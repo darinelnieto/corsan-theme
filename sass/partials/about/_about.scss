@@ -1,0 +1,53 @@
+.about-partial-0056e7 {
+    padding: 3rem 0;
+    position: relative;
+    top: -1.3rem;
+    border-radius: 25px 25px 0 0;
+    z-index: 10;
+    background: #ffffff;
+    .container{
+        width: 100%;
+        max-width: 1392px;
+        .logo{
+            max-width: 200px;
+            position: absolute;
+            left: 90%;
+            transform: translate(-90%, -20%);
+            bottom: 20%;
+            @media(max-width:768px){
+                max-width: 138px;
+                transform: translate(-90%, -40%);
+                bottom: 40%;
+            }
+        }
+        h1{
+            color: $blue;
+            font-weight: 400;
+            font-size: 3.4rem;
+            margin-bottom: 3rem;
+            @media(max-width:510px){
+                font-size: 3rem;
+            }
+        }
+    }
+    .video-container{
+        text-align: center;
+        position: relative;
+        padding-bottom: 50%;
+        padding-top: 35px; 
+        height: 0; 
+        overflow: hidden;   
+        iframe{
+            position: absolute;
+            top: 0;
+            width: 80%;
+            height: 80%;
+            left: 50%;
+            transform: translateX(-50%);
+            @media(max-width:500px){
+                width: 95%;
+                height: 95%;
+            }
+        }
+    }
+}

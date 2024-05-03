@@ -1,0 +1,328 @@
+.body-communities-partial-9516f0 {
+    /*=========== Feature post slide ============*/
+    .slide-container{
+        position: relative;
+        min-height: 150px;
+        background: transparent;
+        .container{
+            width: 100%;
+            max-width: 1392px;
+            position: absolute;
+            bottom: 15%;
+            left: 50%;
+            transform: translate(-50%, -15%);
+            .feature-posts-slide{
+                visibility: hidden;
+                transition: .4s;
+                .post-item{
+                    a{
+                        text-decoration: none;
+                        .card-item{
+                            background: $blue;
+                            padding: 2rem;
+                            border-radius: 37px;
+                            h3{
+                                color: #ffffff;
+                                font-size: 29px;
+                                font-weight: 400;
+                                overflow: hidden;
+                                display: -webkit-box;
+                                -webkit-line-clamp: 2;
+                                        line-clamp: 2; 
+                                -webkit-box-orient: vertical;
+                                min-height: 70px;
+                            }
+                            p{
+                                color: #ffffff;
+                                font-weight: 300;
+                                font-size: 1.1rem;
+                                overflow: hidden;
+                                display: -webkit-box;
+                                -webkit-line-clamp: 3;
+                                        line-clamp: 3; 
+                                -webkit-box-orient: vertical;
+                            }
+                            .cta{
+                                display: flex;
+                                cursor: pointer;
+                                width: fit-content;
+                                .text{
+                                    background: $blue;
+                                    padding: 8px 1rem;
+                                    border-radius: 20px;
+                                    border: 1px solid $yellow;
+                                    color: $yellow;
+                                    font-weight: 400;
+                                    margin-right: 0.5rem;
+                                    height: 40px;
+                                    position: relative;
+                                    font-size: 1rem;
+                                    &::before{
+                                        content: "";
+                                        display: block;
+                                        width: 20px;
+                                        height: 15px;
+                                        position: absolute;
+                                        right: -16%;
+                                        top: 50%;
+                                        transform: translateY(-50%);
+                                        z-index: 9;
+                                        background: $blue;
+                                    }
+                                }
+                                .icon{
+                                    position: relative;
+                                    width: 40px;
+                                    height: 40px;
+                                    border-radius: 50%;
+                                    background: transparent;
+                                    border: 1px solid $yellow;
+                                    &::after{
+                                        content: "";
+                                        width: 14px;
+                                        height: 14px;
+                                        border-radius: 50%;
+                                        border-bottom: 1px solid $yellow;
+                                        position: absolute;
+                                        background: $blue;
+                                        left: -50%;
+                                        transform: translateX(50%);
+                                        top: 2.9%;
+                                        z-index: 10;
+                                    }
+                                    &::before{
+                                        content: "";
+                                        width: 14px;
+                                        height: 14px;
+                                        border-radius: 50%;
+                                        border-top: 1px solid $yellow;
+                                        position: absolute;
+                                        background: $blue;
+                                        left: -50%;
+                                        transform: translateX(50%);
+                                        top: 62.9%;
+                                        z-index: 10;
+                                    }
+                                    svg{
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translate(-50%, -50%);
+                                        width: 10px;
+                                        height: auto;
+                                        g{
+                                            line{
+                                                stroke: $yellow;
+                                            }
+                                        }
+                                    }
+                                }
+                                &:hover{
+                                    .text{
+                                        background: $yellow;
+                                        color: $blue;
+                                        &::before{
+                                            background: $yellow;
+                                        }
+                                    }
+                                    .icon{
+                                        background: $yellow;
+                                        svg{
+                                            g{
+                                                line{
+                                                    stroke:$blue;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /*======== Filter nav ========*/
+    .category-filter-nav-container{
+        .container{
+            width: 100%;
+            max-width: 1330px;
+            ul{
+                list-style: none;
+                display: flex;
+                padding: 0;
+                margin: 0;
+                overflow-x: auto;
+                max-width: 100%;
+                margin-bottom: 3rem;
+                li{
+                    margin: 0 7px;
+                    a{
+                        display: inline-block;
+                        width: fit-content;
+                        padding: 6px 1.3rem;
+                        border: 1px solid $blue;
+                        color: $blue;
+                        text-decoration: none;
+                        border-radius: 20px;
+                        font-weight: 400;
+                        transition: .2s;
+                        &:hover{
+                            background: $blue;
+                            color: #ffffff;
+                        }
+                    }
+                    a.active{
+                        background: $blue;
+                        color: $yellow;
+                        border-color: $yellow;
+                    }
+                }
+            }
+            h1{
+                color: $blue;
+                font-weight: 400;
+                font-size: 3.4rem;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+    /*========= Read post ==========*/
+    .comunities-list{
+        .container{
+            width: 100%;
+            max-width: 1330px;
+            .cta-image{
+                .feature-image-container{
+                    height: 350px;
+                    overflow: hidden;
+                    border-radius: 40px;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+            }
+            .text-container{
+                margin-left: 3rem;
+                h4{
+                    color: $blue;
+                    font-weight: 400;
+                    font-size: 2.5rem;
+                    line-height: 1.2;
+                    @media(max-width:500px){
+                        font-size: 2rem;
+                    }
+                }
+                p{
+                    color: $blue;
+                    font-size: 1.3rem;
+                    font-weight: 300;
+                    line-height: 1.2;
+                }
+                .cta-button{
+                    display: flex;
+                    cursor: pointer;
+                    width: fit-content;
+                    text-decoration: none;
+                    .text{
+                        background: #ffffff;
+                        padding: 6px 1.6rem 10px 1.6rem;
+                        border-radius: 20px;
+                        border: 1px solid $blue;
+                        color: $blue;
+                        font-weight: 400;
+                        margin-right: .5rem;
+                        height: 40px;
+                        position: relative;
+                        font-size: 1.2rem;
+                        &::before{
+                            content: '';
+                            display: block;
+                            width: 20px;
+                            height: 17px;
+                            position: absolute;
+                            right: -11%;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            z-index: 9;
+                            background: #ffffff;
+                        }
+                    }
+                    .icon{
+                        position: relative;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        background: #ffffff;
+                        border: 1px solid $blue;
+                        &::after{
+                            content: '';
+                            width: 14px;
+                            height: 14px;
+                            border-radius: 50%;
+                            border-bottom: 1px solid $blue;
+                            position: absolute;
+                            background: #ffffff;
+                            left: -49%;
+                            transform: translateX(49%);
+                            top: 0.9%;
+                            z-index: 10;
+                        }
+                        &::before{
+                            content: '';
+                            width: 14px;
+                            height: 14px;
+                            border-radius: 50%;
+                            border-top: 1px solid $blue;
+                            position: absolute;
+                            background: #ffffff;
+                            left: -49%;
+                            transform: translateX(49%);
+                            top: 62.9%;
+                            z-index: 10;
+                        }
+                        svg{
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            width: 14px;
+                            height: auto;
+                            g{
+                                line{
+                                    stroke: $blue;
+                                }
+                            }
+                        }
+                    }
+                    &:hover{
+                        .text{
+                            background: $blue;
+                            color: #ffffff;
+                            &::before{
+                                background: $blue;
+                            }
+                        }
+                        .icon{
+                            background: $blue;
+                            svg{
+                                g{
+                                    line{
+                                        stroke:#ffffff;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                @media(max-width: 768px){
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

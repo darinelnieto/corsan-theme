@@ -1,0 +1,13 @@
+{
+    "post_types": {
+        "products": [],
+        "communities": []
+    },
+    "taxonomies": {
+        "product_cat": [],
+        "community_cat": [],
+        "solutions_cat": [],
+        "store_taxonomy" : {},
+        "event_taxonomy" : {}
+    }
+}

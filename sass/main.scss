@@ -1,0 +1,33 @@
+@import 'default_theme';
+
+// Ditto include zone (don't delete anything below)
+// #DittoPartials
+@import "./partials/about/time-line";
+@import "./partials/communities/body-communities";
+@import "./partials/communities/banner";
+@import "./partials/about/about";
+@import "./partials/about/banner-about";
+@import "./partials/single-products/sales-format";
+@import "./partials/single-products/product-details";
+@import "./partials/solutions/products-list";
+@import "./partials/solutions/taxonomies";
+@import "./partials/home/instagram";
+@import "./partials/home/community";
+@import "./partials/home/products-slide";
+@import "./partials/home/banner";
+@import "./partials/working/photos-of-categories";
+@import "./partials/working/banner-working";
+@import "./partials/globals/footer-content";
+@import "./partials/globals/header-content";
+
+// #DittoTemplates
+@import "./templates/archive-communities-template";
+@import "./templates/single-blog-post-template";
+@import "./templates/archive-blog-template";
+@import "./templates/contact-us-template";
+@import "./templates/about-us-template";
+@import "./templates/fqas-template";
+@import "./templates/single-product-template";
+@import "./templates/archive-solutions-template";
+@import "./templates/home-template";
+@import "./templates/working-template";

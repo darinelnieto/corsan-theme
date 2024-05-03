@@ -1,0 +1,305 @@
+.sales-format-partial-f7eea0 {
+    margin-bottom: 3rem;
+    .container{
+        width: 100%;
+        max-width: 1357px;
+        h2{
+            color: $blue;
+            font-weight: 600;
+        }
+        /*======== Sales format table ========*/
+        .sales-format-contain{
+            background: #E4E5E6;
+            border-radius: 30px;
+            /*========= Header table ========*/
+            .header-sales-format-table{
+                display: flex;
+                align-items: center;
+                background: $blue;
+                height: 55px;
+                border-radius: 30px;
+                padding: 0 2rem;
+                p{
+                    color: #ffffff;
+                    font-weight: 700;
+                    margin-bottom: 0;
+                    font-size: 1.2rem;
+                    @media(max-width:921px){
+                        font-size: .9rem;
+                    }
+                    @media screen and (min-width:902px) and (max-width:1095px){
+                        font-size: 1rem;
+                    }
+                }
+                .format-name{
+                    width: 45%;
+                    @media(max-width:815px){
+                        width: 70%;
+                    }
+                    @media screen and (min-width:816) and (max-width:921px) {
+                        width: 40%;
+                    }
+                }
+                .presentation{
+                    width: 15%;
+                    @media(max-width:815px){
+                        width: 30%;
+                    }
+                }
+                .units-container{
+                    width: 40%;
+                    @media(max-width:815px){
+                        display: none;
+                    }
+                    @media screen and (min-width:816) and (max-width:921px) {
+                        width: 45%;
+                    }
+                }
+            }
+            /*========== Body table ==========*/
+            .body-sales-format-table{
+                padding: 1.5rem;
+                .item{
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    padding: 7px 15px;
+                    /*======= Name =======*/
+                    .format-name{
+                        width: 45%;
+                        p{
+                            color: $blue;
+                            font-size: 1.2rem;
+                            font-weight: 400;
+                            margin-bottom: 0;
+                            @media(max-width:921px){
+                                font-size: .9rem;
+                            }
+                            @media screen and (min-width:902px) and (max-width:1095px){
+                                font-size: 1rem;
+                            }
+                        }
+                        @media(max-width:815px){
+                            width: 70%;
+                        }
+                        @media screen and (min-width:816) and (max-width:921px) {
+                            width: 40%;
+                        }
+                    }
+                    /*======= Presentation =======*/
+                    .presentation{
+                        width: 15%;
+                        p{
+                            color: $blue;
+                            font-size: 1.2rem;
+                            font-weight: 400;
+                            margin-bottom: 0;
+                            @media(max-width:921px){
+                                font-size: .9rem;
+                            }
+                            @media screen and (min-width:902px) and (max-width:1095px){
+                                font-size: 1rem;
+                            }
+                        }
+                        @media(max-width:815px){
+                            width: 30%;
+                        }
+                    }
+                    /*======= Add to cart =======*/
+                    .add-to-car-container{
+                        width: 40%;
+                        .select-units{
+                            position: relative;
+                            width: 100%;
+                            max-width: 380px;
+                            .open-options{
+                                border: 1px solid $blue;
+                                height: 40px;
+                                padding: 0 2.5rem 0 1rem;
+                                cursor: pointer;
+                                border-radius: 30px;
+                                display: flex;
+                                align-items: center;
+                                .selected-units{
+                                    color: $blue;
+                                    font-size: 1rem;
+                                    margin-bottom: 0;
+                                    line-height: 0;
+                                }
+                                .icon{
+                                    svg{
+                                        position: absolute;
+                                        right: 5%;
+                                        top: 50%;
+                                        transform: translateY(-50%);
+                                        width: 14px;
+                                        height: auto;
+                                    }
+                                }
+                            }
+                            .options-container{
+                                display: none;
+                                visibility: hidden;
+                                position: absolute;
+                                width: 100%;
+                                background: #ffffff;
+                                z-index: 10;
+                                border-radius: 30px;
+                                padding: 1rem 2rem;
+                                box-shadow: 0px 3px 15px -8px;
+                                ul{
+                                    list-style: none;
+                                    padding: 0;
+                                    margin: 0;
+                                    li{
+                                        font-size: 1rem;
+                                        color: $blue;
+                                        cursor: pointer;
+                                        @media(max-width:901px){
+                                            font-size: .9rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .select-units.active{
+                            .options-container{
+                                display: block;
+                            }
+                        }
+                        @media(max-width:815px){
+                            width: 100%;
+                        }
+                        @media screen and (min-width:816) and (max-width:921px) {
+                            width: 45%;
+                        }
+                    }
+                }
+                .item.selected{
+                    background: $blue;
+                    .format-name, .presentation{
+                        p{
+                            color: $yellow;
+                        }
+                    }
+                    .add-to-car-container{
+                        .select-units{
+                            .open-options{
+                                border: 1px solid $yellow;
+                                p{
+                                    color: $yellow;
+                                }
+                                svg{
+                                    g{
+                                        line{
+                                            stroke:$yellow;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        /*======== CTA add to car =======*/
+        .add-to-cart-button{
+            display: flex;
+            cursor: pointer;
+            width: fit-content;
+            justify-content: right;
+            margin-top: 1rem;
+            .text{
+                background: $blue;
+                padding: 6px 1.6rem 10px 1.6rem;
+                border-radius: 20px;
+                border: 1px solid $blue;
+                color: #ffffff;
+                font-weight: 400;
+                margin-right: .5rem;
+                height: 40px;
+                position: relative;
+                font-size: 1.2rem;
+                &::before{
+                    content: '';
+                    display: block;
+                    width: 20px;
+                    height: 17px;
+                    position: absolute;
+                    right: -11%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    z-index: 9;
+                    background: $blue;
+                }
+            }
+            .icon{
+                position: relative;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: $blue;
+                border: 1px solid $blue;
+                &::after{
+                    content: '';
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    border-bottom: 1px solid $blue;
+                    position: absolute;
+                    background: #ffffff;
+                    left: -40%;
+                    transform: translateX(35%);
+                    top: 7.9%;
+                    z-index: 10;
+                    @media(max-width:640px){
+                        left: -39%;
+                    }
+                }
+                &::before{
+                    content: '';
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    border-top: 1px solid $blue;
+                    position: absolute;
+                    background: #ffffff;
+                    left: -40%;
+                    transform: translateX(35%);
+                    top: 61.9%;
+                    z-index: 10;
+                    @media(max-width:640px){
+                        left: -39%;
+                    }
+                }
+                svg{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 14px;
+                    height: auto;
+                }
+            }
+            &:hover{
+                .text{
+                    background: #ffffff;
+                    color: $blue;
+                    &::before{
+                        background: #ffffff;
+                    }
+                }
+                .icon{
+                    background: #ffffff;
+                    svg{
+                        g{
+                            line{
+                                stroke:$blue;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

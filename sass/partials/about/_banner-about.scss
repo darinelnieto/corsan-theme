@@ -1,0 +1,21 @@
+.banner-about-partial-63dee6 {
+    height: 70vh;
+    position: relative;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    .movil{
+        display: none;
+        @media(max-width:510px){
+            display: block;
+        }
+    }
+    .desktop{
+        @media(max-width:510px){
+            display: none;
+        }
+    }
+}

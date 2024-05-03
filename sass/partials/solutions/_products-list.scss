@@ -1,0 +1,42 @@
+.products-list-partial-fb197d {
+    #loading{
+        text-align: center;
+        img{
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+        }
+    }
+    .card-produc{
+        text-align: center;
+        text-decoration: none;
+        .body-product{
+            img{
+                width: 100%;
+                height: auto;
+                margin: 0 auto;
+            }
+            p{
+                margin-top: 1.4rem;
+                color: $blue;
+                text-transform: uppercase;
+                font-size: 1.4rem;
+                font-weight: 400;
+            }
+        }
+    }
+    .message-zero{
+        h2{
+            color: $blue;
+            font-weight: 700;
+            font-size: 3.5rem;
+            margin-bottom: 0;
+        }
+        p{
+            color: $blue;
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            font-weight: 400;
+        }
+    }
+}

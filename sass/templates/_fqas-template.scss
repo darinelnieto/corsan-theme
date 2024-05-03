@@ -1,0 +1,75 @@
+#fqas-template-d518b0 {
+    padding: 10rem 0 3rem 0;
+    .container{
+        width: 100%;
+        max-width: 1357px;
+        h1{
+            color: $blue;
+            font-weight: 400;
+            font-size: 3.4rem;
+            margin-bottom: 2rem;
+        }
+        .fqas-list{
+            .fqa-item{
+                border-bottom: 1px solid $blue;
+                .the-question{
+                    cursor: pointer;
+                    color: $blue;
+                    display: flex;
+                    justify-content: space-between;
+                    position: relative;
+                    padding: 15px 2rem;
+                    h4{
+                        font-weight: 700;
+                        font-size: 1.5rem;
+                        margin-bottom: 0;
+                        span{
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                            transform: translateY(-50%);
+                        }
+                    }
+                    .icon{
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        transition: .2s;
+                        svg{
+                            width: 14px;
+                            height: auto;
+                        }
+                    }
+                }
+                .the-answer{
+                    height: 0;
+                    overflow: hidden;
+                    visibility: hidden;
+                    padding: 0 2rem;
+                    transition: .2s;
+                    p{
+                        color: $blue;
+                        font-size: 1.1rem;
+                        font-weight: 400;
+                    }
+                }
+            }
+            .fqa-item.active{
+                .the-question{
+                    .icon{
+                        transform: translateY(-50%) rotate(-90deg);
+                    }
+                }
+                .the-answer{
+                    height: auto;
+                    overflow: auto;
+                    padding: 15px 2rem;
+                }
+            }
+            .fqa-item:last-child{
+                border-bottom: none;
+            }
+        }
+    }
+}

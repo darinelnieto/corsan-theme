@@ -1,0 +1,177 @@
+.banner-partial-bfa418 {
+    /*======== Product taxonomies ========*/
+    .taxonomies{
+        .row{
+            width: 100%;
+            margin: 0 auto;
+            .col-6{
+                padding: 0;
+                a{
+                    text-decoration: none;
+                    .taxonomi-card{
+                        position: relative;
+                        overflow: hidden;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                        .name-category{
+                            width: 100%;
+                            height: 0;
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            visibility: hidden;
+                            transition: .2s;
+                            span{
+                                text-transform: uppercase;
+                                font-size: 3.5rem;
+                                color: #002D74;
+                                position: absolute;
+                                bottom: 1rem;
+                                left: 1rem;
+                                line-height: .9;
+                                font-weight: 700;
+                                white-space: break-spaces;
+                                word-wrap: break-word;
+                            }
+                        }
+                        &:hover{
+                            .name-category{
+                                visibility: visible;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /*======== Products slide ========*/
+    .products-slide-container{
+        position: relative;
+        height: 500px;
+        .texture-slide{
+            width: 100%;
+            height: 100%;
+        }
+        .slide-products{
+            position: relative;
+            z-index: 10;
+            visibility: hidden;
+            object-fit: cover;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            transition: .4s;
+            .row{
+                .short-description{
+                    color: $blue;
+                    font-size: 1.5rem;
+                }
+                /*========= Ctas banner =========*/
+                .ctas-container{
+                    display: flex;
+                    align-items: center;
+                    .permalink-product{
+                        border: 1px solid $blue;
+                        display: block;
+                        width: fit-content;
+                        padding: 8px 2rem;
+                        border-radius: 30px;
+                        text-decoration: none;
+                        color: $blue;
+                        font-size: 1.3rem;
+                        transition: .2s;
+                        &:hover{
+                            background: $yellow;
+                            color: $blue;
+                        }
+                        @media(max-width:510px){
+                            width: 40%;
+                            font-size: 1rem;
+                            padding: 6px 1rem;
+                            text-align: center;
+                        }
+                    }
+                    .solutions-link{
+                        position: relative;
+                        display: flex;
+                        max-width: 250px;
+                        margin-left: 2rem;
+                        .text-cta{
+                            position: absolute;
+                            color: #ffffff;
+                            top: 50%;
+                            transform: translate(-20%, -50%);
+                            left: 20%;
+                            font-size: 1.3rem;
+                            transition: .2s;
+                        }
+                        svg{
+                            max-width: 250px;
+                            path{
+                                transition: .2s;
+                            }
+                        }
+                        .icon{
+                            svg{
+                                position: absolute;
+                                top: 50%;
+                                left: 92%;
+                                transform: translate(-92%, -50%);
+                                width: 14px;
+                                height: auto;
+                            }
+                        }
+                        &:hover{
+                            .text-cta{
+                                color: $blue;
+                            }
+                            svg{
+                                path{
+                                    fill: $yellow;
+                                }
+                            }
+                            .icon{
+                                svg{
+                                    g{
+                                        line{
+                                            stroke:$blue;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        @media(max-width:510px){
+                            margin-left: 1rem;
+                            width: 55%;
+                            .text-cta{
+                                font-size: 1rem;
+                            }
+                            .icon{
+                                svg{
+                                    left: 93%;
+                                    transform: translate(-93%, -50%);
+                                }
+                            }
+                        }
+                    }
+                }
+                .product-image{
+                    width: 100%;
+                    max-width: 400px;
+                    margin: 0 auto;
+                }
+                @media(max-width:768px){
+                    flex-direction: column-reverse;
+                }
+            }
+        }
+        @media(max-width:768px){
+            min-height: 700px;
+        }
+    }
+}

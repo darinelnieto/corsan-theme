@@ -1,0 +1,120 @@
+.instagram-partial-0f6ff4 {
+    padding: 3rem 0;
+    .container{
+        width: 100%;
+        max-width: 1392px;
+        .title-container{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            h2{
+                color: $blue;
+                font-weight: 400;
+                margin-bottom: 0;
+                font-size: 3rem;
+            }
+            a{
+                text-decoration: none;
+                .button-container-instagram{
+                    display: flex;
+                    .text-button{
+                        background: $blue;
+                        padding: 6px 1.6rem 10px 1.6rem;
+                        border-radius: 20px;
+                        color: $yellow;
+                        font-weight: 400;
+                        margin-right: .5rem;
+                        height: 40px;
+                        position: relative;
+                        font-size: 1.2rem;
+                        &::before{
+                            content: '';
+                            display: block;
+                            width: 20px;
+                            height: 15px;
+                            position: absolute;
+                            right: -9%;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            z-index: 1;
+                            background: $blue;
+                        }
+                    }
+                    .icon{
+                        position: relative;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        background: $blue;
+                        &::after{
+                            content: '';
+                            width: 12px;
+                            height: 12px;
+                            border-radius: 50%;
+                            position: absolute;
+                            background: #ffffff;
+                            left: -35%;
+                            transform: translateX(35%);
+                            top: 9.9%;
+                            z-index: 10;
+                        }
+                        &::before{
+                            content: '';
+                            width: 12px;
+                            height: 12px;
+                            border-radius: 50%;
+                            position: absolute;
+                            background: #ffffff;
+                            left: -35%;
+                            transform: translateX(35%);
+                            top: 59.9%;
+                            z-index: 10;
+                        }
+                        svg{
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            width: 18px;
+                            height: auto;
+                            path{
+                                fill: $yellow;
+                            }
+                        }
+                    }
+                    &:hover{
+                        .text-button{
+                            background: $yellow;
+                            color: $blue;
+                            &::before{
+                                background: $yellow;
+                            }
+                        }
+                        .icon{
+                            background: $yellow;
+                            svg{
+                                path{
+                                    fill: $blue;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            @media(max-width:640px){
+                flex-direction: column;
+                margin-bottom: 3rem;
+                h2{
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+        .instagram-container{
+            .sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready{
+                border-radius: 25px;
+            }
+        }
+    }
+}

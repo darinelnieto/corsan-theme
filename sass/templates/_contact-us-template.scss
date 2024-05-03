@@ -1,0 +1,193 @@
+#contact-us-template-55cc3c {
+    section{
+        position: relative;
+        min-height: 100vh;
+        overflow: hidden;
+        .background-image{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &::before{
+            content: '';
+            width: 100%;
+            height: 101%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 45, 116, .8);
+            z-index: 9;
+        }
+        #content-contact{
+            position: relative;
+            z-index: 10;
+            align-items: center;
+            padding: 9rem 0 5rem 0;
+            .title-page{
+                color: #ffffff;
+                font-size: 66px;
+                font-weight: 600;
+            }
+            .desription-page{
+                color: #ffffff;
+                font-size: 30px;
+                font-weight: 400;
+            }
+            .from-card{
+                margin: 0 auto;
+                background: $yellow;
+                border-radius: 20px;
+                padding: 2rem;
+                max-width: 374px;
+                z-index: 20;
+                h2{
+                    color: $blue;
+                    font-weight: 600;
+                    font-size: 2rem;
+                }
+                p{
+                    color: $gray;
+                    font-weight: 300;
+                    font-size: .9rem;
+                }
+                .form{
+                    .input{
+                        label{
+                            font-size: 1.2rem;
+                            font-weight: 400;
+                            color: $gray;
+                        }
+                        input{
+                            width: 100%;
+                            background: transparent;
+                            height: 38px;
+                            border-radius: 10px;
+                            border: 1px solid $gray;
+                            padding: 0 10px;
+                        }
+                        textarea{
+                            width: 100%;
+                            background: transparent;
+                            height: 38px;
+                            border-radius: 10px;
+                            border: 1px solid $gray;
+                            height: 80px;
+                            padding: 10px;
+                        }
+                    }
+                    .submit{
+                        p{
+                            position: relative;
+                            margin: 0;
+                            .wpcf7-spinner{
+                                position: absolute;
+                                left: 60%;
+                                top: 50%;
+                                transform: translate(-60%, -50%);
+                                z-index: 30;
+                            }
+                            br{
+                                display: none;
+                            }
+                            .button-container{
+                                display: flex;
+                                outline: none;
+                                border: none;
+                                background: transparent;
+                                br{
+                                    display: none;
+                                }
+                                .text-button{
+                                    background: $blue;
+                                    padding: 9px 2.6rem 10px 2.6rem;
+                                    border-radius: 20px;
+                                    color: #ffffff;
+                                    font-weight: 400;
+                                    margin-right: .5rem;
+                                    height: 40px;
+                                    position: relative;
+                                    font-size: 1rem;
+                                    &::before{
+                                        content: '';
+                                        display: block;
+                                        width: 20px;
+                                        height: 15px;
+                                        position: absolute;
+                                        right: -12%;
+                                        top: 50%;
+                                        transform: translateY(-50%);
+                                        z-index: 1;
+                                        background: $blue;
+                                    }
+                                }
+                                .icon{
+                                    position: relative;
+                                    width: 40px;
+                                    height: 40px;
+                                    border-radius: 50%;
+                                    background: $blue;
+                                    &::after{
+                                        content: '';
+                                        width: 12px;
+                                        height: 12px;
+                                        border-radius: 50%;
+                                        position: absolute;
+                                        background: $yellow;
+                                        left: -35%;
+                                        transform: translateX(35%);
+                                        top: 9.9%;
+                                        z-index: 100;
+                                    }
+                                    &::before{
+                                        content: '';
+                                        width: 12px;
+                                        height: 12px;
+                                        border-radius: 50%;
+                                        position: absolute;
+                                        background: $yellow;
+                                        left: -35%;
+                                        transform: translateX(35%);
+                                        top: 59.9%;
+                                        z-index: 100;
+                                    }
+                                    svg{
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translate(-50%, -50%);
+                                        width: 14px;
+                                        height: auto;
+                                    }
+                                }
+                                &:hover{
+                                    .text-button{
+                                        background: #ffffff;
+                                        color: $blue;
+                                        &::before{
+                                            background: #ffffff;
+                                        }
+                                    }
+                                    .icon{
+                                        background: #ffffff;
+                                        svg{
+                                            g{
+                                                line{
+                                                    stroke:$blue;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
