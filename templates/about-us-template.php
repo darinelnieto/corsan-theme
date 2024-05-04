@@ -18,6 +18,10 @@ get_header();
         <?php get_template_part('partials/about/about'); ?>
         <!-- Time line -->
         <?php get_template_part('partials/about/time-line'); ?>
+        <!-- Our team -->
+        <?php get_template_part('partials/about/work-team'); ?>
+        <!-- Our clients -->
+        <?php get_template_part('partials/about/our-clients'); ?>
     </div>
 </main>
 <?php get_footer(); ?>

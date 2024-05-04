@@ -220,3 +220,77 @@ $('.feature-posts-slide').owlCarousel({
     }
   }
 }).css({'visibility':'visible'});
+// Work team gallery
+$('.gallery-our-team').owlCarousel({
+  autoplay:false,
+  loop:false,
+  navText:[`<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 51 51">
+    <g id="Grupo_248" data-name="Grupo 248" transform="translate(-1751.45 -1397.993)">
+      <g id="Grupo_246" data-name="Grupo 246">
+        <circle id="Elipse_67" data-name="Elipse 67" cx="25" cy="25" r="25" transform="translate(1751.95 1398.493)" fill="none" stroke="#002d74" stroke-miterlimit="10" stroke-width="1"/>
+      </g>
+      <g id="Grupo_247" data-name="Grupo 247">
+        <line id="Línea_66" data-name="Línea 66" x1="13.653" y1="13.653" transform="translate(1770.123 1423.493)" fill="none" stroke="#002d74" stroke-miterlimit="10" stroke-width="1.651"/>
+        <line id="Línea_67" data-name="Línea 67" y1="13.653" x2="13.653" transform="translate(1770.123 1409.839)" fill="none" stroke="#002d74" stroke-miterlimit="10" stroke-width="1.651"/>
+      </g>
+    </g>
+  </svg>
+  `, `<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 51 51">
+    <g id="Grupo_251" data-name="Grupo 251" transform="translate(-1814.731 -1397.993)">
+      <g id="Grupo_249" data-name="Grupo 249">
+        <circle id="Elipse_68" data-name="Elipse 68" cx="25" cy="25" r="25" transform="translate(1815.231 1398.493)" fill="none" stroke="#002d74" stroke-miterlimit="10" stroke-width="1"/>
+      </g>
+      <g id="Grupo_250" data-name="Grupo 250">
+        <line id="Línea_68" data-name="Línea 68" x2="13.653" y2="13.653" transform="translate(1833.404 1409.839)" fill="none" stroke="#002d74" stroke-miterlimit="10" stroke-width="1.651"/>
+        <line id="Línea_69" data-name="Línea 69" x1="13.653" y2="13.653" transform="translate(1833.404 1423.493)" fill="none" stroke="#002d74" stroke-miterlimit="10" stroke-width="1.651"/>
+      </g>
+    </g>
+  </svg>
+  `],
+  nav:true,
+  dots:false,
+  margin:0,
+  items:1
+}).css({'visibility':'visible'});
+// Our clients
+$('.our-clients').owlCarousel({
+  loop:true,
+  autoplay:false,
+  navText:[`<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 51 51">
+    <g id="Grupo_248" data-name="Grupo 248" transform="translate(-1751.45 -1397.993)">
+      <g id="Grupo_246" data-name="Grupo 246">
+        <circle id="Elipse_67" data-name="Elipse 67" cx="25" cy="25" r="25" transform="translate(1751.95 1398.493)" fill="none" stroke="#002d74" stroke-miterlimit="10" stroke-width="1"/>
+      </g>
+      <g id="Grupo_247" data-name="Grupo 247">
+        <line id="Línea_66" data-name="Línea 66" x1="13.653" y1="13.653" transform="translate(1770.123 1423.493)" fill="none" stroke="#002d74" stroke-miterlimit="10" stroke-width="1.651"/>
+        <line id="Línea_67" data-name="Línea 67" y1="13.653" x2="13.653" transform="translate(1770.123 1409.839)" fill="none" stroke="#002d74" stroke-miterlimit="10" stroke-width="1.651"/>
+      </g>
+    </g>
+  </svg>
+  `, `<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 51 51">
+    <g id="Grupo_251" data-name="Grupo 251" transform="translate(-1814.731 -1397.993)">
+      <g id="Grupo_249" data-name="Grupo 249">
+        <circle id="Elipse_68" data-name="Elipse 68" cx="25" cy="25" r="25" transform="translate(1815.231 1398.493)" fill="none" stroke="#002d74" stroke-miterlimit="10" stroke-width="1"/>
+      </g>
+      <g id="Grupo_250" data-name="Grupo 250">
+        <line id="Línea_68" data-name="Línea 68" x2="13.653" y2="13.653" transform="translate(1833.404 1409.839)" fill="none" stroke="#002d74" stroke-miterlimit="10" stroke-width="1.651"/>
+        <line id="Línea_69" data-name="Línea 69" x1="13.653" y2="13.653" transform="translate(1833.404 1423.493)" fill="none" stroke="#002d74" stroke-miterlimit="10" stroke-width="1.651"/>
+      </g>
+    </g>
+  </svg>
+  `],
+  nav:true,
+  dots:true,
+  margin:30,
+  responsive:{
+    0:{
+      items:2
+    },
+    768:{
+      items:4
+    },
+    1000:{
+      items:6
+    }
+  }
+}).css({'visibility':'visible'});

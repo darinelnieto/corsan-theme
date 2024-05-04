@@ -1,0 +1,45 @@
+.our-clients-partial-75cf3f {
+    padding: 4rem 0;
+    .container{
+        width: 100%;
+        max-width: 1392px;
+        h2{
+            color: $blue;
+            font-weight: 400;
+            font-size: 2.8rem;
+            margin-bottom: 2.5rem;
+        }
+        .our-clients{
+            visibility: hidden;
+            .owl-stage {
+                display: flex;
+                align-items: center;
+                .item{
+                    img{
+                        width: 100%;
+                        max-width: 150px;
+                        height: auto;
+                        margin: 0 auto;
+                    }
+                }
+            }
+            .owl-nav{
+                display: flex;
+                align-items: center;
+                position: absolute;
+                right: 0%;
+                bottom: 132%;
+                button{
+                    margin: 0 5px;
+                    outline: none;
+                }
+                .disabled{
+                    opacity: .3;
+                }
+                @media(max-width:500px){
+                    bottom: -14%;
+                }
+            }
+        }
+    }
+}
