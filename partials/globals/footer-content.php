@@ -25,13 +25,13 @@ $social_network = get_field('social_networks_footer', 'option');
                     <div class="col-12 col-md-6 col-lg-5 mb-4 mb-md-0 nav-footer">
                         <h4><?php if(get_bloginfo("language") == "en-US"):?>Solutions<?php else: ?>Soluciones<?php endif; ?></h4>
                         <div class="the-nav">
-                            <?php wp_nav_menu(['menu' => 'help']); ?>
+                            <?php wp_nav_menu(['menu' => 'Solutions']); ?>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-5 mb-5 mb-md-0 nav-footer">
                         <h4><?php if(get_bloginfo("language") == "en-US"):?>Help<?php else: ?>Ayuda<?php endif; ?></h4>
                             <div class="the-nav">
-                                <?php wp_nav_menu(['menu' => 'Solutions']); ?>
+                                <?php wp_nav_menu(['menu' => 'help']); ?>
                             </div>
                     </div>
                 </div>
