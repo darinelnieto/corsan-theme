@@ -54,6 +54,69 @@ body, html {
   display: none;
 }
 
+/*=========== 404 ==========*/
+#ditto_404_error {
+  background: #002D74;
+  padding: 10rem 0;
+}
+#ditto_404_error .row {
+  position: relative;
+}
+#ditto_404_error .row h1 {
+  color: #FFD100;
+  font-weight: 700;
+  font-size: 13rem;
+  text-align: center;
+}
+@media (max-width: 500px) {
+  #ditto_404_error .row h1 {
+    font-size: 10rem;
+  }
+}
+#ditto_404_error .row p {
+  color: #ffffff;
+  font-size: 4rem;
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  #ditto_404_error .row p {
+    text-align: center;
+    font-size: 2.5rem;
+  }
+}
+#ditto_404_error .row a {
+  font-size: 25px;
+  padding: 10px 1rem;
+  color: #FFD100;
+  border: 1px solid #FFD100;
+  border-radius: 30px;
+  text-decoration: none;
+}
+@media (max-width: 500px) {
+  #ditto_404_error .row a {
+    font-size: 20px;
+  }
+}
+#ditto_404_error .row .svg-container {
+  width: fit-content;
+  position: absolute;
+  z-index: 10;
+  right: 3%;
+  top: 100%;
+}
+#ditto_404_error .row .svg-container svg {
+  height: auto;
+  max-width: 250px;
+}
+@media (max-width: 768px) {
+  #ditto_404_error .row .svg-container {
+    top: 111%;
+  }
+  #ditto_404_error .row .svg-container svg {
+    max-width: 200px;
+  }
+}
+
 .our-clients-partial-75cf3f {
   padding: 4rem 0;
 }

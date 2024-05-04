@@ -58,3 +58,57 @@ body, html{
 #wpadminbar{
     display: none;
 }
+/*=========== 404 ==========*/
+#ditto_404_error{
+    background: $blue;
+    padding: 10rem 0;
+    .row{
+        position: relative;
+        h1{
+            color: $yellow;
+            font-weight: 700;
+            font-size: 13rem;
+            text-align: center;
+            @media(max-width:500px){
+                font-size: 10rem;
+            }
+        }
+        p{
+            color: #ffffff;
+            font-size: 4rem;
+            font-weight: 600;
+            @media(max-width:768px){
+                text-align: center;
+                font-size: 2.5rem;
+            }
+        }
+        a{
+            font-size: 25px;
+            padding: 10px 1rem;
+            color: $yellow;
+            border: 1px solid $yellow;
+            border-radius: 30px;
+            text-decoration: none;
+            @media(max-width:500px){
+                font-size: 20px;
+            }
+        }
+        .svg-container{
+            width: fit-content;
+            position: absolute;
+            z-index: 10;
+            right: 3%;
+            top: 100%;
+            svg{
+                height: auto;
+                max-width: 250px;
+            }
+            @media(max-width:768px){
+                top: 111%;
+                svg{
+                    max-width: 200px;
+                }
+            }
+        }
+    }
+}
