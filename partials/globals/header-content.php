@@ -78,7 +78,7 @@ $social_networks = get_field('social_networks', 'option');
                 endif; ?>
             </h3>
             <div class="the-form">
-                <?= do_shortcode('[contact-form-7 id="bd12e32" title="Cotizacion"]'); ?>
+                <?= do_shortcode(get_field('shortcode_form', 'option')); ?>
             </div>
         </div>
     </div>
