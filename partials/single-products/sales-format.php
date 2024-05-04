@@ -17,7 +17,6 @@ $units = get_field('units');
         <div class="row">
             <div class="col-12">
                 <h2><?= get_field('title_sales_format'); ?></h2>
-                <input type="hidden" class="product-name" value="<?= get_the_title(); ?>">
                 <div class="sales-format-contain">
                     <div class="header-sales-format-table">
                         <div class="format-name">
@@ -34,6 +33,8 @@ $units = get_field('units');
                         <?php foreach($sales_format as $item): ?>
                             <div class="item">
                                 <div class="format-name">
+                                    <input type="hidden" class="product-name" value="<?= get_the_title(); ?>">
+                                    <input type="hidden" class="the-feature-image" value="<?= get_the_post_thumbnail_url(); ?>">
                                     <p><?= $item['reference']; ?></p>
                                 </div>
                                 <div class="presentation">
@@ -62,7 +63,7 @@ $units = get_field('units');
                         <?php endforeach; ?>
                     </div>
                 </div>
-                <div class="add-to-cart-button">
+                <div class="add-to-cart-button d-none" onclick="add_to_car(value_initial)">
                     <span class="text"><?php if(get_bloginfo("language") == "en-US"): echo "Quote"; else: echo "Cotizar"; endif; ?></span>
                     <span class="icon <?php if(get_bloginfo("language") == "en-US"): echo "en"; endif; ?>"></span>
                 </div>
@@ -94,7 +95,7 @@ $units = get_field('units');
     /*========= Select units =========*/
     $('.body-sales-format-table').on('click', '.the-option', function(){
         var the_option = $(this).text();
-        var val_initial = '<?php if(get_bloginfo("language") == "en-US"): echo "Select quantity"; else: echo "Selecciona cantidad"; endif; ?>'
+        var val_initial = '<?php if(get_bloginfo("language") == "en-US"): echo "Select quantity"; else: echo "Selecciona cantidad"; endif; ?>';
         $(this).parent().parent().parent().children('.open-options').children('.selected-units').html(`${the_option}`);
         if(the_option !== val_initial){
             $(this).parent().parent().parent().parent().parent().addClass('selected');
@@ -103,6 +104,7 @@ $units = get_field('units');
         }
         $('.select-units').removeClass('active');
         $('.options-container').css({'visibility':'hidden'});
+        validate_options();
     });
 </script>
 <?php endif; ?>        

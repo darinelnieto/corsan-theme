@@ -20,6 +20,7 @@ $social_networks = get_field('social_networks', 'option');
             }
         });
     }); 
+    let value_initial = '<?php if(get_bloginfo("language") == "en-US"): echo "Select quantity"; else: echo "Selecciona cantidad"; endif; ?>';
 </script>
 <section class="header-content-partial-777e2f">
     <div class="container">
@@ -32,8 +33,8 @@ $social_networks = get_field('social_networks', 'option');
             </div>
             <div class="col-4 col-md-2 cta-languaje">
                 <?php wp_nav_menu(['menu' => 'Menu 1']); ?>
-                <div class="cart">
-                    <span class="count"></span>
+                <div class="cart" onclick="open_car()">
+                    <span class="count" id="car-count"></span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="28.869" height="28.115" viewBox="0 0 28.869 28.115">
                         <g id="Grupo_259" data-name="Grupo 259" transform="translate(-1838.252 -47.925)">
                             <path id="Trazado_171" data-name="Trazado 171" d="M1838.252,48.444a.82.82,0,0,1,.87-.518c.649.019,1.3,0,1.947.006a3.074,3.074,0,0,1,3.006,2.166c.171.5.341.995.49,1.5a.31.31,0,0,0,.354.257c2.153.024,4.306.058,6.46.089q7.446.1,14.893.218a1.108,1.108,0,0,1,.642.214.648.648,0,0,1,.2.533c-.55,2.358-1.087,4.721-1.711,7.061a3.591,3.591,0,0,1-3.222,2.587c-2.627.263-5.252.55-7.878.824-1.888.2-3.776.4-5.666.578a.654.654,0,0,0-.614.441,1.818,1.818,0,0,0,1.714,2.637c4.165-.031,8.331-.011,12.5-.01a2.343,2.343,0,0,1,.419.031.632.632,0,0,1,.553.67.65.65,0,0,1-.577.628,1.883,1.883,0,0,1-.281.012q-6.335,0-12.667,0a3.139,3.139,0,0,1-2.917-4.446,1.629,1.629,0,0,0,.073-1.278c-1.351-4-2.672-8.013-4-12.022a1.756,1.756,0,0,0-1.871-1.349c-.611,0-1.222-.009-1.833,0a.8.8,0,0,1-.877-.548Zm6.854,4.745c.019.085.024.132.039.176q1.494,4.531,2.986,9.066c.056.172.142.2.307.185,1.075-.118,2.15-.226,3.225-.338l10.376-1.073a2.283,2.283,0,0,0,2.172-1.879q.564-2.3,1.12-4.6c.1-.4.193-.811.294-1.238Z" fill="#002d74"/>
@@ -56,5 +57,29 @@ $social_networks = get_field('social_networks', 'option');
             </ul>
         </div>
     <?php endif; ?>
+    <!-- Car list -->
+    <div class="car-list" id="car-pop-up">
+        <span class="car-close" onclick="close_car()"></span>
+        <div class="car-header"></div>
+        <div class="car-body" id="car-body"></div>
+        <div class="car-footer">
+            <button class="end-quote d-none" onclick="open_end_quote()">
+                <?php if(get_bloginfo("language") == "en-US"): echo "End quote"; else: echo "Finalizar cotización"; endif; ?>
+            </button>
+        </div>
+    </div>
+    <!-- End quote form -->
+    <div class="end-quote-form-pop-up">
+        <div class="form-container">
+            <div class="close-quote-form" onclick="close_end_quote()"></div>
+            <h3><?php if(get_bloginfo("language") == "en-US"): 
+                echo "To continue, you must fill out the following form."; else: 
+                echo "Para continuar, debes llenar el siguiente formulario."; 
+                endif; ?>
+            </h3>
+            <div class="the-form">
+                <?= do_shortcode('[contact-form-7 id="bd12e32" title="Cotizacion"]'); ?>
+            </div>
+        </div>
+    </div>
 </section>
-                    

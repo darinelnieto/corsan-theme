@@ -69,28 +69,215 @@ for (i = 0; i < acc.length; i++) {
     });
 }
 /*============ Add to car =============*/
-var all_references = [];
-$('.add-to-cart-button').on('click', function(){
+$(()=>{
+  get_items_to_car();
+  product_added();
+  validate_options();
+});
+function validate_options(){
+  var options = $('.item.selected');
+  if(options.length > 0){
+    $('.add-to-cart-button').removeClass('d-none');
+  }else{
+    $('.add-to-cart-button').addClass('d-none');
+  }
+}
+let all_references = [];
+// add to car single product
+function add_to_car(value_initial){
   var references = $('.item.selected');
   for(i = 0; i < references.length; i++){
-    var product_name = $('.product-name').val();
+    var product_name = references[i].querySelectorAll('.format-name > .product-name');
+    var feature = references[i].querySelectorAll('.format-name > .the-feature-image');
     var reference_name = references[i].querySelectorAll('.format-name > p');
     var presentation = references[i].querySelectorAll('.presentation > p');
     var units = references[i].querySelectorAll('.add-to-car-container > .select-units > .open-options > .selected-units');
     var sku = references[i].querySelectorAll('.add-to-car-container > .sku');
     all_references.push({
       sku: sku[0].value,
-      item:i,
-      product_name: product_name,
+      feature:feature[0].value,
+      product_name: product_name[0].value,
       reference_name: reference_name[0].innerHTML,
       presentation: presentation[0].innerHTML,
       units: units[0].innerHTML,
-    }); 
-    console.log(all_references);
+    });
   }
   var list = JSON.stringify(all_references);
   localStorage.setItem('car', list);
+  car_count();
+  open_car();
+  // Reset options
+  $('.selected-units').html(`${value_initial}`);
+  // Reset items
+  references.removeClass('selected');
+  validate_options();
+}
+// Validate car
+function get_items_to_car(){
+  var car_obejct = JSON.parse(localStorage.getItem('car'));
+  if(car_obejct != null){
+    for(item of car_obejct){
+      all_references.push({
+        sku:item.sku,
+        feature:item.feature,
+        product_name: item.product_name,
+        reference_name: item.reference_name,
+        presentation: item.presentation,
+        units: item.units,
+      });
+    }
+  }
+  car_count();
+  product_added();
+};
+// Car count
+function car_count(){
+  count = all_references.length;
+  $('#car-count').html(`${count}`);
+  if(count > 0){
+    $('.end-quote').removeClass('d-none');
+  }else{
+    $('.end-quote').addClass('d-none');
+  }
+}
+// Print cart
+function product_added(){
+  $('#car-body').html('');
+  for(item of all_references){
+    $('#car-body').append(`
+      <div class="car-item">
+        <span class="this-delete"></span>
+        <div>
+          <input type="hidden" class="the-feature-image" value="${item.feature}">
+          <input type="hidden" class="the-product-name" value="${item.product_name}">
+          <input type="hidden" class="the-reference-name" value="${item.reference_name}">
+          <input type="hidden" class="the-sku" value="${item.sku}">
+          <input type="hidden" class="the-units" value="${item.units}">   
+          <input type="hidden" class="the-presentation" value="${item.presentation}">
+        </div>
+        <div class="image-container">
+          <img src="${item.feature}" alt="${item.product_name}">
+        </div>
+        <div class="product-description">
+            <h4>${item.reference_name}</h4>
+            <div class="row caracteristic-product">
+              <div class="col-4">
+                <p><strong>SKU</strong></p>
+              </div>
+              <div class="col-8">
+                <p>${item.sku}</p>
+              </div>
+              <div class="col-4">
+                <p><strong>Unidades</strong></p>
+              </div>
+              <div class="col-8">
+                <p>${item.units}</p>
+              </div>
+              <div class="col-4">
+                <p><strong>Presentación</strong></p>
+              </div>
+              <div class="col-8">
+                <p>${item.presentation}</p>
+              </div>
+            </div>
+        </div>
+      </div>
+    `);
+  }
+}
+// Item delete
+$('#car-body').on('click', '.this-delete', function(){
+  item = $(this);
+  item.parent().remove();
+  delet_item();
 });
+// Car depure
+function delet_item(){
+  all_references = [];
+  var car_list = $('.car-item');
+  for(e = 0; car_list.length > e; e++){
+    sku = car_list[e].querySelectorAll('.the-sku');
+    feature = car_list[e].querySelectorAll('.the-feature-image');
+    product_name = car_list[e].querySelectorAll('.the-product-name');
+    reference_name = car_list[e].querySelectorAll('.the-reference-name');
+    presentation = car_list[e].querySelectorAll('.the-presentation');
+    units = car_list[e].querySelectorAll('.the-units');
+    all_references.push({
+      sku:sku[0].value,
+      feature:feature[0].value,
+      product_name: product_name[0].value,
+      reference_name: reference_name[0].value,
+      presentation: presentation[0].value,
+      units: units[0].value,
+    });
+  }
+  list = JSON.stringify(all_references);
+  localStorage.setItem('car', list);
+  car_count();
+  product_added();
+  if(car_list.length == 0){
+    close_car();
+  }
+}
+// Open car
+function open_car(){
+  $('#car-pop-up').addClass('show');
+  product_added();
+}
+// Close car
+function close_car(){
+  $('#car-pop-up').removeClass('show');
+}
+/*============= Close form end quote ==============*/
+function close_end_quote(){
+  $('.end-quote-form-pop-up').removeClass('show');
+}
+function open_end_quote(){
+  close_car();
+  $('.end-quote-form-pop-up').addClass('show');
+  add_products_to_quote_form();
+}
+function add_products_to_quote_form(){
+  var products = [];
+  var list = [];
+  var product_list = $('.car-item');
+  for(e = 0; product_list.length > e; e++){
+    sku = product_list[e].querySelectorAll('.the-sku');
+    product_name = product_list[e].querySelectorAll('.the-product-name');
+    reference_name = product_list[e].querySelectorAll('.the-reference-name');
+    presentation = product_list[e].querySelectorAll('.the-presentation');
+    units = product_list[e].querySelectorAll('.the-units');
+    products.push({
+      sku:sku[0].value,
+      product_name: product_name[0].value,
+      reference_name: reference_name[0].value,
+      presentation: presentation[0].value,
+      units: units[0].value,
+    });
+  }
+  for(item of products){
+    list.push(`Nombre del producto: ${item.reference_name}, Sku: ${item.sku}, presentación: ${item.presentation}, cantidad: ${item.units} |--|`);
+  }
+  if(list.length > 0){
+    $('#products-to-quote').val(list);
+    list = [];
+  }
+}
+/*=========== Reset car ===========*/
+function clear_car_after_submit_qoute_form(){
+  setTimeout(function(){
+    close_end_quote();
+  }, 3000);
+  localStorage.removeItem('car');
+  all_references = [];
+  get_items_to_car();
+}
+/*=========== Submit quote ============*/
+var wpcf7Elm = document.querySelector( '.the-form > .wpcf7' );
+ 
+wpcf7Elm.addEventListener( 'wpcf7submit', function( event ) {
+  clear_car_after_submit_qoute_form();
+}, false );
 /*========== FQAs ==========*/
 var fqa = $('.the-question');
 var i;
