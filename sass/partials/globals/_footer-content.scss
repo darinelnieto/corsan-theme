@@ -18,6 +18,30 @@
                 height: auto;
             }
         }
+        .menu-nav-container{
+            .nav-footer{
+                h4{
+                    color: $yellow;
+                    font-weight: 600;
+                }
+                .the-nav{
+                    ul{
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        li{
+                            margin-bottom: .3rem;
+                            a{
+                                text-decoration: none;
+                                color: $yellow;
+                                font-weight: 300;
+                                font-size: 1.1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
         .contact-container{
             max-width: 350px;
             p{

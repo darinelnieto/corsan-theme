@@ -2246,6 +2246,24 @@ body, html {
   max-width: 188px;
   height: auto;
 }
+.footer-content-partial-ecbbb5 .container .menu-nav-container .nav-footer h4 {
+  color: #FFD100;
+  font-weight: 600;
+}
+.footer-content-partial-ecbbb5 .container .menu-nav-container .nav-footer .the-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-content-partial-ecbbb5 .container .menu-nav-container .nav-footer .the-nav ul li {
+  margin-bottom: 0.3rem;
+}
+.footer-content-partial-ecbbb5 .container .menu-nav-container .nav-footer .the-nav ul li a {
+  text-decoration: none;
+  color: #FFD100;
+  font-weight: 300;
+  font-size: 1.1rem;
+}
 .footer-content-partial-ecbbb5 .container .contact-container {
   max-width: 350px;
 }
