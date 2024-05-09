@@ -10,7 +10,7 @@
         left: 50%;
         top: 3%;
         transform: translate(-50%, -3%);
-        z-index: 40;
+        z-index: 41;
         .row{
             /*========== Logo ==========*/
             .logo-container{
@@ -32,9 +32,12 @@
                         a{
                             color: $blue;
                             text-decoration: none;
-                            font-size: 1.2rem;
+                            font-size: 1rem;
                         }
                     }
+                }
+                @media(max-width:1080px){
+                    display: none;
                 }
             }
             /*======== Languaje cta =======*/
@@ -70,14 +73,57 @@
                             background: #ffffff;
                         }
                     }
+                    .client-cta{
+                        a{
+                            display: flex;
+                            align-items: center;
+                            background: $blue;
+                            color: $yellow;
+                            svg{
+                                width: 18px;
+                                height: auto;
+                                margin-right: 10px;
+                            }
+                            &:hover{
+                                background: $blue;
+                                color: $yellow;
+                            }
+                        }
+                    }
+                    @media(max-width:1080px){
+                        display: none;
+                    }
+                }
+                /*======= Search cta =======*/
+                .search-open{
+                    position: relative;
+                    border: 1px solid $blue;
+                    display: block;
+                    min-width: 36px;
+                    min-height: 36px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    transition: .2s;
+                    margin-right: 1rem;
+                    svg{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 17px;
+                        height: auto;
+                    }
+                    &:hover{
+                        background: #ffffff;
+                    }
                 }
                 /*======= Cart =======*/
                 .cart{
                     position: relative;
                     border: 1px solid $blue;
                     display: block;
-                    width: 36px;
-                    height: 36px;
+                    min-width: 36px;
+                    min-height: 36px;
                     border-radius: 50%;
                     cursor: pointer;
                     transition: .2s;
@@ -90,13 +136,44 @@
                     svg{
                         position: absolute;
                         top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        width: 19px;
+                        left: 55%;
+                        transform: translate(-55%, -50%);
+                        width: 17px;
                         height: auto;
                     }
                     &:hover{
                         background: #ffffff;
+                    }
+                }
+                .bar-menu-movil{
+                    display: none;
+                    width: 26px;
+                    position: relative;
+                    margin-left: 2rem;
+                    cursor: pointer;
+                    span{
+                        display: block;
+                        height: 2px;
+                        border-radius: 20px;
+                        background: $blue;
+                    }
+                    .top{
+                        width: 17px;
+                    }
+                    .center{
+                        width: 100%;
+                        min-width: 26px;
+                        margin: 7px 0;
+                    }
+                    .bottom{
+                        width: 17px;
+                        margin-left: auto;
+                    }
+                    @media(max-width:768px){
+                        margin-left: 1.4rem;
+                    }
+                    @media(max-width:1080px){
+                        display: block;
                     }
                 }
             }
@@ -105,12 +182,175 @@
             max-width: 95%;
         }
     }
+    /*======== Search form ========*/
+    .search-form-container{
+        display: none;
+        position: fixed;
+        width: 100%;
+        max-width: 1392px;
+        height: 19vh;
+        z-index: 40;
+        background: rgba(228, 229, 230);
+        top: 7%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 4rem 2rem;
+        border-radius: 0 0 30px 30px;
+        transition: .2s;
+        form{
+            position: relative;
+            .input-search{
+                width: 100%;
+                height: 40px;
+                border: 1px solid $blue;
+                border-radius: 20px;
+                padding: 0 1rem;
+                outline: none;
+                &::placeholder{
+                    color: $blue;
+                    opacity: .4;
+                }
+            }
+            .searchsubmit{
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                border: none;
+                background: transparent;
+                color: $blue;
+                height: 40px;
+                width: 40px;
+            }
+        }
+    }
+    .search-form-container.show{
+        display: block;
+    }
+    /*=========== Menu movil ===========*/
+    .menu-movil{
+        display: none;
+        position: fixed;
+        width: 100%;
+        max-width: 1392px;
+        height: 19vh;
+        z-index: 40;
+        background: rgba(228, 229, 230);
+        top: 7%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 4rem 2rem;
+        border-radius: 0 0 30px 30px;
+        transition: .2s;
+        .main-menu{
+            ul{
+                list-style: none;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                margin: 0;
+                li{
+                    margin: 0 1rem;
+                    a{
+                        text-decoration: none;
+                        color: $blue;
+                    }
+                }
+            }
+        }
+        .lenguages{
+            ul{
+                display: flex;
+                align-items: center;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                li{
+                    margin: 0 10px;
+                    a{
+                        display: inline-block;
+                        border: 1px solid $blue;
+                        color: $blue;
+                        text-decoration: none;
+                        border-radius: 20px;
+                        font-weight: 400;
+                        transition: 0.2s;
+                        display: inline-block;
+                        padding: 5px 20px;
+                        position: relative;
+                        &:hover{
+                            background: #ffffff;
+                        }
+                    }
+                }
+                .client-cta{
+                    a{
+                        display: flex;
+                        align-items: center;
+                        background: $blue;
+                        color: $yellow;
+                        svg{
+                            width: 18px;
+                            height: auto;
+                            margin-right: 10px;
+                        }
+                        &:hover{
+                            background: $blue;
+                            color: $yellow;
+                        }
+                    }
+                }
+            }
+        }
+        @media(max-width:510px){
+            height: 93vh;
+            border-radius: 0;
+            .main-menu{
+                margin-bottom: 1rem;
+                ul{
+                    display: block;
+                    text-align: center;
+                    li{
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+            .lenguages{
+                ul{
+                    justify-content: center;
+                }
+            }
+        }
+        @media screen and (min-width:510px) and (max-width:768px){
+            height: 88vh;
+            border-radius: 0;
+            top: 13%;
+            .main-menu{
+                margin-bottom: 1rem;
+                ul{
+                    display: block;
+                    text-align: center;
+                    li{
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+            .lenguages{
+                ul{
+                    justify-content: center;
+                }
+            }
+        }
+    }
+    .menu-movil.show{
+        display: block;
+    }
     /*=========== Social networks ============*/
     .social-networks-container{
         position: fixed;
         top: 22%;
         right: 4%;
-        z-index: 40;
+        z-index: 39;
         transform: translateY(-22%);
         ul{
             list-style: none;
@@ -192,6 +432,7 @@
         .car-body{
             height: 80vh;
             overflow-y: auto;
+            overflow-x: hidden;
             visibility: hidden;
             .car-item{
                 display: flex;
@@ -282,6 +523,9 @@
         visibility: visible;
         .car-body{
             visibility: visible;
+        }
+        @media(max-width:510px){
+            width: 100%;
         }
     }
     /*============ End quote form =============*/

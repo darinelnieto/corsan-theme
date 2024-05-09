@@ -85,6 +85,17 @@ if (!is_admin()) {
  */
 add_filter('use_block_editor_for_post', '__return_false', 10);
 add_filter('use_block_editor_for_post_type', '__return_false', 10);
+/*========= Search form =========*/
+function wpdocs_my_search_form($form)
+{
+  $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url('/') . '" >
+	<input type="text" value="' . get_search_query() . '" name="s" id="s" class="input-search" placeholder="Búsqueda..."/>
+	<button id="searchsubmit" class="searchsubmit"><i class="fas fa-search"></i></button>
+	</form>';
+
+  return $form;
+}
+add_filter('get_search_form', 'wpdocs_my_search_form');
 /*
 *  Options
 */

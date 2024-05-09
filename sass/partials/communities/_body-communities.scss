@@ -229,11 +229,10 @@
                     width: fit-content;
                     text-decoration: none;
                     .text{
-                        background: #ffffff;
+                        background: $blue;
                         padding: 6px 1.6rem 10px 1.6rem;
                         border-radius: 20px;
-                        border: 1px solid $blue;
-                        color: $blue;
+                        color: #ffffff;
                         font-weight: 400;
                         margin-right: .5rem;
                         height: 40px;
@@ -249,7 +248,7 @@
                             top: 50%;
                             transform: translateY(-50%);
                             z-index: 9;
-                            background: #ffffff;
+                            background: $blue;
                         }
                     }
                     .icon{
@@ -257,18 +256,16 @@
                         width: 40px;
                         height: 40px;
                         border-radius: 50%;
-                        background: #ffffff;
-                        border: 1px solid $blue;
+                        background: $blue;
                         &::after{
                             content: '';
                             width: 14px;
                             height: 14px;
                             border-radius: 50%;
-                            border-bottom: 1px solid $blue;
                             position: absolute;
                             background: #ffffff;
-                            left: -49%;
-                            transform: translateX(49%);
+                            left: -39%;
+                            transform: translateX(37%);
                             top: 0.9%;
                             z-index: 10;
                         }
@@ -277,11 +274,10 @@
                             width: 14px;
                             height: 14px;
                             border-radius: 50%;
-                            border-top: 1px solid $blue;
                             position: absolute;
                             background: #ffffff;
-                            left: -49%;
-                            transform: translateX(49%);
+                            left: -39%;
+                            transform: translateX(37%);
                             top: 62.9%;
                             z-index: 10;
                         }
@@ -294,21 +290,21 @@
                             height: auto;
                             g{
                                 line{
-                                    stroke: $blue;
+                                    stroke: #ffffff;
                                 }
                             }
                         }
                     }
                     &:hover{
                         .text{
-                            background: $blue;
-                            color: #ffffff;
+                            background: $yellow;
+                            color: $blue;
                             &::before{
-                                background: $blue;
+                                background: $yellow;
                             }
                         }
                         .icon{
-                            background: $blue;
+                            background: $yellow;
                             svg{
                                 g{
                                     line{
