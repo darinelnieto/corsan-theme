@@ -263,12 +263,6 @@ function clear_car_after_submit_qoute_form(){
   all_references = [];
   get_items_to_car();
 }
-/*=========== Submit quote ============*/
-var wpcf7Elm = document.querySelector( '.the-form > .wpcf7' );
- 
-wpcf7Elm.addEventListener( 'wpcf7submit', function( event ) {
-  clear_car_after_submit_qoute_form();
-}, false );
 /*========== FQAs ==========*/
 var fqa = $('.the-question');
 var i;
@@ -518,3 +512,9 @@ function open_car(){
 function close_car(){
   $('#car-pop-up').removeClass('show');
 }
+/*=========== Submit quote ============*/
+var wpcf7Elm = document.querySelector( '.the-form > .wpcf7' );
+ 
+wpcf7Elm.addEventListener( 'wpcf7submit', function( event ) {
+  clear_car_after_submit_qoute_form();
+}, false );
