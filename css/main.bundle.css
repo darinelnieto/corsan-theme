@@ -949,6 +949,19 @@ body, html {
 }
 .sales-format-partial-f7eea0 .container .sales-format-contain .body-sales-format-table {
   padding: 1.5rem;
+  max-height: 50vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.sales-format-partial-f7eea0 .container .sales-format-contain .body-sales-format-table::-webkit-scrollbar {
+  width: 4px;
+  background: transparent !important;
+  border-radius: 20px;
+}
+.sales-format-partial-f7eea0 .container .sales-format-contain .body-sales-format-table::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3) !important;
+  width: 4px;
+  border-radius: 20px;
 }
 .sales-format-partial-f7eea0 .container .sales-format-contain .body-sales-format-table .item {
   display: flex;
@@ -3069,6 +3082,16 @@ body, html {
   overflow-y: auto;
   overflow-x: hidden;
   visibility: hidden;
+}
+.header-content-partial-777e2f .car-list .car-body::-webkit-scrollbar {
+  width: 4px;
+  background: transparent !important;
+  border-radius: 20px;
+}
+.header-content-partial-777e2f .car-list .car-body::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3) !important;
+  width: 4px;
+  border-radius: 20px;
 }
 .header-content-partial-777e2f .car-list .car-body .car-item {
   display: flex;

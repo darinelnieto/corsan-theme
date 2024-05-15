@@ -59,6 +59,19 @@
             /*========== Body table ==========*/
             .body-sales-format-table{
                 padding: 1.5rem;
+                max-height: 50vh;
+                overflow-x: hidden;
+                overflow-y: auto;
+                &::-webkit-scrollbar{
+                    width: 4px;
+                    background: transparent!important;
+                    border-radius: 20px;
+                }
+                &::-webkit-scrollbar-thumb{
+                    background: rgba(0,0,0, .3) !important;
+                    width: 4px;
+                    border-radius: 20px;
+                }
                 .item{
                     display: flex;
                     flex-wrap: wrap;

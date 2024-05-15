@@ -446,6 +446,16 @@
             overflow-y: auto;
             overflow-x: hidden;
             visibility: hidden;
+            &::-webkit-scrollbar{
+                width: 4px;
+                background: transparent!important;
+                border-radius: 20px;
+            }
+            &::-webkit-scrollbar-thumb{
+                background: rgba(0,0,0, .3) !important;
+                width: 4px;
+                border-radius: 20px;
+            }
             .car-item{
                 display: flex;
                 align-items: center;
