@@ -1,10 +1,10 @@
 {
     "key": "group_6608c25ab1499",
-    "title": "Products post type",
+    "title": "Borrador automático",
     "fields": [
         {
             "key": "field_661498191e908",
-            "label": "Short description",
+            "label": "Borrador automático",
             "name": "short_description",
             "aria-label": "",
             "type": "textarea",
@@ -49,7 +49,7 @@
         },
         {
             "key": "field_66121ac93391e",
-            "label": "Products post type",
+            "label": "Title sales format",
             "name": "title_sales_format",
             "aria-label": "",
             "type": "text",
@@ -69,7 +69,7 @@
         },
         {
             "key": "field_66121af43391f",
-            "label": "Products post type",
+            "label": "Sales format",
             "name": "sales_format",
             "aria-label": "",
             "type": "repeater",
@@ -91,7 +91,7 @@
             "sub_fields": [
                 {
                     "key": "field_66121b0733920",
-                    "label": "SKU",
+                    "label": "sku",
                     "name": "sku",
                     "aria-label": "",
                     "type": "text",
@@ -136,7 +136,7 @@
                     "label": "Presentation",
                     "name": "presentation",
                     "aria-label": "",
-                    "type": "number",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -146,10 +146,8 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "min": "",
-                    "max": "",
+                    "maxlength": "",
                     "placeholder": "",
-                    "step": "",
                     "prepend": "",
                     "append": "",
                     "parent_repeater": "field_66121af43391f"
@@ -180,7 +178,7 @@
             "sub_fields": [
                 {
                     "key": "field_66121c1e9612a",
-                    "label": "item",
+                    "label": "Item",
                     "name": "item",
                     "aria-label": "",
                     "type": "text",
@@ -220,5 +218,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712625722
+    "modified": 1715738216
 }

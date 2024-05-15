@@ -38,7 +38,7 @@ $units = get_field('units');
                                     <p><?= $item['reference']; ?></p>
                                 </div>
                                 <div class="presentation">
-                                    <p><?= $item['presentation']; ?> gr</p>
+                                    <p><?= $item['presentation']; ?></p>
                                 </div>
                                 <?php if($units): ?>
                                     <div class="add-to-car-container">
