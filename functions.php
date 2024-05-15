@@ -215,33 +215,13 @@ function products_list_handler( $request ){
   /*========== Query parameters ==========*/
   $query = [
     'post_type'         => 'products',
+    'product_cat'       => $request['taxonomy'],
+    'solutions_cat'     => $request['solutions_category'],
     'post_status'       => 'publish',
+    'posts_per_page'  => -1,
     'meta_query' => array(),
     'orderby'			      => array( 'meta_value' => 'ASC', 'ID' => 'ASC' )
   ];
-  /*======== by product_cat ========*/
-  if($request['taxonomy']){
-    $query = [
-      'post_type'         => 'products',
-      'product_cat'       => $request['taxonomy'],
-      'post_status'       => 'publish',
-      'posts_per_page'  => -1,
-      'meta_query' => array(),
-      'orderby'			      => array( 'meta_value' => 'ASC', 'ID' => 'ASC' )
-    ];
-  }
-  /*======== by solutions_cat ========*/
-  if($request['solutions_category']){
-    $query = [
-      'post_type'         => 'products',
-      'product_cat'       => $request['taxonomy'],
-      'solutions_cat'     => $request['solutions_category'],
-      'posts_per_page'  => -1,
-      'post_status'       => 'publish',
-      'meta_query' => array(),
-      'orderby'			      => array( 'meta_value' => 'ASC', 'ID' => 'ASC' )
-    ];
-  }
   /*========== Query =========*/
   $news = new WP_Query($query); 
   /*========== Response order ==========*/
