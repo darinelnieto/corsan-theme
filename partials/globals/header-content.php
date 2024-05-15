@@ -99,7 +99,10 @@ $social_networks = get_field('social_networks', 'option');
     <!-- Car list -->
     <div class="car-list" id="car-pop-up">
         <span class="car-close" onclick="close_car()"></span>
-        <div class="car-header"></div>
+        <div class="car-header">
+            <h2><?php if(get_bloginfo("language") == "en-US"): ?>Quote<?php else: ?>Cotización<?php endif; ?></h2>
+            <p class="message-zero d-none"><?php if(get_bloginfo("language") == "en-US"): ?>There are no items in your quote.<?php else: ?>No hay items en tu cotización.<?php endif; ?></p>
+        </div>
         <div class="car-body" id="car-body"></div>
         <div class="car-footer">
             <button class="end-quote d-none" onclick="open_end_quote()">
