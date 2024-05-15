@@ -225,6 +225,7 @@ function products_list_handler( $request ){
       'post_type'         => 'products',
       'product_cat'       => $request['taxonomy'],
       'post_status'       => 'publish',
+      'posts_per_page'  => -1,
       'meta_query' => array(),
       'orderby'			      => array( 'meta_value' => 'ASC', 'ID' => 'ASC' )
     ];
@@ -235,7 +236,7 @@ function products_list_handler( $request ){
       'post_type'         => 'products',
       'product_cat'       => $request['taxonomy'],
       'solutions_cat'     => $request['solutions_category'],
-      'posts_per_page' => -1,
+      'posts_per_page'  => -1,
       'post_status'       => 'publish',
       'meta_query' => array(),
       'orderby'			      => array( 'meta_value' => 'ASC', 'ID' => 'ASC' )
