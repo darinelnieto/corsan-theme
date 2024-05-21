@@ -72,9 +72,6 @@
                                 font-size: 1.4rem;
                                 font-weight: 400;
                             }
-                            .hover{
-                                display: none;
-                            }
                         }
                         &:hover{
                             .img-container{
@@ -83,14 +80,6 @@
                                 }
                                 &::before{
                                     display: none;
-                                }
-                            }
-                            .product-name{
-                                .default{
-                                    display: none;
-                                }
-                                .hover{
-                                    display: block;
                                 }
                             }
                         }

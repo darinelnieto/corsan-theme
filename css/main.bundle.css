@@ -1301,20 +1301,11 @@ body, html {
   font-size: 1.4rem;
   font-weight: 400;
 }
-.products-list-partial-fb197d .card-produc .body-product .product-name .hover {
-  display: none;
-}
 .products-list-partial-fb197d .card-produc .body-product:hover .img-container .color-hover {
   display: block;
 }
 .products-list-partial-fb197d .card-produc .body-product:hover .img-container::before {
   display: none;
-}
-.products-list-partial-fb197d .card-produc .body-product:hover .product-name .default {
-  display: none;
-}
-.products-list-partial-fb197d .card-produc .body-product:hover .product-name .hover {
-  display: block;
 }
 .products-list-partial-fb197d .message-zero h2 {
   color: #002D74;
@@ -1959,20 +1950,11 @@ body, html {
   font-size: 1.4rem;
   font-weight: 400;
 }
-.products-slide-partial-5303c9 .container .products-slide .item a .card-product .product-name .hover {
-  display: none;
-}
 .products-slide-partial-5303c9 .container .products-slide .item a .card-product:hover .img-container .color-hover {
   display: block;
 }
 .products-slide-partial-5303c9 .container .products-slide .item a .card-product:hover .img-container::before {
   display: none;
-}
-.products-slide-partial-5303c9 .container .products-slide .item a .card-product:hover .product-name .default {
-  display: none;
-}
-.products-slide-partial-5303c9 .container .products-slide .item a .card-product:hover .product-name .hover {
-  display: block;
 }
 .products-slide-partial-5303c9 .container .products-slide .owl-nav {
   display: flex;

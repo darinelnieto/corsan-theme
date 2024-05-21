@@ -130,7 +130,6 @@ if($taxonomies):
                                         </div>
                                     <div class="product-name">
                                         <h4 class="default">${item.title}</h4>
-                                        <h4 class="hover" style="color:${item.color}">${item.title}</h4>
                                     </div>
                                 </div>
                             </a>

@@ -37,7 +37,6 @@ if($solutions_products):
                                     </div>
                                     <div class="product-name">
                                         <h4 class="default"><?= get_the_title($prod->ID); ?></h4>
-                                        <h4 class="hover" style="color:<?= $color; ?>"><?= get_the_title($prod->ID); ?></h4>
                                     </div>
                                 </div>
                             </a>
