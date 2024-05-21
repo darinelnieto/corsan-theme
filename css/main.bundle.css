@@ -1866,6 +1866,32 @@ body, html {
 .products-slide-partial-5303c9 .container .products-slide .item a .card-product .img-container {
   position: relative;
 }
+.products-slide-partial-5303c9 .container .products-slide .item a .card-product .img-container::before {
+  content: "";
+  background: #D9D9D9;
+  width: 70%;
+  min-width: 210px;
+  max-width: 210px;
+  height: 90%;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.products-slide-partial-5303c9 .container .products-slide .item a .card-product .img-container .color-hover {
+  display: none;
+  width: 70%;
+  min-width: 210px;
+  max-width: 210px;
+  height: 90%;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.2s;
+}
 .products-slide-partial-5303c9 .container .products-slide .item a .card-product .img-container img {
   max-width: 200px;
   height: auto;
@@ -1881,6 +1907,21 @@ body, html {
   text-transform: uppercase;
   font-size: 1.4rem;
   font-weight: 400;
+}
+.products-slide-partial-5303c9 .container .products-slide .item a .card-product .product-name .hover {
+  display: none;
+}
+.products-slide-partial-5303c9 .container .products-slide .item a .card-product:hover .img-container .color-hover {
+  display: block;
+}
+.products-slide-partial-5303c9 .container .products-slide .item a .card-product:hover .img-container::before {
+  display: none;
+}
+.products-slide-partial-5303c9 .container .products-slide .item a .card-product:hover .product-name .default {
+  display: none;
+}
+.products-slide-partial-5303c9 .container .products-slide .item a .card-product:hover .product-name .hover {
+  display: block;
 }
 .products-slide-partial-5303c9 .container .products-slide .owl-nav {
   display: flex;

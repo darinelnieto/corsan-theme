@@ -22,15 +22,22 @@ if($solutions_products):
             <div class="col-12">
                 <h3 class="slide-name"><?php if(get_bloginfo("language") == "en-US"): echo "Featured Products"; else: echo "Productos destacados"; endif; ?></h3>
                 <div class="products-slide owl-carousel">
-                    <?php foreach($solutions_products as $product): $prod = $product['product']; ?>
+                    <?php 
+                        foreach($solutions_products as $product): 
+                        $prod = $product['product']; 
+                        $cat = get_the_terms($prod->ID, 'product_cat'); 
+                        $color = get_field('color', $cat[0]->taxonomy . '_' . $cat[0]->term_id);
+                    ?>
                         <div class="item">
                             <a href="<?= get_permalink($prod->ID); ?>">
                                 <div class="card-product">
                                     <div class="img-container">
+                                        <span class="color-hover" style="background:<?= $color; ?>"></span>
                                         <img src="<?= get_the_post_thumbnail_url($prod->ID); ?>" alt="<?= get_the_title($prod->ID); ?>" class="product-image">
                                     </div>
                                     <div class="product-name">
-                                        <h4><?= get_the_title($prod->ID); ?></h4>
+                                        <h4 class="default"><?= get_the_title($prod->ID); ?></h4>
+                                        <h4 class="hover" style="color:<?= $color; ?>"><?= get_the_title($prod->ID); ?></h4>
                                     </div>
                                 </div>
                             </a>
