@@ -1304,9 +1304,6 @@ body, html {
 .products-list-partial-fb197d .card-produc .body-product:hover .img-container .color-hover {
   display: block;
 }
-.products-list-partial-fb197d .card-produc .body-product:hover .img-container::before {
-  display: none;
-}
 .products-list-partial-fb197d .message-zero h2 {
   color: #002D74;
   font-weight: 700;
