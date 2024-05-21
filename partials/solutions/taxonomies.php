@@ -20,13 +20,6 @@ if($taxonomies):
 <section class="taxonomies-partial-a0ac83">
     <div class="container">
         <div class="row mb-3">
-            <div class="col-12">
-                <?php if(!$category->taxonomy): ?>
-                    <h1><?= get_the_title(); ?></h1>
-                <?php else: ?>
-                    <h1><?= $category->name; ?></h1>
-                <?php endif; ?>
-            </div>
             <?php foreach($taxonomies as $taxonomy):  ?>
                 <div class="col-6 col-md-3 mb-4 item-taxonomy">
                     <a href="<?= home_url(); ?>/product_cat/<?= $taxonomy->slug; ?>">
@@ -42,7 +35,11 @@ if($taxonomies):
         </div>
         <div class="row filter-before-products">
             <div class="col-12">
-                <h2><?php if(get_bloginfo("language") == "en-US"): echo "Products"; else: echo "Productos"; endif; ?></h2>
+                <h1>
+                    <?php if(!$category->taxonomy): ?><?= get_the_title(); ?> Products
+                    <?php else: ?>Productos de <?= $category->name; ?>
+                    <?php endif; ?>
+                </h1>
                 <?php if($solutions): ?>
                     <div class="filter-solution">
                         <div class="open-filter">
