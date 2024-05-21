@@ -124,8 +124,14 @@ if($taxonomies):
                         <div class="col-6 col-md-4 col-lg-3 mb-4">
                             <a href="${item.permalink}" class="card-produc">
                                 <div class="body-product">
-                                    <img src="${item.thumbnail}" alt="Imagen destacada del restaurante ${item.title}">
-                                    <p>${item.title}</p>
+                                    <div class="img-container">
+                                        <span class="color-hover" style="background:${item.color}"></span>
+                                        <img src="${item.thumbnail}" alt="Imagen destacada del restaurante ${item.title}">
+                                        </div>
+                                    <div class="product-name">
+                                        <h4 class="default">${item.title}</h4>
+                                        <h4 class="hover" style="color:${item.color}">${item.title}</h4>
+                                    </div>
                                 </div>
                             </a>
                         </div>

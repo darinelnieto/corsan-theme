@@ -228,10 +228,12 @@ function products_list_handler( $request ){
   $products = array();
   while ($news->have_posts()) {
     $news->the_post();
+    $cat = get_the_terms($news->ID, 'product_cat');
     array_push($products, array(
       'title'         => get_the_title($item->ID),
       "thumbnail"     => get_the_post_thumbnail_url($item->ID),
-      'permalink'     => get_permalink($item->ID)
+      'permalink'     => get_permalink($item->ID),
+      "color"         => get_field('color', $cat[0]->taxonomy . '_' . $cat[0]->term_id)
     ));
     wp_reset_postdata();
   }

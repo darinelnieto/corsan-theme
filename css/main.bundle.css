@@ -1253,17 +1253,68 @@ body, html {
   text-align: center;
   text-decoration: none;
 }
-.products-list-partial-fb197d .card-produc .body-product img {
-  width: 100%;
+.products-list-partial-fb197d .card-produc .body-product {
+  text-align: center;
+}
+.products-list-partial-fb197d .card-produc .body-product .img-container {
+  position: relative;
+}
+.products-list-partial-fb197d .card-produc .body-product .img-container::before {
+  content: "";
+  background: #D9D9D9;
+  width: 70%;
+  min-width: 210px;
+  max-width: 210px;
+  height: 90%;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.products-list-partial-fb197d .card-produc .body-product .img-container .color-hover {
+  display: none;
+  width: 70%;
+  min-width: 210px;
+  max-width: 210px;
+  height: 90%;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.2s;
+}
+.products-list-partial-fb197d .card-produc .body-product .img-container img {
+  max-width: 200px;
   height: auto;
+  position: relative;
+  z-index: 10;
   margin: 0 auto;
 }
-.products-list-partial-fb197d .card-produc .body-product p {
+.products-list-partial-fb197d .card-produc .body-product .product-name {
   margin-top: 1.4rem;
+}
+.products-list-partial-fb197d .card-produc .body-product .product-name h4 {
   color: #002D74;
   text-transform: uppercase;
   font-size: 1.4rem;
   font-weight: 400;
+}
+.products-list-partial-fb197d .card-produc .body-product .product-name .hover {
+  display: none;
+}
+.products-list-partial-fb197d .card-produc .body-product:hover .img-container .color-hover {
+  display: block;
+}
+.products-list-partial-fb197d .card-produc .body-product:hover .img-container::before {
+  display: none;
+}
+.products-list-partial-fb197d .card-produc .body-product:hover .product-name .default {
+  display: none;
+}
+.products-list-partial-fb197d .card-produc .body-product:hover .product-name .hover {
+  display: block;
 }
 .products-list-partial-fb197d .message-zero h2 {
   color: #002D74;
