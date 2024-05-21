@@ -36,8 +36,10 @@ if($taxonomies):
         <div class="row filter-before-products">
             <div class="col-12">
                 <h1>
-                    <?php if(!$category->taxonomy): ?><?= get_the_title(); ?> Products
-                    <?php else: ?>Productos de <?= $category->name; ?>
+                    <?php if(!$category->taxonomy): ?>
+                        <?php if(get_bloginfo("language") == "en-US"): echo "products"; else: echo "Productos"; endif; ?>
+                    <?php else: ?>
+                        <?php if(get_bloginfo("language") == "en-US"): echo $category->name . " products"; else: echo "Productos de " . $category->name; endif; ?>
                     <?php endif; ?>
                 </h1>
                 <?php if($solutions): ?>
