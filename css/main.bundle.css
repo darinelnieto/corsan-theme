@@ -1480,7 +1480,8 @@ body, html {
   border-radius: 20px;
   width: 100%;
   background: #ffffff;
-  bottom: -6.5rem;
+  bottom: -8.5rem;
+  z-index: 20;
 }
 .taxonomies-partial-a0ac83 .container .filter-before-products .filter-solution .solution-list ul {
   list-style: none;
