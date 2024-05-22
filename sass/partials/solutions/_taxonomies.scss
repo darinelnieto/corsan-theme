@@ -41,6 +41,12 @@
                             width: 76px !important;
                         }
                     }
+                    .hogar{
+                        @media(max-width:640px){
+                            font-size: 1.5rem;
+                            width: 80px !important;
+                        }
+                    }
                     &:hover{
                         .name-category{
                             opacity: 1;

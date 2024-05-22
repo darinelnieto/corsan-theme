@@ -26,7 +26,7 @@ if($taxonomies):
                         <div class="taxonomi-card">
                             <img src="<?= get_field('feature_image', $taxonomy->taxonomy . '_' . $taxonomy->term_id); ?>" alt="<?= $taxonomy->name; ?>">
                             <div class="name-category" style="background:<?= get_field('color', $taxonomy->taxonomy . '_' . $taxonomy->term_id) ?>;"></div>
-                            <span style="width:<?= get_field('size_title', $taxonomy->taxonomy . '_' . $taxonomy->term_id); ?>px;"><?= $taxonomy->name; ?></span>
+                            <span class="<?= $taxonomy->slug; ?>" style="width:<?= get_field('size_title', $taxonomy->taxonomy . '_' . $taxonomy->term_id); ?>px;"><?= $taxonomy->name; ?></span>
                         </div>
                     </a>
                 </div>
