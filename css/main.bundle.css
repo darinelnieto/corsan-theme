@@ -1289,6 +1289,7 @@ body, html {
   position: relative;
   z-index: 10;
   margin: 0 auto;
+  transition: 0.3s;
 }
 .products-list-partial-fb197d .card-produc .body-product .product-name {
   margin-top: 1.4rem;
@@ -1304,6 +1305,9 @@ body, html {
   width: 210px;
   max-width: 210px;
   height: 90%;
+}
+.products-list-partial-fb197d .card-produc .body-product:hover .img-container img {
+  transform: scale(1.07);
 }
 .products-list-partial-fb197d .message-zero h2 {
   color: #002D74;
@@ -1932,6 +1936,7 @@ body, html {
   position: relative;
   z-index: 10;
   margin: 0 auto;
+  transition: 0.3s;
 }
 .products-slide-partial-5303c9 .container .products-slide .item a .card-product .product-name {
   margin-top: 1.4rem;
@@ -1947,6 +1952,9 @@ body, html {
   width: 210px;
   max-width: 210px;
   height: 90%;
+}
+.products-slide-partial-5303c9 .container .products-slide .item a .card-product:hover .img-container img {
+  transform: scale(1.05);
 }
 .products-slide-partial-5303c9 .container .products-slide .owl-nav {
   display: flex;
