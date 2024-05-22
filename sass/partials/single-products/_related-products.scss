@@ -135,6 +135,9 @@
                     }
                 }
             }
+            .owl-nav.disabled{
+                display: none;
+            }
         }
     }
 }

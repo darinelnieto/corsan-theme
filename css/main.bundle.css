@@ -361,6 +361,9 @@ body, html {
 .related-products-partial-573627 .container .products-slide .owl-nav .disabled:hover svg g g line {
   stroke: #002d74;
 }
+.related-products-partial-573627 .container .products-slide .owl-nav.disabled {
+  display: none;
+}
 
 .our-clients-partial-75cf3f {
   padding: 4rem 0;
