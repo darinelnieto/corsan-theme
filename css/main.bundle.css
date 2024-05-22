@@ -1384,6 +1384,12 @@ body, html {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+@media (max-width: 640px) {
+  .products-list-partial-fb197d .card-produc .body-product .img-container::before {
+    min-width: 160px;
+    max-width: 160px;
+  }
+}
 .products-list-partial-fb197d .card-produc .body-product .img-container .color-hover {
   visibility: hidden;
   width: 0;
@@ -1397,6 +1403,7 @@ body, html {
 }
 .products-list-partial-fb197d .card-produc .body-product .img-container img {
   max-width: 200px;
+  width: 100%;
   height: auto;
   position: relative;
   z-index: 10;
@@ -1417,6 +1424,12 @@ body, html {
   width: 210px;
   max-width: 210px;
   height: 90%;
+}
+@media (max-width: 640px) {
+  .products-list-partial-fb197d .card-produc .body-product:hover .img-container .color-hover {
+    width: 160px;
+    max-width: 160px;
+  }
 }
 .products-list-partial-fb197d .card-produc .body-product:hover .img-container img {
   transform: scale(1.07);
@@ -1476,6 +1489,12 @@ body, html {
   white-space: break-spaces;
   word-wrap: break-word;
   opacity: 1;
+}
+@media (max-width: 640px) {
+  .taxonomies-partial-a0ac83 .container .item-taxonomy a .taxonomi-card span {
+    font-size: 1.5rem;
+    width: 76px !important;
+  }
 }
 .taxonomies-partial-a0ac83 .container .item-taxonomy a .taxonomi-card:hover .name-category {
   opacity: 1;

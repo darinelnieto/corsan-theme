@@ -36,6 +36,10 @@
                         white-space: break-spaces;
                         word-wrap: break-word;
                         opacity: 1;
+                        @media(max-width:640px){
+                            font-size: 1.5rem;
+                            width: 76px !important;
+                        }
                     }
                     &:hover{
                         .name-category{
