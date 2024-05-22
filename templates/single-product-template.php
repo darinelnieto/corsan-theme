@@ -15,6 +15,8 @@ get_header();
     <?php get_template_part('partials/single-products/product-details'); ?>
     <!-- Sales format -->
     <?php get_template_part('partials/single-products/sales-format'); ?>
+    <!-- Related products -->
+    <?php get_template_part('partials/single-products/related-products'); ?>
 </main>
 <?php get_footer(); ?>
                     

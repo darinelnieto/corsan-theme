@@ -1,1 +1,140 @@
-.related-products-partial-573627 {}
+.related-products-partial-573627 {
+    padding: 2rem 0;
+    .container{
+        width: 100%;
+        max-width: 1357px;
+        h2{
+            color: $blue;
+            font-weight: 700;
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+        }
+        .products-slide{
+            visibility: hidden;
+            transition: .4s;
+            .item{
+                a{
+                    text-decoration: none;
+                    .card-product{
+                        text-align: center;
+                        .img-container{
+                            position: relative;
+                            &::before{
+                                content: '';
+                                background: #D9D9D9;
+                                width: 70%;
+                                min-width: 210px;
+                                max-width: 210px;
+                                height: 90%;
+                                border-radius: 10px;
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                            }
+                            .color-hover{
+                                visibility: hidden;
+                                width: 0;
+                                height: 0;
+                                border-radius: 10px;
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                transition: .2s;
+                            }
+                            img{
+                                max-width: 200px;
+                                height: auto;
+                                position: relative;
+                                z-index: 10;
+                                margin: 0 auto;
+                                transition: .3s;
+                            }
+                        }
+                        .product-name{
+                            margin-top: 1.4rem;
+                            h4{
+                                color: $blue;
+                                text-transform: uppercase;
+                                font-size: 1.4rem;
+                                font-weight: 400;
+                            }
+                        }
+                        &:hover{
+                            .img-container{
+                                .color-hover{
+                                    visibility: visible;
+                                    width: 210px;
+                                    max-width: 210px;
+                                    height: 90%;
+                                }
+                                img{
+                                    transform: scale(1.05);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            /*======= Nav =======*/
+            .owl-nav{
+                display: flex;
+                align-items: center;
+                position: absolute;
+                right: 0;
+                bottom: 107%;
+                button{
+                    outline: none;
+                    svg{
+                        g{
+                            g{
+                                line, circle{
+                                    transition: .2s;
+                                }
+                            }
+                        }
+                    }
+                    &:hover{
+                        svg{
+                            g{
+                                g{
+                                    circle{
+                                        fill:$blue;
+                                    }
+                                }
+                                g{
+                                    line{
+                                        stroke: #ffffff;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .owl-prev{
+                    margin-right: 10px;
+                }
+                .disabled{
+                    opacity: .4;
+                    &:hover{
+                        svg{
+                            g{
+                                g{
+                                    circle{
+                                        fill:none;
+                                    }
+                                }
+                                g{
+                                    line{
+                                        stroke: #002d74;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
