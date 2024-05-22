@@ -21,18 +21,33 @@
                         top: 0;
                         width: 100%;
                         height: 100%;
-                        span{
-                            text-transform: uppercase;
-                            font-size: 3.5rem;
-                            color: #002D74;
-                            position: absolute;
-                            bottom: 1rem;
-                            left: 1rem;
-                            line-height: .94;
-                            font-weight: 700;
-                            white-space: break-spaces;
-                            word-wrap: break-word;
+                        opacity: .3;
+                        transition: .2s;
+                    }
+                    span{
+                        text-transform: uppercase;
+                        font-size: 3.5rem;
+                        color: #002D74;
+                        position: absolute;
+                        bottom: 1rem;
+                        left: 1rem;
+                        line-height: .94;
+                        font-weight: 700;
+                        white-space: break-spaces;
+                        word-wrap: break-word;
+                        opacity: 1;
+                    }
+                    &:hover{
+                        .name-category{
+                            opacity: 1;
                         }
+                    }
+                }
+            }
+            a.active{
+                .taxonomi-card{
+                    .name-category{
+                        opacity: 1;
                     }
                 }
             }

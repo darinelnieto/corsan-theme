@@ -1349,8 +1349,10 @@ body, html {
   top: 0;
   width: 100%;
   height: 100%;
+  opacity: 0.3;
+  transition: 0.2s;
 }
-.taxonomies-partial-a0ac83 .container .item-taxonomy a .taxonomi-card .name-category span {
+.taxonomies-partial-a0ac83 .container .item-taxonomy a .taxonomi-card span {
   text-transform: uppercase;
   font-size: 3.5rem;
   color: #002D74;
@@ -1361,6 +1363,13 @@ body, html {
   font-weight: 700;
   white-space: break-spaces;
   word-wrap: break-word;
+  opacity: 1;
+}
+.taxonomies-partial-a0ac83 .container .item-taxonomy a .taxonomi-card:hover .name-category {
+  opacity: 1;
+}
+.taxonomies-partial-a0ac83 .container .item-taxonomy a.active .taxonomi-card .name-category {
+  opacity: 1;
 }
 .taxonomies-partial-a0ac83 .container .filter-before-products h1 {
   color: #002D74;

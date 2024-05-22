@@ -19,15 +19,14 @@ if($taxonomies):
 ?>
 <section class="taxonomies-partial-a0ac83">
     <div class="container">
-        <div class="row mb-3">
+        <div class="row mb-3 card-product-cat-container">
             <?php foreach($taxonomies as $taxonomy):  ?>
                 <div class="col-6 col-md-3 mb-4 item-taxonomy">
-                    <a href="<?= home_url(); ?>/product_cat/<?= $taxonomy->slug; ?>">
+                    <a href="<?= home_url(); ?>/product_cat/<?= $taxonomy->slug; ?>/">
                         <div class="taxonomi-card">
                             <img src="<?= get_field('feature_image', $taxonomy->taxonomy . '_' . $taxonomy->term_id); ?>" alt="<?= $taxonomy->name; ?>">
-                            <div class="name-category" style="background:<?= get_field('color', $taxonomy->taxonomy . '_' . $taxonomy->term_id) ?>;">
-                                <span style="width:<?= get_field('size_title', $taxonomy->taxonomy . '_' . $taxonomy->term_id); ?>px;"><?= $taxonomy->name; ?></span>
-                            </div>
+                            <div class="name-category" style="background:<?= get_field('color', $taxonomy->taxonomy . '_' . $taxonomy->term_id) ?>;"></div>
+                            <span style="width:<?= get_field('size_title', $taxonomy->taxonomy . '_' . $taxonomy->term_id); ?>px;"><?= $taxonomy->name; ?></span>
                         </div>
                     </a>
                 </div>
@@ -158,5 +157,12 @@ if($taxonomies):
         `);
         $('#loading').removeClass('d-none');
         get_products();
+        // Validate active category
+        var valida_url = $('.card-product-cat-container a');
+        for(i = 0; valida_url.length > i; i++){
+            if(valida_url[i].href == window.location.href){
+                valida_url[i].classList.add("active");
+            }
+        }
     });
 </script>
