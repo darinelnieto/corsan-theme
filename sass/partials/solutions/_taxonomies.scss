@@ -3,11 +3,6 @@
     .container{
         width: 100%;
         max-width: 1357px;
-        h1{
-            color: $blue;
-            font-weight: 400;
-            font-size: 4.6rem;
-        }
         /*========= Taxonomies =========*/
         .item-taxonomy{
             a{
@@ -44,7 +39,7 @@
         }
         /*======= Filter before products list =======*/
         .filter-before-products{
-            h2{
+            h1{
                 color: $blue;
                 font-size: 4rem;
                 margin-bottom: 1.5rem

@@ -1273,11 +1273,9 @@ body, html {
   transform: translate(-50%, -50%);
 }
 .products-list-partial-fb197d .card-produc .body-product .img-container .color-hover {
-  display: none;
-  width: 70%;
-  min-width: 210px;
-  max-width: 210px;
-  height: 90%;
+  visibility: hidden;
+  width: 0;
+  height: 0;
   border-radius: 10px;
   position: absolute;
   top: 50%;
@@ -1302,7 +1300,10 @@ body, html {
   font-weight: 400;
 }
 .products-list-partial-fb197d .card-produc .body-product:hover .img-container .color-hover {
-  display: block;
+  visibility: visible;
+  width: 210px;
+  max-width: 210px;
+  height: 90%;
 }
 .products-list-partial-fb197d .message-zero h2 {
   color: #002D74;
@@ -1325,11 +1326,6 @@ body, html {
   max-width: 1357px;
   /*========= Taxonomies =========*/
   /*======= Filter before products list =======*/
-}
-.taxonomies-partial-a0ac83 .container h1 {
-  color: #002D74;
-  font-weight: 400;
-  font-size: 4.6rem;
 }
 .taxonomies-partial-a0ac83 .container .item-taxonomy a {
   text-decoration: none;
@@ -1362,7 +1358,7 @@ body, html {
   white-space: break-spaces;
   word-wrap: break-word;
 }
-.taxonomies-partial-a0ac83 .container .filter-before-products h2 {
+.taxonomies-partial-a0ac83 .container .filter-before-products h1 {
   color: #002D74;
   font-size: 4rem;
   margin-bottom: 1.5rem;
@@ -1920,11 +1916,9 @@ body, html {
   transform: translate(-50%, -50%);
 }
 .products-slide-partial-5303c9 .container .products-slide .item a .card-product .img-container .color-hover {
-  display: none;
-  width: 70%;
-  min-width: 210px;
-  max-width: 210px;
-  height: 90%;
+  visibility: hidden;
+  width: 0;
+  height: 0;
   border-radius: 10px;
   position: absolute;
   top: 50%;
@@ -1949,10 +1943,10 @@ body, html {
   font-weight: 400;
 }
 .products-slide-partial-5303c9 .container .products-slide .item a .card-product:hover .img-container .color-hover {
-  display: block;
-}
-.products-slide-partial-5303c9 .container .products-slide .item a .card-product:hover .img-container::before {
-  display: none;
+  visibility: visible;
+  width: 210px;
+  max-width: 210px;
+  height: 90%;
 }
 .products-slide-partial-5303c9 .container .products-slide .owl-nav {
   display: flex;
