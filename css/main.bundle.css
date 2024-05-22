@@ -3219,6 +3219,12 @@ body, html {
   z-index: 39;
   transform: translateY(-22%);
 }
+@media (max-width: 500px) {
+  .header-content-partial-777e2f .social-networks-container {
+    top: 95%;
+    transform: translateY(-95%);
+  }
+}
 .header-content-partial-777e2f .social-networks-container ul {
   list-style: none;
   padding: 0;

@@ -390,6 +390,10 @@
         right: 4%;
         z-index: 39;
         transform: translateY(-22%);
+        @media(max-width:500px){
+            top: 95%;
+            transform: translateY(-95%);
+        }
         ul{
             list-style: none;
             padding: 0;
