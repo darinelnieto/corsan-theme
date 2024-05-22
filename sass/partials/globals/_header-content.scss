@@ -33,6 +33,33 @@
                             color: $blue;
                             text-decoration: none;
                             font-size: 1rem;
+                            transition: .2s;
+                            position: relative;
+                            display: block;
+                            width: fit-content;
+                            &::after{
+                                content: '';
+                                width: 0;
+                                height: 2px;
+                                position: absolute;
+                                left: 0;
+                                top: 100%;
+                                background: $blue;
+                                visibility: hidden;
+                                transition: .2s;
+                            }
+                            &:hover{
+                                &::after{
+                                    width: calc(100% + 10px);
+                                    visibility: visible;
+                                }
+                            }
+                        }
+                        a.active{
+                            &::after{
+                                width: calc(100% + 10px);
+                                visibility: visible;
+                            }
                         }
                     }
                 }

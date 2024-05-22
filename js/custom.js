@@ -1,3 +1,12 @@
+$(document).ready(function(){
+  var cambio = false;
+  $('.menu-menu-main-container  ul li a').each(function(index) {
+    if(this.href.trim() == window.location){
+        $(this).addClass("active");
+        cambio = true;
+    }
+  });
+})
 /*======= Slide products banner =======*/
 $('.slide-products').owlCarousel({
     autoplay:false,
