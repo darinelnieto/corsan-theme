@@ -9,5 +9,12 @@
         "solutions_cat": [],
         "store_taxonomy" : {},
         "event_taxonomy" : {}
-    }
+    },
+    "admin_pages": [
+        "options-theme_page_acf-options-quote-form",
+        "options-theme_page_acf-options-communities",
+        "options-theme_page_acf-options-contact",
+        "options-theme_page_acf-options-header",
+        "toplevel_page_acf-options-footer"
+    ]
 }
