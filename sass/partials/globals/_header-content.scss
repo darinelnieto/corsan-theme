@@ -106,14 +106,25 @@
                             align-items: center;
                             background: $blue;
                             color: $yellow;
+                            transition: .2s;
                             svg{
                                 width: 18px;
                                 height: auto;
                                 margin-right: 10px;
+                                transition: .2s;
                             }
                             &:hover{
-                                background: $blue;
-                                color: $yellow;
+                                background: $yellow;
+                                color: $blue;
+                                svg{
+                                    g{
+                                        g{
+                                            path{
+                                                fill: $blue;
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }

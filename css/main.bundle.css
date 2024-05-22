@@ -2817,15 +2817,20 @@ body, html {
   align-items: center;
   background: #002D74;
   color: #FFD100;
+  transition: 0.2s;
 }
 .header-content-partial-777e2f .container .row .cta-languaje ul .client-cta a svg {
   width: 18px;
   height: auto;
   margin-right: 10px;
+  transition: 0.2s;
 }
 .header-content-partial-777e2f .container .row .cta-languaje ul .client-cta a:hover {
-  background: #002D74;
-  color: #FFD100;
+  background: #FFD100;
+  color: #002D74;
+}
+.header-content-partial-777e2f .container .row .cta-languaje ul .client-cta a:hover svg g g path {
+  fill: #002D74;
 }
 @media (max-width: 1080px) {
   .header-content-partial-777e2f .container .row .cta-languaje ul {
