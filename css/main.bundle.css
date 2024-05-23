@@ -1337,7 +1337,6 @@ body, html {
   object-fit: cover;
   margin: 0 auto;
   border-radius: 20px;
-  cursor: zoom-in;
 }
 @media (max-width: 510px) {
   .product-details-partial-d60d33 .container .image-container .gallery-product .item-image img {
