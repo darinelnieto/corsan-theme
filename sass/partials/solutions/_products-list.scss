@@ -33,14 +33,19 @@
                 }
                 .color-hover{
                     visibility: hidden;
-                    width: 0;
-                    height: 0;
                     border-radius: 10px;
                     position: absolute;
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%, -50%);
                     transition: .2s;
+                    width: 210px;
+                    max-width: 210px;
+                    height: 90%;
+                    @media(max-width:640px){
+                        width: 160px;
+                        max-width: 160px;
+                    }
                 }
                 img{
                     max-width: 200px;
@@ -65,13 +70,6 @@
                 .img-container{
                     .color-hover{
                         visibility: visible;
-                        width: 210px;
-                        max-width: 210px;
-                        height: 90%;
-                        @media(max-width:640px){
-                            width: 160px;
-                            max-width: 160px;
-                        }
                     }
                     img{
                         transform: scale(1.07);

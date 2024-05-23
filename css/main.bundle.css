@@ -295,8 +295,9 @@ body, html {
 }
 .related-products-partial-573627 .container .products-slide .item a .card-product .img-container .color-hover {
   visibility: hidden;
-  width: 0;
-  height: 0;
+  width: 210px;
+  max-width: 210px;
+  height: 90%;
   border-radius: 10px;
   position: absolute;
   top: 50%;
@@ -323,9 +324,6 @@ body, html {
 }
 .related-products-partial-573627 .container .products-slide .item a .card-product:hover .img-container .color-hover {
   visibility: visible;
-  width: 210px;
-  max-width: 210px;
-  height: 90%;
 }
 .related-products-partial-573627 .container .products-slide .item a .card-product:hover .img-container img {
   transform: scale(1.05);
@@ -1467,14 +1465,21 @@ body, html {
 }
 .products-list-partial-fb197d .card-produc .body-product .img-container .color-hover {
   visibility: hidden;
-  width: 0;
-  height: 0;
   border-radius: 10px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   transition: 0.2s;
+  width: 210px;
+  max-width: 210px;
+  height: 90%;
+}
+@media (max-width: 640px) {
+  .products-list-partial-fb197d .card-produc .body-product .img-container .color-hover {
+    width: 160px;
+    max-width: 160px;
+  }
 }
 .products-list-partial-fb197d .card-produc .body-product .img-container img {
   max-width: 200px;
@@ -1496,15 +1501,6 @@ body, html {
 }
 .products-list-partial-fb197d .card-produc .body-product:hover .img-container .color-hover {
   visibility: visible;
-  width: 210px;
-  max-width: 210px;
-  height: 90%;
-}
-@media (max-width: 640px) {
-  .products-list-partial-fb197d .card-produc .body-product:hover .img-container .color-hover {
-    width: 160px;
-    max-width: 160px;
-  }
 }
 .products-list-partial-fb197d .card-produc .body-product:hover .img-container img {
   transform: scale(1.07);
@@ -2142,8 +2138,9 @@ body, html {
 }
 .products-slide-partial-5303c9 .container .products-slide .item a .card-product .img-container .color-hover {
   visibility: hidden;
-  width: 0;
-  height: 0;
+  width: 210px;
+  max-width: 210px;
+  height: 90%;
   border-radius: 10px;
   position: absolute;
   top: 50%;
@@ -2170,9 +2167,6 @@ body, html {
 }
 .products-slide-partial-5303c9 .container .products-slide .item a .card-product:hover .img-container .color-hover {
   visibility: visible;
-  width: 210px;
-  max-width: 210px;
-  height: 90%;
 }
 .products-slide-partial-5303c9 .container .products-slide .item a .card-product:hover .img-container img {
   transform: scale(1.05);

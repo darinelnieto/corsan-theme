@@ -34,8 +34,9 @@
                             }
                             .color-hover{
                                 visibility: hidden;
-                                width: 0;
-                                height: 0;
+                                width: 210px;
+                                max-width: 210px;
+                                height: 90%;
                                 border-radius: 10px;
                                 position: absolute;
                                 top: 50%;
@@ -65,9 +66,6 @@
                             .img-container{
                                 .color-hover{
                                     visibility: visible;
-                                    width: 210px;
-                                    max-width: 210px;
-                                    height: 90%;
                                 }
                                 img{
                                     transform: scale(1.05);
