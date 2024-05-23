@@ -4,10 +4,80 @@
         width: 100%;
         max-width: 1357px;
         .image-container{
-            text-align: center;
-            img{
-                width: 100%;
-                max-width: 700px;
+            .gallery-product{
+                opacity: 0;
+                margin-bottom: 1rem;
+                .item-image{
+                    img{
+                        width: 100%;
+                        max-width: 470px;
+                        height: 548px;              
+                        object-fit: cover;
+                        margin: 0 auto;
+                        border-radius: 20px;
+                        cursor: zoom-in;
+                        @media(max-width:510px){
+                            height: auto;
+                            object-fit: contain;
+                        }
+                    }
+                }
+            }
+            .nav-gallery{
+                opacity: 0;
+                transition: .2s;
+                .nav-image{
+                    border-radius: 10px;
+                    padding: 10px;
+                    width: 65px;
+                    height: 85px;
+                    position: relative;
+                    margin: 0 auto;
+                    cursor: pointer;
+                    opacity: .4;
+                    overflow: hidden;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                    @media(max-width:640px){
+                        width: 100%;
+                    }
+                }
+                .nav-image.active{
+                    opacity: 1;
+                }
+                .owl-nav{
+                    .owl-prev{
+                        position: absolute;
+                        top: 40%;
+                        transform: translateY(-40%);
+                        left: -5%;
+                        z-index: 40;
+                        outline: none;
+                        color: #ffffff;
+                    }
+                    .owl-next{
+                        position: absolute;
+                        top: 40%;
+                        transform: translateY(-40%);
+                        right: -5%;
+                        z-index: 40;
+                        outline: none;
+                        color: #ffffff;
+                        @media(max-width:768px){
+                            right: 0;
+                        }
+                    }
+                    .disabled{
+                        opacity: .3;
+                    }
+                }
             }
         }
         .description{
@@ -17,6 +87,10 @@
                 font-weight: 400;
                 font-size: 3.4rem;
                 margin-bottom: 2rem;
+                @media(max-width:510px){
+                    font-size: 2rem;
+                    margin-top: 2rem;
+                }
             }
             .the-content{
                 h3{

@@ -1,10 +1,10 @@
 {
     "key": "group_6608c25ab1499",
-    "title": "Borrador automático",
+    "title": "Products post type",
     "fields": [
         {
             "key": "field_661498191e908",
-            "label": "Borrador automático",
+            "label": "Short description",
             "name": "short_description",
             "aria-label": "",
             "type": "textarea",
@@ -23,11 +23,11 @@
             "new_lines": "br"
         },
         {
-            "key": "field_661202224d0a5",
-            "label": "Presentation of the product",
-            "name": "presentation_of_the_product",
+            "key": "field_664f7ba377b43",
+            "label": "Gallery",
+            "name": "gallery",
             "aria-label": "",
-            "type": "image",
+            "type": "gallery",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -38,6 +38,8 @@
             },
             "return_format": "array",
             "library": "all",
+            "min": "",
+            "max": "",
             "min_width": "",
             "min_height": "",
             "min_size": "",
@@ -45,11 +47,12 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
+            "insert": "append",
             "preview_size": "medium"
         },
         {
             "key": "field_66121ac93391e",
-            "label": "Title sales format",
+            "label": "Products post type",
             "name": "title_sales_format",
             "aria-label": "",
             "type": "text",
@@ -69,7 +72,7 @@
         },
         {
             "key": "field_66121af43391f",
-            "label": "Sales format",
+            "label": "Products post type",
             "name": "sales_format",
             "aria-label": "",
             "type": "repeater",
@@ -91,7 +94,7 @@
             "sub_fields": [
                 {
                     "key": "field_66121b0733920",
-                    "label": "sku",
+                    "label": "SKU",
                     "name": "sku",
                     "aria-label": "",
                     "type": "text",
@@ -178,7 +181,7 @@
             "sub_fields": [
                 {
                     "key": "field_66121c1e9612a",
-                    "label": "Item",
+                    "label": "item",
                     "name": "item",
                     "aria-label": "",
                     "type": "text",
@@ -218,5 +221,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1715738216
+    "modified": 1716485375
 }

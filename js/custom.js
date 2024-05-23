@@ -6,6 +6,7 @@ $(document).ready(function(){
         cambio = true;
     }
   });
+  controle_pop_up();
 })
 /*======= Slide products banner =======*/
 $('.slide-products').owlCarousel({
@@ -528,3 +529,46 @@ var wpcf7Elm = document.querySelector( '.the-form > .wpcf7' );
 wpcf7Elm.addEventListener( 'wpcf7submit', function( event ) {
   clear_car_after_submit_qoute_form();
 }, false );
+/*============= Single products slider =============*/
+$('.gallery-product').owlCarousel({
+  autoplay:false,
+  loop:false,
+  nav: false,
+  dots: false,
+  items: 1,
+  margin:10,
+}).css({'opacity':1}).on('translated.owl.carousel', function() {
+  controle_pop_up();
+});
+// Nav gallery
+$('.nav-gallery').owlCarousel({
+  autoplay:false,
+  loop:false,
+  navText: [
+    '<i class="fa-solid fa-chevron-left"></i>',
+    '<i class="fa-solid fa-chevron-right"></i>'
+],
+  nav:true,
+  dots:false,
+  responsive:{
+      0:{
+          items:3,
+          margin:10,
+      },
+      640:{
+          items:4,
+          margin:0,
+      }
+  }
+}).css({'opacity':1});
+// Nav controller by click
+$('.nav-gallery').on('click', '.nav-image', function(){
+  var position = $(this).children('.position').val();
+  $('.gallery-product').trigger('to.owl.carousel', position);
+});
+function controle_pop_up(){
+  var position = $('.gallery-product .active .position').val();
+  $('.nav-image').removeClass('active');
+  $('.item-'+position).addClass('active');
+  $('.gallery-product-pop-up').trigger('to.owl.carousel', position);
+};
