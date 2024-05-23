@@ -11,9 +11,6 @@
                     padding: 10px;
                     img{
                         width: 100%;
-                        max-width: 470px;
-                        height: 548px;              
-                        object-fit: cover;
                         margin: 0 auto;
                         @media(max-width:510px){
                             height: auto;
