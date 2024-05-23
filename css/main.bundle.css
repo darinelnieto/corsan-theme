@@ -1327,6 +1327,9 @@ body, html {
   opacity: 0;
   margin-bottom: 1rem;
 }
+.product-details-partial-d60d33 .container .image-container .gallery-product .item-image {
+  padding: 10px;
+}
 .product-details-partial-d60d33 .container .image-container .gallery-product .item-image img {
   width: 100%;
   max-width: 470px;
