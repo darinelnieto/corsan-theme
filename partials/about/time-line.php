@@ -17,7 +17,7 @@ if($add_time_line):
         <?php if($purpose_and_mission): ?>
             <div class="row">
                 <div class="col-12 col-md-6 mb-5">
-                    <div class="card-purpose item-purpose-and-mission">
+                    <div class="card-purpose item-purpose-and-mission" data-aos="fade-up-right" data-aos-duration="2000">
                         <h2><?= $purpose_and_mission['purpose_title']; ?></h2>
                         <p><?= $purpose_and_mission['purpose_description']; ?></p>
                         <div class="svg">
@@ -38,7 +38,7 @@ if($add_time_line):
                     </div>
                 </div>
                 <div class="col-12 col-md-6 mb-5">
-                    <div class="card-mission item-purpose-and-mission">
+                    <div class="card-mission item-purpose-and-mission" data-aos="fade-up-left" data-aos-duration="2000">
                         <h2><?= $purpose_and_mission['mission_title']; ?></h2>
                         <p><?= $purpose_and_mission['mission_description']; ?></p>
                         <div class="svg">
@@ -62,19 +62,19 @@ if($add_time_line):
         <?php endif; ?>
         <div class="row">
             <div class="col-12 title-container">
-                <h2><?= get_field('title'); ?></h2>
-                <h4><?= get_field('subtitle'); ?></h4>
+                <h2 data-aos="fade-right" data-aos-duration="2500"><?= get_field('title'); ?></h2>
+                <h4 data-aos="fade-right" data-aos-duration="3000"><?= get_field('subtitle'); ?></h4>
             </div>
         </div>
         <?php foreach($add_time_line as $item): ?>
             <div class="row align-items-center justify-content-between time-line-container">
-                <span class="year"><?= $item['year'] ?></span>
-                <div class="col-12 col-md-5 star-item">
+                <span class="year" data-aos="zoom-in" data-aos-duration="3000"><?= $item['year'] ?></span>
+                <div class="col-12 col-md-5 star-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="3000">
                     <div class="content">
                         <?= $item['description']; ?>
                     </div>
                 </div>
-                <div class="col-12 col-md-5 end-item">
+                <div class="col-12 col-md-5 end-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="3000">
                     <?php if($item['show_image'] === true): ?>
                         <img src="<?= $item['image']['url']; ?>" alt="<?= $item['image']['title']; ?>">
                     <?php else: ?>

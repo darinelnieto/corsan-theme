@@ -15,12 +15,12 @@ if($clients):
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12">
-                <h2><?= get_field('our_client_title'); ?></h2>
+                <h2 data-aos="zoom-in-down" data-aos-duration="2000"><?= get_field('our_client_title'); ?></h2>
             </div>
             <div class="col-12 col-md-11">
                 <div class="our-clients owl-carousel">
                     <?php foreach($clients as $client): ?>
-                        <div class="item">
+                        <div class="item" data-aos="zoom-in" data-aos-duration="2000">
                             <img src="<?= $client['logo']['url']; ?>" alt="<?= $client['logo']['title']; ?>">
                         </div>
                     <?php endforeach; ?>

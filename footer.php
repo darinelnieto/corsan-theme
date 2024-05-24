@@ -18,4 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php wp_footer(); ?>
 </body>
+<script>
+  AOS.init();
+</script>
 </html>

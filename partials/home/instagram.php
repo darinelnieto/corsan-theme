@@ -15,15 +15,15 @@ $instagram = get_field('shortcode_instagram');
         <div class="row">
             <div class="col-12">
                 <div class="title-container">
-                    <h2>Instagram</h2>
-                    <a href="<?= get_field('instagram_link'); ?>" target="_blank">
+                    <h2 data-aos="zoom-in-right" data-aos-duration="1000">Instagram</h2>
+                    <a href="<?= get_field('instagram_link'); ?>" target="_blank" data-aos="zoom-in-left" data-aos-duration="1000">
                         <span class="button-container-instagram">
                             <span class="text-button"><?= get_field('text_button_instagram'); ?></span>
                             <span class="icon"></span>
                         </span>
                     </a>
                 </div>
-                <div class="instagram-container">
+                <div class="instagram-container" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                     <?= do_shortcode($instagram); ?>
                 </div>
             </div>

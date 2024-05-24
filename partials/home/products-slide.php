@@ -15,12 +15,12 @@ if($solutions_products):
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <h2 class="solutions-title"><?= get_field('solutions_title'); ?></h2>
-                <p class="solutions-description"><?= get_field('solutions_description'); ?></p>
+                <h2 class="solutions-title" data-aos="zoom-in" data-aos-duration="1000"><?= get_field('solutions_title'); ?></h2>
+                <p class="solutions-description" data-aos="zoom-in-up" data-aos-duration="1000"><?= get_field('solutions_description'); ?></p>
             </div>
             <!-- Products slide -->
             <div class="col-12">
-                <h3 class="slide-name"><?php if(get_bloginfo("language") == "en-US"): echo "Featured Products"; else: echo "Productos destacados"; endif; ?></h3>
+                <h3 class="slide-name" data-aos="zoom-in-right" data-aos-duration="1000"><?php if(get_bloginfo("language") == "en-US"): echo "Featured Products"; else: echo "Productos destacados"; endif; ?></h3>
                 <div class="products-slide owl-carousel">
                     <?php 
                         foreach($solutions_products as $product): 
@@ -28,7 +28,7 @@ if($solutions_products):
                         $cat = get_the_terms($prod->ID, 'product_cat'); 
                         $color = get_field('color', $cat[0]->taxonomy . '_' . $cat[0]->term_id);
                     ?>
-                        <div class="item">
+                        <div class="item" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="3000">
                             <a href="<?= get_permalink($prod->ID); ?>">
                                 <div class="card-product">
                                     <div class="img-container">

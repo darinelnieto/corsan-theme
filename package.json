@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/pipe-code/ditto#readme",
   "dependencies": {
+    "aos": "^2.3.4",
     "css-loader": "^3.5.3",
     "file-loader": "^6.0.0",
     "jquery": "^3.5.1",

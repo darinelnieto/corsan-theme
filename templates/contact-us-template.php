@@ -17,11 +17,11 @@ $banner = get_field('background_image');
         <div class="container">
             <div class="row" id="content-contact">
                 <div class="col-12 col-md-6">
-                    <h1 class="title-page"><?= get_field('title_page'); ?></h1>
-                    <p class="desription-page"><?= get_field('description_page'); ?></p>
+                    <h1 class="title-page" data-aos="fade-right"><?= get_field('title_page'); ?></h1>
+                    <p class="desription-page" data-aos="fade-right"><?= get_field('description_page'); ?></p>
                 </div>
                 <div class="col-12 col-md-6">
-                    <div class="from-card">
+                    <div class="from-card" data-aos="fade-left" >
                         <h2><?= get_field('title_form_contact'); ?></h2>
                         <p><?= get_field('intro_form_contact'); ?></p>
                         <div class="form">

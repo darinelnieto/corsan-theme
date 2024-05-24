@@ -17,12 +17,12 @@ $key = 0;
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h1><?= the_title(); ?></h1>
+                    <h1 data-aos="fade-right"><?= the_title(); ?></h1>
                     <?php if($fqas): ?>
                         <div class="fqas-list">
                             <?php foreach($fqas as $item): $key++; ?>
                                 <div class="fqa-item">
-                                    <div class="the-question">
+                                    <div class="the-question" data-aos="zoom-in">
                                         <h4><span><?= $key; ?></span> ¿<?= $item['question'] ?>?</h4>
                                         <span class="icon"></span>
                                     </div>

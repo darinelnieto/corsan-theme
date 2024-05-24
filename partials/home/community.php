@@ -16,8 +16,8 @@ if($community->have_posts()):
         <div class="row">
             <div class="col-12">
                 <div class="title-container">
-                    <h2 class="community-title"><?php if(get_bloginfo("language") == "en-US"): echo "Community"; else: echo "Comunidad"; endif; ?></h2>
-                    <a href="<?= get_field('select_page_to_see_all_posts'); ?>">
+                    <h2 class="community-title" data-aos="zoom-in-right" data-aos-duration="1000"><?php if(get_bloginfo("language") == "en-US"): echo "Community"; else: echo "Comunidad"; endif; ?></h2>
+                    <a href="<?= get_field('select_page_to_see_all_posts'); ?>" data-aos="zoom-in-left" data-aos-duration="1000">
                         <span class="button-container">
                             <span class="text-button"><?= get_field('button_text'); ?></span>
                             <span class="icon"></span>
