@@ -1367,20 +1367,12 @@ body, html {
   max-width: 54vw;
 }
 .product-details-partial-d60d33 .gallery-pop-up-container .body-pop-up .gallery-product-pop-up .owl-item .item-image img {
-  width: 100%;
+  width: 90%;
 }
 @media (max-width: 500px) {
   .product-details-partial-d60d33 .gallery-pop-up-container .body-pop-up {
     height: auto;
     max-width: 95%;
-  }
-  .product-details-partial-d60d33 .gallery-pop-up-container .body-pop-up .gallery-product-pop-up .owl-item .item-image img {
-    max-height: 90vh;
-    min-height: 90vh;
-    width: 97%;
-    margin: 0 auto;
-    object-fit: cover;
-    object-position: center;
   }
 }
 .product-details-partial-d60d33 .gallery-pop-up-container.show {

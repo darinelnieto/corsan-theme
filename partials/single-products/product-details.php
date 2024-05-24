@@ -19,6 +19,7 @@ $gallery = get_field('gallery');
 			<div class="gallery-product-pop-up owl-carousel">
 				<?php $e = -1; foreach($gallery as $image): $e++; ?>
 					<div class="item-image">
+						<input type="hidden" class="position" value="<?= $e; ?>">
 						<img src="<?= $image['url']; ?>" alt="<?= $image['title']; ?>">
 					</div>
 				<?php endforeach; ?>
