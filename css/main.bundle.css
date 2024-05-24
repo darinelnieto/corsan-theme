@@ -363,7 +363,7 @@ body, html {
 }
 
 .our-clients-partial-75cf3f {
-  padding: 4rem 0;
+  padding: 0 0 4rem 0;
 }
 .our-clients-partial-75cf3f .container {
   width: 100%;
@@ -414,7 +414,7 @@ body, html {
 }
 
 .work-team-partial-6053d3 {
-  padding: 3rem 0;
+  padding: 3rem 0 0 0;
 }
 .work-team-partial-6053d3 .container {
   width: 100%;
@@ -451,6 +451,42 @@ body, html {
   opacity: 0.3;
 }
 
+.time-line-partial-76a83f .item-purpose-and-mission {
+  height: 300px;
+  background: #002D74;
+  border-radius: 30px;
+  padding: 2rem;
+  position: relative;
+}
+.time-line-partial-76a83f .item-purpose-and-mission h2 {
+  color: #ffffff;
+  font-weight: 600;
+}
+.time-line-partial-76a83f .item-purpose-and-mission p {
+  color: #ffffff;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  margin-bottom: 0;
+  max-width: 80%;
+}
+.time-line-partial-76a83f .item-purpose-and-mission .svg {
+  position: absolute;
+  right: 3%;
+  top: 90%;
+  transform: translateY(-90%);
+  width: 100px;
+  height: 100px;
+}
+.time-line-partial-76a83f .item-purpose-and-mission .svg svg {
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 768px) {
+  .time-line-partial-76a83f .item-purpose-and-mission {
+    min-height: 300px;
+    height: auto;
+  }
+}
 .time-line-partial-76a83f .container {
   width: 100%;
   max-width: 1392px;
@@ -896,7 +932,7 @@ body, html {
 }
 
 .about-partial-0056e7 {
-  padding: 3rem 0;
+  padding: 3rem 0 0 0;
   position: relative;
   top: -1.3rem;
   border-radius: 25px 25px 0 0;

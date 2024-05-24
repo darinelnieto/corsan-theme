@@ -16,12 +16,12 @@ get_header();
     <div class="body-about">
         <!-- About section -->
         <?php get_template_part('partials/about/about'); ?>
+        <!-- Our clients -->
+        <?php get_template_part('partials/about/our-clients'); ?>
         <!-- Time line -->
         <?php get_template_part('partials/about/time-line'); ?>
         <!-- Our team -->
         <?php get_template_part('partials/about/work-team'); ?>
-        <!-- Our clients -->
-        <?php get_template_part('partials/about/our-clients'); ?>
     </div>
 </main>
 <?php get_footer(); ?>

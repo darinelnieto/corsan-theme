@@ -147,6 +147,104 @@
             "append": ""
         },
         {
+            "key": "field_664ff1df67325",
+            "label": "Purpose and mission",
+            "name": "purpose_and_mission",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_664ff24967326",
+                    "label": "Purpose title",
+                    "name": "purpose_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_664ff26867327",
+                    "label": "Purpose description",
+                    "name": "purpose_description",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "placeholder": "",
+                    "new_lines": "br"
+                },
+                {
+                    "key": "field_664ff28a67328",
+                    "label": "Mission title",
+                    "name": "mission_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_664ff29a67329",
+                    "label": "Mission description",
+                    "name": "mission_description",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "placeholder": "",
+                    "new_lines": "br"
+                }
+            ]
+        },
+        {
             "key": "field_6634afef7f77d",
             "label": "Add time line",
             "name": "add_time_line",
@@ -170,7 +268,7 @@
             "sub_fields": [
                 {
                     "key": "field_6634b0137f77e",
-                    "label": "year",
+                    "label": "Year",
                     "name": "year",
                     "aria-label": "",
                     "type": "number",
@@ -424,7 +522,7 @@
             "sub_fields": [
                 {
                     "key": "field_6635a14305136",
-                    "label": "Logo",
+                    "label": "logo",
                     "name": "logo",
                     "aria-label": "",
                     "type": "image",
@@ -469,5 +567,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1714795239
+    "modified": 1716515931
 }
