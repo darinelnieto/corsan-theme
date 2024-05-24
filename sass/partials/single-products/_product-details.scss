@@ -75,6 +75,7 @@
                     img{
                         width: 100%;
                         margin: 0 auto;
+                        cursor: zoom-in;
                         @media(max-width:510px){
                             height: auto;
                             object-fit: contain;

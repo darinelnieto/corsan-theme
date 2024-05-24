@@ -1392,6 +1392,7 @@ body, html {
 .product-details-partial-d60d33 .container .image-container .gallery-product .item-image img {
   width: 100%;
   margin: 0 auto;
+  cursor: zoom-in;
 }
 @media (max-width: 510px) {
   .product-details-partial-d60d33 .container .image-container .gallery-product .item-image img {
