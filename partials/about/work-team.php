@@ -15,14 +15,14 @@ if($gallery):
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h2 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500"><?= get_field('work_team_title'); ?></h2>
+                <h2 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000"><?= get_field('work_team_title'); ?></h2>
             </div>
         </div>
     </div>
     <div class="gallery-our-team owl-carousel">
         <?php foreach($gallery as $img): ?>
             <div class="item">
-                <img src="<?= $img['url']; ?>" alt="<?= $img['title']; ?>" data-aos="zoom-in" data-aos-duration="2000">
+                <img src="<?= $img['url']; ?>" alt="<?= $img['title']; ?>">
             </div>
         <?php endforeach; ?>
     </div>
