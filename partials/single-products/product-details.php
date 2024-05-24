@@ -12,6 +12,19 @@ $gallery = get_field('gallery');
 
 ?>
 <section class="product-details-partial-d60d33">
+	<!-- Gallery pop up -->
+	<div class="gallery-pop-up-container">
+		<div class="close-pop-up-gallery"></div>
+		<div class="body-pop-up">
+			<div class="gallery-product-pop-up owl-carousel">
+				<?php $e = -1; foreach($gallery as $image): $e++; ?>
+					<div class="item-image">
+						<img src="<?= $image['url']; ?>" alt="<?= $image['title']; ?>">
+					</div>
+				<?php endforeach; ?>
+			</div>
+		</div>
+	</div>
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6 image-container">

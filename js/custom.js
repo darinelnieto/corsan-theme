@@ -566,9 +566,30 @@ $('.nav-gallery').on('click', '.nav-image', function(){
   var position = $(this).children('.position').val();
   $('.gallery-product').trigger('to.owl.carousel', position);
 });
+$('.gallery-product-pop-up').owlCarousel({
+  autoplay:false,
+  loop:false,
+  nav: false,
+  dots: false,
+  items: 1,
+  margin:10,
+  touchDrag: false,
+  mouseDrag: false
+});
 function controle_pop_up(){
   var position = $('.gallery-product .active .position').val();
   $('.nav-image').removeClass('active');
   $('.item-'+position).addClass('active');
   $('.gallery-product-pop-up').trigger('to.owl.carousel', position);
 };
+$('.gallery-product').on('click', '.item-image', function(){
+  $('.gallery-pop-up-container').addClass('show');
+});
+$('.close-pop-up-gallery').on('click', function(){
+  $('.gallery-pop-up-container').removeClass('show');
+});
+$(document).on('keyup', (e)=>{
+  if (e.key == "Escape"){
+      $('.gallery-pop-up-container').removeClass('show');
+  }
+});

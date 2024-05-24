@@ -1319,6 +1319,78 @@ body, html {
 .product-details-partial-d60d33 {
   padding: 6rem 0 3rem 0;
 }
+.product-details-partial-d60d33 .gallery-pop-up-container {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.product-details-partial-d60d33 .gallery-pop-up-container .close-pop-up-gallery {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  cursor: pointer;
+}
+.product-details-partial-d60d33 .gallery-pop-up-container .close-pop-up-gallery::after {
+  content: "";
+  width: 25px;
+  height: 2px;
+  background: #ffffff;
+  position: absolute;
+  left: 97%;
+  top: 3%;
+  transform: translate(-97%, -3%) rotate(-45deg);
+}
+.product-details-partial-d60d33 .gallery-pop-up-container .close-pop-up-gallery::before {
+  content: "";
+  width: 25px;
+  height: 2px;
+  background: #ffffff;
+  position: absolute;
+  left: 97%;
+  top: 3%;
+  transform: translate(-97%, -3%) rotate(45deg);
+}
+.product-details-partial-d60d33 .gallery-pop-up-container .body-pop-up {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  width: 100%;
+  max-width: 40vw;
+  height: 97vh;
+}
+.product-details-partial-d60d33 .gallery-pop-up-container .body-pop-up .gallery-product-pop-up .owl-item .item-image img {
+  min-height: 97vh;
+  max-height: 97vh;
+  border-radius: 20px;
+  width: 100%;
+  object-fit: contain;
+}
+@media (max-width: 500px) {
+  .product-details-partial-d60d33 .gallery-pop-up-container .body-pop-up {
+    height: auto;
+    max-width: 95%;
+  }
+  .product-details-partial-d60d33 .gallery-pop-up-container .body-pop-up .gallery-product-pop-up .owl-item .item-image img {
+    max-height: 90vh;
+    min-height: 90vh;
+    width: 97%;
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+.product-details-partial-d60d33 .gallery-pop-up-container.show {
+  display: block;
+}
 .product-details-partial-d60d33 .container {
   width: 100%;
   max-width: 1357px;
