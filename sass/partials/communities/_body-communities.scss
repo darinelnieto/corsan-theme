@@ -47,27 +47,26 @@
                                 cursor: pointer;
                                 width: fit-content;
                                 .text{
-                                    background: $blue;
-                                    padding: 8px 1rem;
+                                    background: #ffffff;
+                                    padding: 6px 1.6rem 10px 1.6rem;
                                     border-radius: 20px;
-                                    border: 1px solid $yellow;
-                                    color: $yellow;
+                                    color: $blue;
                                     font-weight: 400;
-                                    margin-right: 0.5rem;
+                                    margin-right: .5rem;
                                     height: 40px;
                                     position: relative;
-                                    font-size: 1rem;
+                                    font-size: 1.2rem;
                                     &::before{
-                                        content: "";
+                                        content: '';
                                         display: block;
                                         width: 20px;
                                         height: 15px;
                                         position: absolute;
-                                        right: -16%;
+                                        right: -12%;
                                         top: 50%;
                                         transform: translateY(-50%);
-                                        z-index: 9;
-                                        background: $blue;
+                                        z-index: 1;
+                                        background: #ffffff;
                                     }
                                 }
                                 .icon{
@@ -75,32 +74,29 @@
                                     width: 40px;
                                     height: 40px;
                                     border-radius: 50%;
-                                    background: transparent;
-                                    border: 1px solid $yellow;
+                                    background: #ffffff;
                                     &::after{
-                                        content: "";
-                                        width: 14px;
-                                        height: 14px;
+                                        content: '';
+                                        width: 12px;
+                                        height: 12px;
                                         border-radius: 50%;
-                                        border-bottom: 1px solid $yellow;
                                         position: absolute;
                                         background: $blue;
-                                        left: -50%;
-                                        transform: translateX(50%);
-                                        top: 2.9%;
+                                        left: -35%;
+                                        transform: translateX(35%);
+                                        top: 9.9%;
                                         z-index: 10;
                                     }
                                     &::before{
-                                        content: "";
-                                        width: 14px;
-                                        height: 14px;
+                                        content: '';
+                                        width: 12px;
+                                        height: 12px;
                                         border-radius: 50%;
-                                        border-top: 1px solid $yellow;
                                         position: absolute;
                                         background: $blue;
-                                        left: -50%;
-                                        transform: translateX(50%);
-                                        top: 62.9%;
+                                        left: -35%;
+                                        transform: translateX(35%);
+                                        top: 59.9%;
                                         z-index: 10;
                                     }
                                     svg{
@@ -108,11 +104,11 @@
                                         top: 50%;
                                         left: 50%;
                                         transform: translate(-50%, -50%);
-                                        width: 10px;
+                                        width: 14px;
                                         height: auto;
                                         g{
                                             line{
-                                                stroke: $yellow;
+                                                stroke: $blue;
                                             }
                                         }
                                     }

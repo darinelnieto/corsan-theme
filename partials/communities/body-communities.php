@@ -24,7 +24,7 @@ endif;
                     <div class="col-12 col-md-10">
                         <div class="feature-posts-slide owl-carousel">
                             <?php foreach($feature_posts as $the_blog): ?>
-                                <div class="post-item">
+                                <div class="post-item" data-aos="fade-down">
                                     <a href="<?= get_permalink($the_blog['post']->ID); ?>">
                                         <div class="card-item">
                                             <h3><?= get_the_title($the_blog['post']->ID); ?></h3>
@@ -62,9 +62,9 @@ endif;
                         wp_nav_menu(['menu' => 'blog']);
                         if(!$category->taxonomy): 
                     ?>
-                        <h1><?php if(get_bloginfo("language") == "en-US"): ?>All items<?php else: ?>Todos los artículos<?php endif; ?></h1>
+                        <h1 data-aos="fade-right"><?php if(get_bloginfo("language") == "en-US"): ?>All items<?php else: ?>Todos los artículos<?php endif; ?></h1>
                     <?php else: ?>
-                        <h1><?php if(get_bloginfo("language") == "en-US"): echo $category->name; ?> articles<?php else: ?>Artículos de <?php echo $category->name; endif; ?></h1>
+                        <h1 data-aos="fade-right"><?php if(get_bloginfo("language") == "en-US"): echo $category->name; ?> articles<?php else: ?>Artículos de <?php echo $category->name; endif; ?></h1>
                     <?php endif; ?>
                 </div>
             </div>
@@ -79,13 +79,13 @@ endif;
                         <div class="row align-items-center">
                             <div class="col-12 col-md-5 mb-4 mb-md-0">
                                 <a href="<?= get_permalink($community->ID); ?>" class="cta-image">
-                                    <div class="feature-image-container">
+                                    <div class="feature-image-container" data-aos="fade-right">
                                         <img src="<?= get_the_post_thumbnail_url($community->ID); ?>" alt="<?= the_title($community->ID); ?>">
                                     </div>
                                 </a>
                             </div>
                             <div class="col-12 col-md-5">
-                                <div class="text-container">
+                                <div class="text-container" data-aos="fade-left">
                                     <h4><?= the_title($community->ID); ?></h4>
                                     <p><?= get_field('short_description', $community->ID); ?></p>
                                     <a href="<?= get_permalink($community->ID); ?>" class="cta-button">

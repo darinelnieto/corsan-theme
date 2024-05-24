@@ -263,11 +263,10 @@
                                         cursor: pointer;
                                         width: fit-content;
                                         .text{
-                                            background: #E4E5E6;
+                                            background: $blue;
                                             padding: 3px 1rem;
                                             border-radius: 20px;
-                                            border: 1px solid #002D74;
-                                            color: #002D74;
+                                            color: #ffffff;
                                             font-weight: 400;
                                             margin-right: 0.5rem;
                                             height: 30px;
@@ -283,7 +282,7 @@
                                                 top: 50%;
                                                 transform: translateY(-50%);
                                                 z-index: 9;
-                                                background: #E4E5E6;
+                                                background: $blue;
                                             }
                                         }
                                         .icon{
@@ -291,31 +290,28 @@
                                             width: 30px;
                                             height: 30px;
                                             border-radius: 50%;
-                                            background: #E4E5E6;
-                                            border: 1px solid $blue;
+                                            background: $blue;
                                             &::after{
                                                 content: "";
-                                                width: 14px;
-                                                height: 14px;
+                                                width: 12px;
+                                                height: 12px;
                                                 border-radius: 50%;
-                                                border-bottom: 1px solid #002D74;
                                                 position: absolute;
                                                 background: #E4E5E6;
-                                                left: -60%;
-                                                transform: translateX(35%);
-                                                top: -13.1%;
+                                                left: -56%;
+                                                transform: translateX(56%);
+                                                top: 0.9%;
                                                 z-index: 10;
                                             }
                                             &::before{
                                                 content: "";
-                                                width: 14px;
-                                                height: 14px;
+                                                width: 12px;
+                                                height: 12px;
                                                 border-radius: 50%;
-                                                border-top: 1px solid #002D74;
                                                 position: absolute;
                                                 background: #E4E5E6;
-                                                left: -60%;
-                                                transform: translateX(35%);
+                                                left: -56%;
+                                                transform: translateX(56%);
                                                 top: 59.9%;
                                                 z-index: 10;
                                             }
@@ -328,25 +324,25 @@
                                                 height: auto;
                                                 g{
                                                     line{
-                                                        stroke: $blue;
+                                                        stroke: #ffffff;
                                                     }
                                                 }
                                             }
                                         }
                                         &:hover{
                                             .text{
-                                                background: $blue;
-                                                color: #ffffff;
+                                                background: $yellow;
+                                                color: $blue;
                                                 &::before{
-                                                    background: $blue;
+                                                    background: $yellow;
                                                 }
                                             }
                                             .icon{
-                                                background: $blue;
+                                                background: $yellow;
                                                 svg{
                                                     g{
                                                         line{
-                                                            stroke:#ffffff;
+                                                            stroke:$blue;
                                                         }
                                                     }
                                                 }

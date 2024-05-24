@@ -30,12 +30,12 @@ else
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-11">
-                    <h1><?= the_title(); ?></h1>
-                    <div class="description">
+                    <h1 data-aos="fade-right"><?= the_title(); ?></h1>
+                    <div class="description" data-aos="fade-right">
                         <?= the_content(); ?>
                     </div>
                     <?php if($video): ?>
-                        <div class="video-container">
+                        <div class="video-container" data-aos="zoom-in">
                             <iframe width="560" height="315" src="https://www.youtube.com/embed/<?= $video; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                     <?php endif; ?>
@@ -46,7 +46,7 @@ else
     <section class="counters-metric">
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center">
+                <div class="col-12 text-center" data-aos="zoom-in">
                     <div class="share-and-likes">
                         <div class="cta-likes">
                             <input type="hidden" class="post-id" value="<?= $id; ?>">
@@ -68,8 +68,8 @@ else
                             </div>
                         </div>
                     </div>
-                    <h2><?= the_title(); ?></h2>
-                    <div class="data-counters">
+                    <h2 data-aos="zoom-in"><?= the_title(); ?></h2>
+                    <div class="data-counters" data-aos="zoom-in">
                         <div class="likes-contain">
                             <div class="svg">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25.743" height="23.587" viewBox="0 0 25.743 23.587">
@@ -110,10 +110,10 @@ else
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-10">
-                    <h2><?php if(get_bloginfo("language") == "en-US"): ?>Related Posts<?php else: ?>Artículos relacionados<?php endif; ?></h2>
+                    <h2 data-aos="fade-right"><?php if(get_bloginfo("language") == "en-US"): ?>Related Posts<?php else: ?>Artículos relacionados<?php endif; ?></h2>
                     <div class="slide-related-post owl-carousel">
                         <?php while($related->have_posts()): $related->the_post(); if($title !== get_the_title($related->ID)): ?>
-                            <div class="item">
+                            <div class="item" data-aos="zoom-in">
                                 <a href="<?= get_permalink($related->ID); ?>">
                                     <div class="card-post">
                                         <div class="image-container">
