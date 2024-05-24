@@ -44,17 +44,13 @@
             transform: translate(-50%, -50%);
             z-index: 100;
             width: 100%;
-            max-width: 40vw;
+            max-width: 54vw;
             height: 97vh;
             .gallery-product-pop-up{
                 .owl-item{
                     .item-image{
                         img{
-                            min-height: 97vh;
-                            max-height: 97vh;
-                            border-radius: 20px;
                             width: 100%;
-                            object-fit: contain;
                         }
                     }
                 }
