@@ -15,12 +15,12 @@ if($solutions_products):
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <h2 class="solutions-title" data-aos="zoom-in" data-aos-duration="1000"><?= get_field('solutions_title'); ?></h2>
-                <p class="solutions-description" data-aos="zoom-in-up" data-aos-duration="1000"><?= get_field('solutions_description'); ?></p>
+                <h2 class="solutions-title" ><?= get_field('solutions_title'); ?></h2>
+                <p class="solutions-description" ><?= get_field('solutions_description'); ?></p>
             </div>
             <!-- Products slide -->
             <div class="col-12">
-                <h3 class="slide-name" data-aos="zoom-in-right" data-aos-duration="1000"><?php if(get_bloginfo("language") == "en-US"): echo "Featured Products"; else: echo "Productos destacados"; endif; ?></h3>
+                <h3 class="slide-name"><?php if(get_bloginfo("language") == "en-US"): echo "Featured Products"; else: echo "Productos destacados"; endif; ?></h3>
                 <div class="products-slide owl-carousel">
                     <?php 
                         foreach($solutions_products as $product): 
