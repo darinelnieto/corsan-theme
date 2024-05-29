@@ -113,7 +113,7 @@ else
                     <h2 data-aos="fade-right"><?php if(get_bloginfo("language") == "en-US"): ?>Related Posts<?php else: ?>Artículos relacionados<?php endif; ?></h2>
                     <div class="slide-related-post owl-carousel">
                         <?php while($related->have_posts()): $related->the_post(); if($title !== get_the_title($related->ID)): ?>
-                            <div class="item" data-aos="zoom-in">
+                            <div class="item" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1000">
                                 <a href="<?= get_permalink($related->ID); ?>">
                                     <div class="card-post">
                                         <div class="image-container">
