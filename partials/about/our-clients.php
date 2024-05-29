@@ -20,7 +20,7 @@ if($clients):
             <div class="col-12 col-md-11">
                 <div class="our-clients owl-carousel">
                     <?php foreach($clients as $client): ?>
-                        <div class="item" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="3000">
+                        <div class="item" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1000">
                             <img src="<?= $client['logo']['url']; ?>" alt="<?= $client['logo']['title']; ?>">
                         </div>
                     <?php endforeach; ?>
