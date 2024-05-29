@@ -153,8 +153,13 @@
                     flex-direction: column;
                     max-width: 100%;
                     input[type="email"]{
-                        max-width: 78%;
+                        max-width: 100%;
                         width: 100%;
+                    }
+                    .button{
+                        position: relative;
+                        top: 0;
+                        margin: 1rem auto 1rem 0;
                     }
                 }
             }

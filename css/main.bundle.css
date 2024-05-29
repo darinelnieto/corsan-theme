@@ -2950,8 +2950,13 @@ body, html {
     max-width: 100%;
   }
   .footer-content-partial-ecbbb5 .container .suscribe .input-and-button input[type=email] {
-    max-width: 78%;
+    max-width: 100%;
     width: 100%;
+  }
+  .footer-content-partial-ecbbb5 .container .suscribe .input-and-button .button {
+    position: relative;
+    top: 0;
+    margin: 1rem auto 1rem 0;
   }
 }
 .footer-content-partial-ecbbb5 .container .suscribe .policies-container label {
