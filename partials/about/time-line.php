@@ -68,7 +68,7 @@ if($add_time_line):
         </div>
         <?php foreach($add_time_line as $item): ?>
             <div class="row align-items-center justify-content-between time-line-container">
-                <span class="year" data-aos="zoom-in" data-aos-duration="1000"><?= $item['year'] ?></span>
+                <span class="year" data-aos="zoom-in"><?= $item['year'] ?></span>
                 <div class="col-12 col-md-5 star-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="3000">
                     <div class="content">
                         <?= $item['description']; ?>
