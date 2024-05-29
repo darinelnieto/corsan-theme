@@ -2949,14 +2949,18 @@ body, html {
     flex-direction: column;
     max-width: 100%;
   }
-  .footer-content-partial-ecbbb5 .container .suscribe .input-and-button input[type=email] {
+  .footer-content-partial-ecbbb5 .container .suscribe .input-and-button p {
+    margin-bottom: 0;
+  }
+  .footer-content-partial-ecbbb5 .container .suscribe .input-and-button p input[type=email] {
     max-width: 100%;
     width: 100%;
   }
-  .footer-content-partial-ecbbb5 .container .suscribe .input-and-button .button {
+  .footer-content-partial-ecbbb5 .container .suscribe .input-and-button p .button {
     position: relative;
     top: 0;
     margin: 1rem auto 1rem 0;
+    padding: 0;
   }
 }
 .footer-content-partial-ecbbb5 .container .suscribe .policies-container label {
