@@ -552,7 +552,7 @@ $('.nav-gallery').owlCarousel({
   dots:false,
   responsive:{
       0:{
-          items:3,
+          items:4,
           margin:10,
       },
       640:{
