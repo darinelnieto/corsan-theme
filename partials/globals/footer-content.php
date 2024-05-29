@@ -15,20 +15,26 @@ $social_network = get_field('social_networks_footer', 'option');
 ?>
 <section class="footer-content-partial-ecbbb5">
     <div class="container">
-        <div class="row justify-content-between align-items-start">
-            <div class="col-12 col-md-4 mb-5 mb-md-0 contain-left">
+        <div class="row justify-content-between align-items-start mb-4">
+            <div class="col-12 col-md-4 mb-5 mb-md-0 contain-left d-block d-md-none">
                 <h3><?= get_field('slogan', 'option'); ?></h3>
                 <img src="<?= $logo['url']; ?>" alt="<?= $logo['title']; ?>">
             </div>
+            <div class="col-12 col-md-4 mb-5 mb-md-0 suscribe">
+                <p class="intro"><?= get_field('form_intro', 'option'); ?></p>
+                <div class="suscription-form">
+                    <?= do_shortcode(get_field('shortcode_form_suscribe', 'option')); ?>
+                </div>
+            </div>
             <div class="col-12 col-md-4 menu-nav-container">
                 <div class="row justify-content-end">
-                    <div class="col-12 col-md-6 col-lg-5 mb-4 mb-md-0 nav-footer">
+                    <div class="col-6 col-md-6 col-lg-5 mb-4 mb-md-0 nav-footer">
                         <h4><?php if(get_bloginfo("language") == "en-US"):?>Solutions<?php else: ?>Soluciones<?php endif; ?></h4>
                         <div class="the-nav">
                             <?php wp_nav_menu(['menu' => 'Solutions']); ?>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-5 mb-5 mb-md-0 nav-footer">
+                    <div class="col-6 col-md-6 col-lg-5 mb-5 mb-md-0 nav-footer">
                         <h4><?php if(get_bloginfo("language") == "en-US"):?>Help<?php else: ?>Ayuda<?php endif; ?></h4>
                             <div class="the-nav">
                                 <?php wp_nav_menu(['menu' => 'help']); ?>
@@ -53,6 +59,17 @@ $social_network = get_field('social_networks_footer', 'option');
                 </div>
             <?php endif; ?>
         </div>
+        <!-- Desktop content -->
+        <div class="row justify-content-between align-items-end">
+            <div class="col-12 col-md-4 contain-left d-none d-md-block">
+                <h3><?= get_field('slogan', 'option'); ?></h3>
+                <img src="<?= $logo['url']; ?>" alt="<?= $logo['title']; ?>">
+            </div>
+            <div class="col-12 col-md-4 users-ctas">
+                <?php wp_nav_menu([ 'menu' => 'Footer' ]); ?>
+            </div>
+        </div>
+        <!-- Copy right -->
         <div class="row copi-right-container">
             <div class="col-2 d-block d-md-none favicon">
                 <img src="<?= $favicon['url']; ?>" alt="<?= $favicon['title']; ?>">

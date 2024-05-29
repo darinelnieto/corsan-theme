@@ -593,3 +593,15 @@ $(document).on('keyup', (e)=>{
       $('.gallery-pop-up-container').removeClass('show');
   }
 });
+// Suscribe policies animate
+$('.input-and-button .button').prop('disabled', true);
+$('.policies-container label').on('click', function(){
+  checkbox = $('input[type="checkbox"]', this);
+  if(checkbox.prop('checked')){
+    $('.checkbox', this).addClass('active');
+    $('.input-and-button .button').prop('disabled', false);
+  }else{
+    $('.checkbox', this).removeClass('active');
+    $('.input-and-button .button').prop('disabled', true);
+  }
+});
