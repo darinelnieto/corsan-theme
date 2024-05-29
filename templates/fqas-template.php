@@ -22,7 +22,7 @@ $key = 0;
                         <div class="fqas-list">
                             <?php foreach($fqas as $item): $key++; ?>
                                 <div class="fqa-item">
-                                    <div class="the-question" data-aos="zoom-in">
+                                    <div class="the-question">
                                         <h4><span><?= $key; ?></span> ¿<?= $item['question'] ?>?</h4>
                                         <span class="icon"></span>
                                     </div>
