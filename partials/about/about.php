@@ -15,7 +15,7 @@ $video = get_field('video_id');
         <div class="row align-items-center" style="position:relative;">
             <img src="<?= get_the_post_thumbnail_url(); ?>" alt="<?= get_the_title(); ?>" class="logo">
             <div class="col-12">
-                <h1 data-aos="zoom-out-up" data-aos-duration="2000"><?= the_title(); ?></h1>
+                <h1 data-aos="fade-right"><?= the_title(); ?></h1>
             </div>
         </div>
     </div>
