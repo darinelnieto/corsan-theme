@@ -1400,6 +1400,7 @@ body, html {
 }
 .product-details-partial-d60d33 .gallery-pop-up-container .body-pop-up .gallery-product-pop-up .owl-item .item-image img {
   width: 90%;
+  margin: 0 auto;
 }
 @media (max-width: 500px) {
   .product-details-partial-d60d33 .gallery-pop-up-container .body-pop-up {
