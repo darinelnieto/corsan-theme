@@ -8,6 +8,10 @@
             font-weight: 700;
             font-size: 3.5rem;
             margin-bottom: 2rem;
+            @media(max-width:500px){
+                font-size: 2.5rem;
+                margin-bottom: 5rem;
+            }
         }
         .products-slide{
             visibility: hidden;

@@ -266,6 +266,12 @@ body, html {
   font-size: 3.5rem;
   margin-bottom: 2rem;
 }
+@media (max-width: 500px) {
+  .related-products-partial-573627 .container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 5rem;
+  }
+}
 .related-products-partial-573627 .container .products-slide {
   visibility: hidden;
   transition: 0.4s;
