@@ -20,7 +20,7 @@ if($solutions_products):
             </div>
             <!-- Products slide -->
             <div class="col-12">
-                <h3 class="slide-name"><?php if(get_bloginfo("language") == "en-US"): echo "Featured Products"; else: echo "Productos destacados"; endif; ?></h3>
+                <h3 class="slide-name" data-aos="fade-right"><?php if(get_bloginfo("language") == "en-US"): echo "Featured Products"; else: echo "Productos destacados"; endif; ?></h3>
                 <div class="products-slide owl-carousel">
                     <?php 
                         foreach($solutions_products as $product): 
