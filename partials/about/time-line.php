@@ -69,12 +69,12 @@ if($add_time_line):
         <?php foreach($add_time_line as $item): ?>
             <div class="row align-items-center justify-content-between time-line-container">
                 <span class="year" data-aos="zoom-in"><?= $item['year'] ?></span>
-                <div class="col-12 col-md-5 star-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="3000">
+                <div class="col-12 col-md-5 star-item" data-aos="fade-left" data-aos-duration="2000">
                     <div class="content">
                         <?= $item['description']; ?>
                     </div>
                 </div>
-                <div class="col-12 col-md-5 end-item" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="3000">
+                <div class="col-12 col-md-5 end-item" data-aos="fade-right" data-aos-duration="2000">
                     <?php if($item['show_image'] === true): ?>
                         <img src="<?= $item['image']['url']; ?>" alt="<?= $item['image']['title']; ?>">
                     <?php else: ?>
