@@ -17,7 +17,7 @@ $products = get_field('products_slide');
         <div class="taxonomies">
             <div class="row">
                 <?php foreach($taxonomies as $taxonomy): $tax = $taxonomy['select_taxonomy']; ?>
-                    <div class="col-6 col-md-3" data-aos="zoom-in">
+                    <div class="col-6 col-md-3">
                         <a href="<?= home_url(); ?>/product_cat/<?= $tax->slug; ?>">
                             <div class="taxonomi-card">
                                 <img src="<?= get_field('feature_image', $tax->taxonomy . '_' . $tax->term_id); ?>" alt="<?= $tax->name; ?>">
