@@ -3005,6 +3005,11 @@ body, html {
 .footer-content-partial-ecbbb5 .container .suscribe .policies-container label .text a {
   color: #FFD100;
 }
+@media (max-width: 1150px) {
+  .footer-content-partial-ecbbb5 .container .suscribe .policies-container label .text {
+    width: 90%;
+  }
+}
 .footer-content-partial-ecbbb5 .container .menu-nav-container .nav-footer h4 {
   color: #FFD100;
   font-weight: 600;

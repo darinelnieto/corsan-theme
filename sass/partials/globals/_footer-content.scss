@@ -210,6 +210,9 @@
                         a{
                             color: $yellow;
                         }
+                        @media(max-width:1150px){
+                            width: 90%;
+                        }
                     }
                 }
             }
