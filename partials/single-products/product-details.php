@@ -38,7 +38,7 @@ $gallery = get_field('gallery');
 					<?php endforeach; ?>
 				</div>
 				<div class="row justify-content-center">
-					<div class="col-7">
+					<div class="col-12 col-md-7">
 						<div class="nav-gallery owl-carousel">
 							<?php $i = -1; foreach($gallery as $image): $i++; ?>
 								<div class="nav-image  item-<?= $i; ?>">
