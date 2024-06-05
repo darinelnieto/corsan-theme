@@ -79,9 +79,9 @@ if($taxonomies):
     });
     /*========== Api route and parameters ==========*/
     <?php if(get_bloginfo("language") == "en-US"): ?>
-        var rout = _dittoURL_ + "/wp-json/product/list";
+        var rout = _dittoURL_ + "/en/wp-json/product/list";
     <?php else: ?>
-        var rout = _dittoURL_ + "/es/wp-json/product/list";
+        var rout = _dittoURL_ + "/wp-json/product/list";
     <?php endif; ?>
     var href = '';
     <?php if($category->taxonomy): ?>
