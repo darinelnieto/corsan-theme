@@ -91,14 +91,14 @@
                     }
                     &:hover{
                         .text-button{
-                            background: $yellow;
+                            background: $light_blue;
                             color: $blue;
                             &::before{
-                                background: $yellow;
+                                background: $light_blue;
                             }
                         }
                         .icon{
-                            background: $yellow;
+                            background: $light_blue;
                             svg{
                                 g{
                                     line{

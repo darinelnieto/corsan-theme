@@ -1,0 +1,55 @@
+.sustainability-partial-0c071c {
+    padding: 0 0 50px 0;
+    .title{
+        color: $blue;
+        font-weight: 700;
+        font-size: 3.5rem;
+        margin-bottom: 2rem;
+        @media(max-width:768px){
+            font-size: 2rem;
+        }
+    }
+    .description{
+        color: $blue;
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 1.2;
+        margin-bottom: 2rem;
+        @media(max-width:640px){
+            font-size: 1rem;
+        }
+    }
+    .card-gray{
+        background: #D9D9D9;
+        border-radius: 20px;
+        padding: 1rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        height: 100%;
+        .image-contain{
+            text-align: center;
+            img{
+                max-width: 190px;
+                height: auto;
+            }
+        }
+        .text{
+            font-size: 1.5rem;
+            text-align: center;
+            color: $blue;
+            line-height: 1.3;
+            font-weight: 300;
+        }
+        @media(max-width:640px){
+            .image-contain{
+                img{
+                    max-width: 150px;
+                }
+            }
+            .text{
+                font-size: 1rem;
+            }
+        }
+    }
+}

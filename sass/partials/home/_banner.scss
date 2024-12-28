@@ -66,107 +66,117 @@
             transform: translate(-50%, -50%);
             max-width: 90%;
             transition: .4s;
-            .row{
-                .short-description{
-                    color: $blue;
-                    font-size: 1.5rem;
-                }
-                /*========= Ctas banner =========*/
-                .ctas-container{
-                    display: flex;
-                    align-items: center;
-                    .permalink-product{
-                        border: 1px solid $blue;
-                        display: block;
-                        width: fit-content;
-                        padding: 8px 2rem;
-                        border-radius: 30px;
-                        text-decoration: none;
+            .owl-stage{
+                display: flex;
+                align-items: center;
+                .row{
+                    padding: 0 2px;
+                    .short-description{
                         color: $blue;
-                        font-size: 1.3rem;
-                        transition: .2s;
-                        &:hover{
-                            background: $yellow;
-                            color: $blue;
-                        }
-                        @media(max-width:510px){
-                            width: 40%;
+                        font-size: 1.5rem;
+                        line-height: 1.2;
+                        font-weight: 400;
+                        @media(max-width:640px){
                             font-size: 1rem;
-                            padding: 6px 1rem;
-                            text-align: center;
                         }
                     }
-                    .solutions-link{
-                        position: relative;
+                    /*========= Ctas banner =========*/
+                    .ctas-container{
                         display: flex;
-                        max-width: 250px;
-                        margin-left: 2rem;
-                        .text-cta{
-                            position: absolute;
-                            color: #ffffff;
-                            top: 50%;
-                            transform: translate(-20%, -50%);
-                            left: 20%;
+                        align-items: center;
+                        .permalink-product{
+                            border: 1px solid $blue;
+                            display: block;
+                            width: fit-content;
+                            padding: 8px 2rem;
+                            border-radius: 30px;
+                            text-decoration: none;
+                            color: $blue;
                             font-size: 1.3rem;
                             transition: .2s;
-                        }
-                        svg{
-                            max-width: 250px;
-                            path{
-                                transition: .2s;
-                            }
-                        }
-                        .icon{
-                            svg{
-                                position: absolute;
-                                top: 50%;
-                                left: 92%;
-                                transform: translate(-92%, -50%);
-                                width: 14px;
-                                height: auto;
-                            }
-                        }
-                        &:hover{
-                            .text-cta{
+                            &:hover{
+                                background: $light_blue;
                                 color: $blue;
                             }
+                            @media(max-width:510px){
+                                width: 40%;
+                                font-size: 1rem;
+                                padding: 6px 1rem;
+                                text-align: center;
+                            }
+                        }
+                        .solutions-link{
+                            position: relative;
+                            display: flex;
+                            max-width: 250px;
+                            margin-left: 2rem;
+                            .text-cta{
+                                position: absolute;
+                                color: #ffffff;
+                                top: 50%;
+                                transform: translate(-20%, -50%);
+                                left: 20%;
+                                font-size: 1.3rem;
+                                transition: .2s;
+                            }
                             svg{
+                                max-width: 250px;
                                 path{
-                                    fill: $yellow;
+                                    transition: .2s;
                                 }
                             }
                             .icon{
                                 svg{
-                                    g{
-                                        line{
-                                            stroke:$blue;
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 92%;
+                                    transform: translate(-92%, -50%);
+                                    width: 14px;
+                                    height: auto;
+                                }
+                            }
+                            &:hover{
+                                .text-cta{
+                                    color: $blue;
+                                }
+                                svg{
+                                    path{
+                                        fill: $light_blue;
+                                    }
+                                }
+                                .icon{
+                                    svg{
+                                        g{
+                                            line{
+                                                stroke:$blue;
+                                            }
                                         }
                                     }
                                 }
                             }
-                        }
-                        @media(max-width:510px){
-                            margin-left: 1rem;
-                            width: 55%;
-                            .text-cta{
-                                font-size: 1rem;
-                            }
-                            .icon{
-                                svg{
-                                    left: 93%;
-                                    transform: translate(-93%, -50%);
+                            @media(max-width:510px){
+                                margin-left: 1rem;
+                                width: 55%;
+                                .text-cta{
+                                    font-size: 1rem;
+                                }
+                                .icon{
+                                    svg{
+                                        left: 93%;
+                                        transform: translate(-93%, -50%);
+                                    }
                                 }
                             }
                         }
                     }
-                }
-                .product-image{
-                    width: 100%;
-                    max-width: 400px;
-                    margin: 0 auto;
-                }
-                @media(max-width:768px){
-                    flex-direction: column-reverse;
+                    .product-image{
+                        width: 100%;
+                        max-width: 400px;
+                        margin: 0 auto;
+                    }
+                    @media(max-width:768px){
+                        flex-direction: column-reverse;
+                    }
                 }
             }
         }

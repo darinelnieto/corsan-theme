@@ -115,14 +115,14 @@
                                 }
                                 &:hover{
                                     .text{
-                                        background: $yellow;
+                                        background: $light_blue;
                                         color: $blue;
                                         &::before{
-                                            background: $yellow;
+                                            background: $light_blue;
                                         }
                                     }
                                     .icon{
-                                        background: $yellow;
+                                        background: $light_blue;
                                         svg{
                                             g{
                                                 line{
@@ -171,8 +171,8 @@
                     }
                     a.active{
                         background: $blue;
-                        color: $yellow;
-                        border-color: $yellow;
+                        color: $light_blue;
+                        border-color: $light_blue;
                     }
                 }
             }
@@ -293,14 +293,14 @@
                     }
                     &:hover{
                         .text{
-                            background: $yellow;
+                            background: $light_blue;
                             color: $blue;
                             &::before{
-                                background: $yellow;
+                                background: $light_blue;
                             }
                         }
                         .icon{
-                            background: $yellow;
+                            background: $light_blue;
                             svg{
                                 g{
                                     line{

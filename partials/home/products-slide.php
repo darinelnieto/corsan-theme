@@ -15,7 +15,7 @@ if($solutions_products):
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <h2 class="solutions-title" ><?= get_field('solutions_title'); ?></h2>
+                <h1 class="solutions-title" ><?= get_field('solutions_title'); ?></h1>
                 <p class="solutions-description" ><?= get_field('solutions_description'); ?></p>
             </div>
             <!-- Products slide -->
@@ -32,7 +32,6 @@ if($solutions_products):
                             <a href="<?= get_permalink($prod->ID); ?>">
                                 <div class="card-product">
                                     <div class="img-container">
-                                        <span class="color-hover" style="background:<?= $color; ?>"></span>
                                         <img src="<?= get_the_post_thumbnail_url($prod->ID); ?>" alt="<?= get_the_title($prod->ID); ?>" class="product-image">
                                     </div>
                                     <div class="product-name">

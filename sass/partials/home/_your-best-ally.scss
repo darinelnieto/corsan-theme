@@ -1,0 +1,146 @@
+.your-best-ally-partial-9d74ce {
+    padding: 2rem 0 100px 0;
+    @media(max-width:768px){
+        padding: 2rem 0 55px 0;
+    }
+    h2{
+        color: $blue;
+        font-weight: 700;
+        font-size: 3.5rem;
+        margin-bottom: 3rem;
+        @media(max-width:768px){
+            font-size: 2rem;
+        }
+    }
+    .about-us{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        height: 100%;
+        .about-description{
+            padding: 20px;
+            border-radius: 20px;
+            background: #D9D9D9;
+            height: 50%;
+            position: relative;
+            p{
+                color: $blue;
+                font-size: 1.5rem;
+                font-weight: 400;
+                margin-bottom: 0;
+                line-height: 1.2;
+                position: absolute;
+                width: 92%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                @media(max-width:640px){
+                    font-size: 1rem;
+                }
+            }
+            @media(max-width:768px){
+                height: auto;
+                p{
+                    position: relative;
+                    left: 0;
+                    top: 0;
+                    transform: none;
+                }
+            }
+        }
+        .year-content{
+            padding: 30px 20px;
+            border-radius: 20px;
+            background: #EAEBF3;
+            height: 50%;
+            position: relative;
+            .row{
+                position: absolute;
+                width: 92%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                p{
+                    color: $blue;
+                    font-size: 1.5rem;
+                    font-weight: 400;
+                    margin-bottom: 0;
+                    line-height: 1.2;
+                    @media(max-width:640px){
+                        font-size: 1rem;
+                    }
+                }
+                .year-logo{
+                    width: 100%;
+                }
+            }
+            @media(max-width:768px){
+                height: auto;
+                .row{
+                    width: 100%;
+                    position: relative;
+                    left: 0;
+                    top: 0;
+                    transform: none;
+                }
+            }
+        }
+    }
+    .card-gray{
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        background: #6B6B6B;
+        padding: 0 20px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        svg{
+            width: 300px;
+            height: auto;
+            position: relative;
+            left: -2px;
+        }
+        p{
+            color: #ffffff;
+            font-size: 22px;
+            line-height: 1.2;
+            font-weight: 400;
+            @media(max-width:640px){
+                font-size: 1rem !important;
+            }
+        }
+        @media(max-width:768px){
+            svg{
+                left: auto;
+                right: -56%;
+            }
+            p{
+                font-size: 1.5rem;
+            }
+        }
+    }
+    .map-card{
+        background: #D9D9D9;
+        border-radius: 20px;
+        padding: 15px 20px 0 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        img{
+            max-width: 200px;
+            height: auto;
+            margin: 0 auto;
+        }
+        p{
+            color: $blue;
+            font-size: 1.5rem;
+            line-height: 1.2;
+            font-weight: 400;
+            @media(max-width:640px){
+                font-size: 1rem;
+            }
+        }
+    }
+}

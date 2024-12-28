@@ -192,20 +192,20 @@
                     background: $blue;
                     .format-name, .presentation{
                         p{
-                            color: $yellow;
+                            color: $light_blue;
                         }
                     }
                     .add-to-car-container{
                         .select-units{
                             .open-options{
-                                border: 1px solid $yellow;
+                                border: 1px solid $light_blue;
                                 p{
-                                    color: $yellow;
+                                    color: $light_blue;
                                 }
                                 svg{
                                     g{
                                         line{
-                                            stroke:$yellow;
+                                            stroke:$light_blue;
                                         }
                                     }
                                 }

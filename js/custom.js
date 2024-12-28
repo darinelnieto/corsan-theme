@@ -7,12 +7,13 @@ $(document).ready(function(){
     }
   });
   controle_pop_up();
-})
+});
 /*======= Slide products banner =======*/
 $('.slide-products').owlCarousel({
-    autoplay:false,
-    loop:false,
-    nav:true,
+    autoplay:true,
+    loop:true,
+    nav:false,
+    dots:false,
     margin:10,
     items:1,
 }).css({'visibility':'visible'});
@@ -47,9 +48,6 @@ $('.products-slide').owlCarousel({
     margin:40,
     responsive:{
         0:{
-            items:1
-        },
-        600:{
             items:2
         },
         768:{

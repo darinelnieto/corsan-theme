@@ -15,10 +15,12 @@ get_header();
     <?php get_template_part('partials/home/banner'); ?>
     <!-- Products slide -->
     <?php get_template_part('partials/home/products-slide'); ?>
-    <!-- Community -->
-    <?php get_template_part('partials/home/community'); ?>
-    <!-- Instagram -->
-    <?php get_template_part('partials/home/instagram'); ?>
+    <!-- Corsan as your best ally -->
+    <?php get_template_part('partials/home/your-best-ally'); ?>
+    <!-- videos manuals and distributor -->
+    <?php get_template_part('partials/home/videos-manuals-and-distributor'); ?>
+    <!-- Sustainability -->
+    <?php get_template_part('partials/home/sustainability'); ?>
 </main>
 <?php get_footer(); ?>
                     

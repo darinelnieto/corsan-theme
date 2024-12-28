@@ -105,7 +105,7 @@
                             display: flex;
                             align-items: center;
                             background: $blue;
-                            color: $yellow;
+                            color: $light_blue;
                             transition: .2s;
                             svg{
                                 width: 18px;
@@ -114,7 +114,7 @@
                                 transition: .2s;
                             }
                             &:hover{
-                                background: $yellow;
+                                background: $light_blue;
                                 color: $blue;
                                 svg{
                                     g{
@@ -326,7 +326,7 @@
                         display: flex;
                         align-items: center;
                         background: $blue;
-                        color: $yellow;
+                        color: $light_blue;
                         svg{
                             width: 18px;
                             height: auto;
@@ -334,7 +334,7 @@
                         }
                         &:hover{
                             background: $blue;
-                            color: $yellow;
+                            color: $light_blue;
                         }
                     }
                 }
@@ -418,7 +418,7 @@
                         font-size: 1.2rem;
                     }
                     &:hover{
-                        background: $yellow;
+                        background: $light_blue;
                         color: $blue;
                     }
                 }
