@@ -1,57 +1,55 @@
 .videos-manuals-and-distributor-partial-80d462 {
-    padding: 2rem 0 100px 0;
+    position: relative;
+    height: scaleVW(640, $desktop);
+    width: 100%;
+    overflow: hidden;
     @media(max-width:768px){
-        padding: 2rem 0 55px 0;
+        height: scaleVW(811, $movil);
     }
-    .row{
-        .card-item{
-            display: flex;
-            flex-direction: column;
-            gap: 45px;
-            .image-contain{
-                background: #D9D9D9;
-                border-radius: 20px;
-                position: relative;
-                height: 350px;
-            }
-            .cta-page{
-                background: $blue;
-                color: $white;
-                font-weight: 400;
-                border-radius: 25px;
-                font-size: 1.2rem;
-                text-align: center;
-                text-decoration: none;
-                padding: 7px 1rem;
-                @media(max-width:640px){
-                    font-size: 1rem;
-                }
-            }
+    video{
+        height: 100% !important;
+        height: 100% !important;
+        object-position: center;
+        object-fit: cover;
+    }
+    .video-description{
+        position: absolute;
+        top: scaleVW(102, $desktop);
+        left: scaleVW(192, $desktop);
+        color: $white;
+        max-width: scaleVW(560, $desktop);
+        font-weight: 300;
+        font-size: scaleVW(48, $desktop);
+        line-height: LH(62, 48);
+        strong{
+            font-weight: 600;
         }
-        .map{
-            .image-contain{
-                img{
-                    position: absolute;
-                    left: 50%;
-                    top: 50%;
-                    transform: translate(-50%, -50%);
-                    max-width: 275px;
-                }
-            }
+        @media(max-width:768px){
+            max-width: scaleVW(375, $movil);
+            top: scaleVW(97, $movil);
+            left: scaleVW(37, $movil);
+            font-size: scaleVW(32, $movil);
+            line-height: LH(45, 32);
         }
-        .blog{
-            .image-contain{
-                overflow: hidden;
-                img{
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-            }
-        }
-        @media(max-width: 768px){
-            flex-direction: column-reverse;
-            gap: 55px;
+    }
+    .vol-controller{
+        cursor: pointer;
+        position: absolute;
+        bottom:scaleVW(33, $desktop);
+        right: scaleVW(33, $desktop);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: scaleVW(55, $desktop);
+        height: scaleVW(55, $desktop);
+        border-radius: 50%;
+        color: $white;
+        background: rgba(0, 45, 116, 55%);
+        @media(max-width:768px){
+            bottom:scaleVW(23, $movil);
+            right: scaleVW(23, $movil);
+            width: scaleVW(40, $movil);
+            height: scaleVW(40, $movil);
         }
     }
 }

@@ -30,7 +30,6 @@ if($related_products->have_posts()):
                             <a href="<?= get_permalink($related_products->ID); ?>">
                                 <div class="card-product">
                                     <div class="img-container">
-                                        <span class="color-hover" style="background:<?= $color; ?>"></span>
                                         <img src="<?= get_the_post_thumbnail_url($related_products->ID); ?>" alt="<?= get_the_title($related_products->ID); ?>" class="product-image">
                                     </div>
                                     <div class="product-name">

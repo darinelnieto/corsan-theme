@@ -32,6 +32,56 @@ $banner = get_field('background_image');
             </div>
         </div>
     </section>
+
+    <section class="pqr-section">
+        <div class="container">
+            <div class="pqr-content">
+                <div class="pqr-left" data-aos="fade-right">
+                    <h3 class="pqr-title"><?= get_field('pqr_left_content')['title']; ?></h3>
+                    <h4 class="pqr-subtitle"><?= get_field('pqr_left_content')['subtitle']; ?></h4>
+                    <ul class="pqr-list">
+                        <?php if (have_rows('pqr_left_content')) : 
+                            while (have_rows('pqr_left_content')) : the_row();
+                                if (have_rows('contact_list')) :
+                                    while (have_rows('contact_list')) : the_row(); ?>
+                                        <li>
+                                            <span><?= get_sub_field('icon'); ?></span>
+                                            <a href="<?= get_sub_field('link')['url']; ?>"><?= get_sub_field('link')['title']; ?></a>
+                                        </li>
+                                    <?php endwhile;
+                                endif;
+                            endwhile;
+                        endif; ?>
+                    </ul>
+                </div>
+
+                <div class="pqr-right" data-aos="fade-left">
+                    <p><?= get_field('pqr_right_content')['intro']; ?></p>
+                    <img src="<?= get_field('pqr_right_content')['image']['url']; ?>" alt="<?= get_field('pqr_right_content')['image']['title']; ?>">
+                    <h3 class="pqr-title"><?= get_field('pqr_right_content')['pqrsf_title']; ?></h3>
+                    <ul class="pqr-list">
+                        <?php if (have_rows('pqr_right_content')) : 
+                            while (have_rows('pqr_right_content')) : the_row();
+                                if (have_rows('pqrsf_list')) :
+                                    while (have_rows('pqrsf_list')) : the_row(); ?>
+                                        <li>
+                                            <div class="li-img">
+                                                <img src="<?= get_sub_field('icon')['url']; ?>" alt="<?= get_sub_field('icon')['title']; ?>">
+                                            </div>
+                                            <div class="pqr-text">
+                                                <strong><?= get_sub_field('name'); ?></strong>
+                                                <span><?= get_sub_field('description'); ?></span>
+                                            </div>
+                                        </li>
+                                    <?php endwhile;
+                                endif;
+                            endwhile;
+                        endif; ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 <script>
     $(document).ready(function(){

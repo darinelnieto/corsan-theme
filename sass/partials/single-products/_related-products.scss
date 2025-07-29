@@ -2,7 +2,7 @@
     padding: 2rem 0;
     .container{
         width: 100%;
-        max-width: 1357px;
+        max-width: 1300px;
         h2{
             color: $blue;
             font-weight: 700;
@@ -28,17 +28,6 @@
                                 background: #D9D9D9;
                                 width: 70%;
                                 min-width: 210px;
-                                max-width: 210px;
-                                height: 90%;
-                                border-radius: 10px;
-                                position: absolute;
-                                top: 50%;
-                                left: 50%;
-                                transform: translate(-50%, -50%);
-                            }
-                            .color-hover{
-                                visibility: hidden;
-                                width: 210px;
                                 max-width: 210px;
                                 height: 90%;
                                 border-radius: 10px;

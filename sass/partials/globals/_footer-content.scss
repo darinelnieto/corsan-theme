@@ -5,10 +5,10 @@
     z-index: 2;
     .container{
         width: 100%;
-        max-width: 1392px;
+        max-width: 1300px;
         .contain-left{
             h3{
-                color: $light_blue;
+                color: $white;
                 font-size: 1.2rem;
                 font-weight: 400;
                 margin-bottom: 3rem;
@@ -42,16 +42,15 @@
                 }
                 input[type="email"]{
                     background: transparent;
-                    color: $light_blue;
-                    border: 1px solid $light_blue;
+                    color: $white;
+                    border: 1px solid $white;
                     height: 40px;
                     border-radius: 30px;
                     padding: 0 1rem;
-                    color: $light_blue;
                     outline: none;
                     max-width: 300px;
                     &::placeholder{
-                        color: $light_blue;
+                        color: $white;
                         opacity: .5;
                     }
                 }
@@ -70,7 +69,7 @@
                     border: none;
                     background: transparent;
                     .text-button{
-                        background: $light_blue;
+                        background: $white;
                         padding: 9px 1.6rem 10px 1.6rem;
                         border-radius: 20px;
                         color: $blue;
@@ -89,7 +88,7 @@
                             top: 50%;
                             transform: translateY(-50%);
                             z-index: 1;
-                            background: $light_blue;
+                            background: $white;
                         }
                     }
                     .icon-suscribe{
@@ -97,7 +96,7 @@
                         width: 40px;
                         height: 40px;
                         border-radius: 50%;
-                        background: $light_blue;
+                        background: $white;
                         &::after{
                             content: '';
                             width: 12px;
@@ -176,15 +175,15 @@
                     .checkbox{
                         width: 14px;
                         height: 14px;
-                        border: 1px solid $light_blue;
+                        border: 1px solid $white;
                         border-radius: 4px;
                         position: relative;
                         &::before{
                             content: '';
                             width: 10px;
                             height: 4px;
-                            border-left: 2px solid $light_blue;
-                            border-bottom: 2px solid $light_blue;
+                            border-left: 2px solid $white;
+                            border-bottom: 2px solid $white;
                             position: absolute;
                             top: 50%;
                             left: 50%;
@@ -202,12 +201,12 @@
                     }
                     .text{
                         padding-left: 10px;
-                        color: $light_blue;
+                        color: $white;
                         width: 80%;
                         font-size: 12px;
                         font-weight: 300;
                         a{
-                            color: $light_blue;
+                            color: $white;
                         }
                         @media(max-width:1150px){
                             width: 90%;
@@ -216,7 +215,6 @@
                 }
             }
         }
-
         .menu-nav-container{
             .nav-footer{
                 h4{
@@ -232,7 +230,7 @@
                             margin-bottom: .3rem;
                             a{
                                 text-decoration: none;
-                                color: $light_blue;
+                                color: $white;
                                 font-weight: 300;
                                 font-size: 16px;
                             }
@@ -298,7 +296,7 @@
                         z-index: 10;
                     }
                     li{
-                        color: $light_blue;
+                        color: $white;
                         display: flex;
                         align-items: start;
                         .icon{
@@ -317,12 +315,12 @@
             }
         }
         .copi-right-container{
-            border-top: 1px solid $light_blue;
+            border-top: 1px solid $white;
             margin-top: 2rem;
             padding: 2rem 0 0 0;
             align-items: center;
             .copi-right{
-                color: $light_blue;
+                color: $white;
                 font-size: 16px;
                 font-weight: 300;
                 margin: 0;
@@ -341,7 +339,7 @@
                 justify-content: right;
                 align-items: center;
                 p{
-                    color: $light_blue;
+                    color: $white;
                     font-size: 16px;
                     margin-bottom: 0;
                     margin-right: 7px;
@@ -357,11 +355,11 @@
                             display: block;
                             width: 40px;
                             height: 40px;
-                            border: 1px solid $light_blue;
+                            border: 1px solid $white;
                             border-radius: 50%;
                             background: transparent;
                             position: relative;
-                            color: $light_blue;
+                            color: $white;
                             svg{
                                 font-size: 1.2rem;
                                 position: absolute;
@@ -389,9 +387,9 @@
                     a{
                         display: flex;
                         align-items: center;
-                        border: 1px solid $light_blue;
+                        border: 1px solid $white;
                         border-radius: 30px;
-                        color: $light_blue;
+                        color: $white;
                         text-decoration: none;
                         padding: 5px 20px;
                         font-weight: 400;
@@ -403,13 +401,13 @@
                             g{
                                 g{
                                     path{
-                                        fill: $light_blue;
+                                        fill: $white;
                                     }
                                 }
                             }
                         }
                         &:hover{
-                            background: $light_blue;
+                            background: $white;
                             color: $blue;
                             svg{
                                 g{
@@ -427,9 +425,6 @@
         }
         @media(max-width:768px){
             padding: 0 1.5rem;
-        }
-        @media(min-width:1500px){
-            max-width: 95%;
         }
     }
 }

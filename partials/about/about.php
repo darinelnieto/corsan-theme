@@ -19,7 +19,15 @@ $video = get_field('video_id');
             </div>
         </div>
     </div>
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/<?= $video; ?>?autoplay=1&loop=1&autopause=0&muted=1&controls=0" title="Vimeo video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div>
+    <?php if($video): ?>
+        <div class="video-container">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-11">
+                        <iframe src="https://www.youtube.com/embed/<?= $video; ?>?autoplay=0&loop=1&autopause=0&muted=1&controls=1" title="Vimeo video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
 </section>            

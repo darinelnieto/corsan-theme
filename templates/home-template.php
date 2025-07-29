@@ -13,12 +13,14 @@ get_header();
 <main id="home-template-7bdd82">
     <!-- Banner -->
     <?php get_template_part('partials/home/banner'); ?>
-    <!-- Products slide -->
-    <?php get_template_part('partials/home/products-slide'); ?>
-    <!-- Corsan as your best ally -->
-    <?php get_template_part('partials/home/your-best-ally'); ?>
+    <!-- Products tabs -->
+    <?php get_template_part('partials/home/products-tabs'); ?>
     <!-- videos manuals and distributor -->
     <?php get_template_part('partials/home/videos-manuals-and-distributor'); ?>
+    <!-- Products Slide -->
+    <?php get_template_part('partials/home/products-slide'); ?>
+    <!-- Community -->
+    <?php get_template_part('partials/home/community'); ?>
     <!-- Sustainability -->
     <?php get_template_part('partials/home/sustainability'); ?>
 </main>

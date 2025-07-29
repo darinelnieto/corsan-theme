@@ -24,6 +24,8 @@ function ditto_scripts() {
   wp_enqueue_script('aos.js', get_template_directory_uri() . '/js/aos.js');
   wp_register_script('custom.js', get_template_directory_uri() . '/js/custom.js', array('jquery'), '1', true);
   wp_enqueue_script('custom.js');
+  wp_register_script('new-custom.js', get_template_directory_uri() . '/js/new-custom.js', array('jquery'), '1', true);
+  wp_enqueue_script('new-custom.js');
 }
 add_action( 'wp_enqueue_scripts', 'ditto_scripts');
 
@@ -134,7 +136,18 @@ if (function_exists('acf_add_options_page')) {
     'menu_title'     => 'Quote form',
     'parent_slug'   => 'theme-settings',
   ));
+  acf_add_options_sub_page(array(
+    'page_title'     => 'Solutions nav',
+    'menu_title'     => 'Solutions nav',
+    'parent_slug'   => 'theme-settings',
+  ));
 }
+/*=========== Detección de dispositivo ===========*/
+function definir_dispositivo_global() {
+    global $es_movil;
+    $es_movil = wp_is_mobile();
+}
+add_action('init', 'definir_dispositivo_global');
 /*======== Products post type ========*/
 add_theme_support('post-thumbnails');
 add_post_type_support( 'products', 'thumbnail' );
@@ -202,6 +215,21 @@ function products_post()
   ));
 };
 add_action('init', 'products_post', 3);
+/*============ Suports ===========*/
+add_post_type_support( 'products', 'thumbnail' );
+function suport_post(){
+/*====== Argument post type =====*/
+  $products = array(
+    'public' => true,
+    'has_archive' => true,
+    'label'  => 'Soporte',
+    'menu_icon' => 'dashicons-embed-post',
+    'supports' => ['title', 'editor', 'thumbnail']
+  );
+  /*============ Register post type ============*/
+  register_post_type('soporte', $products);
+}
+add_action('init', 'suport_post', 3);
 /*============ Creating filter API by product category ============*/
 add_action( 'rest_api_init', function () {
   register_rest_route( 'product', '/list', array(

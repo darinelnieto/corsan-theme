@@ -35,24 +35,24 @@
             }
             .desription-page{
                 color: #ffffff;
-                font-size: 30px;
+                font-size: 29px;
                 font-weight: 400;
             }
             .from-card{
                 margin: 0 auto;
-                background: $light_blue;
+                background: $white;
                 border-radius: 20px;
-                padding: 2rem;
-                max-width: 374px;
+                padding: 2rem 1rem;
+                max-width: 450px;
                 z-index: 20;
                 h2{
                     color: $blue;
-                    font-weight: 600;
+                    font-weight: 700;
                     font-size: 2rem;
                 }
                 p{
                     color: $gray;
-                    font-weight: 300;
+                    font-weight: 400;
                     font-size: .9rem;
                 }
                 .wpcf7-response-output{
@@ -65,9 +65,16 @@
                 }
                 .form{
                     .input{
+                        p{
+                            margin-bottom: 0;
+                            .wpcf7-not-valid-tip{
+                                position: absolute;
+                                right: 0;
+                            }
+                        }
                         label{
-                            font-size: 1.2rem;
-                            font-weight: 400;
+                            font-size: 1rem;
+                            font-weight: 600;
                             color: $gray;
                         }
                         input{
@@ -76,6 +83,7 @@
                             height: 38px;
                             border-radius: 10px;
                             border: 1px solid $gray;
+                            color: $gray;
                             padding: 0 10px;
                             outline: none;
                         }
@@ -98,15 +106,15 @@
                                 display: none;
                             }
                             .checkbox{
-                                width: 14px;
-                                height: 14px;
+                                width: 17px;
+                                height: 17px;
                                 border: 1px solid $blue;
                                 border-radius: 4px;
                                 position: relative;
                                 &::before{
                                     content: '';
-                                    width: 10px;
-                                    height: 4px;
+                                    width: 13px;
+                                    height: 6px;
                                     border-left: 2px solid $blue;
                                     border-bottom: 2px solid $blue;
                                     position: absolute;
@@ -193,7 +201,7 @@
                                         height: 12px;
                                         border-radius: 50%;
                                         position: absolute;
-                                        background: $light_blue;
+                                        background: $white;
                                         left: -35%;
                                         transform: translateX(35%);
                                         top: 9.9%;
@@ -205,7 +213,7 @@
                                         height: 12px;
                                         border-radius: 50%;
                                         position: absolute;
-                                        background: $light_blue;
+                                        background: $white;
                                         left: -35%;
                                         transform: translateX(35%);
                                         top: 59.9%;
@@ -242,6 +250,159 @@
                             }
                         }
                     }
+                }
+            }
+        }
+        @media (max-width: 480px) {
+            #content-contact{
+                .title-page{
+                    font-size: 40px;
+                }
+                .desription-page{
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    section.pqr-section {
+        padding: 2rem 0;
+        &::before{
+            content: '';
+            background: none;
+        }
+        .pqr-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            .pqr-left {
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                .pqr-title, .pqr-subtitle {
+                    font-size: 2.5rem;
+                    font-weight: bold;
+                    margin-bottom: 1rem;
+                    color: #002d74;
+                }
+                .pqr-subtitle {
+                    font-size: 1.5rem;
+                }
+                .pqr-list {
+                    list-style: none;
+                    padding: 0;
+                    li {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 1rem;
+                        color: #002d74;
+                        span {
+                            margin-right: 1rem;
+                            font-size: 1.2rem;
+                            color: #002d74;
+                        }
+                        a {
+                            color: #002d74;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+            .pqr-right {
+                text-align: center;
+            }
+            
+            .pqr-right p,
+            .pqr-right h3,
+            .pqr-right ul {
+                display: inline-block;
+                text-align: left;
+                margin: 0px auto 0 140px;
+            }
+            .pqr-right {
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                text-align: center;
+                p {
+                    font-size: 1.2rem;
+                    margin-bottom: 1rem;
+                    color: #002d74;
+                }
+                .pqr-title, .pqr-subtitle {
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    margin-bottom: 1rem;
+                    color: #002d74;
+                }
+                img {
+                    max-width: 80%;
+                    height: auto;
+                    margin-bottom: 1rem;
+                }
+                .pqr-list {
+                    list-style: none;
+                    padding: 0;
+                    li {
+                        display: flex;
+                        .li-img {
+                            width: 50px;
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            margin-right: 20px;
+                        }
+                        .pqr-text {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            color: #002d74;
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+            }
+            @media (max-width: 480px) {
+                .pqr-left {
+                    width: 100%;
+                    display: flex                    ;
+                    justify-content: center;
+                    align-items: flex-start;
+                    flex-direction: column;
+                }
+                .pqr-right {
+                    width: 100%;
+                    img {
+                        max-width: 100%;
+                        height: auto;
+                        margin-bottom: 1rem;
+                    }
+                    li {
+                        display: flex;
+                        .li-img {
+                            width: 40px;
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            margin-right: 10px;
+                        }
+                        .pqr-text {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            color: #002d74;
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+                .pqr-right p,
+                .pqr-right h3,
+                .pqr-right ul {
+                    margin: 0 auto 0 0;
                 }
             }
         }

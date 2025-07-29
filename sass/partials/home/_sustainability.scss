@@ -1,54 +1,149 @@
 .sustainability-partial-0c071c {
-    padding: 0 0 50px 0;
-    .title{
-        color: $blue;
-        font-weight: 700;
-        font-size: 3.5rem;
-        margin-bottom: 2rem;
-        @media(max-width:768px){
-            font-size: 2rem;
-        }
-    }
-    .description{
-        color: $blue;
-        font-size: 1.5rem;
-        font-weight: 400;
-        line-height: 1.2;
-        margin-bottom: 2rem;
-        @media(max-width:640px){
-            font-size: 1rem;
-        }
-    }
-    .card-gray{
-        background: #D9D9D9;
-        border-radius: 20px;
-        padding: 1rem 1.5rem;
+    background: $white;
+    .top-content{
         display: flex;
-        flex-direction: column;
-        gap: 20px;
-        height: 100%;
+        align-items: baseline;
+        @media(max-width:768px){
+            flex-direction: column;
+        }
         .image-contain{
-            text-align: center;
+            width: scaleVW(1032, $desktop);
+            height: scaleVW(810, $desktop);
             img{
-                max-width: 190px;
-                height: auto;
+                width: scaleVW(1032, $desktop);
+                height: scaleVW(810, $desktop);
             }
-        }
-        .text{
-            font-size: 1.5rem;
-            text-align: center;
-            color: $blue;
-            line-height: 1.3;
-            font-weight: 300;
-        }
-        @media(max-width:640px){
-            .image-contain{
+            @media(max-width:768px){
+                width: scaleVW(457, $movil);
+                height: scaleVW(359, $movil);
+                max-width: 100%;
                 img{
-                    max-width: 150px;
+                   width: 100%;
+                   height: auto;
                 }
             }
-            .text{
-                font-size: 1rem;
+        }
+        .text-content{
+            width: scaleVW(506, $desktop);
+            padding-bottom: scaleVW(149, $desktop);
+            @media(max-width:768px){
+                display: flex;
+                width: 100%;
+                gap: scaleVW(31, $movil);
+                align-items: center;
+                padding-bottom: 0;
+            }
+            h2{
+                color: $blue;
+                font-size: scaleVW(64, $desktop);
+                line-height: LH(58, 64);
+                font-weight: 700;
+                margin-bottom: scaleVW(42, $desktop);
+                @media(max-width:768px){
+                    width: scaleVW(220, $movil);
+                    font-size: scaleVW(32, $movil);
+                    line-height: LH(30, 32);
+                }
+            }
+            .iso-text{
+                background: $blue_light;
+                width: scaleVW(746, $desktop);
+                height: scaleVW(188, $desktop);
+                position: relative;
+                border-radius: scaleVW(94, $desktop) 0 0 scaleVW(94, $desktop);
+                display: flex;
+                align-items: center;
+                padding-left: scaleVW(90, $desktop);
+                span{
+                    font-size: scaleVW(64, $desktop);
+                    line-height: LH(58, 64);
+                    color: $white;
+                    font-weight: 700;
+                }
+                @media(max-width:768px){
+                    min-width: scaleVW(239, $movil);
+                    height: scaleVW(51, $movil);
+                    border-radius: scaleVW(94, $movil) 0 0 scaleVW(94, $movil);
+                    padding-left: scaleVW(20, $movil);
+                    span{
+                        font-size: scaleVW(24, $movil);
+                        line-height: LH(58, 24);
+                    }
+                }
+            }
+        }
+    }
+    /*=========== Process ===========*/
+    .bottom-content{
+        padding: scaleVW(81, $desktop) 0 scaleVW(211, $desktop) 0;
+        @media(max-width:768px){
+            padding: scaleVW(35, $movil) 0 scaleVW(86, $movil);
+        }
+        .description{
+            font-size: scaleVW(24, $desktop);
+            line-height: LH(40, 24);
+            color: $gray;
+            font-weight: 400;
+            margin-bottom: scaleVW(95, $desktop);
+            @media(max-width:768px){
+                font-size: scaleVW(16, $movil);
+                line-height: LH(20, 16);
+            }
+        }
+        .sustainability-cards{
+            display: flex;
+            gap: scaleVW(32, $desktop);
+            @media(max-width:768px){
+                flex-direction: column;
+                gap: scaleVW(32, $movil);
+                align-items: center;
+                padding-top: scaleVW(35, $movil);
+            }
+            .process-card{
+                display: flex;
+                flex-direction: column;
+                width: scaleVW(330.75, $desktop);
+                height: scaleVW(263, $desktop);
+                overflow: hidden;
+                border-radius: scaleVW(40, $desktop);
+                @media(max-width:768px){
+                    width: scaleVW(350, $movil);
+                    height: scaleVW(263, $movil);
+                    border-radius: scaleVW(40, $movil);
+                }
+                .image-contain{
+                    width: 100%;
+                    height: scaleVW(162, $desktop);
+                    @media(max-width:768px){
+                        width: scaleVW(350, $movil);
+                        height: scaleVW(162, $movil);
+                    }
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+                .process-text{
+                    background: $green;
+                    padding: scaleVW(16, $desktop);
+                    p{
+                        color: $white;
+                        font-size: scaleVW(20, $desktop);
+                        line-height: LH(23, 20);
+                        text-align: center;
+                        font-weight: 400;
+                    }
+                    @media(max-width:768px){
+                        width: scaleVW(350, $movil);
+                        height: scaleVW(101, $movil);
+                        padding: scaleVW(16, $movil);
+                        p{
+                            font-size: scaleVW(20, $movil);
+                        }
+                    }
+                }
             }
         }
     }

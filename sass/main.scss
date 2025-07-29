@@ -2,9 +2,9 @@
 
 // Ditto include zone (don't delete anything below)
 // #DittoPartials
+@import "./partials/home/products-slide";
 @import "./partials/home/sustainability";
 @import "./partials/home/videos-manuals-and-distributor";
-@import "./partials/home/your-best-ally";
 @import "./partials/single-products/related-products";
 @import "./partials/about/our-clients";
 @import "./partials/about/work-team";
@@ -19,7 +19,7 @@
 @import "./partials/solutions/taxonomies";
 @import "./partials/home/instagram";
 @import "./partials/home/community";
-@import "./partials/home/products-slide";
+@import "./partials/home/products-tabs";
 @import "./partials/home/banner";
 @import "./partials/working/photos-of-categories";
 @import "./partials/working/banner-working";
@@ -27,6 +27,8 @@
 @import "./partials/globals/header-content";
 
 // #DittoTemplates
+@import "./templates/map-template";
+@import "./templates/portfolio-template";
 @import "./templates/archive-communities-template";
 @import "./templates/single-blog-post-template";
 @import "./templates/archive-blog-template";

@@ -11,13 +11,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 $clients = get_field('clients');
 if($clients):
 ?>
-<section class="our-clients-partial-75cf3f">
+<div class="our-clients-partial-75cf3f">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12">
                 <h2 data-aos="fade-right"><?= get_field('our_client_title'); ?></h2>
             </div>
-            <div class="col-12 col-md-11">
+            <div class="col-12">
                 <div class="our-clients owl-carousel">
                     <?php foreach($clients as $client): ?>
                         <div class="item" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1000">
@@ -28,5 +28,5 @@ if($clients):
             </div>
         </div>
     </div>
-</section>
+</div>
 <?php endif; ?>         

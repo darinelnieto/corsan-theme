@@ -1,187 +1,146 @@
 .banner-partial-bfa418 {
-    /*======== Product taxonomies ========*/
     .taxonomies{
-        .row{
-            width: 100%;
-            margin: 0 auto;
-            .col-6{
-                padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        .taxonomi-card{
+            display: flex;
+            overflow: hidden;
+            width: scaleVW(480, $desktop);
+            height: scaleVW(640, $desktop);
+            position: relative;
+            @media(max-width:510px){
+                width: scaleVW(480, $movil);
+                height: scaleVW(640, $movil);
+            }
+            img{
+                width: 100%;
+            }
+            .text-taxonomy{
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: scaleVW(27, $desktop);
+                z-index: 1;
+                width: scaleVW(402, $desktop);
+                display: flex;
+                flex-direction: column;
+                gap: scaleVW(24, $desktop);
+                @media(max-width:510px){
+                    width: scaleVW(402, $movil);
+                    gap: scaleVW(24, $movil);
+                    bottom: scaleVW(27, $movil);
+                }
+                .name-category{
+                    text-align: center;
+                    color: $white;
+                    font-size: scaleVW(48, $desktop);
+                    line-height: LH(58, 48);
+                    font-weight: 700;
+                    margin: 0;
+                    filter:drop-shadow(0px 3px 4px black);
+                    @media(max-width:510px){
+                        font-size: scaleVW(48, $movil);
+                    }
+                }
                 a{
+                    display: flex;
+                    align-items: center;
+                    gap: scaleVW(159, $desktop);
+                    justify-content: center;
+                    width: 100%;
+                    height: scaleVW(70, $desktop);
+                    background: $blue;
+                    border-radius: scaleVW(10, $desktop);
                     text-decoration: none;
-                    .taxonomi-card{
-                        position: relative;
-                        overflow: hidden;
-                        img{
-                            width: 100%;
-                            height: 100%;
+                    transition: .2s;
+                    span{
+                        color: $white;
+                        font-size: scaleVW(24, $desktop);
+                    }
+                    svg{
+                        width: scaleVW(28, $desktop);
+                        height: scaleVW(28, $desktop);
+                    }
+                    &:hover{
+                        background: $white;
+                        span{
+                            color: $blue;
                         }
-                        .name-category{
-                            width: 100%;
-                            height: 0;
-                            position: absolute;
-                            bottom: 0;
-                            left: 0;
-                            visibility: hidden;
-                            transition: .2s;
-                            span{
-                                text-transform: uppercase;
-                                font-size: 3.5rem;
-                                color: #002D74;
-                                position: absolute;
-                                bottom: 1rem;
-                                left: 1rem;
-                                line-height: .9;
-                                font-weight: 700;
-                                white-space: break-spaces;
-                                word-wrap: break-word;
+                        svg{
+                            path{
+                                stroke: $blue;
                             }
                         }
-                        &:hover{
-                            .name-category{
-                                visibility: visible;
-                                height: 100%;
-                            }
+                    }
+                    @media(max-width:510px){
+                        height: scaleVW(70, $movil);
+                        border-radius:  scaleVW(10, $movil);
+                        gap: scaleVW(159, $movil);
+                        span{
+                            font-size: scaleVW(24, $movil);
+                        }
+                        svg{
+                            width: scaleVW(28, $movil);
+                            height: scaleVW(28, $movil);
                         }
                     }
                 }
             }
         }
     }
-    /*======== Products slide ========*/
-    .products-slide-container{
-        position: relative;
-        height: 500px;
-        .texture-slide{
-            width: 100%;
-            height: 100%;
+    /*========= After banner =========*/
+    .after-banner{
+        background: $white;
+        padding: scaleVW(102, $desktop) 0;
+        .text-contain{
+            display: flex;
+            flex-direction: column;
+            gap: scaleVW(45, $desktop);
+            max-width: scaleVW(650, $desktop);
+            h1{
+                color: $blue;
+                font-size: scaleVW(64,$desktop);
+                font-weight: 700;
+                margin-bottom: 0;
+                line-height: 1;
+            }
+            .description{
+                font-size: scaleVW(32, $desktop);
+                line-height: LH(40, 32);
+                font-weight: 300;
+                color: $gray;
+                margin-bottom: 0;
+            }
         }
-        .slide-products{
-            position: relative;
-            z-index: 10;
-            visibility: hidden;
-            object-fit: cover;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            max-width: 90%;
-            transition: .4s;
-            .owl-stage{
-                display: flex;
-                align-items: center;
-                .row{
-                    padding: 0 2px;
-                    .short-description{
-                        color: $blue;
-                        font-size: 1.5rem;
-                        line-height: 1.2;
-                        font-weight: 400;
-                        @media(max-width:640px){
-                            font-size: 1rem;
-                        }
-                    }
-                    /*========= Ctas banner =========*/
-                    .ctas-container{
-                        display: flex;
-                        align-items: center;
-                        .permalink-product{
-                            border: 1px solid $blue;
-                            display: block;
-                            width: fit-content;
-                            padding: 8px 2rem;
-                            border-radius: 30px;
-                            text-decoration: none;
-                            color: $blue;
-                            font-size: 1.3rem;
-                            transition: .2s;
-                            &:hover{
-                                background: $light_blue;
-                                color: $blue;
-                            }
-                            @media(max-width:510px){
-                                width: 40%;
-                                font-size: 1rem;
-                                padding: 6px 1rem;
-                                text-align: center;
-                            }
-                        }
-                        .solutions-link{
-                            position: relative;
-                            display: flex;
-                            max-width: 250px;
-                            margin-left: 2rem;
-                            .text-cta{
-                                position: absolute;
-                                color: #ffffff;
-                                top: 50%;
-                                transform: translate(-20%, -50%);
-                                left: 20%;
-                                font-size: 1.3rem;
-                                transition: .2s;
-                            }
-                            svg{
-                                max-width: 250px;
-                                path{
-                                    transition: .2s;
-                                }
-                            }
-                            .icon{
-                                svg{
-                                    position: absolute;
-                                    top: 50%;
-                                    left: 92%;
-                                    transform: translate(-92%, -50%);
-                                    width: 14px;
-                                    height: auto;
-                                }
-                            }
-                            &:hover{
-                                .text-cta{
-                                    color: $blue;
-                                }
-                                svg{
-                                    path{
-                                        fill: $light_blue;
-                                    }
-                                }
-                                .icon{
-                                    svg{
-                                        g{
-                                            line{
-                                                stroke:$blue;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                            @media(max-width:510px){
-                                margin-left: 1rem;
-                                width: 55%;
-                                .text-cta{
-                                    font-size: 1rem;
-                                }
-                                .icon{
-                                    svg{
-                                        left: 93%;
-                                        transform: translate(-93%, -50%);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    .product-image{
-                        width: 100%;
-                        max-width: 400px;
-                        margin: 0 auto;
-                    }
-                    @media(max-width:768px){
-                        flex-direction: column-reverse;
-                    }
-                }
+        .image-contain{
+            img{
+                width: scaleVW(785, $desktop);
+                height: scaleVW(527, $desktop);
             }
         }
         @media(max-width:768px){
-            min-height: 700px;
+            padding: scaleVW(88, $movil) 0 scaleVW(70, $movil) 0;
+            .text-contain{
+                max-width: 100%;
+                gap: scaleVW(32, $movil);
+                margin-bottom: scaleVW(53, $movil);
+                h1{
+                    font-size: scaleVW(32, $movil);
+                }
+                .description{
+                    font-size: scaleVW(20, $movil);
+                    line-height: LH(25, 20);
+                }
+            }
+            .image-contain{
+                img{
+                    width: scaleVW(462, $movil);
+                    height: scaleVW(310, $movil);
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
         }
     }
 }

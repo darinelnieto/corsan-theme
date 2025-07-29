@@ -13,8 +13,6 @@ get_header();
 <main id="single-product-template-15a47a">
     <!-- Products details -->
     <?php get_template_part('partials/single-products/product-details'); ?>
-    <!-- Sales format -->
-    <?php get_template_part('partials/single-products/sales-format'); ?>
     <!-- Related products -->
     <?php get_template_part('partials/single-products/related-products'); ?>
 </main>

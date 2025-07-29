@@ -39,6 +39,16 @@
     font-style: normal;
     font-display: swap;
 }
+/*========== Sizes and line-height functions ==========*/
+$movil: 480;
+$lg: 1600;
+$desktop: 1920;
+@function scaleVW($size, $viewportWidth) {
+    @return calc(($size * 100) / $viewportWidth) * 1vw;
+}
+@function LH($lineheight, $fontSize) {
+    @return calc($lineheight / $fontSize);
+}
 /*=========== Fonts globals ===========*/
 *{
     font-family: 'Roboto';
@@ -46,8 +56,16 @@
 /*========== Variables ==========*/
 $light_blue: #B2B7D3;
 $blue: #002D74;
-$gray: #808184;
+$blue_light: #397DC9;
+$gray: #4D4D4D;
+$gray_bg: #F0F0F0;
 $white: #ffffff;
+$green: #7FB116;
+/*============ Dev style ===========*/
+#wpadminbar{
+    top: inherit;
+    bottom: 0;
+}
 /*========= Admin wordpress front =========*/
 html{
     margin-top: 0 !important;
@@ -55,6 +73,14 @@ html{
 body, html{
     width: 100%;
     overflow-x: hidden;
+    .container{
+        width: 100%;
+        max-width: scaleVW(1424, $desktop);
+        padding: 0;
+        @media(max-width:768px){
+            max-width: scaleVW(423, $movil);
+        }
+    }
 }
 /*=========== 404 ==========*/
 #ditto_404_error{

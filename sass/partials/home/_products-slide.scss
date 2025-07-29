@@ -1,156 +1,176 @@
-.products-slide-partial-5303c9 {
-    padding: 2.5rem 0 2rem 0;
-    @media(max-width:768px){
-        padding: 2.5rem 0 0 0;
-    }
-    .container{
-        width: 100%;
-        max-width: 1300px;
-        .solutions-title{
-            color: $blue;
-            font-weight: 700;
-            font-size: 3.5rem;
-            margin-bottom: 0;
+.products-slide-partial-19f476 {
+    padding: scaleVW(111, $desktop) 0;
+    background: $white;
+    .prduct-slide-home{
+        @media(max-width:768px){
+            margin-bottom: scaleVW(34, $movil);
+        }
+        .item{
+            display: flex;
+            align-items: center;
+            gap: scaleVW(40, $desktop);
             @media(max-width:768px){
-                font-size: 2rem;
-                margin-bottom: 10px;
-                text-align: left;
+                flex-direction: column;
+                gap: 0;
             }
-        }
-        .solutions-description{
-            color: $blue;
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            font-weight: 400;
-            @media(max-width:640px){
-                text-align: left;
-                font-size: 1rem;
+            .image-contain{
+                width: scaleVW(773, $desktop);
+                height: scaleVW(475, $desktop);
+                @media(max-width:768px){
+                    width: scaleVW(448, $movil);
+                    height: scaleVW(329, $movil);
+                }
+                img{
+                    width: 100%;
+                    height: auto;
+                }
             }
-        }
-        /*======== Product slide ========*/
-        .slide-name{
-            color: $blue;
-            margin-bottom: 1.2rem;
-            font-size: 1.4rem;
-            font-weight: 400;
-            @media(max-width:640px){
-                font-size: 1.1rem;
-            }
-        }
-        .products-slide{
-            visibility: hidden;
-            transition: .4s;
-            .item{
-                a{
+            .text-contain{
+                width: scaleVW(612, $desktop);
+                @media(max-width:768px){
+                    width: scaleVW(402, $movil);
+                }
+                .product-name{
+                    font-size: scaleVW(64, $desktop);
+                    line-height: LH(58, 64);
+                    font-weight: 700;
+                    color: $blue;
+                    margin-bottom: scaleVW(16, $desktop);
+                    @media(max-width:768px){
+                        font-size: scaleVW(36, $movil);
+                        line-height: LH(58, 36);
+                        margin-bottom: scaleVW(16, $movil);
+                    }
+                }
+                .advantages-title{
+                    font-size: scaleVW(32, $desktop);
+                    line-height: LH(40, 32);
+                    color: $gray;
+                    font-weight: 700;
+                    margin-bottom: 0;
+                    @media(max-width:768px){
+                        font-size: scaleVW(20, $movil);
+                        line-height: LH(40, 20);
+                    }
+                }
+                .advantages{
+                    list-style: none;
+                    padding: 0;
+                    margin-bottom: scaleVW(66, $desktop);
+                    @media(max-width:768px){
+                        margin-bottom: scaleVW(66, $movil);
+                    }
+                    li{
+                        display: flex;
+                        align-items: center;
+                        gap: scaleVW(5, $desktop);
+                        font-size: scaleVW(32, $desktop);
+                        line-height: LH(40, 32);
+                        color: $gray;
+                        font-weight: 400;
+                        svg{
+                            width: scaleWV(23.264, $desktop);
+                            height: scaleVW(24.64, $desktop);
+                        }
+                        @media(max-width:768px){
+                            font-size: scaleVW(20, $movil);
+                            line-height: LH(40, 20);
+                            svg{
+                                width: scaleWV(23.264, $movil);
+                                height: scaleVW(24.64, $movil);
+                            }
+                        }
+                    }
+                }
+                .cta{
+                    background: $blue;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border-radius: scaleVW(10, $desktop);
+                    padding: scaleVW(21, $desktop) scaleVW(39, $desktop);
+                    width: scaleVW(402, $desktop);
+                    height: scaleVW(70, $desktop);
+                    border: scaleVW(1, $desktop) solid $blue;
+                    color: $white;
                     text-decoration: none;
-                    .card-product{
-                        text-align: center;
-                        .img-container{
-                            position: relative;
-                            &::before{
-                                content: '';
-                                background: #D9D9D9;
-                                width: 150px;
-                                height: 150px;
-                                border-radius: 50%;
-                                position: absolute;
-                                top: 50%;
-                                left: 50%;
-                                transform: translate(-50%, -50%);
-                            }
-                            img{
-                                max-width: 200px;
-                                height: auto;
-                                position: relative;
-                                z-index: 10;
-                                margin: 0 auto;
-                                transition: .3s;
-                            }
+                    font-weight: 400;
+                    font-size: scaleVW(24, $desktop);
+                    line-height: LH(28, 24);
+                    transition: .2s;
+                    svg{
+                        width: scaleVW(28, $desktop);
+                        height: scaleVW(28, $desktop);
+                    }
+                    @media(max-width:768px){
+                        border-radius: scaleVW(10, $movil);
+                        padding: scaleVW(21, $movil) scaleVW(39, $movil);
+                        width: scaleVW(402, $movil);
+                        height: scaleVW(70, $movil);
+                        border: scaleVW(1, $movil) solid $blue;
+                        font-size: scaleVW(24, $movil);
+                        svg{
+                            width: scaleVW(28, $movil);
+                            height: scaleVW(28, $movil);
                         }
-                        .product-name{
-                            margin-top: 1.4rem;
-                            h4{
-                                color: $blue;
-                                text-transform: uppercase;
-                                font-size: 1.4rem;
-                                font-weight: 400;
-                            }
-                            @media(max-width:640px){
-                                margin: 5px;
-                                h4{
-                                    font-size: 16px;
-                                }
-                            }
-                        }
-                        &:hover{
-                            .img-container{
-                                .color-hover{
-                                    visibility: visible;
-                                }
-                                img{
-                                    transform: scale(1.05);
-                                }
+                    }
+                    &:hover{
+                        background: $white;
+                        color: $blue;
+                        svg{
+                            path{
+                                stroke: $blue;
                             }
                         }
                     }
                 }
             }
-            /*======= Nav =======*/
-            .owl-nav{
+        }
+    }
+    .nav{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: scaleWV(8, $desktop);
+        list-style: none;
+        .prev, .next{
+            svg{
+                width: scaleVW(40, $desktop);
+                height: scaleVW(40, $desktop);
+                @media(max-width:768px){
+                    width: scaleVW(40, $movil);
+                    height: scaleVW(40, $movil);
+                }
+            }
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            padding: scaleVW(8, $desktop);
+            align-items: center;
+            gap: scaleVW(10, $desktop);
+            .dot{
                 display: flex;
-                align-items: center;
-                position: absolute;
-                right: 0;
-                bottom: 107%;
-                button{
-                    outline: none;
-                    svg{
-                        g{
-                            g{
-                                line, circle{
-                                    transition: .2s;
-                                }
-                            }
-                        }
-                    }
-                    &:hover{
-                        svg{
-                            g{
-                                g{
-                                    circle{
-                                        fill:$blue;
-                                    }
-                                }
-                                g{
-                                    line{
-                                        stroke: #ffffff;
-                                    }
-                                }
-                            }
-                        }
-                    }
+                width: scaleVW(12, $desktop);
+                height: scaleVW(12, $desktop);
+                border-radius: 50%;
+                background: $gray;
+            }
+            .active{
+                background: $blue;
+                width: scaleVW(16, $desktop);
+                height: scaleVW(16, $desktop);
+            }
+            @media(max-width:768px){
+                padding: scaleVW(8, $movil);
+                gap: scaleVW(10, $movil);
+                .dot{
+                    width: scaleVW(12, $movil);
+                    height: scaleVW(12, $movil);
                 }
-                .owl-prev{
-                    margin-right: 10px;
-                }
-                .disabled{
-                    opacity: .4;
-                    &:hover{
-                        svg{
-                            g{
-                                g{
-                                    circle{
-                                        fill:none;
-                                    }
-                                }
-                                g{
-                                    line{
-                                        stroke: #002d74;
-                                    }
-                                }
-                            }
-                        }
-                    }
+                .active{
+                    width: scaleVW(16, $movil);
+                    height: scaleVW(16, $movil);
                 }
             }
         }
