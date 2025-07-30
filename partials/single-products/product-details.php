@@ -29,7 +29,9 @@ $cat = get_the_terms(get_the_id(), 'product_cat');
 						<div class="slide-contain" id="slideGallery">
 							<?php $nav = 0; foreach($gallery as $image): $nav++; ?>
 								<div class="item-image <?php if($nav === 1): ?>show<?php endif; ?>" id="item-<?= $nav; ?>">
-									<img src="<?= $image['url']; ?>" alt="<?= $image['title']; ?>">
+									<a href="<?= $image['url']; ?>" class="zoom-trigger">
+										<img src="<?= $image['url']; ?>" alt="<?= $image['title']; ?>" width="<?= $image['width']; ?>" height="<?= $image['height']; ?>" class="zoom-image">
+									</a>
 								</div>
 							<?php endforeach; ?>
 						</div>
@@ -46,15 +48,9 @@ $cat = get_the_terms(get_the_id(), 'product_cat');
 							<span class="text">
 								<?php if(get_bloginfo("language") == "en-US"): ?>More information<?php else: ?>Más información<?php endif; ?>
 							</span>
-							<span class="icon">
-								<svg xmlns="http://www.w3.org/2000/svg" width="15.656" height="15.656" viewBox="0 0 15.656 15.656">
-									<g id="Grupo_240" data-name="Grupo 240" transform="translate(-1539.091 -986.869)">
-										<line id="Línea_13" data-name="Línea 13" y1="14.802" x2="14.802" transform="translate(1539.444 987.369)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1"/>
-										<line id="Línea_14" data-name="Línea 14" x2="11.698" transform="translate(1542.548 987.369)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1"/>
-										<line id="Línea_15" data-name="Línea 15" y2="11.698" transform="translate(1554.246 987.369)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1"/>
-									</g>
-								</svg>
-							</span>
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M12.62 20.81C12.28 20.93 11.72 20.93 11.38 20.81C8.48 19.82 2 15.69 2 8.68998C2 5.59998 4.49 3.09998 7.56 3.09998C9.38 3.09998 10.99 3.97998 12 5.33998C13.01 3.97998 14.63 3.09998 16.44 3.09998C19.51 3.09998 22 5.59998 22 8.68998C22 15.69 15.52 19.82 12.62 20.81Z" stroke="#FCF4F4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
 						</div>
 					</div>
 				</div>
@@ -75,11 +71,18 @@ $cat = get_the_terms(get_the_id(), 'product_cat');
         </div>
     </div>
 </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.21/jquery.zoom.min.js"></script>
 <script>
 	$('.nav-galery').on('click', '.item-image', function(e){
 		var item = $(this).attr('href');
 		$('.item-image').removeClass('show');
 		$(item).addClass('show');
 		e.preventDefault();
+	});
+	$('.zoom-trigger').each(function() {
+		$(this).zoom({
+			url: $(this).attr('href'),
+			magnify: 2
+		});
 	});
 </script>

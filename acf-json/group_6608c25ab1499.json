@@ -118,6 +118,66 @@
                     "bidirectional_target": []
                 }
             ]
+        },
+        {
+            "key": "field_688979a2b18fa",
+            "label": "Sales format",
+            "name": "sales_format",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_688979d0b18fb",
+                    "label": "Title",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_688979d7b18fc",
+                    "label": "Table",
+                    "name": "table",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "<table>\r\n     <thead>\r\n           <tr>\r\n               <th>título de la columna<\/th>\r\n               <th>título de la columna<\/th>\r\n           <\/tr>\r\n     <\/thead>\r\n     <tbody>\r\n           <tr>\r\n               <td>Valor de la columna<\/td>\r\n               <td>Valor de la columna<\/td>\r\n           <\/tr>\r\n     <\/tbody>\r\n<\/table>",
+                    "allow_in_bindings": 0,
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                }
+            ]
         }
     ],
     "location": [
@@ -138,5 +198,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753760502
+    "modified": 1753841087
 }

@@ -1,0 +1,47 @@
+.tecnical-caracteristics-partial-c0e2d0 {
+    background: $gray_bg;
+    padding-bottom: scaleVW(96, $desktop);
+    .caracteristics{
+        background: $white;
+        border-radius: scaleVW(20, $desktop);
+        padding: scaleVW(61, $desktop) scaleVW(146, $desktop);
+        h2{
+            color: $gray;
+            font-size: scaleVW(32, $desktop);
+            line-height: LH(40, 32);
+            margin-bottom: scaleVW(21, $desktop);
+            font-weight: 700;
+            text-align: center;
+        }
+        .description{
+            color: $gray;
+            font-size: scaleVW(24, $desktop);
+            line-height: LH(32, 24);
+            margin-bottom: scaleVW(58, $desktop);
+            font-weight: 400;
+            text-align: center;
+        }
+        .caracteristics-list{
+            display: flex;
+            flex-wrap: wrap;
+            gap: scaleVW(54, $desktop);
+            .item{
+                width: scaleVW(327, $desktop);
+                height: scaleVW(150, $desktop);
+                display: flex;
+                gap: scaleVW(30, $desktop);
+                img{
+                    width: scaleVW(40, $desktop);
+                    height: scaleVW(40, $desktop);
+                }
+                p{
+                    width: scaleVW(257, $desktop);
+                    color: $gray;
+                    font-size: scaleVW(20, $desktop);
+                    line-height: LH(34, 20);
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+}

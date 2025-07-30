@@ -1,6 +1,6 @@
 .product-details-partial-d60d33 {
     background: $gray_bg;
-    padding: scaleVW(33, $desktop) 0 scaleVW(140, $desktop);
+    padding: scaleVW(33, $desktop) 0;
     .container{
         .top-contain{
             display: flex;
@@ -40,12 +40,24 @@
                         min-width: scaleVW(527, $desktop);
                         height: scaleVW(572, $desktop);
                         display: none;
-                        img{
+                        .zoom-trigger{
                             width: 100%;
                             height: 100%;
-                            object-fit: cover;
-                            object-position: center;
-                            border-radius: scaleVW(10, $desktop);
+                            position: relative;
+                            overflow: hidden;
+                            display: block;
+                            .zoom-image {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                border-radius: scaleVW(10, $desktop);
+                                transition: transform 0.3s ease-in-out;
+                            }
+                            &:hover{
+                                .zoom-image{
+                                    transform: scale(1.5);
+                                }
+                            }
                         }
                     }
                     .item-image.show{
@@ -81,10 +93,35 @@
                     p{
                         font-size: scaleVW(24, $desktop);
                         line-height: LH(40, 24);
+                        font-weight: 400;
                         color: $gray;
                         strong{
                            font-size: scaleVW(32, $desktop); 
                            line-height: LH(40, 32);
+                           font-weight: 700;
+                        }
+                    }
+                }
+                .cta-more-information{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: scaleVW(121, $desktop);
+                    background: $blue;
+                    color: $white;
+                    width: scaleVW(402, $desktop);
+                    height: scaleVW(70, $desktop);
+                    border-radius: scaleVW(10, $desktop);
+                    border: scaleVW(1, $desktop) solid $blue;
+                    transition: .2s;
+                    cursor: pointer;
+                    &:hover{
+                        background: $white;
+                        color: $blue;
+                        svg{
+                            path{
+                                stroke: $blue;
+                            }
                         }
                     }
                 }
