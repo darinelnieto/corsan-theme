@@ -223,6 +223,13 @@
                     }
                     .description{
                         color: $white;
+                        a{
+                            font-size: scaleVW(22, $desktop);
+                            line-height: LH(27, 22);
+                            font-weight: 600;
+                            text-decoration: none;
+                            color: $white;
+                        }
                         strong{
                             font-size: scaleVW(22, $desktop);
                             line-height: LH(27, 22);

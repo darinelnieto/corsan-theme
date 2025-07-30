@@ -4378,6 +4378,13 @@ body .container, html .container {
 #contact-us-template-55cc3c .after-form .text-contain .right-contain .content .description {
   color: #ffffff;
 }
+#contact-us-template-55cc3c .after-form .text-contain .right-contain .content .description a {
+  font-size: 1.1458333333vw;
+  line-height: 1.2272727273;
+  font-weight: 600;
+  text-decoration: none;
+  color: #ffffff;
+}
 #contact-us-template-55cc3c .after-form .text-contain .right-contain .content .description strong {
   font-size: 1.1458333333vw;
   line-height: 1.2272727273;
