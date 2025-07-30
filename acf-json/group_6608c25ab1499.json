@@ -30,6 +30,8 @@
             "insert": "append",
             "preview_size": "medium"
         },
+        false,
+        false,
         {
             "key": "field_68884257fc859",
             "label": "Tecnical caracteristics group",
@@ -119,6 +121,7 @@
                 }
             ]
         },
+        false,
         {
             "key": "field_688979a2b18fa",
             "label": "Sales format",
@@ -178,7 +181,8 @@
                     "delay": 0
                 }
             ]
-        }
+        },
+        false
     ],
     "location": [
         [
@@ -198,5 +202,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753841087
+    "modified": 1753867659
 }

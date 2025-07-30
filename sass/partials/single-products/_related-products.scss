@@ -1,132 +1,161 @@
 .related-products-partial-573627 {
-    padding: 2rem 0;
-    .container{
-        width: 100%;
-        max-width: 1300px;
-        h2{
-            color: $blue;
-            font-weight: 700;
-            font-size: 3.5rem;
-            margin-bottom: 2rem;
-            @media(max-width:500px){
-                font-size: 2.5rem;
-                margin-bottom: 5rem;
-            }
-        }
-        .products-slide{
-            visibility: hidden;
-            transition: .4s;
-            .item{
-                a{
-                    text-decoration: none;
-                    .card-product{
-                        text-align: center;
-                        .img-container{
-                            position: relative;
-                            &::before{
-                                content: '';
-                                background: #D9D9D9;
-                                width: 70%;
-                                min-width: 210px;
-                                max-width: 210px;
-                                height: 90%;
-                                border-radius: 10px;
-                                position: absolute;
-                                top: 50%;
-                                left: 50%;
-                                transform: translate(-50%, -50%);
-                            }
-                            img{
-                                max-width: 200px;
-                                height: auto;
-                                position: relative;
-                                z-index: 10;
-                                margin: 0 auto;
-                                transition: .3s;
-                            }
+    background: #D4D4D4;
+    padding: scaleVW(110, $desktop) 0;
+    h2{
+        font-size: scaleVW(48, $desktop);
+        line-height: LH(56, 48);
+        margin-bottom: scaleVW(32, $desktop);
+        color: $blue;
+        font-weight: 700;
+    }
+    .products-slide{
+        .card-produc{
+            text-decoration: none;
+            width: scaleVW(304, $desktop);
+            height: scaleVW(388, $desktop);
+            border-radius: scaleVW(10, $desktop);
+            background: $white;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            .body-product{
+                padding: scaleVW(26, $desktop) scaleVW(24, $desktop);
+                .product-name{
+                    position: relative;
+                    z-index: 1;
+                    h4{
+                        color: $blue;
+                        font-size: scaleVW(20, $desktop);
+                        margin-bottom: 0;
+                        font-weight: 700;
+                        width: scaleVW(222, $desktop);
+                    }
+                    p{
+                        font-size: scaleVW(15, $desktop);
+                        font-weight: 600;
+                        color: $gray;
+                        margin: 0;
+                    }
+                }
+                .img-container{
+                    width: scaleVW(256, $desktop);
+                    height: scaleVW(288, $desktop);
+                    margin: 0 auto;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+                .end-card{
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    bottom: scaleVW(26, $desktop);
+                    display: flex;
+                    flex-direction: column;
+                    gap: scaleVW(14, $desktop);
+                    width: scaleVW(258, $desktop);
+                    .cta-card{
+                        display: flex;
+                        align-items: center;
+                        gap: scaleVW(159, $desktop);
+                        justify-content: center;
+                        width: 100%;
+                        height: scaleVW(44, $desktop);
+                        background: $blue;
+                        border-radius: scaleVW(4, $desktop);
+                        text-decoration: none;
+                        transition: .2s;
+                        border: scaleVW(1, $desktop) solid $blue;
+                        span{
+                            color: $white;
+                            font-size: scaleVW(16, $desktop);
                         }
-                        .product-name{
-                            margin-top: 1.4rem;
-                            h4{
-                                color: $blue;
-                                text-transform: uppercase;
-                                font-size: 1.4rem;
-                                font-weight: 400;
-                            }
+                        svg{
+                            width: scaleVW(14, $desktop);
+                            height: scaleVW(14, $desktop);
                         }
                         &:hover{
-                            .img-container{
-                                .color-hover{
-                                    visibility: visible;
+                            background: $white;
+                            span{
+                                color: $blue;
+                            }
+                            svg{
+                                path{
+                                    stroke: $blue;
                                 }
-                                img{
-                                    transform: scale(1.05);
-                                }
+                            }
+                        }
+                        @media(max-width:510px){
+                            height: scaleVW(70, $movil);
+                            border-radius:  scaleVW(10, $movil);
+                            gap: scaleVW(159, $movil);
+                            span{
+                                font-size: scaleVW(24, $movil);
+                            }
+                            svg{
+                                width: scaleVW(28, $movil);
+                                height: scaleVW(28, $movil);
                             }
                         }
                     }
                 }
             }
-            /*======= Nav =======*/
-            .owl-nav{
+        }
+    }
+    /*======== Nav a dots ========*/
+    .nav{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: scaleWV(8, $desktop);
+        list-style: none;
+        margin-top: scaleVW(43, $desktop);
+        .prev, .next{
+            svg{
+                width: scaleVW(40, $desktop);
+                height: scaleVW(40, $desktop);
+                @media(max-width:768px){
+                    width: scaleVW(40, $movil);
+                    height: scaleVW(40, $movil);
+                }
+            }
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            padding: scaleVW(8, $desktop);
+            align-items: center;
+            gap: scaleVW(10, $desktop);
+            .dot{
                 display: flex;
-                align-items: center;
-                position: absolute;
-                right: 0;
-                bottom: 107%;
-                button{
-                    outline: none;
-                    svg{
-                        g{
-                            g{
-                                line, circle{
-                                    transition: .2s;
-                                }
-                            }
-                        }
-                    }
-                    &:hover{
-                        svg{
-                            g{
-                                g{
-                                    circle{
-                                        fill:$blue;
-                                    }
-                                }
-                                g{
-                                    line{
-                                        stroke: #ffffff;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                .owl-prev{
-                    margin-right: 10px;
-                }
-                .disabled{
-                    opacity: .4;
-                    &:hover{
-                        svg{
-                            g{
-                                g{
-                                    circle{
-                                        fill:none;
-                                    }
-                                }
-                                g{
-                                    line{
-                                        stroke: #002d74;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                width: scaleVW(12, $desktop);
+                height: scaleVW(12, $desktop);
+                border-radius: 50%;
+                background: $gray;
             }
-            .owl-nav.disabled{
-                display: none;
+            .active{
+                background: $blue;
+                width: scaleVW(16, $desktop);
+                height: scaleVW(16, $desktop);
+            }
+            @media(max-width:768px){
+                padding: scaleVW(8, $movil);
+                gap: scaleVW(10, $movil);
+                .dot{
+                    width: scaleVW(12, $movil);
+                    height: scaleVW(12, $movil);
+                }
+                .active{
+                    width: scaleVW(16, $movil);
+                    height: scaleVW(16, $movil);
+                }
             }
         }
     }
