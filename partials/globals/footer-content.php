@@ -21,10 +21,7 @@ $social_network = get_field('social_networks_footer', 'option');
                 <img src="<?= $logo['url']; ?>" alt="<?= $logo['title']; ?>">
             </div>
             <div class="col-12 col-lg-4 mb-5 mb-md-0 suscribe">
-                <p class="intro"><?= get_field('form_intro', 'option'); ?></p>
-                <div class="suscription-form">
-                    <?= do_shortcode(get_field('shortcode_form_suscribe', 'option')); ?>
-                </div>
+                
             </div>
             <div class="col-12 col-md-8 col-lg-5 menu-nav-container">
                 <div class="row justify-content-md-end">
@@ -38,12 +35,6 @@ $social_network = get_field('social_networks_footer', 'option');
                         <h4><?php if(get_bloginfo("language") == "en-US"):?>Help<?php else: ?>Ayuda<?php endif; ?></h4>
                         <div class="the-nav">
                             <?php wp_nav_menu(['menu' => 'help']); ?>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-4 mb-5 mb-md-0 nav-footer">
-                        <h4>Community</h4>
-                        <div class="the-nav">
-                            <?php wp_nav_menu(['menu' => 'Community']); ?>
                         </div>
                     </div>
                 </div>

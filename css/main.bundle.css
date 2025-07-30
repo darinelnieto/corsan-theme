@@ -2572,7 +2572,6 @@ body .container, html .container {
 }
 .banner-partial-bfa418 .taxonomies {
   display: flex;
-  flex-wrap: wrap;
   padding: 0;
 }
 .banner-partial-bfa418 .taxonomies .taxonomi-card {
