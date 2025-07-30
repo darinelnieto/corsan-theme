@@ -30,8 +30,6 @@
             "insert": "append",
             "preview_size": "medium"
         },
-        false,
-        false,
         {
             "key": "field_68884257fc859",
             "label": "Tecnical caracteristics group",
@@ -121,7 +119,6 @@
                 }
             ]
         },
-        false,
         {
             "key": "field_688979a2b18fa",
             "label": "Sales format",
@@ -182,7 +179,74 @@
                 }
             ]
         },
-        false
+        {
+            "key": "field_6889e70beb951",
+            "label": "Related manuals",
+            "name": "related_manuals",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_6889e71ceb952",
+                    "label": "Title",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_6889e726eb953",
+                    "label": "Manuals",
+                    "name": "manuals",
+                    "aria-label": "",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "communities"
+                    ],
+                    "post_status": [
+                        "publish"
+                    ],
+                    "taxonomy": "",
+                    "return_format": "object",
+                    "multiple": 1,
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "bidirectional": 0,
+                    "ui": 1,
+                    "bidirectional_target": []
+                }
+            ]
+        }
     ],
     "location": [
         [
@@ -202,5 +266,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753867659
+    "modified": 1753868105
 }

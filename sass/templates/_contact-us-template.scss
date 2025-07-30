@@ -1,408 +1,239 @@
 #contact-us-template-55cc3c {
-    section{
-        position: relative;
-        min-height: 100vh;
-        overflow: hidden;
-        .background-image{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        &::before{
-            content: '';
-            width: 100%;
-            height: 101%;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(0, 45, 116, .8);
-            z-index: 9;
-        }
-        #content-contact{
-            position: relative;
-            z-index: 10;
-            align-items: center;
-            padding: 9rem 0 5rem 0;
-            .title-page{
-                color: #ffffff;
-                font-size: 66px;
-                font-weight: 600;
+    .contact-content{
+        background: $gray_bg;
+        padding: scaleVW(48, $desktop) 0 scaleVW(80, $desktop) 0;
+        .text-content{
+            display: flex;
+            flex-direction: column;
+            gap: scaleVW(32, $desktop);
+            height: scaleVW(270.46, $desktop);
+            margin-bottom: scaleVW(60, $desktop);
+            .text-before-title{
+                color: $gray;
+                font-size: scaleVW(24, $desktop);
+                line-height: LH(36, 24);
             }
-            .desription-page{
-                color: #ffffff;
-                font-size: 29px;
-                font-weight: 400;
+            h1{
+                max-width: scaleVW(756, $desktop);
+                font-size: scaleVW(48, $desktop);
+                line-height: LH(56, 48);
+                font-weight: 700;
+                color: $blue;
+                margin-bottom: 0;
             }
-            .from-card{
-                margin: 0 auto;
-                background: $white;
-                border-radius: 20px;
-                padding: 2rem 1rem;
-                max-width: 450px;
-                z-index: 20;
-                h2{
-                    color: $blue;
-                    font-weight: 700;
-                    font-size: 2rem;
+        }
+        .form{
+            width: scaleVW(1439, $desktop);
+            .inputs-contain{
+                display: flex;
+                align-items: center;
+                gap: scaleVW(32, $desktop);
+                margin-bottom: scaleVW(48, $desktop);
+                .input{
+                    input{
+                        padding: scaleVW(10, $desktop) scaleVW(10, $desktop) scaleVW(32, $desktop) scaleVW(10, $desktop);
+                        background: transparent;
+                        border: none;
+                        border-bottom: scaleVW(2, $desktop) solid #CACACA;
+                        color: $gray;
+                        font-size: scaleVW(24, $desktop);
+                        line-height: LH(36, 24);
+                        width: scaleVW(458.33, $desktop);
+                        height: scaleVW(78, $desktop);
+                        outline: none;
+                        &:focus{
+                            border-color: $gray;
+                        }
+                    }
                 }
-                p{
+            }
+            .text-area{
+                margin-bottom: scaleVW(48, $desktop);
+                textarea{
+                    padding: scaleVW(10, $desktop);
+                    background: transparent;
+                    border: none;
+                    border-bottom: scaleVW(2, $desktop) solid #CACACA;
                     color: $gray;
-                    font-weight: 400;
-                    font-size: .9rem;
-                }
-                .wpcf7-response-output{
-                    background: #ffffff;
-                    color: $blue;
-                    font-size: 16px;
-                    font-weight: 300;
-                    padding: 1rem;
-                    border-color: #ffffff;
-                }
-                .form{
-                    .input{
-                        p{
-                            margin-bottom: 0;
-                            .wpcf7-not-valid-tip{
-                                position: absolute;
-                                right: 0;
-                            }
-                        }
-                        label{
-                            font-size: 1rem;
-                            font-weight: 600;
-                            color: $gray;
-                        }
-                        input{
-                            width: 100%;
-                            background: transparent;
-                            height: 38px;
-                            border-radius: 10px;
-                            border: 1px solid $gray;
-                            color: $gray;
-                            padding: 0 10px;
-                            outline: none;
-                        }
-                        textarea{
-                            width: 100%;
-                            background: transparent;
-                            height: 38px;
-                            border-radius: 10px;
-                            border: 1px solid $gray;
-                            height: 80px;
-                            padding: 10px;
-                            outline: none;
-                        }
+                    font-size: scaleVW(24, $desktop);
+                    line-height: LH(36, 24);
+                    width: scaleVW(1439, $desktop);
+                    height: scaleVW(146, $desktop);
+                    outline: none;
+                    &:focus{
+                        border-color: $gray;
                     }
-                    .policies-container{
-                        label{
-                            cursor: pointer;
-                            display: flex;
-                            br, .wpcf7-form-control-wrap{
-                                display: none;
-                            }
-                            .checkbox{
-                                width: 17px;
-                                height: 17px;
-                                border: 1px solid $blue;
-                                border-radius: 4px;
-                                position: relative;
-                                &::before{
-                                    content: '';
-                                    width: 13px;
-                                    height: 6px;
-                                    border-left: 2px solid $blue;
-                                    border-bottom: 2px solid $blue;
-                                    position: absolute;
-                                    top: 50%;
-                                    left: 50%;
-                                    transform: translate(-50%, -50%) rotate(-45deg);
-                                    visibility: hidden;
-                                    transition: .2s;
-                                    display: none;
-                                }
-                            }
-                            .checkbox.active{
-                                &::before{
-                                    visibility: visible;
-                                    display: block;
-                                }
-                            }
-                            .text{
-                                padding-left: 10px;
-                                color: $blue;
-                                width: 90%;
-                                font-size: 12px;
-                                font-weight: 300;
-                                a{
-                                    color: $blue;
-                                }
-                            }
+                }        
+            }
+            .policies-container{
+                margin-bottom: scaleVW(48, $desktop);
+                p{
+                    label{
+                        display: flex;
+                        align-items: center;
+                        gap: scaleVW(8, $desktop);
+                        cursor: pointer;
+                        width: fit-content;
+                        br, .wpcf7-form-control-wrap{
+                            display: none;
                         }
-                    }
-                    .submit{
-                        p{
+                        .checkbox{
+                            display: block;
+                            width: scaleVW(20, $desktop);
+                            height: scaleVW(20, $desktop);
+                            border-radius: scaleVW(5, $desktop);
+                            border: scaleVW(2, $desktop) solid $gray;
                             position: relative;
-                            margin: 0;
-                            .wpcf7-spinner{
-                                position: absolute;
-                                left: 60%;
-                                top: 50%;
-                                transform: translate(-60%, -50%);
-                                z-index: 30;
-                            }
-                            br{
+                            &::before{
+                                content: '';
                                 display: none;
+                                width: scaleVW(16, $desktop);
+                                height: scaleVW(7, $desktop);
+                                border-bottom: scaleVW(3, $desktop) solid $gray;
+                                border-left: scaleVW(3, $desktop) solid $gray;
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%) rotate(-45deg);
+                                transition: .2s;
                             }
-                            .button-container{
-                                display: flex;
-                                outline: none;
-                                border: none;
-                                background: transparent;
-                                br{
-                                    display: none;
-                                }
-                                .text-button{
-                                    background: $blue;
-                                    padding: 9px 2.6rem 10px 2.6rem;
-                                    border-radius: 20px;
-                                    color: #ffffff;
-                                    font-weight: 400;
-                                    margin-right: .5rem;
-                                    height: 40px;
-                                    position: relative;
-                                    font-size: 1rem;
-                                    &::before{
-                                        content: '';
-                                        display: block;
-                                        width: 20px;
-                                        height: 15px;
-                                        position: absolute;
-                                        right: -12%;
-                                        top: 50%;
-                                        transform: translateY(-50%);
-                                        z-index: 1;
-                                        background: $blue;
-                                    }
-                                }
-                                .icon{
-                                    position: relative;
-                                    width: 40px;
-                                    height: 40px;
-                                    border-radius: 50%;
-                                    background: $blue;
-                                    &::after{
-                                        content: '';
-                                        width: 12px;
-                                        height: 12px;
-                                        border-radius: 50%;
-                                        position: absolute;
-                                        background: $white;
-                                        left: -35%;
-                                        transform: translateX(35%);
-                                        top: 9.9%;
-                                        z-index: 100;
-                                    }
-                                    &::before{
-                                        content: '';
-                                        width: 12px;
-                                        height: 12px;
-                                        border-radius: 50%;
-                                        position: absolute;
-                                        background: $white;
-                                        left: -35%;
-                                        transform: translateX(35%);
-                                        top: 59.9%;
-                                        z-index: 100;
-                                    }
-                                    svg{
-                                        position: absolute;
-                                        top: 50%;
-                                        left: 50%;
-                                        transform: translate(-50%, -50%);
-                                        width: 14px;
-                                        height: auto;
-                                    }
-                                }
-                                &:hover{
-                                    .text-button{
-                                        background: #ffffff;
-                                        color: $blue;
-                                        &::before{
-                                            background: #ffffff;
-                                        }
-                                    }
-                                    .icon{
-                                        background: #ffffff;
-                                        svg{
-                                            g{
-                                                line{
-                                                    stroke:$blue;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
+                        }
+                        .checkbox.active{
+                            &::before{
+                                display: block;
                             }
+                        }
+                        .text{
+                            font-size: scaleVW(20, $desktop);
+                            line-height: LH(23, 20);
+                            color: $gray;
+                            font-weight: 300;
                         }
                     }
                 }
             }
-        }
-        @media (max-width: 480px) {
-            #content-contact{
-                .title-page{
-                    font-size: 40px;
+            button{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: scaleVW(358, $desktop);
+                height: scaleVW(70, $desktop);
+                border: scaleVW(1, $desktop) solid $blue;
+                border-radius: scaleVW(15, $desktop);
+                background: $blue;
+                color: $white;
+                font-size: scaleVW(22, $desktop);
+                line-height: LH(27, 22);
+                font-weight: 600;
+                gap: scaleVW(180, $desktop);
+                outline: none;
+                br{
+                    display: none;
                 }
-                .desription-page{
-                    font-size: 20px;
+                svg{
+                    width: scaleVW(24, $desktop);
+                    height: scaleVW(24, $desktop);
+                }
+                &:hover{
+                    background: $white;
+                    color: $blue;
+                    svg{
+                        path{
+                            stroke: $blue;
+                        }
+                    }
                 }
             }
         }
     }
-    section.pqr-section {
-        padding: 2rem 0;
+    /*============ After form ============*/
+    .after-form{
+        position: relative;
+        width: scaleVW(1920, $desktop);
+        height: scaleVW(540, $desktop);
+        padding: scaleVW(80, $desktop) 0;
+        img{
+            width: scaleVW(1920, $desktop);
+            height: scaleVW(540, $desktop);
+            object-fit: cover;
+            object-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
         &::before{
             content: '';
-            background: none;
+            width: scaleVW(1920, $desktop);
+            height: scaleVW(540, $desktop);
+            background: rgba(57, 125, 201, 80%);
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
         }
-        .pqr-content {
+        .text-contain{
+            position: relative;
+            z-index: 2;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            .pqr-left {
-                width: 50%;
+            gap: scaleVW(69, $desktop);
+            .left-content{
+                width: scaleVW(575, $desktop);
+                height: scaleVW(184, $desktop);
+                p{
+                    color: $white;
+                    font-size: scaleVW(24, $desktop);
+                    line-height: LH(36, 24);
+                    font-weight: 300;
+                    margin-bottom: scaleVW(24, $desktop);
+                }
+                h2{
+                    color: $blue;
+                    font-size: scaleVW(48, $desktop);
+                    line-height: LH(56, 48);
+                    font-weight: 700;
+                }
+            }
+            .right-contain{
+                width: scaleVW(771, $desktop);
+                height: scaleVW(380, $desktop);
                 display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                .pqr-title, .pqr-subtitle {
-                    font-size: 2.5rem;
-                    font-weight: bold;
-                    margin-bottom: 1rem;
-                    color: #002d74;
-                }
-                .pqr-subtitle {
-                    font-size: 1.5rem;
-                }
-                .pqr-list {
-                    list-style: none;
-                    padding: 0;
-                    li {
-                        display: flex;
-                        align-items: center;
-                        margin-bottom: 1rem;
-                        color: #002d74;
-                        span {
-                            margin-right: 1rem;
-                            font-size: 1.2rem;
-                            color: #002d74;
-                        }
-                        a {
-                            color: #002d74;
-                            text-decoration: none;
+                gap: scaleVW(102, $desktop);
+                .content{
+                    width: scaleVW(359, $desktop);
+                    padding: scaleVW(32, $desktop);
+                    h3{
+                        color: $blue;
+                        width: scaleVW(107, $desktop);
+                        position: relative;
+                        height: scaleVW(55, $desktop);
+                        font-size: scaleVW(22, $desktop);
+                        line-height: LH(27, 22);
+                        position: relative;
+                        font-weight: 700;
+                        margin-bottom: scaleVW(27, $desktop);
+                        &::after{
+                            content: '';
+                            width: scaleVW(27, $desktop);
+                            height: scaleVW(3, $desktop);
+                            background: $blue;
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
                         }
                     }
-                }
-            }
-            .pqr-right {
-                text-align: center;
-            }
-            
-            .pqr-right p,
-            .pqr-right h3,
-            .pqr-right ul {
-                display: inline-block;
-                text-align: left;
-                margin: 0px auto 0 140px;
-            }
-            .pqr-right {
-                width: 50%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                text-align: center;
-                p {
-                    font-size: 1.2rem;
-                    margin-bottom: 1rem;
-                    color: #002d74;
-                }
-                .pqr-title, .pqr-subtitle {
-                    font-size: 1.5rem;
-                    font-weight: bold;
-                    margin-bottom: 1rem;
-                    color: #002d74;
-                }
-                img {
-                    max-width: 80%;
-                    height: auto;
-                    margin-bottom: 1rem;
-                }
-                .pqr-list {
-                    list-style: none;
-                    padding: 0;
-                    li {
-                        display: flex;
-                        .li-img {
-                            width: 50px;
-                            display: flex;
-                            justify-content: flex-start;
-                            align-items: center;
-                            margin-right: 20px;
+                    .description{
+                        color: $white;
+                        strong{
+                            font-size: scaleVW(22, $desktop);
+                            line-height: LH(27, 22);
+                            font-weight: 600;
                         }
-                        .pqr-text {
-                            display: flex;
-                            flex-direction: column;
-                            align-items: flex-start;
-                            color: #002d74;
-                            font-size: 0.8rem;
+                        p{
+                            font-size: scaleVW(20, $desktop);
+                            line-height: LH(32, 20);
+                            font-weight: 300;
                         }
                     }
-                }
-            }
-            @media (max-width: 480px) {
-                .pqr-left {
-                    width: 100%;
-                    display: flex                    ;
-                    justify-content: center;
-                    align-items: flex-start;
-                    flex-direction: column;
-                }
-                .pqr-right {
-                    width: 100%;
-                    img {
-                        max-width: 100%;
-                        height: auto;
-                        margin-bottom: 1rem;
-                    }
-                    li {
-                        display: flex;
-                        .li-img {
-                            width: 40px;
-                            display: flex;
-                            justify-content: flex-start;
-                            align-items: center;
-                            margin-right: 10px;
-                        }
-                        .pqr-text {
-                            display: flex;
-                            flex-direction: column;
-                            align-items: flex-start;
-                            color: #002d74;
-                            font-size: 0.8rem;
-                        }
-                    }
-                }
-                .pqr-right p,
-                .pqr-right h3,
-                .pqr-right ul {
-                    margin: 0 auto 0 0;
                 }
             }
         }

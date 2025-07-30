@@ -1,5 +1,93 @@
 .related-manuals-partial-d5f0ac {
     padding: scaleVW(96, $desktop) 0;
     background: #F5F5F5;
-    
+    h2{
+        font-size: scaleVW(48, $desktop);
+        line-height: LH(56, 48);
+        margin: 0 auto scaleVW(32, $desktop) auto;
+        color: $blue;
+        font-weight: 700;
+        width: scaleVW(1234, $desktop);
+    }
+    .related-manuals-contain{
+        width: 100%;
+        padding: 0 scaleVW(60, $desktop);
+        position: relative;
+        .mauals-slide{
+            max-width: scaleVW(1114, $desktop);
+            margin: 0 auto;
+            .owl-stage-outer{
+                position: relative;
+                z-index: 1;
+                .item{
+                    a{
+                        display: flex;
+                        flex-direction: column;
+                        width: scaleVW(350, $desktop);
+                        height: scaleVW(405, $desktop);
+                        overflow: hidden;
+                        border-radius: scaleVW(20, $desktop);
+                        text-decoration: none;
+                        img{
+                            width: 100%;
+                            height: scaleVW(190, $desktop);
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                        .text-contain{
+                            padding: scaleVW(24, $desktop);
+                            height: scaleVW(247, $desktop);
+                            width: 100%;
+                            background: $white;
+                            h3{
+                                font-size: scaleVW(20, $desktop);
+                                line-height: LH(23, 20);
+                                color: $gray;
+                                margin-bottom: scaleVW(16, $desktop);
+                                font-weight: 600;
+                            }
+                            p{
+                                font-size: scaleVW(18, $desktop);
+                                line-height: LH(21, 18);
+                                color: $gray;
+                                margin-bottom: 0;
+                                font-weight: 300;
+                            }
+                        }
+                    }
+                }
+            }
+            .owl-nav{
+                display: flex;
+                width: scaleVW(1234, $desktop);
+                justify-content: space-between;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                button{
+                    svg{
+                        width: scaleVW(60, $desktop);
+                        height: scaleVW(60, $desktop);
+                    }
+                }
+            }
+            .owl-dots{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: scaleVW(12, $desktop);
+                margin-top: scaleVW(64, $desktop);
+                .owl-dot{
+                    width: scaleVW(8, $desktop);
+                    height: scaleVW(8, $desktop);
+                    border-radius: 50%;
+                    background: #C1C1C1;
+                }
+                .active{
+                    background: #777777;
+                }
+            }
+        }
+    }
 }
