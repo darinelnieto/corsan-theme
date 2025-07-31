@@ -1,430 +1,163 @@
 .footer-content-partial-ecbbb5 {
-    background: #002D74;
-    padding: 3rem 0;
-    position: relative;
-    z-index: 2;
-    .container{
-        width: 100%;
-        max-width: 1300px;
-        .contain-left{
-            h3{
-                color: $white;
-                font-size: 1.2rem;
-                font-weight: 400;
-                margin-bottom: 3rem;
-            }
+    background: $blue;
+    padding: scaleVW(79, $desktop) 0 scaleVW(73, $desktop) 0;
+    @media(max-width:768px){
+        padding: scaleVW(66, $movil) 0 scaleVW(67, $movil) 0;
+    }
+    .footer-content{
+        display: flex;
+        gap: scaleVW(270, $desktop);
+        margin-bottom: scaleVW(126, $desktop);
+        .logo-contain{
+            width: scaleVW(292, $desktop);
+            display: flex;
+            flex-direction: column;
+            gap: scaleVW(33, $desktop);
             img{
-                max-width: 188px;
-                height: auto;
+                width: scaleVW(283.45, $desktop);
+                height: scaleVW(50.06, $desktop);
+            }
+            .slogan{
+                color: #B2B2B2;
+                font-size: scaleVW(16, $desktop);
+                line-height: LH(24, 16);
+                margin-bottom: 0;
             }
         }
-        .suscribe{
-            position: relative;
-            .intro{
-                color: $white;
-                font-weight: 600;
-                font-size: 22px;
-            }
-            .wpcf7-response-output{
-                background: #ffffff;
-                color: $blue;
-                font-size: 16px;
-                font-weight: 300;
-                padding: 1rem;
-                border-color: #ffffff;
-            }
-            .input-and-button{
-                position: relative;
+        /*========== Right content desktop =========*/
+        .right-content{
+            display: flex;
+            gap: scaleVW(100, $desktop);
+            width: scaleVW(830.71, $desktop);
+            justify-content: space-between;
+            .nav-content{
+                width: scaleVW(438.71, $desktop);
                 display: flex;
-                max-width: 360px;
-                br{
-                    display: none;
-                }
-                input[type="email"]{
-                    background: transparent;
-                    color: $white;
-                    border: 1px solid $white;
-                    height: 40px;
-                    border-radius: 30px;
-                    padding: 0 1rem;
-                    outline: none;
-                    max-width: 300px;
-                    &::placeholder{
+                gap: scaleVW(135, $desktop);
+                .nav-item{
+                    width: scaleVW(152, $desktop);
+                    h4{
                         color: $white;
-                        opacity: .5;
+                        font-size: scaleVW(20, $desktop);
+                        line-height: LH(23, 20);
+                        margin-bottom: scaleVW(24, $desktop);
+                        font-weight: 700;
                     }
-                }
-                .wpcf7-spinner{
-                    position: absolute;
-                    top: 150%;
-                    left: 50%;
-                    transform: translateX(-50%);
-                }
-                .button{
-                    position: absolute;
-                    top: -1px;
-                    right: 0;
-                    display: flex;
-                    outline: none;
-                    border: none;
-                    background: transparent;
-                    .text-button{
-                        background: $white;
-                        padding: 9px 1.6rem 10px 1.6rem;
-                        border-radius: 20px;
-                        color: $blue;
-                        font-weight: 400;
-                        margin-right: .5rem;
-                        height: 40px;
-                        position: relative;
-                        font-size: 1rem;
-                        &::before{
-                            content: '';
-                            display: block;
-                            width: 20px;
-                            height: 15px;
-                            position: absolute;
-                            right: -12%;
-                            top: 50%;
-                            transform: translateY(-50%);
-                            z-index: 1;
-                            background: $white;
-                        }
-                    }
-                    .icon-suscribe{
-                        position: relative;
-                        width: 40px;
-                        height: 40px;
-                        border-radius: 50%;
-                        background: $white;
-                        &::after{
-                            content: '';
-                            width: 12px;
-                            height: 12px;
-                            border-radius: 50%;
-                            position: absolute;
-                            background: #002D74;
-                            left: -35%;
-                            transform: translateX(35%);
-                            top: 9.9%;
-                            z-index: 100;
-                        }
-                        &::before{
-                            content: '';
-                            width: 12px;
-                            height: 12px;
-                            border-radius: 50%;
-                            position: absolute;
-                            background: #002D74;
-                            left: -35%;
-                            transform: translateX(35%);
-                            top: 59.9%;
-                            z-index: 100;
-                        }
-                        svg{
-                            position: absolute;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
-                            width: 14px;
-                            height: auto;
-                            color: $blue;
-                        }
-                    }
-                    &:hover{
-                        .text-button{
-                            background: #ffffff;
-                            color: $blue;
-                            &::before{
-                                background: #ffffff;
-                            }
-                        }
-                        .icon-suscribe{
-                            background: #ffffff;
-                            svg{
-                               color: $blue;
-                            }
-                        }
-                    }
-                }
-                @media(max-width:768px){
-                    flex-direction: column;
-                    max-width: 100%;
-                    p{
-                        margin-bottom: 0;
-                        input[type="email"]{
-                            max-width: 100%;
-                            width: 100%;
-                        }
-                        .button{
-                            position: relative;
-                            top: 0;
-                            margin: 1rem auto 1rem 0;
+                    .the-nav{
+                        ul{
                             padding: 0;
+                            margin: 0;
+                            list-style: none;
+                            display: flex;
+                            flex-direction: column;
+                            li{
+                                a{
+                                    color: #B2B2B2;
+                                    font-size: scaleVW(18, $desktop);
+                                    text-decoration: none;
+                                    line-height: scaleVW(24, $desktop);
+                                }
+                            }
                         }
                     }
                 }
             }
-            .policies-container{
-                label{
-                    cursor: pointer;
-                    display: flex;
-                    br, .wpcf7-form-control-wrap{
-                        display: none;
-                    }
-                    .checkbox{
-                        width: 14px;
-                        height: 14px;
-                        border: 1px solid $white;
-                        border-radius: 4px;
-                        position: relative;
-                        &::before{
-                            content: '';
-                            width: 10px;
-                            height: 4px;
-                            border-left: 2px solid $white;
-                            border-bottom: 2px solid $white;
-                            position: absolute;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%) rotate(-45deg);
-                            visibility: hidden;
-                            transition: .2s;
-                            display: none;
-                        }
-                    }
-                    .checkbox.active{
-                        &::before{
-                            visibility: visible;
-                            display: block;
-                        }
-                    }
-                    .text{
-                        padding-left: 10px;
-                        color: $white;
-                        width: 80%;
-                        font-size: 12px;
-                        font-weight: 300;
-                        a{
-                            color: $white;
-                        }
-                        @media(max-width:1150px){
-                            width: 90%;
-                        }
-                    }
-                }
-            }
-        }
-        .menu-nav-container{
-            .nav-footer{
+            .contact-us{
+                width: scaleVW(227, $desktop);
                 h4{
                     color: $white;
-                    font-weight: 600;
+                    font-size: scaleVW(20, $desktop);
+                    line-height: LH(23, 20);
+                    margin-bottom: scaleVW(24, $desktop);
+                    font-weight: 700;
+                    padding-left: scaleVW(35, $desktop);
                 }
-                .the-nav{
-                    ul{
-                        list-style: none;
-                        padding: 0;
-                        margin: 0;
-                        li{
-                            margin-bottom: .3rem;
-                            a{
-                                text-decoration: none;
-                                color: $white;
-                                font-weight: 300;
-                                font-size: 16px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        .contact-container{
-            max-width: 270px;
-            margin-left: auto;
-            p{
-                color: $white;
-                font-size: 1.4rem;
-                font-weight: 600;
-                line-height: 1;
-                padding-left: 10px;
-                @media(max-width:500px){
-                    max-width: 313px;
-                    margin: 0 auto 1rem auto;
-                }
-            }
-            .contact-contain{
                 ul{
+                    padding: 0;
+                    margin: 0;
                     list-style: none;
-                    padding: 1rem;
-                    border-radius: 20px 0 20px 20px;
-                    background: #001D3F;
-                    position: relative;
-                    width: 100%;
-                    max-width: 270px;
-                    &::before{
-                        content: "";
-                        width: 78px;
-                        height: 40px;
-                        border-radius: 20px 20px 0 0;
-                        background: #001D3F;
-                        position: absolute;
-                        right: 0;
-                        top: -30%;
-                        transform: translateY(30%);
-                    }
-                    &::after{
-                        content: "";
-                        width: 15px;
-                        height: 15px;
-                        background: #001D3F;
-                        position: absolute;
-                        top: -7%;
-                        left: 69%;
-                        transform: translate(-69%, -7%);
-                    }
-                    .rounde{
-                        display: block;
-                        width: 15px;
-                        height: 17px;
-                        background: #002D74;
-                        position: absolute;
-                        top: -12%;
-                        left: 66.5%;
-                        transform: translate(-66.5%, 0%);
-                        border-radius: 0 0 30px 0;
-                        z-index: 10;
-                    }
+                    display: flex;
+                    flex-direction: column;
+                    gap: scaleVW(24, $desktop);
                     li{
-                        color: $white;
+                        color: #B2B2B2;
+                        font-size: scaleVW(18, $desktop);
+                        text-decoration: none;
+                        line-height: scaleVW(24, $desktop);
                         display: flex;
-                        align-items: start;
-                        .icon{
-                            font-size: 16px;
-                            margin-right: 10px;
-                        }
-                        .text{
-                            font-size: 12px;
-                            font-weight: 400;
-                        }
+                        gap: scaleVW(18, $desktop);
                     }
                 }
-            }
-            @media(max-width:768px){
-                margin: 0 auto;
             }
         }
-        .copi-right-container{
-            border-top: 1px solid $white;
-            margin-top: 2rem;
-            padding: 2rem 0 0 0;
-            align-items: center;
-            .copi-right{
-                color: $white;
-                font-size: 16px;
-                font-weight: 300;
-                margin: 0;
-                @media(max-width:768px){
-                    text-align: right;
-                    margin-top: 1rem;
-                }
-            }
-            .favicon{
-                img{
-                    width: 36px;
-                }
-            }
-            .follow-us{
-                display: flex;
-                justify-content: right;
-                align-items: center;
-                p{
-                    color: $white;
-                    font-size: 16px;
-                    margin-bottom: 0;
-                    margin-right: 7px;
-                }
+    }
+    .bottom-content{
+        .content{
+            .users-content{
                 ul{
                     display: flex;
                     list-style: none;
                     padding: 0;
                     margin: 0;
+                    justify-content: end;
+                    gap: scaleVW(57, $desktop);
                     li{
-                        margin: 0 7px;
                         a{
-                            display: block;
-                            width: 40px;
-                            height: 40px;
-                            border: 1px solid $white;
-                            border-radius: 50%;
-                            background: transparent;
-                            position: relative;
-                            color: $white;
+                            color: #D4D4D4;
+                            text-decoration: none;
+                            display: flex;
+                            align-items: center;
+                            gap: scaleVW(24, $desktop);
+                            font-size: scaleVW(24, $desktop);
+                            line-height: LH(28, 24);
+                            font-weight: 400;
                             svg{
-                                font-size: 1.2rem;
-                                position: absolute;
-                                top: 50%;
-                                left: 50%;
-                                transform: translate(-50%, -50%);
+                                width: scsleVW(33, $desktop);
+                                height: scaleVW(33, $desktop);
+                                path{
+                                    stroke: #D4D4D4;
+                                }
                             }
                         }
                     }
                 }
             }
-        }
-        .users-ctas{
-            ul{
+            hr{
+                background: #9DA6B4;
+                opacity: 1;
+                height: scaleVW(1, $desktop);
+                margin-top: scaleVW(23, $desktop);
+            }
+            .end{
                 display: flex;
+                width: 100%;
+                justify-content: space-between;
                 align-items: center;
-                padding: 0;
-                list-style: none;
-                justify-content: right;
-                @media(max-width:768px){
-                    justify-content: center;
+                .copi-right{
+                    font-size: scaleVW(18, $desktop);
+                    line-height: LH(20, 18);
+                    color: #B2B2B2;
+                    margin-bottom: 0;
+                    font-weight: 400;
                 }
-                li{
-                    margin: 0 10px;
-                    a{
-                        display: flex;
-                        align-items: center;
-                        border: 1px solid $white;
-                        border-radius: 30px;
-                        color: $white;
-                        text-decoration: none;
-                        padding: 5px 20px;
-                        font-weight: 400;
-                        svg{
-                            width: 18px;
-                            height: auto;
-                            margin-right: 10px;
-                            transition: .2s;
-                            g{
-                                g{
-                                    path{
-                                        fill: $white;
-                                    }
-                                }
-                            }
-                        }
-                        &:hover{
-                            background: $white;
-                            color: $blue;
+                ul{
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    display: flex;
+                    gap: scaleVW(32, $desktop);
+                    align-items: center;
+                    li{
+                        a{
+                            color: #B3B3B3;
                             svg{
-                                g{
-                                    g{
-                                        path{
-                                            fill: $blue;
-                                        }
-                                    }
-                                }
+                                width: scaleVW(31.08, $desktop);
+                                height: auto;
                             }
                         }
                     }
                 }
             }
-        }
-        @media(max-width:768px){
-            padding: 0 1.5rem;
         }
     }
 }
