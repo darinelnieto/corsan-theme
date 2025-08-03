@@ -139,10 +139,10 @@
                         },
                         {
                             "key": "field_688ea87b80d97",
-                            "label": "Name",
-                            "name": "name",
+                            "label": "Description",
+                            "name": "description",
                             "aria-label": "",
-                            "type": "text",
+                            "type": "textarea",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -154,9 +154,9 @@
                             "default_value": "",
                             "maxlength": "",
                             "allow_in_bindings": 0,
+                            "rows": "",
                             "placeholder": "",
-                            "prepend": "",
-                            "append": "",
+                            "new_lines": "br",
                             "parent_repeater": "field_68884285fc85a"
                         }
                     ]
@@ -310,5 +310,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1754179722
+    "modified": 1754180084
 }
