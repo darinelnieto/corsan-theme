@@ -1,15 +1,24 @@
 .banner-partial-e9938f {
-    height: 70vh;
-    width: 100%;
     position: relative;
+    width: 100%;
+    height: scaleVW(640, $desktop);
     img{
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center;
     }
-    .color{
-        width: 100%;
-        height: 100%;
-        display: block;
+    h1{
+        color: $white;
+        font-size: scaleVW(48, $desktop);
+        line-height: LH(56, 48);
+        font-weight: 300;
+        position: absolute;
+        left: scaleVW(197, $desktop);
+        top: scaleVW(102, $desktop);
+        width: scaleVW(560, $desktop);
+        strong{
+            font-weight: 600;
+        }
     }
 }

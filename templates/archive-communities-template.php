@@ -14,9 +14,7 @@ get_header();
     <!-- Banner -->
     <?php get_template_part('partials/communities/banner'); ?>
     <!-- Posts list -->
-    <div class="body-archive">
-        <?php get_template_part('partials/communities/body-communities'); ?>
-    </div>
+    <?php get_template_part('partials/communities/body-communities'); ?>
 </main>
 <?php get_footer(); ?>
                     

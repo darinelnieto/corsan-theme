@@ -345,7 +345,7 @@ $('.feature-posts-slide').owlCarousel({
       loop:true,
       autoplay:true
     },
-    970:{
+    768:{
       items:3,
       nav:false
     }

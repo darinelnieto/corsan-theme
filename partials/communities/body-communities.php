@@ -21,30 +21,22 @@ endif;
         <div class="slide-container">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-12 col-md-10">
+                    <div class="col-12">
                         <div class="feature-posts-slide owl-carousel">
                             <?php foreach($feature_posts as $the_blog): ?>
-                                <div class="post-item" data-aos="fade-down">
-                                    <a href="<?= get_permalink($the_blog['post']->ID); ?>">
-                                        <div class="card-item">
-                                            <h3><?= get_the_title($the_blog['post']->ID); ?></h3>
-                                            <p><?= get_field('short_description', $the_blog['post']->ID); ?></p>
-                                            <div class="cta">
-                                                <span class="text">
-                                                    <?php if(get_bloginfo("language") == "en-US"): ?>See more<?php else: ?>Ver más<?php endif; ?>
-                                                </span>
-                                                <span class="icon">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="15.656" height="15.656" viewBox="0 0 15.656 15.656">
-                                                        <g id="Grupo_240" data-name="Grupo 240" transform="translate(-1539.091 -986.869)">
-                                                            <line id="Línea_13" data-name="Línea 13" y1="14.802" x2="14.802" transform="translate(1539.444 987.369)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1"/>
-                                                            <line id="Línea_14" data-name="Línea 14" x2="11.698" transform="translate(1542.548 987.369)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1"/>
-                                                            <line id="Línea_15" data-name="Línea 15" y2="11.698" transform="translate(1554.246 987.369)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1"/>
-                                                        </g>
-                                                    </svg>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </a>
+                                <div class="item">
+                                    <div class="card-item">
+                                        <h3><?= get_the_title($the_blog['post']->ID); ?></h3>
+                                        <p><?= get_field('short_description', $the_blog['post']->ID); ?></p>
+                                        <a href="<?= get_permalink($the_blog['post']->ID); ?>">
+                                            <span class="text">
+                                                <?php if(get_bloginfo("language") == "en-US"): ?>See more<?php else: ?>Ver más<?php endif; ?>
+                                            </span>
+                                            <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1.67383 8H15.6738M15.6738 8L8.67383 1M15.6738 8L8.67383 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                    </div>
                                 </div>
                             <?php endforeach; ?>
                         </div>
@@ -53,58 +45,29 @@ endif;
             </div>
         </div>
     <?php endif; ?>
-    <!-- Category filter -->
-    <div class="category-filter-nav-container">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <?php 
-                        wp_nav_menu(['menu' => 'blog']);
-                        if(!$category->taxonomy): 
-                    ?>
-                        <h1 data-aos="fade-right"><?php if(get_bloginfo("language") == "en-US"): ?>All items<?php else: ?>Todos los artículos<?php endif; ?></h1>
-                    <?php else: ?>
-                        <h1 data-aos="fade-right"><?php if(get_bloginfo("language") == "en-US"): echo $category->name; ?> articles<?php else: ?>Artículos de <?php echo $category->name; endif; ?></h1>
-                    <?php endif; ?>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- Read post -->
     <div class="comunities-list">
         <div class="container">
             <div class="row justify-content-center">
-                <?php while($community->have_posts()): $community->the_post(); ?>
-                    <div class="col-12 mb-5">
-                        <div class="row align-items-center">
-                            <div class="col-12 col-md-5 mb-4 mb-md-0">
-                                <a href="<?= get_permalink($community->ID); ?>" class="cta-image">
-                                    <div class="feature-image-container" data-aos="fade-right">
-                                        <img src="<?= get_the_post_thumbnail_url($community->ID); ?>" alt="<?= the_title($community->ID); ?>">
-                                    </div>
+                <div class="col-12">
+                    <?php while($community->have_posts()): $community->the_post(); ?>
+                        <div class="item-post">
+                            <div class="image-contain">
+                                <?= get_the_post_thumbnail($community->ID); ?>
+                            </div>
+                            <div class="text-contain">
+                                <h2><?= the_title($community->ID); ?></h2>
+                                <p><?= get_field('short_description', $community->ID); ?></p>
+                                <a href="<?= get_permalink($community->ID); ?>" class="cta-button">
+                                    <span class="text"><?php if(get_bloginfo("language") == "en-US"): echo "See more"; else: echo "Ver más"; endif; ?></span>
+                                    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.67383 8H15.6738M15.6738 8L8.67383 1M15.6738 8L8.67383 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
                                 </a>
                             </div>
-                            <div class="col-12 col-md-5">
-                                <div class="text-container" data-aos="fade-left">
-                                    <h4><?= the_title($community->ID); ?></h4>
-                                    <p><?= get_field('short_description', $community->ID); ?></p>
-                                    <a href="<?= get_permalink($community->ID); ?>" class="cta-button">
-                                        <span class="text"><?php if(get_bloginfo("language") == "en-US"): echo "See more"; else: echo "Ver más"; endif; ?></span>
-                                        <span class="icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="15.656" height="15.656" viewBox="0 0 15.656 15.656">
-                                                <g id="Grupo_240" data-name="Grupo 240" transform="translate(-1539.091 -986.869)">
-                                                    <line id="Línea_13" data-name="Línea 13" y1="14.802" x2="14.802" transform="translate(1539.444 987.369)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1"/>
-                                                    <line id="Línea_14" data-name="Línea 14" x2="11.698" transform="translate(1542.548 987.369)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1"/>
-                                                    <line id="Línea_15" data-name="Línea 15" y2="11.698" transform="translate(1554.246 987.369)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1"/>
-                                                </g>
-                                            </svg>
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
                         </div>
-                    </div>
-                <?php endwhile; wp_reset_postdata(); ?>
+                    <?php endwhile; wp_reset_postdata(); ?>
+                </div>
             </div>
         </div>
     </div>
@@ -119,4 +82,4 @@ endif;
             }
         });
     })
-</script>    
+</script> 
