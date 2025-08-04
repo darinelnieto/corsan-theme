@@ -60,3 +60,26 @@ $tabs = $solutions['products_tabs'];
         </div>
     </div>
 </section>     
+<script>
+    $(()=>{
+        if($(window).width() < 768){
+            $('.the-tabs').addClass('owl-carousel');
+            $('.the-tabs').owlCarousel({
+                autoplay:false,
+                loop:true,
+                nav:false,
+                dots:false,
+                margin:20,
+                responsive:{
+                    0:{
+                        items:1.5,
+                        center:true
+                    },
+                    640:{
+                        items:2
+                    }
+                }
+            });
+        }
+    });
+</script>

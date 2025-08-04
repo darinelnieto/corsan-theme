@@ -46,7 +46,7 @@ if($postucts_array):
     <div class="container">
         <div class="row">
             <?php foreach($postucts_array as $post): $cat = get_the_terms($post->ID, 'product_cat'); ?>
-                <div class="col-6 col-md-4 col-lg-3 mb-5">
+                <div class="col-12 col-md-6 col-lg-3 mb-5">
                     <a href="<?= get_permalink($post->ID); ?>" class="card-produc">
                         <div class="body-product">
                             <div class="product-name">

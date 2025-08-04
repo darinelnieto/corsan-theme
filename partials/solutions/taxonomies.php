@@ -13,31 +13,33 @@ $category_nav = get_field('category_nav', 'option');
 ?>
 <section class="taxonomies-partial-a0ac83">
     <?php if($taxonomies): $key = 0; ?>
-        <div class="banner">
-            <?php foreach($taxonomies as $item): $key++; ?>
-                <div class="card-taxonomy <?php if($key === 1): ?>main-card active<?php endif; ?>">
-                    <div class="secondary-image">
-                        <img src="<?= $item['image_active']['url']; ?>" alt="<?= $item['image_active']['title']; ?>" width="<?= $item['image_active']['width']; ?>" height="<?= $item['image_active']['height']; ?>">
-                    </div>
-                    <div class="card-content <?php if(!$item['main_image']): ?>blue<?php endif; ?>">
-                        <?php if($item['main_image']): ?>
-                            <img src="<?= $item['main_image']['url']; ?>" alt="<?= $item['main_image']['title']; ?>" width="<?= $item['main_image']['width']; ?>" height="<?= $item['main_image']['height']; ?>" class="main-image">
-                        <?php endif; ?>
-                        <div class="text-contain">
-                            <?php if($item['name']): ?>
-                                <h3><?= $item['name'] ?></h3>
-                            <?php endif; if($item['decription']): ?>
-                                <p><?= $item['decription']; ?></p>
-                            <?php endif; ?>
+        <div class="taxonomy-image-slide">
+            <div class="banner">
+                <?php foreach($taxonomies as $item): $key++; ?>
+                    <div class="card-taxonomy <?php if($key === 1): ?>main-card active<?php endif; ?>">
+                        <div class="secondary-image">
+                            <img src="<?= $item['image_active']['url']; ?>" alt="<?= $item['image_active']['title']; ?>" width="<?= $item['image_active']['width']; ?>" height="<?= $item['image_active']['height']; ?>">
                         </div>
-                        <a href="<?= $item['solutions_link']['url']; ?>" class="taxonomi-link">
-                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M2 16H30M30 16L16 2M30 16L16 30" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
+                        <div class="card-content <?php if(!$item['main_image']): ?>blue<?php endif; ?>">
+                            <?php if($item['main_image']): ?>
+                                <img src="<?= $item['main_image']['url']; ?>" alt="<?= $item['main_image']['title']; ?>" width="<?= $item['main_image']['width']; ?>" height="<?= $item['main_image']['height']; ?>" class="main-image">
+                            <?php endif; ?>
+                            <div class="text-contain">
+                                <?php if($item['name']): ?>
+                                    <h3><?= $item['name'] ?></h3>
+                                <?php endif; if($item['decription']): ?>
+                                    <p><?= $item['decription']; ?></p>
+                                <?php endif; ?>
+                            </div>
+                            <a href="<?= $item['solutions_link']['url']; ?>" class="taxonomi-link">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 16H30M30 16L16 2M30 16L16 30" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                </div>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
+            </div>
         </div>
     <?php endif; if($category_nav): ?>
         <div class="category-nav">

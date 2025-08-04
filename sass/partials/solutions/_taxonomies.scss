@@ -1,102 +1,153 @@
 .taxonomies-partial-a0ac83 {
-    .banner{
-        display: flex;
-        .card-taxonomy{
-            height: scaleVW(452, $desktop);
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            .secondary-image{
-                width: 0;
-                height: 100%;
-                overflow: hidden;
-                transition: .2s;
-                img{
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    object-position: center;
-                }
-            }
-            .card-content{
-                width: scaleVW(351, $desktop);
-                height: 100%;
-                position: relative;
-                cursor: pointer;
-                .main-image{
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    object-position: cover;
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                }
-                &::after{
-                    content: '';
-                    width: 100%;
-                    height: 100%;
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    background: rgba(0, 45, 116, 80%);
-                }
-                .text-contain{
-                    position: absolute;
-                    top: scaleVW(58, $desktop);
-                    left: scaleVW(43, $desktop);
-                    z-index: 1;
-                    display: flex;
-                    flex-direction: column;
-                    gap: scaleVW(27, $desktop);
-                    h3{
-                        color: $white;
-                        font-size: scaleVW(48, $desktop);
-                        line-height: LH(50, 48);
-                        filter: drop-shadow(0px 3px 4px $gray);
-                        min-height: scaleVW(100, $desktop);
-                        font-weight: 700;
-                    }
-                    p{
-                        color: $white;
-                        font-weight: 400;
-                        font-size: scaleVW(20, $desktop);
-                        line-height: LH(23, 20);
-                        max-width: scaleVW(202, $desktop);
-                    }
-                }
-                a{
-                    display: flex;
-                    position: absolute;
-                    right: scaleVW(32, $desktop);
-                    bottom: scaleVW(26, $desktop);
-                    z-index: 1;
-                    transition: .2s;
-                    svg{
-                        width: scaleVW(28, $desktop);
-                        height: scaleVW(28, $desktop);
-                    }
-                    &:hover{
-                        right: scaleVW(28, $desktop);
-                    }
-                }
-            }
-            .blue{
-                background: $blue_light;
-                &::after{
-                    display: none;
-                }
-            }
+    .taxonomy-image-slide{
+        &::-webkit-scrollbar {
+            height: 0px;
+            background: transparent;
         }
-        .card-taxonomy.active{
-            .secondary-image{
-                width: scaleVW(515, $desktop);
-                height: 100%;
-                img{
-                    width: 100%;
+        &::-webkit-scrollbar-thumb {
+            background: transparent;
+            height: 0px;
+        }
+        @media(max-width:768px){
+            overflow-x: auto;
+        }
+        .banner{
+            display: flex;
+            @media(max-width:768px){
+                width: scaleVW(599, $movil);
+                gap: scaleVW(5, $movil);
+            }
+            .card-taxonomy{
+                height: scaleVW(452, $desktop);
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                @media(max-width:768px){
+                    height: scaleVW(188, $movil);
+                    width: scaleVW(146, $movil);
+                }
+                .secondary-image{
+                    width: 0;
                     height: 100%;
-                    object-fit: cover;
-                    object-position: center;
+                    overflow: hidden;
+                    transition: .2s;
+                    @media(max-width:768px){
+                        display: none;
+                    }
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+                .card-content{
+                    width: scaleVW(351, $desktop);
+                    height: 100%;
+                    position: relative;
+                    cursor: pointer;
+                    @media(max-width:768px){
+                        width: scaleVW(146, $movil);
+                    }
+                    .main-image{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: cover;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                    }
+                    &::after{
+                        content: '';
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        background: rgba(0, 45, 116, 80%);
+                    }
+                    .text-contain{
+                        position: absolute;
+                        top: scaleVW(58, $desktop);
+                        left: scaleVW(43, $desktop);
+                        z-index: 1;
+                        display: flex;
+                        flex-direction: column;
+                        gap: scaleVW(27, $desktop);
+                        @media(max-width:768px){
+                            top: inherit;
+                            bottom: scaleVW(24, $movil);
+                            left: 50%;
+                            transform: translateX(-50%);
+                        }
+                        h3{
+                            color: $white;
+                            font-size: scaleVW(48, $desktop);
+                            line-height: LH(50, 48);
+                            filter: drop-shadow(0px 3px 4px $gray);
+                            min-height: scaleVW(100, $desktop);
+                            font-weight: 700;
+                            @media(max-width:768px){
+                                font-size: scaleVW(18, $movil);
+                                line-height: LH(20, 18);
+                                width: scaleVW(96, $movil);
+                                text-align: center;
+                            }
+                        }
+                        p{
+                            color: $white;
+                            font-weight: 400;
+                            font-size: scaleVW(20, $desktop);
+                            line-height: LH(23, 20);
+                            max-width: scaleVW(202, $desktop);
+                            @media(max-width:768px){
+                                display: none;
+                            }
+                        }
+                    }
+                    a{
+                        display: flex;
+                        position: absolute;
+                        right: scaleVW(32, $desktop);
+                        bottom: scaleVW(26, $desktop);
+                        z-index: 1;
+                        transition: .2s;
+                        @media(max-width:768px){
+                            width: 100%;
+                            height: 100%;
+                            left: 0;
+                            top: 0;
+                        }
+                        svg{
+                            width: scaleVW(28, $desktop);
+                            height: scaleVW(28, $desktop);
+                            @media(max-width:768px){
+                                display: none;
+                            }
+                        }
+                        &:hover{
+                            right: scaleVW(28, $desktop);
+                        }
+                    }
+                }
+                .blue{
+                    background: $blue_light;
+                    &::after{
+                        display: none;
+                    }
+                }
+            }
+            .card-taxonomy.active{
+                .secondary-image{
+                    width: scaleVW(515, $desktop);
+                    height: 100%;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                    }
                 }
             }
         }
@@ -104,6 +155,9 @@
     .category-nav{
         background: $gray_bg;
         padding-top: scaleVW(38, $desktop);
+        @media(max-width:768px){
+            padding-top: scaleVW(15, $movil);
+        }
         .category-list{
             display: flex;
             align-items: center;
@@ -113,6 +167,13 @@
             background: $blue;
             border-radius: scaleVW(10, $desktop);
             padding: scaleVW(30, $desktop) 0;
+            @media(max-width:768px){
+                background: transparent;
+                padding: 0;
+                border-radius: 0;
+                flex-wrap: wrap;
+                gap: scaleVW(7, $movil) scaleVW(15, $movil);
+            }
             li{
                 border-right: scaleVW(2, $desktop) solid #849EC1;
                 a{
@@ -130,6 +191,22 @@
                     img{
                         width: scaleVW(32, $desktop);
                         height: scaleVW(32, $desktop);
+                    }
+                }
+                @media(max-width:768px){
+                    border: none;
+                    a{
+                        width: scaleVW(204, $movil);
+                        height: scaleVW(52, $movil);
+                        background: $blue;
+                        border-radius: scaleVW(20, $movil);
+                        font-size: scaleVW(20, $movil);
+                        line-height: LH(23, 20);
+                        gap: scaleVW(15, $movil);
+                        img{
+                            width: scaleVW(32, $movil);
+                            height: scaleVW(32, $movil);
+                        }
                     }
                 }
             }

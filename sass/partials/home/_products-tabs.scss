@@ -1,137 +1,188 @@
 .products-slide-partial-5303c9 {
     padding: scaleVW(110, $desktop);
     background: $gray_bg;
-    .title{
-        color: $blue;
-        font-size: scaleVW(48, $desktop);
-        line-height: LH(58, $desktop);
-        font-weight: 800;
-        margin-bottom: scaleVW(51, $desktop);
+    @media(max-width:768px){
+        padding: 0;
+        padding: scaleVW(44, $movil) 0 scaleVW(44, $movil) 0;
     }
-    .tabs-content{
-        /*=========== Tabs controller ===========*/
-        .tabs{
+    .container{
+        @media(max-width:768px){
+            max-width: 100%;
+        }
+        .title{
+            color: $blue;
+            font-size: scaleVW(48, $desktop);
+            line-height: LH(58, 48);
+            font-weight: 800;
             margin-bottom: scaleVW(51, $desktop);
-            display: flex;
-            align-items: center;
-            width: 100%;
-            border-bottom: scaleVW(1, $desktop) solid $gray;
-            justify-content: space-between;
-            .tab-controller{
-                width: scaleVW(329.84, $desktop);
-                padding-bottom: scaleVW(39, $desktop);
-                display: flex;
-                justify-content: center;
-                text-decoration: none;
-                font-size: scaleVW(22, $desktop);
-                font-weight: 600;
-                color: $gray;
-                transition: .2s;
-            }
-            .tab-controller.active{
-                border-bottom: scaleVW(4, $desktop) solid $blue;
-                color: $blue;
+            @media(max-width:768px){
+                font-size: scaleVW(32, $movil);
+                line-height: LH(58, 32);
+                max-width: scaleVW(423, $movil);
+                margin: 0 auto;
+                margin-bottom: scaleVW(14, $movil);
             }
         }
-        /*========= Tabs body =========*/
-        .body-tabs{
-            .the-tabs{
-                display: none;
-                gap: scaleVW(60, $desktop);
-                justify-content: space-between;
-                flex-wrap: wrap;
-                .item{
-                    width: scaleVW(304, $desktop);
-                    height: scaleVW(388, $desktop);
-                    border-radius: scaleVW(10, $desktop);
-                    background: $white;
-                    position: relative;
-                    a{
-                        text-decoration: none;
-                        .card-product{
-                            padding: scaleVW(26, $desktop) scaleVW(24, $desktop);
-                            .product-name{
-                                position: relative;
-                                z-index: 1;
-                                h4{
-                                    color: $blue;
-                                    font-size: scaleVW(20, $desktop);
-                                    margin-bottom: 0;
-                                    font-weight: 700;
-                                    width: scaleVW(222, $desktop);
-                                }
-                                p{
-                                    font-size: scaleVW(15, $desktop);
-                                    font-weight: 600;
-                                    color: $gray;
-                                    margin: 0;
+    }
+    /*=========== Tabs controller ===========*/
+    .tabs{
+        margin-bottom: scaleVW(51, $desktop);
+        display: flex;
+        align-items: center;
+        width: 100%;
+        border-bottom: scaleVW(1, $desktop) solid $gray;
+        justify-content: space-between;
+        @media(max-width:768px){
+            padding: 0 scaleVW(20, $movil) scaleVW(18, $movil) scaleVW(20, $movil);
+            margin-bottom: scaleVW(39, $movil);
+        }
+        .tab-controller{
+            width: scaleVW(329.84, $desktop);
+            padding-bottom: scaleVW(39, $desktop);
+            display: flex;
+            justify-content: center;
+            text-decoration: none;
+            font-size: scaleVW(22, $desktop);
+            font-weight: 600;
+            color: $gray;
+            transition: .2s;
+            @media(max-width:768px){
+                width: fit-content;
+                font-size: scaleVW(16, $movil);
+                line-height: LH(14, 14);
+            }
+        }
+        .tab-controller.active{
+            border-bottom: scaleVW(4, $desktop) solid $blue;
+            color: $blue;
+            @media(max-width:768px){
+                border: none;
+            }
+        }
+    }
+    /*========= Tabs body =========*/
+    .body-tabs{
+        .the-tabs{
+            display: none;
+            gap: scaleVW(60, $desktop); 
+            justify-content: space-between;
+            flex-wrap: wrap;
+            transition: .2s;
+            .item{
+                width: scaleVW(304, $desktop);
+                height: scaleVW(388, $desktop);
+                border-radius: scaleVW(10, $desktop);
+                background: $white;
+                position: relative;
+                @media(max-width:768px){
+                    width: scaleVW(304, $movil);
+                    height: scaleVW(388, $movil);
+                    border-radius: scaleVW(10, $movil);
+                }
+                a{
+                    text-decoration: none;
+                    .card-product{
+                        padding: scaleVW(26, $desktop) scaleVW(24, $desktop);
+                        @media(max-width:768px){
+                            padding: scaleVW(24, $movil) scaleVW(24, $movil);
+                        }
+                        .product-name{
+                            position: relative;
+                            z-index: 1;
+                            h4{
+                                color: $blue;
+                                font-size: scaleVW(20, $desktop);
+                                margin-bottom: 0;
+                                font-weight: 700;
+                                width: scaleVW(222, $desktop);
+                                @media(max-width:768px){
+                                    font-size: scaleVW(20, $movil);
+                                    width: scaleVW(201, $movil);
                                 }
                             }
-                            .img-container{
-                                width: scaleVW(256, $desktop);
-                                height: scaleVW(288, $desktop);
-                                margin: 0 auto;
-                                position: absolute;
-                                top: 50%;
-                                left: 50%;
-                                transform: translate(-50%, -50%);
-                                img{
-                                    width: 100%;
-                                    height: 100%;
-                                    object-fit: cover;
-                                    object-position: center;
+                            p{
+                                font-size: scaleVW(15, $desktop);
+                                font-weight: 600;
+                                color: $gray;
+                                margin: 0;
+                                @media(max-width:768px){
+                                    font-size: scaleVW(15, $movil);
                                 }
                             }
-                            .end-card{
-                                position: absolute;
-                                left: 50%;
-                                transform: translateX(-50%);
-                                bottom: scaleVW(26, $desktop);
+                        }
+                        .img-container{
+                            width: scaleVW(256, $desktop);
+                            height: scaleVW(288, $desktop);
+                            margin: 0 auto;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            @media(max-width:768px){
+                                width: scaleVW(256, $movil);
+                                height: scaleVW(288, $movil);
+                            }
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                object-position: center;
+                            }
+                        }
+                        .end-card{
+                            position: absolute;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            bottom: scaleVW(26, $desktop);
+                            display: flex;
+                            flex-direction: column;
+                            gap: scaleVW(14, $desktop);
+                            width: scaleVW(258, $desktop);
+                            @media(max-width:768px){
+                                width: scaleVW(258, $movil);
+                                bottom: scaleVW(26, $movil);
+                            }
+                            .cta-card{
                                 display: flex;
-                                flex-direction: column;
-                                gap: scaleVW(14, $desktop);
-                                width: scaleVW(258, $desktop);
-                                .cta-card{
-                                    display: flex;
-                                    align-items: center;
-                                    gap: scaleVW(159, $desktop);
-                                    justify-content: center;
-                                    width: 100%;
-                                    height: scaleVW(44, $desktop);
-                                    background: $blue;
-                                    border-radius: scaleVW(4, $desktop);
-                                    text-decoration: none;
-                                    transition: .2s;
-                                    border: scaleVW(1, $desktop) solid $blue;
+                                align-items: center;
+                                gap: scaleVW(159, $desktop);
+                                justify-content: center;
+                                width: 100%;
+                                height: scaleVW(44, $desktop);
+                                background: $blue;
+                                border-radius: scaleVW(4, $desktop);
+                                text-decoration: none;
+                                transition: .2s;
+                                border: scaleVW(1, $desktop) solid $blue;
+                                span{
+                                    color: $white;
+                                    font-size: scaleVW(16, $desktop);
+                                }
+                                svg{
+                                    width: scaleVW(14, $desktop);
+                                    height: scaleVW(14, $desktop);
+                                }
+                                @media(max-width:768px){
+                                    gap: scaleVW(159, $movil);
+                                    height: scaleVW(44, $movil);
+                                    border-radius: scaleVW(4, $movil);
+                                    border: scaleVW(1, $movil) solid $blue;
                                     span{
-                                        color: $white;
-                                        font-size: scaleVW(16, $desktop);
+                                        font-size: scaleVW(16, $movil);
                                     }
                                     svg{
-                                        width: scaleVW(14, $desktop);
-                                        height: scaleVW(14, $desktop);
+                                        width: scaleVW(14, $movil);
+                                        height: scaleVW(14, $movil);
                                     }
-                                    &:hover{
-                                        background: $white;
-                                        span{
-                                            color: $blue;
-                                        }
-                                        svg{
-                                            path{
-                                                stroke: $blue;
-                                            }
-                                        }
+                                }
+                                &:hover{
+                                    background: $white;
+                                    span{
+                                        color: $blue;
                                     }
-                                    @media(max-width:510px){
-                                        height: scaleVW(70, $movil);
-                                        border-radius:  scaleVW(10, $movil);
-                                        gap: scaleVW(159, $movil);
-                                        span{
-                                            font-size: scaleVW(24, $movil);
-                                        }
-                                        svg{
-                                            width: scaleVW(28, $movil);
-                                            height: scaleVW(28, $movil);
+                                    svg{
+                                        path{
+                                            stroke: $blue;
                                         }
                                     }
                                 }
@@ -140,9 +191,9 @@
                     }
                 }
             }
-            .the-tabs.active{
-                display: flex;
-            }
+        }
+        .the-tabs.active{
+            display: flex;
         }
     }
 }

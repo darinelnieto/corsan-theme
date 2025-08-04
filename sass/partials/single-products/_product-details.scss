@@ -1,17 +1,27 @@
 .product-details-partial-d60d33 {
     background: $gray_bg;
     padding: scaleVW(33, $desktop) 0;
+    @media(max-width:768px){
+        padding: scaleVW(22, $movil) 0;
+    }
     .container{
         .top-contain{
             display: flex;
             align-items: flex-start;
             gap: scaleVW(93, $desktop);
+            @media(max-width:768px){
+                flex-direction: column;
+            }
             /*============= Gallery =================*/
             .gallery-contain{
                 display: flex;
                 align-items: flex-start;
                 gap: scaleVW(20, $desktop);
                 width: scaleVW(616, $desktop);
+                @media(max-width:768px){
+                    width: scaleVW(414, $movil);
+                    gap: scaleVW(20, $movil);
+                }
                 /*=========Nav gallery  ========*/
                 .nav-galery{
                     display: flex;
@@ -27,6 +37,16 @@
                             border-radius: scaleVW(5, $desktop);
                         }
                     }
+                    @media(max-width:768px){
+                        width: scaleVW(69, $movil);
+                        gap: scaleVW(10, $movil);
+                        .nav-image{
+                            img{
+                                height: scaleVW(70, $movil);
+                                border-radius: scaleVW(5, $movil);
+                            }
+                        }
+                    }
                 }
                 /*=========== Slide contain ===========*/
                 .slide-contain{
@@ -35,6 +55,10 @@
                     display: flex;
                     align-items: center;
                     overflow: hidden;
+                    @media(max-width:768px){
+                        width: scaleVW(325, $movil);
+                        height: scaleVW(376, $movil);
+                    }
                     .item-image{
                         width: 100%;
                         min-width: scaleVW(527, $desktop);
@@ -59,6 +83,18 @@
                                 }
                             }
                         }
+                        @media(max-width:768px){
+                            width: scaleVW(325, $movil);
+                            height: scaleVW(376, $movil);
+                            .zoom-image{
+                                border-radius: scaleVW(10, $movil);
+                            }
+                            &:hover{
+                                .zoom-image{
+                                    transform: scale(1.1);
+                                }
+                            }
+                        }
                     }
                     .item-image.show{
                         display: block;
@@ -71,6 +107,10 @@
                 gap: scaleVW(30, $desktop);
                 display: flex;
                 flex-direction: column;
+                @media(max-width:768px){
+                    min-width: scaleVW(420, $movil);
+                    gap: scaleVW(35, $movil);
+                }
                 .title{
                     position: relative;
                     h1{
@@ -79,6 +119,9 @@
                         font-size: scaleVW(48, $desktop);
                         line-height: LH(72, 48);
                         margin-bottom: 0;
+                        @media(max-width:768px){
+                            font-size: scaleVW(48, $movil);
+                        }
                     }
                     span{
                         font-size: scaleVW(20, $desktop);
@@ -87,6 +130,10 @@
                         position: absolute;
                         bottom: 0;
                         transform: translateY(26%);
+                        @media(max-width:768px){
+                            font-size: scaleVW(20, $movil);
+                            color: #000000;
+                        }
                     }
                 }
                 .description{
@@ -99,6 +146,13 @@
                            font-size: scaleVW(32, $desktop); 
                            line-height: LH(40, 32);
                            font-weight: 700;
+                        }
+                        @media(max-width:768px){
+                            font-size: scaleVW(20, $movil);
+                            width: scaleVW(364, $movil);
+                            strong{
+                                font-size: scaleVW(32, $movil); 
+                            }
                         }
                     }
                 }
@@ -124,11 +178,15 @@
                             }
                         }
                     }
-                }
-                .cta-more-information{
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+                    @media(max-width:768px){
+                        width: scaleVW(420, $movil);
+                        height: scaleVW(70, $movil);
+                        border-radius: scaleVW(10, $movil);
+                        border: scaleVW(1, $movil) solid $blue;
+                        font-size: scaleVW(24, $movil);
+                        padding: scaleVW(21, $movil) scaleVW(36, $movil);
+                        justify-content: space-between;
+                    }
                 }
             }
         }

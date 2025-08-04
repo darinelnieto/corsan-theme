@@ -5,6 +5,10 @@
         background: $white;
         border-radius: scaleVW(20, $desktop);
         padding: scaleVW(61, $desktop) scaleVW(146, $desktop);
+        @media(max-width:768px){
+            border-radius: scaleVW(20, $movil);
+            padding: scaleVW(39, $movil) scaleVW(18, $movil);
+        }
         h2{
             color: $gray;
             font-size: scaleVW(32, $desktop);
@@ -12,6 +16,10 @@
             margin-bottom: scaleVW(21, $desktop);
             font-weight: 700;
             text-align: center;
+            @media(max-width:768px){
+                font-size: scaleVW(32, $movil);
+                margin-bottom: scaleVW(21, $movil);
+            }
         }
         .description{
             color: $gray;
@@ -20,11 +28,20 @@
             margin-bottom: scaleVW(58, $desktop);
             font-weight: 400;
             text-align: center;
+            @media(max-width:768px){
+                font-size: scaleVW(24, $movil);
+                line-height: LH(32, 24);
+                margin-bottom: scaleVW(51, $movil);
+            }
         }
         .caracteristics-list{
             display: flex;
             flex-wrap: wrap;
             gap: scaleVW(54, $desktop);
+            @media(max-width: 768px){
+                justify-content: center;
+                gap: scaleVW(0, $movil);
+            }
             .item{
                 width: scaleVW(327, $desktop);
                 height: scaleVW(150, $desktop);
@@ -40,6 +57,20 @@
                     font-size: scaleVW(20, $desktop);
                     line-height: LH(34, 20);
                     font-weight: 300;
+                }
+                @media(max-width: 768px){
+                    width: scaleVW(336, $movil);
+                    height: scaleVW(117, $movil);
+                    gap: scaleVW(31, $movil);
+                    img{
+                        width: scaleVW(41, $movil);
+                        height: scaleVW(41, $movil);
+                    }
+                    p{
+                        width: scaleVW(264.07, $movil);
+                        font-size: scaleVW(20, $movil);
+                        height: scaleVW(112, $movil);
+                    }
                 }
             }
         }
