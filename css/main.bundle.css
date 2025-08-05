@@ -3414,6 +3414,13 @@ body .container, html .container {
   margin-bottom: 6.5625vw;
   /*========== Right content desktop =========*/
 }
+@media (max-width: 768px) {
+  .footer-content-partial-ecbbb5 .footer-content {
+    flex-direction: column;
+    gap: 14.1666666667vw;
+    margin-bottom: 19.375vw;
+  }
+}
 .footer-content-partial-ecbbb5 .footer-content .logo-contain {
   width: 15.2083333333vw;
   display: flex;
@@ -3430,11 +3437,31 @@ body .container, html .container {
   line-height: 1.5;
   margin-bottom: 0;
 }
+@media (max-width: 768px) {
+  .footer-content-partial-ecbbb5 .footer-content .logo-contain {
+    width: 60.8333333333vw;
+    gap: 1.6666666667vw;
+  }
+  .footer-content-partial-ecbbb5 .footer-content .logo-contain img {
+    width: 59.0520833333vw;
+    height: 10.4291666667vw;
+  }
+  .footer-content-partial-ecbbb5 .footer-content .logo-contain .slogan {
+    font-size: 3.3333333333vw;
+  }
+}
 .footer-content-partial-ecbbb5 .footer-content .right-content {
   display: flex;
   gap: 5.2083333333vw;
   width: 43.2661458333vw;
   justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .footer-content-partial-ecbbb5 .footer-content .right-content {
+    flex-direction: column;
+    width: 80.8333333333vw;
+    gap: 14.1666666667vw;
+  }
 }
 .footer-content-partial-ecbbb5 .footer-content .right-content .nav-content {
   width: 22.8494791667vw;
@@ -3460,9 +3487,25 @@ body .container, html .container {
 }
 .footer-content-partial-ecbbb5 .footer-content .right-content .nav-content .nav-item .the-nav ul li a {
   color: #B2B2B2;
-  font-size: 0.9375vw;
+  font-size: 0.8333333333vw;
   text-decoration: none;
-  line-height: 1.25vw;
+  line-height: 1.3333333333;
+}
+@media (max-width: 768px) {
+  .footer-content-partial-ecbbb5 .footer-content .right-content .nav-content {
+    width: 100%;
+    gap: 2.9166666667vw;
+  }
+  .footer-content-partial-ecbbb5 .footer-content .right-content .nav-content .nav-item {
+    width: 37.9166666667vw;
+  }
+  .footer-content-partial-ecbbb5 .footer-content .right-content .nav-content .nav-item h4 {
+    font-size: 4.1666666667vw;
+    margin-bottom: 5vw;
+  }
+  .footer-content-partial-ecbbb5 .footer-content .right-content .nav-content .nav-item .the-nav ul li a {
+    font-size: 3.75vw;
+  }
 }
 .footer-content-partial-ecbbb5 .footer-content .right-content .contact-us {
   width: 11.8229166667vw;
@@ -3487,9 +3530,25 @@ body .container, html .container {
   color: #B2B2B2;
   font-size: 0.9375vw;
   text-decoration: none;
-  line-height: 1.25vw;
+  line-height: 1.3333333333;
   display: flex;
   gap: 0.9375vw;
+}
+@media (max-width: 768px) {
+  .footer-content-partial-ecbbb5 .footer-content .right-content .contact-us {
+    width: 80.8333333333vw;
+  }
+  .footer-content-partial-ecbbb5 .footer-content .right-content .contact-us h4 {
+    font-size: 4.1666666667vw;
+    margin-bottom: 5vw;
+  }
+  .footer-content-partial-ecbbb5 .footer-content .right-content .contact-us ul {
+    width: 47.0833333333vw;
+  }
+  .footer-content-partial-ecbbb5 .footer-content .right-content .contact-us ul li {
+    font-size: 3.3333333333vw;
+    gap: 3.75vw;
+  }
 }
 .footer-content-partial-ecbbb5 .bottom-content .content .users-content ul {
   display: flex;

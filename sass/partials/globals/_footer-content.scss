@@ -8,6 +8,11 @@
         display: flex;
         gap: scaleVW(270, $desktop);
         margin-bottom: scaleVW(126, $desktop);
+        @media(max-width:768px){
+            flex-direction: column;
+            gap: scaleVW(68, $movil);
+            margin-bottom: scaleVW(93, $movil);
+        }
         .logo-contain{
             width: scaleVW(292, $desktop);
             display: flex;
@@ -23,6 +28,17 @@
                 line-height: LH(24, 16);
                 margin-bottom: 0;
             }
+            @media(max-width:768px){
+                width: scaleVW(292, $movil);
+                gap: scaleVW(8, $movil);
+                img{
+                    width: scaleVW(283.45, $movil);
+                    height: scaleVW(50.06, $movil);
+                }
+                .slogan{
+                    font-size: scaleVW(16, $movil);
+                }
+            }
         }
         /*========== Right content desktop =========*/
         .right-content{
@@ -30,6 +46,11 @@
             gap: scaleVW(100, $desktop);
             width: scaleVW(830.71, $desktop);
             justify-content: space-between;
+            @media(max-width:768px){
+                flex-direction: column;
+                width: scaleVW(388, $movil);
+                gap: scaleVW(68, $movil);
+            }
             .nav-content{
                 width: scaleVW(438.71, $desktop);
                 display: flex;
@@ -53,9 +74,29 @@
                             li{
                                 a{
                                     color: #B2B2B2;
-                                    font-size: scaleVW(18, $desktop);
+                                    font-size: scaleVW(16, $desktop);
                                     text-decoration: none;
-                                    line-height: scaleVW(24, $desktop);
+                                    line-height: LH(24, 18);
+                                }
+                            }
+                        }
+                    }
+                }
+                @media(max-width:768px){
+                    width: 100%;
+                    gap: scaleVW(14, $movil);
+                    .nav-item{
+                        width: scaleVW(182, $movil);
+                        h4{
+                            font-size: scaleVW(20, $movil);
+                            margin-bottom: scaleVW(24, $movil);
+                        }
+                        .the-nav{
+                            ul{
+                                li{
+                                    a{
+                                        font-size: scaleVW(18, $movil);
+                                    }
                                 }
                             }
                         }
@@ -83,9 +124,23 @@
                         color: #B2B2B2;
                         font-size: scaleVW(18, $desktop);
                         text-decoration: none;
-                        line-height: scaleVW(24, $desktop);
+                        line-height: LH(24, 18);
                         display: flex;
                         gap: scaleVW(18, $desktop);
+                    }
+                }
+                @media(max-width:768px){
+                    width: scaleVW(388, $movil);
+                    h4{
+                        font-size: scaleVW(20, $movil);
+                        margin-bottom: scaleVW(24, $movil);
+                    }
+                    ul{
+                        width: scaleVW(226, $movil);
+                        li{
+                            font-size: scaleVW(16, $movil);
+                            gap: scaleVW(18, $movil);
+                        }
                     }
                 }
             }
