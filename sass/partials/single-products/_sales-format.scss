@@ -7,41 +7,72 @@
         margin-bottom: scaleVW(32, $desktop);
         color: $blue;
         font-weight: 700;
+        @media(max-width:768px){
+            font-size: scaleVW(32, $movil);
+            line-height: LH(38, 32);
+            margin-bottom: scaleVW(24, $movil);
+        }
     }
-    .table-content{
-        overflow: hidden;
-        border-radius: scaleVW(20, $desktop);
-        table{
-            width: 100%;
-            thead{
-                background: $blue_light;
-                tr{
-                    th{
-                        padding: scaleVW(34, $desktop) scaleVW(24, $desktop);
-                        color: $white;
-                        font-size: scaleVW(20, $desktop);
-                        line-height: LH(30, 20);
-                        font-weight: 400;
-                        text-align: center;
-                    }
-                }
+    .the-table-contain{
+        @media(max-width:768px){
+            overflow-x: auto;
+            &::-webkit-scrollbar {
+                height: 0px;
+                background: transparent;
             }
-            tbody{
-                tr{
-                    td{
-                        padding: scaleVW(16, $desktop) scaleVW(24, $desktop);
-                        color: $gray;
-                        font-size: scaleVW(20, $desktop);
-                        line-height: LH(30, 20);
-                        font-weight: 400;
-                        text-align: center;
+            &::-webkit-scrollbar-thumb {
+                background: transparent;
+                height: 0px;
+            }
+        }
+        .table-content{
+            overflow: hidden;
+            border-radius: scaleVW(20, $desktop);
+            width: fit-content;
+            @media(max-width:768px){
+                border-radius: scaleVW(20, $movil);
+            }
+            table{
+                width: 100%;
+                thead{
+                    background: $blue_light;
+                    tr{
+                        th{
+                            padding: scaleVW(34, $desktop) scaleVW(24, $desktop);
+                            color: $white;
+                            font-size: scaleVW(20, $desktop);
+                            line-height: LH(30, 20);
+                            font-weight: 400;
+                            text-align: center;
+                            @media(max-width:768px){
+                                padding: scaleVW(16, $movil) scaleVW(24, $movil);
+                                font-size: scaleVW(20, $movil);
+                                min-width: scaleVW(200, $movil);
+                            }
+                        }
                     }
                 }
-                tr:nth-child(odd){
-                    background: #F9F9F9;
-                }
-                tr:nth-child(even){
-                    background: #EAEAEA;
+                tbody{
+                    tr{
+                        td{
+                            padding: scaleVW(16, $desktop) scaleVW(24, $desktop);
+                            color: $gray;
+                            font-size: scaleVW(20, $desktop);
+                            line-height: LH(30, 20);
+                            font-weight: 400;
+                            text-align: center;
+                            @media(max-width:768px){
+                                padding: scaleVW(16, $movil) scaleVW(24, $movil);
+                                font-size: scaleVW(20, $movil);
+                            }
+                        }
+                    }
+                    tr:nth-child(odd){
+                        background: #F9F9F9;
+                    }
+                    tr:nth-child(even){
+                        background: #EAEAEA;
+                    }
                 }
             }
         }

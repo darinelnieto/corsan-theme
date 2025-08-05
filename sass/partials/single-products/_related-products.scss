@@ -1,12 +1,27 @@
 .related-products-partial-573627 {
     background: #D4D4D4;
     padding: scaleVW(110, $desktop) 0;
-    h2{
-        font-size: scaleVW(48, $desktop);
-        line-height: LH(56, 48);
-        margin-bottom: scaleVW(32, $desktop);
-        color: $blue;
-        font-weight: 700;
+    @media(max-width:768px){
+        padding: scaleVW(29, $movil) 0;
+    }
+    .container{
+        @media(max-width:768px){
+            max-width: 100%;
+        }
+        h2{
+            font-size: scaleVW(48, $desktop);
+            line-height: LH(56, 48);
+            margin-bottom: scaleVW(32, $desktop);
+            color: $blue;
+            font-weight: 700;
+            @media(max-width:768px){
+                font-size: scaleVW(32, $movil);
+                line-height: LH(58, 32);
+                max-width: scaleVW(423, $movil);
+                margin: 0 auto;
+                margin-bottom: scaleVW(51, $movil);
+            }
+        }
     }
     .products-slide{
         .card-produc{
@@ -18,8 +33,17 @@
             position: relative;
             display: flex;
             flex-direction: column;
+            @media(max-width:768px){
+                width: scaleVW(304, $movil);
+                height: scaleVW(388, $movil);
+                border-radius: scaleVW(10, $movil);
+                margin: 0 auto;
+            }
             .body-product{
                 padding: scaleVW(26, $desktop) scaleVW(24, $desktop);
+                @media(max-width:768px){
+                    padding: scaleVW(24, $movil) scaleVW(24, $movil);
+                }
                 .product-name{
                     position: relative;
                     z-index: 1;
@@ -29,12 +53,19 @@
                         margin-bottom: 0;
                         font-weight: 700;
                         width: scaleVW(222, $desktop);
+                        @media(max-width:768px){
+                            font-size: scaleVW(20, $movil);
+                            width: scaleVW(201, $movil);
+                        }
                     }
                     p{
                         font-size: scaleVW(15, $desktop);
                         font-weight: 600;
                         color: $gray;
                         margin: 0;
+                        @media(max-width:768px){
+                            font-size: scaleVW(15, $movil);
+                        }
                     }
                 }
                 .img-container{
@@ -45,6 +76,10 @@
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%, -50%);
+                    @media(max-width:768px){
+                        width: scaleVW(256, $movil);
+                        height: scaleVW(288, $movil);
+                    }
                     img{
                         width: 100%;
                         height: 100%;
@@ -61,6 +96,10 @@
                     flex-direction: column;
                     gap: scaleVW(14, $desktop);
                     width: scaleVW(258, $desktop);
+                    @media(max-width:768px){
+                        width: scaleVW(258, $movil);
+                        bottom: scaleVW(26, $movil);
+                    }
                     .cta-card{
                         display: flex;
                         align-items: center;
@@ -81,6 +120,19 @@
                             width: scaleVW(14, $desktop);
                             height: scaleVW(14, $desktop);
                         }
+                        @media(max-width:768px){
+                            gap: scaleVW(159, $movil);
+                            height: scaleVW(44, $movil);
+                            border-radius: scaleVW(4, $movil);
+                            border: scaleVW(1, $movil) solid $blue;
+                            span{
+                                font-size: scaleVW(16, $movil);
+                            }
+                            svg{
+                                width: scaleVW(14, $movil);
+                                height: scaleVW(14, $movil);
+                            }
+                        }
                         &:hover{
                             background: $white;
                             span{
@@ -90,18 +142,6 @@
                                 path{
                                     stroke: $blue;
                                 }
-                            }
-                        }
-                        @media(max-width:510px){
-                            height: scaleVW(70, $movil);
-                            border-radius:  scaleVW(10, $movil);
-                            gap: scaleVW(159, $movil);
-                            span{
-                                font-size: scaleVW(24, $movil);
-                            }
-                            svg{
-                                width: scaleVW(28, $movil);
-                                height: scaleVW(28, $movil);
                             }
                         }
                     }

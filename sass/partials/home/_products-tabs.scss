@@ -2,7 +2,6 @@
     padding: scaleVW(110, $desktop);
     background: $gray_bg;
     @media(max-width:768px){
-        padding: 0;
         padding: scaleVW(44, $movil) 0 scaleVW(44, $movil) 0;
     }
     .container{

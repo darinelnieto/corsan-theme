@@ -1,6 +1,9 @@
 .related-manuals-partial-d5f0ac {
     padding: scaleVW(96, $desktop) 0;
     background: #F5F5F5;
+    @media(max-width:768px){
+        padding: scaleVW(96, $movil) 0;
+    }
     h2{
         font-size: scaleVW(48, $desktop);
         line-height: LH(56, 48);
@@ -8,6 +11,12 @@
         color: $blue;
         font-weight: 700;
         width: scaleVW(1234, $desktop);
+        @media(max-width:768px){
+            font-size: scaleVW(32, $movil);
+            line-height: LH(38, 32);
+            width: 100%;
+            margin-bottom: scaleVW(64, $movil);
+        }
     }
     .related-manuals-contain{
         width: 100%;

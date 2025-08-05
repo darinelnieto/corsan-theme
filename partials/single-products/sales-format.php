@@ -18,8 +18,10 @@ if($sales_format['table']):
                 <?php if($sales_format['title']): ?>
                     <h2><?= $sales_format['title']; ?></h2>
                 <?php endif; ?>
-                <div class="table-content">
-                    <?= $sales_format['table']; ?>
+                <div class="the-table-contain">
+                    <div class="table-content">
+                        <?= $sales_format['table']; ?>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,6 +1,9 @@
 .tecnical-caracteristics-partial-c0e2d0 {
     background: $gray_bg;
     padding-bottom: scaleVW(96, $desktop);
+    @media(max-width:768px){
+        padding-bottom: scaleVW(74, $movil);
+    }
     .caracteristics{
         background: $white;
         border-radius: scaleVW(20, $desktop);
