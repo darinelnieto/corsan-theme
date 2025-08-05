@@ -82,10 +82,14 @@ if($manuals['manuals']):
         margin:20,
         responsive:{
             0:{
-                items:1
+                items:1.5,
+                center:true,
+                loop:true,
+                nav:false
             },
             640:{
-                items:2
+                items:2,
+                nav:false,
             },
             991:{
                 items:3

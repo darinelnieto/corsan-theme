@@ -4,27 +4,40 @@
     @media(max-width:768px){
         padding: scaleVW(96, $movil) 0;
     }
-    h2{
-        font-size: scaleVW(48, $desktop);
-        line-height: LH(56, 48);
-        margin: 0 auto scaleVW(32, $desktop) auto;
-        color: $blue;
-        font-weight: 700;
-        width: scaleVW(1234, $desktop);
+    .container{
         @media(max-width:768px){
-            font-size: scaleVW(32, $movil);
-            line-height: LH(38, 32);
-            width: 100%;
-            margin-bottom: scaleVW(64, $movil);
+            max-width: 100%;
+        }
+        h2{
+            font-size: scaleVW(48, $desktop);
+            line-height: LH(56, 48);
+            margin: 0 auto scaleVW(32, $desktop) auto;
+            color: $blue;
+            font-weight: 700;
+            width: scaleVW(1234, $desktop);
+            @media(max-width:768px){
+                font-size: scaleVW(32, $movil);
+                line-height: LH(38, 32);
+                width: 100%;
+                max-width: scaleVW(423, $movil);
+                margin: 0 auto;
+                margin-bottom: scaleVW(64, $movil);
+            }
         }
     }
     .related-manuals-contain{
         width: 100%;
         padding: 0 scaleVW(60, $desktop);
         position: relative;
+        @media(max-width:768px){
+            padding: 0;
+        }
         .mauals-slide{
             max-width: scaleVW(1114, $desktop);
             margin: 0 auto;
+            @media(max-width:768px){
+                max-width: 100%;
+            }
             .owl-stage-outer{
                 position: relative;
                 z-index: 1;
@@ -37,11 +50,20 @@
                         overflow: hidden;
                         border-radius: scaleVW(20, $desktop);
                         text-decoration: none;
+                        @media(max-width:768px){
+                            width: 100%;
+                            max-width: scaleVW(355, $movil);
+                            height: scaleVW(405, $movil);
+                            border-radius: scaleVW(20, $movil);
+                        }
                         img{
                             width: 100%;
                             height: scaleVW(190, $desktop);
                             object-fit: cover;
                             object-position: center;
+                            @media(max-width:768px){
+                                height: scaleVW(174, $movil);
+                            }
                         }
                         .text-contain{
                             padding: scaleVW(24, $desktop);
@@ -61,6 +83,17 @@
                                 color: $gray;
                                 margin-bottom: 0;
                                 font-weight: 300;
+                            }
+                            @media(max-width:768px){
+                                padding: scaleVW(24, $movil);
+                                height: scaleVW(231, $movil);
+                                h3{
+                                    font-size: scaleVW(20, $movil);
+                                    margin-bottom: scaleVW(16, $movil);
+                                }
+                                p{
+                                    font-size: scaleVW(18, $movil);
+                                }
                             }
                         }
                     }
@@ -92,6 +125,14 @@
                     height: scaleVW(8, $desktop);
                     border-radius: 50%;
                     background: #C1C1C1;
+                }
+                @media(max-width:768px){
+                    gap: scaleVW(12, $movil);
+                    margin-top: scaleVW(64, $movil);
+                    .owl-dot{
+                        width: scaleVW(8, $movil);
+                        height: scaleVW(8, $movil);
+                    }
                 }
                 .active{
                     background: #777777;

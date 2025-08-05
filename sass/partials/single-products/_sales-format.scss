@@ -28,9 +28,10 @@
         .table-content{
             overflow: hidden;
             border-radius: scaleVW(20, $desktop);
-            width: fit-content;
+            width: 100%;
             @media(max-width:768px){
                 border-radius: scaleVW(20, $movil);
+                width: fit-content;
             }
             table{
                 width: 100%;
