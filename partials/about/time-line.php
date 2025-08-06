@@ -69,8 +69,8 @@ $purpose_and_mission = get_field('purpose_and_mission');
                                 dots: false,
                                 margin: 0,
                                 responsive: {
-                                    0: { items: 1 },
-                                    640: { items: 2 },
+                                    0: { items: 1, margin:30 },
+                                    640: { items: 2, margin:30 },
                                     768: { items: 3 }
                                 }
                             });

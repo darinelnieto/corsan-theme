@@ -1,21 +1,55 @@
 .banner-about-partial-63dee6 {
-    height: 70vh;
     position: relative;
-    img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
+    height: scaleVW(640, $desktop);
+    width: 100%;
+    overflow: hidden;
+    @media(max-width:768px){
+        height: scaleVW(763, $movil);
     }
-    .movil{
-        display: none;
-        @media(max-width:510px){
-            display: block;
+    video{
+        height: 100% !important;
+        height: 100% !important;
+        object-position: center;
+        object-fit: cover;
+    }
+    .video-description{
+        position: absolute;
+        top: scaleVW(102, $desktop);
+        left: scaleVW(192, $desktop);
+        color: $white;
+        max-width: scaleVW(560, $desktop);
+        font-weight: 300;
+        font-size: scaleVW(48, $desktop);
+        line-height: LH(62, 48);
+        strong{
+            font-weight: 600;
+        }
+        @media(max-width:768px){
+            max-width: scaleVW(375, $movil);
+            top: scaleVW(97, $movil);
+            left: scaleVW(37, $movil);
+            font-size: scaleVW(32, $movil);
+            line-height: LH(45, 32);
         }
     }
-    .desktop{
-        @media(max-width:510px){
-            display: none;
+    .vol-controller{
+        cursor: pointer;
+        position: absolute;
+        bottom:scaleVW(33, $desktop);
+        right: scaleVW(33, $desktop);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: scaleVW(55, $desktop);
+        height: scaleVW(55, $desktop);
+        border-radius: 50%;
+        color: $white;
+        background: rgba(0, 45, 116, 55%);
+        @media(max-width:768px){
+            bottom:scaleVW(23, $movil);
+            right: scaleVW(23, $movil);
+            width: scaleVW(40, $movil);
+            height: scaleVW(40, $movil);
         }
     }
 }

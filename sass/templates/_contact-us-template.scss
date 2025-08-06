@@ -4,26 +4,90 @@
         padding: scaleVW(48, $desktop) 0 scaleVW(80, $desktop) 0;
         .text-content{
             display: flex;
-            flex-direction: column;
-            gap: scaleVW(32, $desktop);
-            height: scaleVW(270.46, $desktop);
-            margin-bottom: scaleVW(60, $desktop);
-            .text-before-title{
-                color: $gray;
-                font-size: scaleVW(24, $desktop);
-                line-height: LH(36, 24);
+            align-items: center;
+            justify-content: space-between;
+            .title-contain{
+                display: flex;
+                flex-direction: column;
+                gap: scaleVW(32, $desktop);
+                height: scaleVW(270.46, $desktop);
+                margin-bottom: scaleVW(60, $desktop);
+                .text-before-title{
+                    color: $gray;
+                    font-size: scaleVW(24, $desktop);
+                    line-height: LH(36, 24);
+                }
+                h1{
+                    max-width: scaleVW(756, $desktop);
+                    font-size: scaleVW(48, $desktop);
+                    line-height: LH(56, 48);
+                    font-weight: 700;
+                    color: $blue;
+                    margin-bottom: 0;
+                }
             }
-            h1{
-                max-width: scaleVW(756, $desktop);
-                font-size: scaleVW(48, $desktop);
-                line-height: LH(56, 48);
-                font-weight: 700;
-                color: $blue;
-                margin-bottom: 0;
+            .social-network{
+                ul{
+                    display: flex;
+                    flex-direction: column;
+                    gap: scaleVW(30, $desktop);
+                    list-style: none;
+                    padding: 0;
+                    margin-bottom: 0;
+                    li{
+                        a{
+                            display: flex;
+                            width: scaleVW(30, $desktop);
+                            color: $blue;
+                            svg{
+                                width: 100%;
+                                height: auto;
+                            }
+                        }
+                    }
+                }
+            }
+            @media(max-width:768px){
+                flex-direction: column;
+                gap: scaleVW(31, $movil);
+                width: scaleVW(402, $movil);
+                align-items: flex-start;
+                height: auto;
+                margin-bottom: scaleVW(44, $movil);
+                .title-contain{
+                    width: 100%;
+                    margin-bottom: 0;
+                    height: auto;
+                    .text-before-title{
+                        font-size: scaleVW(16, $movil);
+                        line-height: LH(36, 16);
+                    }
+                    h1{
+                        font-size: scaleVW(32, $movil);
+                        line-height: LH(38, 32);
+                        max-width: 100%;
+                    }
+                }
+                .social-network{
+                    ul{
+                        flex-direction: row;
+                        align-items: center;
+                        gap: scaleVW(30, $movil);
+                        li{
+                            a{
+                                width: scaleVW(30, $movil);
+                            }
+                        }
+                    }
+                }
             }
         }
         .form{
             width: scaleVW(1439, $desktop);
+            @media(max-width:768px){
+                width: scaleVW(402, $movil);
+                margin: 0 auto;
+            }
             .inputs-contain{
                 display: flex;
                 align-items: center;
@@ -46,6 +110,20 @@
                         }
                     }
                 }
+                @media(max-width:768px){
+                    flex-direction: column;
+                    gap: scaleVW(48, $movil);
+                    .input{
+                        input{
+                            width: scaleVW(402, $movil);
+                            height: scaleVW(78, $movil);
+                            font-size: scaleVW(24, $movil);
+                            line-height: LH(36, 24);
+                            border-bottom: scaleVW(2, $movil) solid #CACACA;
+                            padding: scaleVW(10, $movil) scaleVW(10, $movil) scaleVW(32, $movil) scaleVW(10, $movil);
+                        }
+                    }
+                }
             }
             .text-area{
                 margin-bottom: scaleVW(48, $desktop);
@@ -63,10 +141,24 @@
                     &:focus{
                         border-color: $gray;
                     }
-                }        
+                }   
+                @media(max-width:768px){
+                    margin-bottom: scaleVW(48, $movil);
+                    textarea{
+                        padding: scaleVW(10, $movil);
+                        font-size: scaleVW(24, $movil);
+                        line-height: LH(36, 24);
+                        border-bottom: scaleVW(2, $movil) solid #CACACA;
+                        width: scaleVW(402, $movil);
+                        height: scaleVW(146, $movil);
+                    }
+                }     
             }
             .policies-container{
                 margin-bottom: scaleVW(48, $desktop);
+                @media(max-width:768px){
+                    margin-bottom: scaleVW(48, $movil);
+                }
                 p{
                     label{
                         display: flex;
@@ -74,6 +166,9 @@
                         gap: scaleVW(8, $desktop);
                         cursor: pointer;
                         width: fit-content;
+                        @media(max-width:768px){
+                            gap: scaleVW(8, $movil);
+                        }
                         br, .wpcf7-form-control-wrap{
                             display: none;
                         }
@@ -97,6 +192,18 @@
                                 transform: translate(-50%, -50%) rotate(-45deg);
                                 transition: .2s;
                             }
+                            @media(max-width:768px){
+                                min-width: scaleVW(20, $movil);
+                                min-height: scaleVW(20, $movil);
+                                border-radius: scaleVW(5, $movil);
+                                border: scaleVW(2, $movil) solid $gray;
+                                &::before{
+                                    width: scaleVW(16, $movil);
+                                    height: scaleVW(7, $movil);
+                                    border-bottom: scaleVW(3, $movil) solid $gray;
+                                    border-left: scaleVW(3, $movil) solid $gray;
+                                }
+                            }
                         }
                         .checkbox.active{
                             &::before{
@@ -108,6 +215,10 @@
                             line-height: LH(23, 20);
                             color: $gray;
                             font-weight: 300;
+                            @media(max-width:768px){
+                                font-size: scaleVW(12, $movil);
+                                line-height: LH(14, 12);
+                            }
                         }
                     }
                 }
@@ -133,6 +244,19 @@
                 svg{
                     width: scaleVW(24, $desktop);
                     height: scaleVW(24, $desktop);
+                }
+                @media(max-width:768px){
+                    width: scaleVW(402, $movil);
+                    height: scaleVW(70, $movil);
+                    border: scaleVW(1, $movil) solid $blue;
+                    border-radius: scaleVW(15, $movil);
+                    font-size: scaleVW(22, $movil);
+                    justify-content: space-between;
+                    padding: 0 scaleVW(25, $movil);
+                    svg{
+                        width: scaleVW(24, $movil);
+                        height: scaleVW(24, $movil);
+                    }
                 }
                 &:hover{
                     background: $white;
@@ -170,6 +294,15 @@
             left: 0;
             top: 0;
             z-index: 1;
+        }
+        @media(max-width:768px){
+            width: scaleVW(480, $movil);
+            height: auto;
+            padding: scaleVW(50, $movil) 0;
+            img, &::before{
+                width: scaleVW(480, $movil);
+                height: 100%;
+            }
         }
         .text-contain{
             position: relative;

@@ -1,6 +1,9 @@
 .time-line-partial-76a83f {
     background: $white;
     padding: scaleVW(135, $desktop) 0 scaleVW(144, $desktop) 0;
+    @media(max-width:768px){
+        padding: scaleVW(62, $movil) scaleVW(37, $movil);
+    }
     .about-us{
         padding-bottom: scaleVW(35, $desktop);
         h1{
@@ -9,6 +12,9 @@
             font-weight: 700;
             color: $blue;
             margin-bottom: 0;
+            @media(max-width:768px){
+                font-size: scaleVW(32, $movil);
+            }
         }
         h2{
             color: $gray;
@@ -16,12 +22,24 @@
             line-height: LH(40, 32);
             font-weight: 600;
             margin-bottom: scaleVW(69, $desktop);
+            @media(max-width:768px){
+                font-size: scaleVW(20, $movil);
+                line-height: LH(40, 20);
+                margin-bottom: scaleVW(20, $movil);
+                font-weight: 400;
+            }
         }
         p{
             font-size: scaleVW(18, $desktop);
             line-height: LH(32, 18);
             color: $gray;
+            font-weight: 400;
             margin-bottom: 0;
+            @media(max-width:768px){
+                font-size: scaleVW(12, $movil);
+                line-height: LH(20, 12);
+                font-weight: 300;
+            }
         }
     }
     .time-line{
@@ -29,51 +47,81 @@
          .time-line-slide{
             .owl-stage-outer{
                 overflow: inherit;
-                .item{
+                .owl-stage{
                     border-top: scaleVW(1.5, $desktop) solid #EAEAEA;
-                    padding-top: scaleVW(34, $desktop);
-                    position: relative;
-                    &::before{
-                        position: absolute;
-                        content: '';
-                        top: 0;
-                        transform: translateY(-50%);
-                        left: scaleVW(16, $desktop);
-                        width: scaleVW(13.91, $desktop);
-                        height: scaleVW(13.91, $desktop);
-                        border-radius: 50%;
-                        background: $blue;
+                    @media(max-width:768px){
+                        border-top: scaleVW(1.5, $movil) solid #EAEAEA;
                     }
-                    .card-item{
-                        display: flex;
-                        flex-direction: column;
-                        gap: scaleVW(38, $desktop);
-                        max-width: scaleVW(443.67, $desktop);
-                        margin: 0 auto;
-                        .year{
-                            font-size: scaleVW(20, $desktop);
-                            line-height: LH(23, 20);
-                            color: $blue;
-                            font-weight: 700;
+                    .item{
+                        padding-top: scaleVW(34, $desktop);
+                        position: relative;
+                        @media(max-width:768px){
+                            padding-top: scaleVW(34, $movil);
                         }
-                        .image-and-text{
+                        &::before{
+                            position: absolute;
+                            content: '';
+                            top: 0;
+                            transform: translateY(-50%);
+                            left: scaleVW(16, $desktop);
+                            width: scaleVW(13.91, $desktop);
+                            height: scaleVW(13.91, $desktop);
+                            border-radius: 50%;
+                            background: $blue;
+                            @media(max-width:768px){
+                                left: 50%;
+                                width: scaleVW(13.91, $movil);
+                                height: scaleVW(13.91, $movil);
+                                transform: translate(-50%, -50%);
+                            }
+                        }
+                        .card-item{
                             display: flex;
                             flex-direction: column;
-                            gap: scaleVW(24, $desktop);
-                            .image-container{
-                                img{
-                                    width: 100%;
-                                    height: scaleVW(216, $desktop);
-                                    object-fit: cover;
-                                    object-position: center;
-                                    border-radius: scaleVW(20, $desktop);
+                            gap: scaleVW(38, $desktop);
+                            max-width: scaleVW(443.67, $desktop);
+                            margin: 0 auto;
+                            @media(max-width:768px){
+                                max-width: scaleVW(408, $movil);
+                            }
+                            .year{
+                                font-size: scaleVW(20, $desktop);
+                                line-height: LH(23, 20);
+                                color: $blue;
+                                font-weight: 700;
+                                @media(max-width:768px){
+                                    font-size: scaleVW(20, $movil);
                                 }
                             }
-                            .description{
-                                font-size: scaleVW(18, $desktop);
-                                line-height: LH(31, 18);
-                                font-weight: 400;
-                                color: $gray;
+                            .image-and-text{
+                                display: flex;
+                                flex-direction: column;
+                                gap: scaleVW(24, $desktop);
+                                @media(max-width:768px){
+                                    gap: scaleVW(24, $movil);
+                                }
+                                .image-container{
+                                    img{
+                                        width: 100%;
+                                        height: scaleVW(216, $desktop);
+                                        object-fit: cover;
+                                        object-position: center;
+                                        border-radius: scaleVW(20, $desktop);
+                                        @media(max-width:768px){
+                                            height: scaleVW(216, $movil);
+                                            border-radius: scaleVW(20, $movil);
+                                        }
+                                    }
+                                }
+                                .description{
+                                    font-size: scaleVW(18, $desktop);
+                                    line-height: LH(31, 18);
+                                    font-weight: 400;
+                                    color: $gray;
+                                    @media(max-width:768px){
+                                        font-size: scaleVW(18, $movil);
+                                    }
+                                }
                             }
                         }
                     }

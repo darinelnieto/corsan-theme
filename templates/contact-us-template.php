@@ -10,6 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 get_header();
 $after_form = get_field('after_form_content');
+$social_network = get_field('social_networks_footer', 'option');
 ?>
 <main id="contact-us-template-55cc3c">
     <section class="contact-content">
@@ -17,8 +18,21 @@ $after_form = get_field('after_form_content');
             <div class="row">
                 <div class="col-12">
                     <div class="text-content">
-                        <p class="text-before-title"><?= get_field('text_before_title'); ?></p>
-                        <h1><?= get_field('title'); ?></h1>
+                        <div class="title-contain">
+                            <p class="text-before-title"><?= get_field('text_before_title'); ?></p>
+                            <h1><?= get_field('title'); ?></h1>
+                        </div>
+                        <?php if($social_network): ?>
+                            <div class="social-network">
+                                <ul>
+                                    <?php foreach($social_network as $social): ?>
+                                        <li>
+                                            <a href="<?= $social['social_network']; ?>" target="_blank"><?= $social['fontawesome_icon']; ?></a>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                        <?php endif; ?>
                     </div>
                     <div class="form">
                         <?= do_shortcode(get_field('shortcode_form')); ?>
