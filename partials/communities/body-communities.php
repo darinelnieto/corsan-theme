@@ -50,12 +50,15 @@ endif;
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12">
-                    <?php while($community->have_posts()): $community->the_post(); ?>
+                    <?php while($community->have_posts()): $community->the_post(); $cat = get_the_terms($community->ID, 'community_cat'); ?>
                         <div class="item-post">
                             <div class="image-contain">
                                 <?= get_the_post_thumbnail($community->ID); ?>
                             </div>
                             <div class="text-contain">
+                                <?php if($cat): ?>
+                                    <span class="taxonomy"><?= $cat[0]->name; ?></span>
+                                <?php endif;  ?>
                                 <h2><?= the_title($community->ID); ?></h2>
                                 <p><?= get_field('short_description', $community->ID); ?></p>
                                 <a href="<?= get_permalink($community->ID); ?>" class="cta-button">

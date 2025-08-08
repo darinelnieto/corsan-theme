@@ -106,41 +106,25 @@ else
         $related = new WP_Query(array('post_type' => 'communities', 'post_status' => 'publish', 'orderby' => 'rand', 'post_per_page' => 3));
         if($related->have_posts()):
     ?>
-    <section class="related-post">
+    <section class="related-post"> 
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-10">
                     <h2 data-aos="fade-right"><?php if(get_bloginfo("language") == "en-US"): ?>Related Posts<?php else: ?>Artículos relacionados<?php endif; ?></h2>
-                    <div class="slide-related-post owl-carousel">
-                        <?php while($related->have_posts()): $related->the_post(); if($title !== get_the_title($related->ID)): ?>
-                            <div class="item" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1000">
-                                <a href="<?= get_permalink($related->ID); ?>">
-                                    <div class="card-post">
-                                        <div class="image-container">
-                                            <img src="<?= get_the_post_thumbnail_url($related->ID); ?>" alt="<?= get_the_title($related->ID); ?>">
-                                        </div>
-                                        <div class="text-container">
-                                            <h3 class="name-post"><?= get_the_title($related->ID); ?></h3>
+                    <div class="related-manuals-contain">
+                        <div class="slide-related-post owl-carousel">
+                            <?php while($related->have_posts()): $related->the_post(); if($title !== get_the_title($related->ID)): ?>
+                                <div class="item">
+                                    <a href="<?= get_permalink($related->ID); ?>" class="card-manual">
+                                        <img src="<?= get_the_post_thumbnail_url($related->ID); ?>" alt="<?= get_the_title($related->ID); ?>" width="350" height="190" class="feature-image">
+                                        <div class="text-contain">
+                                            <h3><?= get_the_title($related->ID); ?></h3>
                                             <p class="description"><?= get_field('short_description', $related->ID); ?></p>
-                                            <div class="cta">
-                                                <span class="text">
-                                                    <?php if(get_bloginfo("language") == "en-US"): ?>See more<?php else: ?>Ver más<?php endif; ?>
-                                                </span>
-                                                <span class="icon">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="15.656" height="15.656" viewBox="0 0 15.656 15.656">
-                                                        <g id="Grupo_240" data-name="Grupo 240" transform="translate(-1539.091 -986.869)">
-                                                            <line id="Línea_13" data-name="Línea 13" y1="14.802" x2="14.802" transform="translate(1539.444 987.369)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1"/>
-                                                            <line id="Línea_14" data-name="Línea 14" x2="11.698" transform="translate(1542.548 987.369)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1"/>
-                                                            <line id="Línea_15" data-name="Línea 15" y2="11.698" transform="translate(1554.246 987.369)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1"/>
-                                                        </g>
-                                                    </svg>
-                                                </span>
-                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-                            </div>
-                        <?php endif; endwhile; ?>
+                                    </a>
+                                </div>
+                            <?php endif; endwhile; ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -157,20 +141,58 @@ else
         autoplay:false,
         loop:false,
         nav:false,
-        dots:false,
-        margin:30,
+        navText:[
+            `<svg width="68" height="69" viewBox="0 0 68 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d_142_196)">
+                    <circle cx="34" cy="30.5" r="30" transform="rotate(180 34 30.5)" fill="white" fill-opacity="0.7"/>
+                    <path d="M38 22.5L30 30.5L38 38.5" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <defs>
+                    <filter id="filter0_d_142_196" x="0" y="0.5" width="68" height="68" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dy="4"/>
+                        <feGaussianBlur stdDeviation="2"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0.470588 0 0 0 0 0.470588 0 0 0 0 0.470588 0 0 0 0.05 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_142_196"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_142_196" result="shape"/>
+                    </filter>
+                </defs>
+            </svg>`,
+            `<svg width="68" height="69" viewBox="0 0 68 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d_142_264)">
+                    <circle cx="34" cy="30.5" r="30" fill="white" fill-opacity="0.7"/>
+                    <path d="M29 38.5L37 30.5L29 22.5" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <defs>
+                    <filter id="filter0_d_142_264" x="0" y="0.5" width="68" height="68" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dy="4"/>
+                        <feGaussianBlur stdDeviation="2"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0.470588 0 0 0 0 0.470588 0 0 0 0 0.470588 0 0 0 0.05 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_142_264"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_142_264" result="shape"/>
+                    </filter>
+                </defs>
+            </svg>`
+        ],
+        dots:true,
+        margin:20,
         responsive:{
             0:{
-                items:1,
+                items:1.5,
+                center:true,
                 loop:true,
-                autoplay:true
+                nav:false
             },
             640:{
                 items:2,
-                loop:true,
-                autoplay:true
+                nav:false,
             },
-            769:{
+            991:{
                 items:3
             }
         }

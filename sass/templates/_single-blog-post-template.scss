@@ -212,157 +212,143 @@
     }
     /*============== Related post ==============*/
     .related-post{
+        padding: scaleVW(96, $desktop) 0;
+        background: #F5F5F5;
+        @media(max-width:768px){
+            padding: scaleVW(96, $movil) 0;
+        }
         .container{
-            background: #E4E5E6;
-            border-radius: 30px;
-            padding: 1.5rem 0;
-            margin-bottom: 3rem;
-            .row{
-                h2{
-                    color: $blue;
-                    font-weight: 700;
-                    font-size: 3rem;
-                    margin-bottom: 1.2rem;
+            @media(max-width:768px){
+                max-width: 100%;
+            }
+            h2{
+                font-size: scaleVW(48, $desktop);
+                line-height: LH(56, 48);
+                margin: 0 auto scaleVW(32, $desktop) auto;
+                color: $blue;
+                font-weight: 700;
+                width: scaleVW(1234, $desktop);
+                @media(max-width:768px){
+                    font-size: scaleVW(32, $movil);
+                    line-height: LH(38, 32);
+                    width: 100%;
+                    max-width: scaleVW(423, $movil);
+                    margin: 0 auto;
+                    margin-bottom: scaleVW(64, $movil);
                 }
-                .slide-related-post{
-                    visibility: hidden;
-                    transition: .2s;
+            }
+        }
+        .related-manuals-contain{
+            width: 100%;
+            padding: 0 scaleVW(60, $desktop);
+            position: relative;
+            @media(max-width:768px){
+                padding: 0;
+            }
+            .slide-related-post{
+                max-width: scaleVW(1114, $desktop);
+                margin: 0 auto;
+                @media(max-width:768px){
+                    max-width: 100%;
+                }
+                .owl-stage-outer{
+                    position: relative;
+                    z-index: 1;
                     .item{
                         a{
+                            display: flex;
+                            flex-direction: column;
+                            width: scaleVW(350, $desktop);
+                            height: scaleVW(405, $desktop);
+                            overflow: hidden;
+                            border-radius: scaleVW(20, $desktop);
                             text-decoration: none;
-                            .card-post{
-                                .image-container{
-                                    height: 240px;
-                                    width: 100%;
-                                    border-radius: 20px;
-                                    overflow: hidden;
-                                    margin-bottom: 1rem;
-                                    img{
-                                        width: 100%;
-                                        height: 100%;
-                                        object-fit: cover;
-                                    }
+                            @media(max-width:768px){
+                                width: 100%;
+                                max-width: scaleVW(355, $movil);
+                                height: scaleVW(405, $movil);
+                                border-radius: scaleVW(20, $movil);
+                            }
+                            img{
+                                width: 100%;
+                                height: scaleVW(190, $desktop);
+                                object-fit: cover;
+                                object-position: center;
+                                @media(max-width:768px){
+                                    height: scaleVW(174, $movil);
                                 }
-                                .text-container{
+                            }
+                            .text-contain{
+                                padding: scaleVW(24, $desktop);
+                                height: scaleVW(247, $desktop);
+                                width: 100%;
+                                background: $white;
+                                h3{
+                                    font-size: scaleVW(20, $desktop);
+                                    line-height: LH(23, 20);
+                                    color: $gray;
+                                    margin-bottom: scaleVW(16, $desktop);
+                                    font-weight: 600;
+                                }
+                                p{
+                                    font-size: scaleVW(18, $desktop);
+                                    line-height: LH(21, 18);
+                                    color: $gray;
+                                    margin-bottom: 0;
+                                    font-weight: 300;
+                                }
+                                @media(max-width:768px){
+                                    padding: scaleVW(24, $movil);
+                                    height: scaleVW(231, $movil);
                                     h3{
-                                        color: $blue;
-                                        font-size: 1.3rem;
+                                        font-size: scaleVW(20, $movil);
+                                        margin-bottom: scaleVW(16, $movil);
                                     }
                                     p{
-                                        color: $blue;
-                                        font-size: 1rem;
-                                        overflow: hidden;
-                                        text-overflow: ellipsis;
-                                        display: -webkit-box;
-                                        -webkit-line-clamp: 2; /* number of lines to show */
-                                        line-clamp: 2; 
-                                        -webkit-box-orient: vertical;
-                                    }
-                                    .cta{
-                                        display: flex;
-                                        cursor: pointer;
-                                        width: fit-content;
-                                        .text{
-                                            background: $blue;
-                                            padding: 3px 1rem;
-                                            border-radius: 20px;
-                                            color: #ffffff;
-                                            font-weight: 400;
-                                            margin-right: 0.5rem;
-                                            height: 30px;
-                                            position: relative;
-                                            font-size: 1rem;
-                                            &::before{
-                                                content: "";
-                                                display: block;
-                                                width: 20px;
-                                                height: 15px;
-                                                position: absolute;
-                                                right: -16%;
-                                                top: 50%;
-                                                transform: translateY(-50%);
-                                                z-index: 9;
-                                                background: $blue;
-                                            }
-                                        }
-                                        .icon{
-                                            position: relative;
-                                            width: 30px;
-                                            height: 30px;
-                                            border-radius: 50%;
-                                            background: $blue;
-                                            &::after{
-                                                content: "";
-                                                width: 12px;
-                                                height: 12px;
-                                                border-radius: 50%;
-                                                position: absolute;
-                                                background: #E4E5E6;
-                                                left: -56%;
-                                                transform: translateX(56%);
-                                                top: 0.9%;
-                                                z-index: 10;
-                                            }
-                                            &::before{
-                                                content: "";
-                                                width: 12px;
-                                                height: 12px;
-                                                border-radius: 50%;
-                                                position: absolute;
-                                                background: #E4E5E6;
-                                                left: -56%;
-                                                transform: translateX(56%);
-                                                top: 59.9%;
-                                                z-index: 10;
-                                            }
-                                            svg{
-                                                position: absolute;
-                                                top: 50%;
-                                                left: 50%;
-                                                transform: translate(-50%, -50%);
-                                                width: 10px;
-                                                height: auto;
-                                                g{
-                                                    line{
-                                                        stroke: #ffffff;
-                                                    }
-                                                }
-                                            }
-                                        }
-                                        &:hover{
-                                            .text{
-                                                background: $light_blue;
-                                                color: $blue;
-                                                &::before{
-                                                    background: $light_blue;
-                                                }
-                                            }
-                                            .icon{
-                                                background: $light_blue;
-                                                svg{
-                                                    g{
-                                                        line{
-                                                            stroke:$blue;
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
+                                        font-size: scaleVW(18, $movil);
                                     }
                                 }
                             }
                         }
                     }
                 }
-            }
-        }
-        @media(max-width:768px){
-            padding: 0 1rem;
-            .container{
-                .row{
-                    padding: 1rem;
-                    h2{
-                        font-size: 2rem;
+                .owl-nav{
+                    display: flex;
+                    width: scaleVW(1234, $desktop);
+                    justify-content: space-between;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    button{
+                        svg{
+                            width: scaleVW(60, $desktop);
+                            height: scaleVW(60, $desktop);
+                        }
+                    }
+                }
+                .owl-dots{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: scaleVW(12, $desktop);
+                    margin-top: scaleVW(64, $desktop);
+                    .owl-dot{
+                        width: scaleVW(8, $desktop);
+                        height: scaleVW(8, $desktop);
+                        border-radius: 50%;
+                        background: #C1C1C1;
+                    }
+                    @media(max-width:768px){
+                        gap: scaleVW(12, $movil);
+                        margin-top: scaleVW(64, $movil);
+                        .owl-dot{
+                            width: scaleVW(8, $movil);
+                            height: scaleVW(8, $movil);
+                        }
+                    }
+                    .active{
+                        background: #777777;
                     }
                 }
             }

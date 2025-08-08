@@ -338,12 +338,14 @@ $('.feature-posts-slide').owlCarousel({
     0:{
       items:1,
       loop:true,
-      autoplay:true
+      autoplay:false,
+      margin:30
     },
     600:{
       items:2,
       loop:true,
-      autoplay:true
+      autoplay:true,
+      margin:30
     },
     768:{
       items:3,

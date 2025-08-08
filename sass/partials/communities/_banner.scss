@@ -21,4 +21,17 @@
             font-weight: 600;
         }
     }
+    @media(max-width:768px){
+        height: scaleVW(763, $movil);
+        img{
+            object-position: 59%;
+        }
+        h1{
+            color: $blue;
+            font-size: scaleVW(32, $movil);
+            left: scaleVW(35, $movil);
+            top: scaleVW(56, $movil);
+            width: scaleVW(352, $movil);
+        }
+    }
 }

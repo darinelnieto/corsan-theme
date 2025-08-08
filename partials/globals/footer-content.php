@@ -41,12 +41,21 @@ $social_network = get_field('social_networks_footer', 'option');
                             </div>
                             <!-- Contact us -->
                             <div class="contact-us">
-                                <h4><?= get_field('title_right', 'option'); ?></h4>
-                                <ul>
-                                    <?php foreach($contact_dates as $contact): ?>
+                                <div class="contact">
+                                    <h4><?= get_field('title_right', 'option'); ?></h4>
+                                    <ul>
+                                        <?php foreach($contact_dates as $contact): ?>
+                                            <li>
+                                                <span class="icon"><?= $contact['fontawesom_icon']; ?></span>
+                                                <span class="text"><?= $contact['contact_information']; ?></span>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
+                                 <ul class="social-networks d-flex d-md-none">
+                                    <?php foreach($social_network as $social): ?>
                                         <li>
-                                            <span class="icon"><?= $contact['fontawesom_icon']; ?></span>
-                                            <span class="text"><?= $contact['contact_information']; ?></span>
+                                            <a href="<?= $social['social_network']; ?>" target="_blank"><?= $social['fontawesome_icon']; ?></a>
                                         </li>
                                     <?php endforeach; ?>
                                 </ul>

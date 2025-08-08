@@ -2,6 +2,9 @@
     .contact-content{
         background: $gray_bg;
         padding: scaleVW(48, $desktop) 0 scaleVW(80, $desktop) 0;
+        @media(max-width:768px){
+            padding-top: scaleVW(48, $movil);
+        }
         .text-content{
             display: flex;
             align-items: center;
@@ -297,11 +300,11 @@
         }
         @media(max-width:768px){
             width: scaleVW(480, $movil);
-            height: auto;
+            height: scaleVW(846, $movil);
             padding: scaleVW(50, $movil) 0;
             img, &::before{
                 width: scaleVW(480, $movil);
-                height: 100%;
+                height: scaleVW(846, $movil);
             }
         }
         .text-contain{
@@ -309,6 +312,10 @@
             z-index: 2;
             display: flex;
             gap: scaleVW(69, $desktop);
+            @media(max-width:768px){
+                flex-direction: column;
+                gap: scaleVW(24, $movil);
+            }
             .left-content{
                 width: scaleVW(575, $desktop);
                 height: scaleVW(184, $desktop);
@@ -325,15 +332,38 @@
                     line-height: LH(56, 48);
                     font-weight: 700;
                 }
+                @media(max-width:768px){
+                    width: scaleVW(408, $movil);
+                    height: scaleVW(130, $movil);
+                    p{
+                        font-size: scaleVW(20, $movil);
+                        line-height: LH(36, 20);
+                        margin-bottom: scaleVW(24, $movil);
+                    }
+                    h2{
+                        font-size: scaleVW(32, $movil);
+                        line-height: LH(37, 32);
+                    }
+                }
             }
             .right-contain{
                 width: scaleVW(771, $desktop);
                 height: scaleVW(380, $desktop);
                 display: flex;
                 gap: scaleVW(102, $desktop);
+                @media(max-width:768px){
+                    width: scaleVW(359, $movil);
+                    height: scaleVW(380, $movil);
+                    gap: scaleVW(5, $movil);
+                    flex-direction: column;
+                }
                 .content{
                     width: scaleVW(359, $desktop);
                     padding: scaleVW(32, $desktop);
+                    @media(max-width:768px){
+                        width: scaleVW(359, $movil);
+                        padding: 0;
+                    }
                     h3{
                         color: $blue;
                         width: scaleVW(107, $desktop);
@@ -352,6 +382,16 @@
                             position: absolute;
                             bottom: 0;
                             left: 0;
+                        }
+                        @media(max-width:768px){
+                            width: scaleVW(99, $movil);
+                            height: scaleVW(55, $movil);
+                            font-size: scaleVW(22, $movil);
+                             margin-bottom: scaleVW(27, $movil);
+                            &::after{
+                                width: scaleVW(27, $movil);
+                                height: scaleVW(3, $movil);
+                            }
                         }
                     }
                     .description{
@@ -372,6 +412,14 @@
                             font-size: scaleVW(20, $desktop);
                             line-height: LH(32, 20);
                             font-weight: 300;
+                        }
+                        @media(max-width:768px){
+                            a, strong{
+                                font-size: scaleVW(22, $movil);
+                            }
+                            p{
+                                font-size: scaleVW(20, $movil);
+                            }
                         }
                     }
                 }

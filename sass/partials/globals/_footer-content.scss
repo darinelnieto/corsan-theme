@@ -130,16 +130,39 @@
                     }
                 }
                 @media(max-width:768px){
-                    width: scaleVW(388, $movil);
-                    h4{
-                        font-size: scaleVW(20, $movil);
-                        margin-bottom: scaleVW(24, $movil);
+                    display: flex;
+                    align-items: center;
+                    width: scaleVW(407, $movil);
+                    justify-content: space-between;
+                    .contact{
+                        width: scaleVW(388, $movil);
+                        h4{
+                            font-size: scaleVW(20, $movil);
+                            margin-bottom: scaleVW(24, $movil);
+                        }
+                        ul{
+                            width: scaleVW(226, $movil);
+                            li{
+                                font-size: scaleVW(16, $movil);
+                                gap: scaleVW(18, $movil);
+                            }
+                        }
                     }
-                    ul{
-                        width: scaleVW(226, $movil);
+                    .social-networks{
+                        display: flex;
+                        flex-direction: column;
+                        gap: scaleVW(30, $movil);
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
                         li{
-                            font-size: scaleVW(16, $movil);
-                            gap: scaleVW(18, $movil);
+                            a{
+                                color: #D4D4D4;
+                                svg{
+                                    width: scaleVW(31.74, $movil);
+                                    height: auto;
+                                }
+                            }
                         }
                     }
                 }
@@ -175,6 +198,21 @@
                             }
                         }
                     }
+                    @media(max-width:768px){
+                        gap: scaleVW(47, $movil);
+                        justify-content: space-between;
+                        li{
+                            a{
+                                font-size: scaleVW(20, $movil);
+                                line-height: LH(23, 20);
+                                gap: scaleVW(22, $movil);
+                                svg{
+                                    width: scaleVW(30.66, $movil);
+                                    height: scaleVW(30.66, $movil);
+                                }
+                            }
+                        }
+                    }
                 }
             }
             hr{
@@ -182,18 +220,31 @@
                 opacity: 1;
                 height: scaleVW(1, $desktop);
                 margin-top: scaleVW(23, $desktop);
+                @media(max-width:768px){
+                    margin-top: scaleVW(50, $movil);
+                    margin-bottom: scaleVW(45, $movil);
+                    height: scaleVW(1, $movil);
+                }
             }
             .end{
                 display: flex;
                 width: 100%;
                 justify-content: space-between;
                 align-items: center;
+                @media(max-width:768px){
+                    justify-content: center;
+                }
                 .copi-right{
                     font-size: scaleVW(18, $desktop);
                     line-height: LH(20, 18);
                     color: #B2B2B2;
                     margin-bottom: 0;
                     font-weight: 400;
+                    @media(max-width:768px){
+                        font-size: scaleVW(16, $movil);
+                        line-height: LH(18, 16);
+                        text-align: center;
+                    }
                 }
                 ul{
                     list-style: none;
@@ -202,6 +253,9 @@
                     display: flex;
                     gap: scaleVW(32, $desktop);
                     align-items: center;
+                    @media(max-width:768px){
+                        display: none;
+                    }
                     li{
                         a{
                             color: #B3B3B3;
