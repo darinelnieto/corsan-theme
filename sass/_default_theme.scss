@@ -85,53 +85,87 @@ body, html{
 }
 /*=========== 404 ==========*/
 #ditto_404_error{
-    background: $blue;
-    padding: 10rem 0;
-    .row{
-        position: relative;
+    height: scaleVW(873, $desktop);
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    @media(max-width:768px){
+        height: scaleVW(874, $movil);
+    }
+    .background-image{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        @media(max-width:768px){
+            height: 121%;
+        }
+    }
+    .text-contain{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        max-width: scaleVW(518, $desktop);
+        @media(max-width:768px) {
+            max-width: 100%;
+        }
         h1{
-            color: $light_blue;
+            font-size: scaleVW(300, $desktop);
+            line-height: LH(352, 300);
             font-weight: 700;
-            font-size: 13rem;
-            text-align: center;
-            @media(max-width:500px){
-                font-size: 10rem;
+            color: $white;
+            margin-bottom: 0;
+            @media(max-width:768px){
+                font-size: scaleVW(200, $movil);
+                line-height: LH(234, 200);
             }
         }
         p{
-            color: #ffffff;
-            font-size: 4rem;
+            color: $white;
+            font-size: scaleVW(32, $desktop);
+            line-height: LH(38, 32);
             font-weight: 600;
+            margin-bottom: scaleVW(42, $desktop);
             @media(max-width:768px){
-                text-align: center;
-                font-size: 2.5rem;
+                font-size: scaleVW(25, $movil);
+                line-height: LH(29, 25);
+                margin-bottom: scaleVW(63, $movil);
             }
         }
         a{
-            font-size: 25px;
-            padding: 10px 1rem;
-            color: $light_blue;
-            border: 1px solid $light_blue;
-            border-radius: 30px;
+            display: flex;
+            justify-content: space-between;
             text-decoration: none;
-            @media(max-width:500px){
-                font-size: 20px;
-            }
-        }
-        .svg-container{
-            width: fit-content;
-            position: absolute;
-            z-index: 10;
-            right: 3%;
-            top: 100%;
+            align-items: center;
+            margin: 0 auto;
+            width: scaleVW(349, $desktop);
+            height: scaleVW(44, $desktop);
+            color: $blue;
+            background: $white;
+            border-radius: scaleVW(4, $desktop);
+            font-size: scaleVW(16, $desktop);
+            line-height: LH(20, 16);
+            padding: 0 scaleVW(20, $desktop);
+            font-weight: 600;
             svg{
-                height: auto;
-                max-width: 250px;
+                width: scaleVW(14, $desktop);
+                height: scaleVW(14, $desktop);
             }
             @media(max-width:768px){
-                top: 111%;
+                width: scaleVW(349, $movil);
+                height: scaleVW(44, $movil);
+                border-radius: scaleVW(4, $movil);
+                font-size: scaleVW(16, $movil);
+                padding: 0 scaleVW(20, $movil);
                 svg{
-                    max-width: 200px;
+                    width: scaleVW(14, $movil);
+                    height: scaleVW(14, $movil);
                 }
             }
         }

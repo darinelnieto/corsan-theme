@@ -1,5 +1,6 @@
 .header-content-partial-777e2f {
     background: $white;
+    position: relative;
     /*========= Top content =========*/
     .top-content-menu{
         padding: scaleVW(22, $desktop) 0;
@@ -133,4 +134,69 @@
         }
     }
     /*========== Movil star ==========*/
+    #submenu{
+        background: $white;
+        display: none;
+        padding: scaleVW(34, $desktop) 0 scaleVW(54, $desktop) 0;
+        position: absolute;
+        bottom: 0;
+        transform: translateY(99%);
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        .contente-menu{
+            display: flex;
+            gap: scaleVW(223, $desktop);
+            .menu-name{
+                width: scaleVW(193, $desktop);
+                h2{
+                    font-size: scaleVW(42, $desktop);
+                    line-height: LH(58, 42);
+                    font-weight: 700;
+                    color: $blue;
+                }
+            }
+            .menus{
+                width: scaleVW(1050.53, $desktop);
+                display: flex;
+                gap: scaleVW(67, $desktop);
+                justify-content: right;
+                .menu-item{
+                    display: flex;
+                    flex-direction: column;
+                    gap: scaleVW(37, $desktop);
+                    .name-category{
+                        text-decoration: none;
+                        color: $gray;
+                        font-weight: 700;
+                        font-size: scaleVW(24, $desktop);
+                        line-height: LH(34, 24);
+                        display: flex;
+                    }
+                    ul{
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        display: flex;
+                        flex-direction: column;
+                        gap: scaleVW(21, $desktop);
+                        li{
+                            width: 100%;
+                            a{
+                                text-decoration: none;
+                                color: $gray;
+                                font-weight: 400;
+                                font-size: scaleVW(20, $desktop);
+                                line-height: LH(34, 20);
+                                text-transform: lowercase;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #submenu.active{
+        display: block;
+    }
 }

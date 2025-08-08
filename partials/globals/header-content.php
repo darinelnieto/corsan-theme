@@ -49,6 +49,55 @@ global $es_movil;
         </div>
     </div>
     <!-- Menu movil -->
+    <?php
+        $submenu = get_field('submenu_desktop', 'option');
+        if($submenu['menu_taxonomies']):
+    ?>
+        <div id="submenu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="contente-menu">
+                            <div class="menu-name">
+                                <h2><?= $submenu['menu_name']; ?></h2>
+                            </div>
+                            <div class="menus">
+                                <?php foreach($submenu['menu_taxonomies'] as $submenu): 
+                                    $cat = $submenu['category_name']->slug; 
+                                    $products = new WP_Query(array(
+                                        'post_type' => 'products',
+                                        'posts_per_page' => $submenu['perpage'],
+                                        'tax_query' => array(
+                                            array(
+                                                'taxonomy' => 'product_cat',
+                                                'field'    => 'slug',
+                                                'terms'    => $cat,
+                                            ),
+                                        ),
+                                    ));
+                                ?>
+                                    <div class="menu-item">
+                                        <a href="<?= home_url(); ?>/product_cat/<?= $cat; ?>" class="name-category">
+                                            <?= $submenu['category_name']->name; ?>
+                                        </a>
+                                        <ul>
+                                            <?php if($products->have_posts()): while($products->have_posts()): $products->the_post(); ?>
+                                                <li>
+                                                    <a href="<?= get_permalink($products->ID); ?>">
+                                                        <?= get_the_title($products->ID); ?>
+                                                    </a>
+                                                </li>
+                                            <?php endwhile; wp_reset_postdata(); endif; ?>
+                                        </ul>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
     <div class="d-none menu-movil">
         <div class="row align-items-center">
             <div class="col-12 col-md-7 main-menu">

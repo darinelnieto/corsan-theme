@@ -16,6 +16,7 @@
         "options-theme_page_acf-options-contact",
         "options-theme_page_acf-options-header",
         "toplevel_page_acf-options-footer",
-        "options-theme_page_acf-options-solutions-nav"
+        "options-theme_page_acf-options-solutions-nav",
+        "options-theme_page_acf-options-404-page"
     ]
 }

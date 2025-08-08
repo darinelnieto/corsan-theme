@@ -12,3 +12,17 @@ $('.taxonomies-partial-a0ac83').on('click', '.card-content', function(){
     $('.card-taxonomy').removeClass('active');
     $(this).parent().addClass('active');
 });
+/*=========== Menú ===========*/
+$('.submenu').on('mouseover', 'a', function(e){
+    var id = $(this).attr('href');
+    $(id).addClass('active');
+    e.preventDefault();
+});
+$('.submenu').on('click', 'a', function(e){
+    var id = $(this).attr('href');
+    $(id).addClass('active');
+    e.preventDefault();
+});
+$('#submenu').on('mouseleave', function(){
+   $(this).removeClass('active');
+});
