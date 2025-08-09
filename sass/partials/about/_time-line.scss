@@ -36,7 +36,7 @@
             font-weight: 400;
             margin-bottom: 0;
             @media(max-width:768px){
-                font-size: scaleVW(12, $movil);
+                font-size: scaleVW(15, $movil);
                 line-height: LH(20, 12);
                 font-weight: 300;
             }

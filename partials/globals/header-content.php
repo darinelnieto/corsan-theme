@@ -39,7 +39,7 @@ global $es_movil;
                             <path d="M28.625 28.625L22.2812 22.2812M25.7083 14.0417C25.7083 20.485 20.485 25.7083 14.0417 25.7083C7.59834 25.7083 2.375 20.485 2.375 14.0417C2.375 7.59834 7.59834 2.375 14.0417 2.375C20.485 2.375 25.7083 7.59834 25.7083 14.0417Z" stroke="#002D74" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
-                    <div class="bar-menu" onclick="menu_controller()">
+                    <div class="bar-menu">
                         <span class="top"></span>
                         <span class="center"></span>
                         <span class="bottom"></span>
@@ -54,6 +54,9 @@ global $es_movil;
         if($submenu['menu_taxonomies']):
     ?>
         <div id="submenu">
+            <div class="close-submenu d-block d-md-none">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -101,17 +104,23 @@ global $es_movil;
                 </div>
             </div>
         </div>
-    <?php endif; ?>
-    <div class="d-none menu-movil">
-        <div class="row align-items-center">
-            <div class="col-12 col-md-7 main-menu">
-                <?php wp_nav_menu(['menu' => 'menu main']); ?>
-            </div>
-            <div class="col-12 col-md-5 lenguages">
-                <?php wp_nav_menu(['menu' => 'Menu 1']); ?>
+        <div class="menu-movil">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="main-menu">
+                            <?php wp_nav_menu(['menu' => 'menu main']); ?>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="lenguages">
+                            <?php wp_nav_menu(['menu' => 'Menu 1']); ?>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    <?php endif; ?>
 </section>
 <script>
     const rout = _dittoURL_ + "/wp-json/product/search";

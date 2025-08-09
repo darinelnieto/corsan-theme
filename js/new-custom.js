@@ -13,30 +13,54 @@ $('.taxonomies-partial-a0ac83').on('click', '.card-content', function(){
     $(this).parent().addClass('active');
 });
 /*=========== Menú ===========*/
-$('.submenu').on('mouseover', 'a', function(e){
-    var id = $(this).attr('href');
-    $(id).addClass('active');
-    e.preventDefault();
-});
+var product_name = '';
 $('.submenu').on('click', 'a', function(e){
     var id = $(this).attr('href');
     $(id).addClass('active');
     e.preventDefault();
 });
-$('#submenu').on('mouseleave', function(){
-   $(this).removeClass('active');
-   $('.menus ul').removeClass('active');
-   $('#product-image').html('');
+$('.submenu').on('click', function(){
+    var id = $(this).children('a').attr('href');
+    $(id).addClass('active');
+    e.preventDefault();
 });
-$('.menus').on('mouseover', '.name-category', function(){
-    $('.menus ul').removeClass('active');
-    $(this).parent().children('ul').addClass('active');
-});
-var product_name = '';
-$('.menus').on('mouseover', '.the-product', function(){
-   product_name = $(this).text();
-   getProduct()
-});
+$(()=>{
+    if($(window).width() > 768){
+        $('.submenu').on('mouseover', 'a', function(e){
+            var id = $(this).attr('href');
+            $(id).addClass('active');
+            e.preventDefault();
+        });
+        $('#submenu').on('mouseleave', function(){
+            $(this).removeClass('active');
+            $('.menus ul').removeClass('active');
+            $('#product-image').html('');
+        });
+        $('.menus').on('mouseover', '.name-category', function(){
+            $('.menus ul').removeClass('active');
+            $(this).parent().children('ul').addClass('active');
+        });
+        $('.menus').on('mouseover', '.the-product', function(){
+            product_name = $(this).text();
+            getProduct()
+        });
+    }else{
+        var status_bar = false;
+        $('.bar-menu').on('click', function(){
+            if(status_bar === false){
+                $('.menu-movil').addClass('active');
+                status_bar = true;
+            }else{
+                $('.menu-movil').removeClass('active');
+                $('#submenu').removeClass('active');
+                status_bar = false;
+            }
+        });
+        $('.close-submenu').on('click', ()=>{
+            $('#submenu').removeClass('active');
+        })
+    }
+})
 function getProduct(){
     $.ajax({
         url: rout,
