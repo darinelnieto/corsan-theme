@@ -4098,6 +4098,7 @@ body .container, html .container {
   background: #ffffff;
   display: none;
   padding: 1.7708333333vw 0 2.8125vw 0;
+  height: 20.8333333333vw;
   position: absolute;
   bottom: 0;
   transform: translateY(99%);
@@ -4108,6 +4109,7 @@ body .container, html .container {
 .header-content-partial-777e2f #submenu .contente-menu {
   display: flex;
   gap: 11.6145833333vw;
+  position: relative;
 }
 .header-content-partial-777e2f #submenu .contente-menu .menu-name {
   width: 10.0520833333vw;
@@ -4121,29 +4123,40 @@ body .container, html .container {
 .header-content-partial-777e2f #submenu .contente-menu .menus {
   width: 54.7151041667vw;
   display: flex;
-  gap: 3.4895833333vw;
-  justify-content: right;
+  flex-direction: column;
+  gap: 1.5104166667vw;
+  position: relative;
 }
 .header-content-partial-777e2f #submenu .contente-menu .menus .menu-item {
   display: flex;
-  flex-direction: column;
   gap: 1.9270833333vw;
+  width: fit-content;
 }
 .header-content-partial-777e2f #submenu .contente-menu .menus .menu-item .name-category {
   text-decoration: none;
   color: #4D4D4D;
-  font-weight: 700;
+  font-weight: 600;
+  width: 14.2708333333vw;
   font-size: 1.25vw;
   line-height: 1.4166666667;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-content-partial-777e2f #submenu .contente-menu .menus .menu-item .name-category svg {
+  width: 1.1458333333vw;
+  height: 1.1458333333vw;
 }
 .header-content-partial-777e2f #submenu .contente-menu .menus .menu-item ul {
+  display: none;
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
   flex-direction: column;
   gap: 1.09375vw;
+  position: absolute;
+  top: 0;
+  left: 19.9479166667vw;
 }
 .header-content-partial-777e2f #submenu .contente-menu .menus .menu-item ul li {
   width: 100%;
@@ -4155,6 +4168,24 @@ body .container, html .container {
   font-size: 1.0416666667vw;
   line-height: 1.7;
   text-transform: lowercase;
+}
+.header-content-partial-777e2f #submenu .contente-menu .menus .menu-item ul.active {
+  display: flex;
+}
+.header-content-partial-777e2f #submenu .contente-menu .menus .menu-item:hover .name-category {
+  font-weight: 700;
+}
+.header-content-partial-777e2f #submenu .contente-menu #product-image {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15.625vw;
+  height: 15.625vw;
+  overflow: hidden;
+}
+.header-content-partial-777e2f #submenu .contente-menu #product-image img {
+  width: 100%;
 }
 .header-content-partial-777e2f #submenu.active {
   display: block;

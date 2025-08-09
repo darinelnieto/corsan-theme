@@ -78,12 +78,15 @@ global $es_movil;
                                 ?>
                                     <div class="menu-item">
                                         <a href="<?= home_url(); ?>/product_cat/<?= $cat; ?>" class="name-category">
-                                            <?= $submenu['category_name']->name; ?>
+                                            <span class="text"><?= $submenu['category_name']->name; ?></span>
+                                            <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M2 16H30M30 16L16 2M30 16L16 30" stroke="#4D4D4D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
                                         </a>
                                         <ul>
                                             <?php if($products->have_posts()): while($products->have_posts()): $products->the_post(); ?>
                                                 <li>
-                                                    <a href="<?= get_permalink($products->ID); ?>">
+                                                    <a href="<?= get_permalink($products->ID); ?>" class="the-product">
                                                         <?= get_the_title($products->ID); ?>
                                                     </a>
                                                 </li>
@@ -92,6 +95,7 @@ global $es_movil;
                                     </div>
                                 <?php endforeach; ?>
                             </div>
+                            <div id="product-image"></div>
                         </div>
                     </div>
                 </div>
@@ -109,3 +113,6 @@ global $es_movil;
         </div>
     </div>
 </section>
+<script>
+    const rout = _dittoURL_ + "/wp-json/product/search";
+</script>

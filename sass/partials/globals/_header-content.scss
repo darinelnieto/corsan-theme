@@ -138,6 +138,7 @@
         background: $white;
         display: none;
         padding: scaleVW(34, $desktop) 0 scaleVW(54, $desktop) 0;
+        height: scaleVW(400, $desktop);
         position: absolute;
         bottom: 0;
         transform: translateY(99%);
@@ -147,6 +148,8 @@
         .contente-menu{
             display: flex;
             gap: scaleVW(223, $desktop);
+            position: relative;
+
             .menu-name{
                 width: scaleVW(193, $desktop);
                 h2{
@@ -159,27 +162,38 @@
             .menus{
                 width: scaleVW(1050.53, $desktop);
                 display: flex;
-                gap: scaleVW(67, $desktop);
-                justify-content: right;
+                flex-direction: column;
+                gap: scaleVW(29, $desktop);
+                position: relative;
                 .menu-item{
                     display: flex;
-                    flex-direction: column;
                     gap: scaleVW(37, $desktop);
+                    width: fit-content;
                     .name-category{
                         text-decoration: none;
                         color: $gray;
-                        font-weight: 700;
+                        font-weight: 600;
+                        width: scaleVW(274, $desktop);
                         font-size: scaleVW(24, $desktop);
                         line-height: LH(34, 24);
                         display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        svg{
+                            width: scaleVW(22, $desktop);
+                            height: scaleVW(22, $desktop);
+                        }
                     }
                     ul{
+                        display: none;
                         list-style: none;
                         padding: 0;
                         margin: 0;
-                        display: flex;
                         flex-direction: column;
                         gap: scaleVW(21, $desktop);
+                        position: absolute;
+                        top: 0;
+                        left: scaleVW(383, $desktop);
                         li{
                             width: 100%;
                             a{
@@ -192,6 +206,26 @@
                             }
                         }
                     }
+                    ul.active{
+                        display: flex;
+                    }
+                    &:hover{
+                        .name-category{
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+            #product-image{
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: scaleVW(300, $desktop);
+                height: scaleVW(300, $desktop);
+                overflow: hidden;
+                img{
+                    width: 100%;
                 }
             }
         }

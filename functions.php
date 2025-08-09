@@ -237,7 +237,7 @@ function suport_post(){
 add_action('init', 'suport_post', 3);
 /*============ Creating filter API by product category ============*/
 add_action( 'rest_api_init', function () {
-  register_rest_route( 'product', '/list', array(
+  register_rest_route( 'product', '/search', array(
       array(
           'methods'               => WP_REST_Server::READABLE,
           'callback'              => 'products_list_handler',
@@ -250,12 +250,8 @@ function products_list_handler( $request ){
   /*========== Query parameters ==========*/
   $query = [
     'post_type'         => 'products',
-    'product_cat'       => $request['taxonomy'],
-    'solutions_cat'     => $request['solutions_category'],
+    's'                 => $params['name'],
     'post_status'       => 'publish',
-    'posts_per_page'  => -1,
-    'meta_query' => array(),
-    'orderby'			      => array( 'meta_value' => 'ASC', 'ID' => 'ASC' )
   ];
   /*========== Query =========*/
   $news = new WP_Query($query); 
@@ -263,12 +259,10 @@ function products_list_handler( $request ){
   $products = array();
   while ($news->have_posts()) {
     $news->the_post();
-    $cat = get_the_terms($news->ID, 'product_cat');
     array_push($products, array(
-      'title'         => get_the_title($item->ID),
-      "thumbnail"     => get_the_post_thumbnail_url($item->ID),
-      'permalink'     => get_permalink($item->ID),
-      "color"         => get_field('color', $cat[0]->taxonomy . '_' . $cat[0]->term_id)
+      'title'         => get_the_title(get_the_id()),
+      "thumbnail"     => get_the_post_thumbnail_url(get_the_id()),
+      'permalink'     => get_permalink(get_the_id()),
     ));
     wp_reset_postdata();
   }
