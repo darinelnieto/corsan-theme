@@ -103,7 +103,7 @@
             }
             /*============= Right content ==============*/
             .right-content{
-                min-width: scaleVW(432, $desktop);
+                min-width: scaleVW(712, $desktop);
                 gap: scaleVW(30, $desktop);
                 display: flex;
                 flex-direction: column;
