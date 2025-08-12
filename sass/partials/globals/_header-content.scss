@@ -135,10 +135,10 @@
     }
     /*========== Drop menu ==========*/
     #submenu{
-        background: $white;
+        background: #D9D9D9;
         display: none;
-        padding: scaleVW(34, $desktop) 0 scaleVW(54, $desktop) 0;
-        height: scaleVW(400, $desktop);
+        padding: scaleVW(64, $desktop) 0;
+        height: scaleVW(752, $desktop);
         position: absolute;
         bottom: 0;
         transform: translateY(99%);
@@ -169,9 +169,9 @@
             .menu-name{
                 width: scaleVW(193, $desktop);
                 h2{
-                    font-size: scaleVW(42, $desktop);
-                    line-height: LH(58, 42);
-                    font-weight: 700;
+                    font-size: scaleVW(36, $desktop);
+                    line-height: LH(20, 20);
+                    font-weight: 600;
                     color: $blue;
                 }
                 @media(max-width:768px){
@@ -194,21 +194,22 @@
                 }
                 .menu-item{
                     display: flex;
-                    gap: scaleVW(37, $desktop);
+                    gap: scaleVW(44, $desktop);
                     width: fit-content;
                     @media(max-width:768px){
                         flex-direction: column;
                     }
                     .name-category{
                         text-decoration: none;
-                        color: $gray;
+                        color: #707070;
                         font-weight: 600;
-                        width: scaleVW(274, $desktop);
-                        font-size: scaleVW(24, $desktop);
-                        line-height: LH(34, 24);
+                        width: scaleVW(268, $desktop);
+                        font-size: scaleVW(32, $desktop);
+                        line-height: LH(20, 32);
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
+                        transition: .2s;
                         svg{
                             width: scaleVW(22, $desktop);
                             height: scaleVW(22, $desktop);
@@ -229,7 +230,7 @@
                         padding: 0;
                         margin: 0;
                         flex-direction: column;
-                        gap: scaleVW(21, $desktop);
+                        gap: scaleVW(7, $desktop);
                         position: absolute;
                         top: 0;
                         left: scaleVW(383, $desktop);
@@ -237,11 +238,14 @@
                             width: 100%;
                             a{
                                 text-decoration: none;
-                                color: $gray;
+                                color: #707070;
                                 font-weight: 400;
-                                font-size: scaleVW(20, $desktop);
-                                line-height: LH(34, 20);
+                                font-size: scaleVW(24, $desktop);
+                                line-height: LH(20, 24);
                                 text-transform: lowercase;
+                                &:hover{
+                                    color: #424242;
+                                }
                             }
                         }
                     }
@@ -250,7 +254,7 @@
                     }
                     &:hover{
                         .name-category{
-                            font-weight: 700;
+                            color: #424242;
                         }
                     }
                 }
@@ -258,13 +262,13 @@
             #product-image{
                 position: absolute;
                 right: 0;
-                top: 50%;
-                transform: translateY(-50%);
+                top: 0;
                 width: scaleVW(300, $desktop);
-                height: scaleVW(300, $desktop);
                 overflow: hidden;
                 img{
-                    width: 100%;
+                        width: 28vw;
+                        height: auto;
+                        margin: 0 auto;
                 }
             }
         }

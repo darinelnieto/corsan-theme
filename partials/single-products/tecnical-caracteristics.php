@@ -21,7 +21,9 @@ $content = get_field('tecnical_caracteristics_group');
                         <div class="caracteristics-list">
                             <?php foreach($content['caracteristics'] as $item): ?>
                                 <div class="item">
-                                    <img src="<?= $item['icon']['url']; ?>" alt="<?= $item['icon']['title']; ?>" width="<?= $item['icon']['width']; ?>" height="<?= $item['icon']['height']; ?>">
+                                    <?php if($item['icon']): ?>
+                                        <img src="<?= $item['icon']['url']; ?>" alt="<?= $item['icon']['title']; ?>" width="<?= $item['icon']['width']; ?>" height="<?= $item['icon']['height']; ?>">
+                                    <?php endif; ?>
                                     <p class="name"><?= $item['description']; ?></p>
                                 </div>
                             <?php endforeach; ?>
