@@ -5,9 +5,12 @@
         padding: scaleVW(30, $movil) 0;
     }
     h2{
+        a{
+            text-decoration: none;
+            color: $blue;
+        }
         font-size: scaleVW(48, $desktop);
         line-height: LH(56, 48);
-        color: $blue;
         font-weight: 700;
         margin-bottom: scaleVW(48, $desktop);
         @media(max-width:768px){

@@ -113,11 +113,25 @@
                         bottom: scaleVW(26, $desktop);
                         z-index: 1;
                         transition: .2s;
+                        gap: scaleVW(20, $desktop);
+                        text-decoration: none;
+                        color: $white;
                         @media(max-width:768px){
                             width: 100%;
                             height: 100%;
                             left: 0;
                             top: 0;
+                            gap: scaleVW(20, $movil);
+                        }
+                        span{
+                            color: $white;
+                            font-size: scaleVW(20, $desktop);
+                            line-height: LH(23, 20);
+                            font-weight: 400;
+                            @media(max-width:768px){
+                                font-size: scaleVW(18, $movil);
+                                line-height: LH(23, 18);
+                            }
                         }
                         svg{
                             width: scaleVW(28, $desktop);
@@ -149,6 +163,11 @@
                         object-position: center;
                     }
                 }
+                .card-content{
+                    a{
+                        text-decoration: underline;
+                    }
+                }
             }
         }
     }
@@ -161,7 +180,7 @@
         .category-list{
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: start;
             list-style: none;
             margin: 0;
             background: $blue;
@@ -178,20 +197,23 @@
                 border-right: scaleVW(2, $desktop) solid #849EC1;
                 a{
                     display: flex;
-                    width: scaleVW(348, $desktop);
+                    width: 14.4vw;
                     height: scaleVW(70, $desktop);
                     align-items: center;
                     justify-content: center;
                     gap: scaleVW(15, $desktop);
                     text-decoration: none;
                     color: $white;
-                    font-size: scaleVW(32, $desktop);
-                    line-height: LH(38, 32);
+                    font-size: scaleVW(25, $desktop);
+                    line-height: LH(38, 25);
                     font-weight: 400;
                     img{
                         width: scaleVW(32, $desktop);
                         height: scaleVW(32, $desktop);
                     }
+                }
+                a.active{
+                    text-decoration: underline;
                 }
                 @media(max-width:768px){
                     border: none;

@@ -52,11 +52,11 @@
                 gap: scaleVW(68, $movil);
             }
             .nav-content{
-                width: scaleVW(438.71, $desktop);
+                width: scaleVW(458.71, $desktop);
                 display: flex;
                 gap: scaleVW(135, $desktop);
                 .nav-item{
-                    width: scaleVW(152, $desktop);
+                    width: scaleVW(172, $desktop);
                     h4{
                         color: $white;
                         font-size: scaleVW(20, $desktop);
@@ -71,6 +71,7 @@
                             list-style: none;
                             display: flex;
                             flex-direction: column;
+                            gap: scaleVW(20, $desktop);
                             li{
                                 a{
                                     color: #B2B2B2;
@@ -93,6 +94,7 @@
                         }
                         .the-nav{
                             ul{
+                                gap: scaleVW(16, $movil);
                                 li{
                                     a{
                                         font-size: scaleVW(18, $movil);

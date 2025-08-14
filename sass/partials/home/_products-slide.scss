@@ -16,14 +16,17 @@
             .image-contain{
                 width: scaleVW(773, $desktop);
                 height: scaleVW(475, $desktop);
-                @media(max-width:768px){
-                    width: scaleVW(448, $movil);
-                    height: scaleVW(329, $movil);
-                }
                 img{
                         width: 28vw;
                         height: auto;
                         margin: 0 auto;
+                }
+                @media(max-width:768px){
+                    width: scaleVW(448, $movil);
+                    height: auto;
+                    img{
+                        width: 100%;
+                    }
                 }
             }
             .text-contain{

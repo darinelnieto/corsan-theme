@@ -135,7 +135,7 @@
     }
     /*========== Drop menu ==========*/
     #submenu{
-        background: #D9D9D9;
+        background: $white;
         display: none;
         padding: scaleVW(64, $desktop) 0;
         height: scaleVW(752, $desktop);
@@ -262,13 +262,12 @@
             #product-image{
                 position: absolute;
                 right: 0;
-                top: 0;
-                width: scaleVW(300, $desktop);
+                top: 50%;
+                transform: translate(50%, -25%);
+                width: scaleVW(450, $desktop);
                 overflow: hidden;
                 img{
-                        width: 28vw;
-                        height: auto;
-                        margin: 0 auto;
+                    width: 100%;
                 }
             }
         }

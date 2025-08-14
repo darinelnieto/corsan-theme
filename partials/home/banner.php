@@ -28,7 +28,7 @@ global $es_movil;
                         <div class="text-taxonomy">
                             <p class="name-category"><?= $tax->name; ?></p>
                             <a href="<?= home_url(); ?>/product_cat/<?= $tax->slug; ?>">
-                                <span class="text"><?php if(get_bloginfo("language") == "en-US"): ?>Learn more<?php else: ?>Conocer más<?php endif; ?></span>
+                                <span class="text"><?php if(get_bloginfo("language") == "en-US"): ?>See products<?php else: ?>Ver porductos<?php endif; ?></span>
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M2 16H30M30 16L16 2M30 16L16 30" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>

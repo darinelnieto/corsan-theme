@@ -472,7 +472,15 @@
             "type": "group",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_689dcc0c25c1f",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -502,6 +510,27 @@
                     "append": ""
                 },
                 {
+                    "key": "field_689dd0d8d8cd8",
+                    "label": "Enable manual sorting of videos and manuals",
+                    "name": "enable_manual_sorting_of_videos_and_manuals",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
                     "key": "field_6883c64ad3e41",
                     "label": "List",
                     "name": "list",
@@ -509,7 +538,15 @@
                     "type": "repeater",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_689dd0d8d8cd8",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -602,7 +639,7 @@
             "selected": 0
         },
         {
-            "key": "field_6884ce9db5a8e",
+            "key": "field_689dc76e437a5",
             "label": "Environmental responsibility content",
             "name": "environmental_responsibility_content",
             "aria-label": "",
@@ -618,7 +655,7 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_6884ceb3b5a8f",
+                    "key": "field_689dc76e437a6",
                     "label": "Main image",
                     "name": "main_image",
                     "aria-label": "",
@@ -644,7 +681,7 @@
                     "preview_size": "medium"
                 },
                 {
-                    "key": "field_6884cecfb5a90",
+                    "key": "field_689dc76e437a7",
                     "label": "Title",
                     "name": "title",
                     "aria-label": "",
@@ -665,7 +702,7 @@
                     "append": ""
                 },
                 {
-                    "key": "field_6884ced5b5a91",
+                    "key": "field_689dc76e437a8",
                     "label": "Iso text",
                     "name": "iso_text",
                     "aria-label": "",
@@ -686,7 +723,7 @@
                     "append": ""
                 },
                 {
-                    "key": "field_6884cf03b5a92",
+                    "key": "field_689dc76e437a9",
                     "label": "Description",
                     "name": "description",
                     "aria-label": "",
@@ -707,7 +744,7 @@
                     "new_lines": "br"
                 },
                 {
-                    "key": "field_6884cf1fb5a93",
+                    "key": "field_689dc76e437aa",
                     "label": "Process",
                     "name": "process",
                     "aria-label": "",
@@ -729,7 +766,7 @@
                     "rows_per_page": 20,
                     "sub_fields": [
                         {
-                            "key": "field_6884d0e6b5a94",
+                            "key": "field_689dc76e437ab",
                             "label": "Image",
                             "name": "image",
                             "aria-label": "",
@@ -753,10 +790,10 @@
                             "mime_types": "",
                             "allow_in_bindings": 0,
                             "preview_size": "medium",
-                            "parent_repeater": "field_6884cf1fb5a93"
+                            "parent_repeater": "field_689dc76e437aa"
                         },
                         {
-                            "key": "field_6884d15db5a95",
+                            "key": "field_689dc76e437ac",
                             "label": "Process description",
                             "name": "process_description",
                             "aria-label": "",
@@ -775,7 +812,101 @@
                             "rows": 3,
                             "placeholder": "",
                             "new_lines": "br",
-                            "parent_repeater": "field_6884cf1fb5a93"
+                            "parent_repeater": "field_689dc76e437aa"
+                        }
+                    ]
+                },
+                {
+                    "key": "field_689dc87b813f6",
+                    "label": "Description two",
+                    "name": "description_two",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": "",
+                    "placeholder": "",
+                    "new_lines": "br"
+                },
+                {
+                    "key": "field_689dc8a5813f8",
+                    "label": "Process two",
+                    "name": "process_two",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "table",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Agregar Fila",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_689dc8a6813f9",
+                            "label": "Image",
+                            "name": "image",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "allow_in_bindings": 0,
+                            "preview_size": "medium",
+                            "parent_repeater": "field_689dc8a5813f8"
+                        },
+                        {
+                            "key": "field_689dc8a6813fa",
+                            "label": "Process description",
+                            "name": "process_description",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "rows": "",
+                            "placeholder": "",
+                            "new_lines": "br",
+                            "parent_repeater": "field_689dc8a5813f8"
                         }
                     ]
                 }
@@ -800,5 +931,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753534850
+    "modified": 1755173118
 }

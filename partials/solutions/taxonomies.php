@@ -32,6 +32,9 @@ $category_nav = get_field('category_nav', 'option');
                                 <?php endif; ?>
                             </div>
                             <a href="<?= $item['solutions_link']['url']; ?>" class="taxonomi-link">
+                                <span>
+                                    <?php if(get_bloginfo("language") == "en-US"): ?>See products<?php else: ?>Ver porductos<?php endif; ?>
+                                </span>
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M2 16H30M30 16L16 2M30 16L16 30" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -50,7 +53,9 @@ $category_nav = get_field('category_nav', 'option');
                             <?php foreach($category_nav as $item): ?>
                                 <li>
                                     <a href="<?= $item['link']['url']; ?>">
-                                        <img src="<?= $item['icon']['url']; ?>" alt="<?= $item['icon']['title']; ?>" width="<?= $item['icon']['width']; ?>">
+                                        <?php if($item['icon']): ?>
+                                            <img src="<?= $item['icon']['url']; ?>" alt="<?= $item['icon']['title']; ?>" width="<?= $item['icon']['width']; ?>">
+                                        <?php endif; ?>
                                         <span class="text"><?= $item['link']['title']; ?></span>
                                     </a>
                                 </li>
@@ -68,6 +73,12 @@ $category_nav = get_field('category_nav', 'option');
             if(this.href.trim() == window.location.href){
                 $('.main-card').removeClass('active');
                 $(this).parent().parent().addClass("active");
+            }
+        });
+        $('.taxonomies-partial-a0ac83 .category-list a').each(function(index) {
+            if(this.href.trim() == window.location.href){
+                $('.category-list a').removeClass('active');
+                $(this).addClass("active");
             }
         });
     });
