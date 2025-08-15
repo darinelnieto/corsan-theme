@@ -164,6 +164,52 @@
             ]
         },
         {
+            "key": "field_689f45ca03b59",
+            "label": "Advantages",
+            "name": "advantages",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Agregar Fila",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_689f45ea03b5a",
+                    "label": "Item",
+                    "name": "item",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_689f45ca03b59"
+                }
+            ]
+        },
+        {
             "key": "field_688979a2b18fa",
             "label": "Sales format",
             "name": "sales_format",
@@ -383,5 +429,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1755268377
+    "modified": 1755268612
 }
