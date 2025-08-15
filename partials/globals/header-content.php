@@ -66,18 +66,32 @@ global $es_movil;
                             </div>
                             <div class="menus">
                                 <?php foreach($submenu['menu_taxonomies'] as $submenu): 
-                                    $cat = $submenu['category_name']->slug; 
-                                    $products = new WP_Query(array(
+                                    $cat_id = $submenu['category_name']->term_id; 
+                                    $cat = $submenu['category_name']->slug;
+                                    $products_query = new WP_Query(array(
                                         'post_type' => 'products',
                                         'posts_per_page' => $submenu['perpage'],
                                         'tax_query' => array(
                                             array(
                                                 'taxonomy' => 'product_cat',
-                                                'field'    => 'slug',
-                                                'terms'    => $cat,
+                                                'field'    => 'term_id',
+                                                'terms'    => $cat_id,
                                             ),
                                         ),
+                                        'lang' => defined('ICL_LANGUAGE_CODE') ? ICL_LANGUAGE_CODE : '',
                                     ));
+                                    $products = [];
+                                    if($products_query->have_posts()){
+                                        while($products_query->have_posts()){
+                                            $products_query->the_post();
+                                            $products[] = get_the_ID();
+                                        }
+                                        wp_reset_postdata();
+                                        // Ordenar manualmente por título en el idioma actual
+                                        usort($products, function($a, $b){
+                                            return strcasecmp(get_the_title($a), get_the_title($b));
+                                        });
+                                    }
                                 ?>
                                     <div class="menu-item">
                                         <a href="<?= home_url(); ?>/product_cat/<?= $cat; ?>" class="name-category">
@@ -87,13 +101,13 @@ global $es_movil;
                                             </svg>
                                         </a>
                                         <ul>
-                                            <?php if($products->have_posts()): while($products->have_posts()): $products->the_post(); ?>
+                                            <?php if(!empty($products)): foreach($products as $prod_id): ?>
                                                 <li>
-                                                    <a href="<?= get_permalink($products->ID); ?>" class="the-product">
-                                                        <?= get_the_title($products->ID); ?>
+                                                    <a href="<?= get_permalink($prod_id); ?>" class="the-product">
+                                                        <?= get_the_title($prod_id); ?>
                                                     </a>
                                                 </li>
-                                            <?php endwhile; wp_reset_postdata(); endif; ?>
+                                            <?php endforeach; endif; ?>
                                         </ul>
                                     </div>
                                 <?php endforeach; ?>
