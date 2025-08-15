@@ -25,6 +25,7 @@ if($related_products->have_posts()):
                         $related_products->the_post(); 
                         $cat = get_the_terms($related_products->ID, 'product_cat');
                         if(get_the_title($related_products->ID) !== $the_name):
+                        $icons = get_field('icons_for_cards', $related_products->ID);
                     ?>
                         <div class="item">
                             <a href="<?= get_permalink($related_products->ID); ?>" class="card-produc">
@@ -35,6 +36,16 @@ if($related_products->have_posts()):
                                     </div>
                                     <div class="img-container">
                                         <img src="<?= get_the_post_thumbnail_url($related_products->ID); ?>" alt="<?= get_the_title($related_products->ID); ?>" class="product-image">
+                                        <?php if($icons): ?>
+                                        <ul class="icons-content">
+                                            <?php foreach($icons as $icon): ?>
+                                                <li>
+                                                    <img src="<?= $icon['icon']['url']; ?>" alt="<?= $icon['icon']['title']; ?>" width="<?= $icon['icon']['width']; ?>" height="<?= $icon['icon']['height']; ?>">
+                                                    <span><?= $icon['text']; ?></span>
+                                                </li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    <?php endif; ?>
                                     </div>
                                     <div class="end-card">
                                         <span class="cta-card">

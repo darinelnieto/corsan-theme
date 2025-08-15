@@ -127,6 +127,49 @@
                                 object-fit: cover;
                                 object-position: center;
                             }
+                            .icons-content{
+                                display: flex;
+                                align-items: center;
+                                padding: 0;
+                                width: 100%;
+                                list-style: none;
+                                position: absolute;
+                                bottom: scaleVW(15, $desktop);
+                                z-index: 1;
+                                li{
+                                    display: flex;
+                                    align-items: end;
+                                    width: auto;
+                                    padding: 0 scaleVW(10, $desktop);
+                                    gap: scaleVW(5, $desktop);
+                                    img{
+                                        width: scaleVW(32, $desktop);
+                                        height: scaleVW(22, $desktop);
+                                        object-fit: contain;
+                                    }
+                                    span{
+                                        font-size: scaleVW(13, $desktop);
+                                        line-height: LH(19, 13);
+                                        color: #9DA6B4;
+                                        font-weight: 400;
+                                    }
+                                }
+                                @media(max-width:768px){
+                                    bottom: scaleVW(15, $movil);
+                                    li{
+                                        padding: 0 scaleVW(10, $movil);
+                                        gap: scaleVW(5, $movil);
+                                        img{
+                                            width: scaleVW(32, $movil);
+                                            height: scaleVW(22, $movil);
+                                            object-fit: contain;
+                                        }
+                                        span{
+                                            font-size: scaleVW(13, $movil);
+                                        }
+                                    }
+                                }
+                            }
                         }
                         .end-card{
                             position: absolute;

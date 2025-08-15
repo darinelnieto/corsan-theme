@@ -28,7 +28,9 @@ $tabs = $solutions['products_tabs'];
                                 <div class="the-tabs  <?php if($body_key === 1): ?>active<?php endif; ?>" id="item-<?= $body_key; ?>">
                                     <?php foreach($tab['products_list'] as $product): 
                                         $prod = $product['product']; 
-                                        $cat = get_the_terms($prod->ID, 'product_cat'); ?>
+                                        $cat = get_the_terms($prod->ID, 'product_cat'); 
+                                        $icons = get_field('icons_for_cards', $prod->ID);
+                                    ?>
                                         <div class="item" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="3000">
                                             <a href="<?= get_permalink($prod->ID); ?>">
                                                 <div class="card-product">
@@ -38,6 +40,16 @@ $tabs = $solutions['products_tabs'];
                                                     </div>
                                                     <div class="img-container">
                                                         <img src="<?= get_the_post_thumbnail_url($prod->ID); ?>" alt="<?= get_the_title($prod->ID); ?>" class="product-image">
+                                                        <?php if($icons): ?>
+                                                            <ul class="icons-content">
+                                                                <?php foreach($icons as $icon): ?>
+                                                                    <li>
+                                                                        <img src="<?= $icon['icon']['url']; ?>" alt="<?= $icon['icon']['title']; ?>" width="<?= $icon['icon']['width']; ?>" height="<?= $icon['icon']['height']; ?>">
+                                                                        <span><?= $icon['text']; ?></span>
+                                                                    </li>
+                                                                <?php endforeach; ?>
+                                                            </ul>
+                                                        <?php endif; ?>
                                                     </div>
                                                     <div class="end-card">
                                                         <span class="cta-card">
