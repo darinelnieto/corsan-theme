@@ -36,8 +36,8 @@
                         h3{
                             color: $blue;
                             font-weight: 600;
-                            font-size: scaleVW(44, $desktop);
-                            line-height: LH(52, 44);
+                            font-size: scaleVW(32, $desktop);
+                            line-height: LH(42, 32);
                             margin-bottom:0;
                             display: -webkit-box;
                             -webkit-line-clamp: 2;
@@ -45,7 +45,7 @@
                             overflow: hidden;
                             text-overflow: ellipsis;
                             @media(max-width:768px){
-                                font-size: scaleVW(44, $movil);
+                                font-size: scaleVW(32, $movil);
                             }
                         }
                         p{
@@ -181,8 +181,8 @@
                     }
                 }
                 h2{
-                    font-size: scaleVW(52, $desktop);
-                    line-height: LH(61, 52);
+                    font-size: scaleVW(42, $desktop);
+                    line-height: LH(51, 42);
                     color: $blue;
                     margin-bottom: scaleVW(40, $desktop);
                     font-weight: 700;

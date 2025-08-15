@@ -62,7 +62,11 @@ global $es_movil;
                     <div class="col-12">
                         <div class="contente-menu">
                             <div class="menu-name">
-                                <h2><?= $submenu['menu_name']; ?></h2>
+                                <h2>
+                                    <a href="<?= home_url() ?>/soluciones/">
+                                        <?= $submenu['menu_name']; ?>
+                                    </a>
+                                </h2>
                             </div>
                             <div class="menus">
                                 <?php foreach($submenu['menu_taxonomies'] as $submenu): 
@@ -104,7 +108,7 @@ global $es_movil;
                                             <?php if(!empty($products)): foreach($products as $prod_id): ?>
                                                 <li>
                                                     <a href="<?= get_permalink($prod_id); ?>" class="the-product">
-                                                        <?= get_the_title($prod_id); ?>
+                                                        <?= ucfirst(mb_strtolower(get_the_title($prod_id), 'UTF-8')); ?>
                                                     </a>
                                                 </li>
                                             <?php endforeach; endif; ?>

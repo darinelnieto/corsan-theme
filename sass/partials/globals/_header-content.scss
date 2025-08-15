@@ -137,14 +137,26 @@
     #submenu{
         background: $white;
         display: none;
-        padding: scaleVW(64, $desktop) 0;
-        height: scaleVW(752, $desktop);
+        padding: scaleVW(44, $desktop) 0;
+        height: scaleVW(632, $desktop);
+        overflow-Y: auto;
         position: absolute;
         bottom: 0;
         transform: translateY(99%);
         left: 0;
         width: 100%;
         z-index: 10;
+        border-top: scaleVW(1.5, $desktop) solid $blue;
+        &::-webkit-scrollbar {
+            width: scaleVW(6, $desktop);
+            background: transparent;
+            border-radius: 20px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.5);
+            width: scaleVW(6, $desktop);
+            border-radius: 20px;
+        }
         @media(max-width:768px){
             height: 91vh;
             padding: scaleVW(40, $movil) 0;
@@ -160,7 +172,7 @@
         }
         .contente-menu{
             display: flex;
-            gap: scaleVW(223, $desktop);
+            gap: scaleVW(113, $desktop);
             position: relative;
             @media(max-width:768px){
                 flex-direction: column;
@@ -171,8 +183,11 @@
                 h2{
                     font-size: scaleVW(36, $desktop);
                     line-height: LH(20, 20);
-                    font-weight: 600;
-                    color: $blue;
+                    font-weight: 500;
+                    a{
+                        text-decoration: none;
+                        color: $blue;
+                    }
                 }
                 @media(max-width:768px){
                     width: scaleVW(407, $movil);
@@ -202,7 +217,7 @@
                     .name-category{
                         text-decoration: none;
                         color: #707070;
-                        font-weight: 600;
+                        font-weight: 500;
                         width: scaleVW(268, $desktop);
                         font-size: scaleVW(32, $desktop);
                         line-height: LH(20, 32);
@@ -239,10 +254,9 @@
                             a{
                                 text-decoration: none;
                                 color: #707070;
-                                font-weight: 400;
+                                font-weight: 500;
                                 font-size: scaleVW(24, $desktop);
                                 line-height: LH(20, 24);
-                                text-transform: lowercase;
                                 &:hover{
                                     color: #424242;
                                 }
@@ -263,7 +277,7 @@
                 position: absolute;
                 right: 0;
                 top: 50%;
-                transform: translate(50%, -25%);
+                transform: translate(25%, -25%);
                 width: scaleVW(450, $desktop);
                 overflow: hidden;
                 img{

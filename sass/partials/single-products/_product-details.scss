@@ -137,22 +137,23 @@
                     }
                 }
                 .description{
+                    h2, h3, h4, h5, h6{
+                        font-size: scaleVW(32, $desktop); 
+                        line-height: LH(40, 32);
+                        font-weight: 500;
+                        color: $gray;
+                         @media(max-width:768px){
+                            font-size: scaleVW(32, $movil); 
+                        }
+                    }
                     p{
                         font-size: scaleVW(24, $desktop);
                         line-height: LH(40, 24);
                         font-weight: 400;
                         color: $gray;
-                        strong{
-                           font-size: scaleVW(32, $desktop); 
-                           line-height: LH(40, 32);
-                           font-weight: 700;
-                        }
                         @media(max-width:768px){
                             font-size: scaleVW(20, $movil);
                             width: scaleVW(364, $movil);
-                            strong{
-                                font-size: scaleVW(32, $movil); 
-                            }
                         }
                     }
                 }
@@ -169,6 +170,10 @@
                     border: scaleVW(1, $desktop) solid $blue;
                     transition: .2s;
                     cursor: pointer;
+                    svg{
+                        width: scaleVW(28, $desktop);
+                        height: scaleVW(28, $desktop);
+                    }
                     &:hover{
                         background: $white;
                         color: $blue;
@@ -186,6 +191,10 @@
                         font-size: scaleVW(24, $movil);
                         padding: scaleVW(21, $movil) scaleVW(36, $movil);
                         justify-content: space-between;
+                        svg{
+                            width: scaleVW(28, $movil);
+                            height: scaleVW(28, $movil);
+                        }
                     }
                 }
             }
@@ -203,30 +212,37 @@
         top: 0;
         .form-container{
             background: #ffffff;
-            padding: 1rem;
-            border-radius: 30px;
+            padding: scaleVW(73, $desktop) scaleVW(51, $desktop);
             position: absolute;
-            width: 100%;
-            max-width: 600px;
-            height: auto;
+            width: scaleVW(604, $desktop);
+            height: 95vh;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
+            overflow-y: auto;
+            &::-webkit-scrollbar {
+                width: scaleVW(6, $desktop);
+                background: transparent;
+                border-radius: 20px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: rgba(0, 0, 0, 0.5);
+                width: scaleVW(6, $desktop);
+                border-radius: 20px;
+            }
             .close-quote-form{
                 display: block;
-                width: 20px;
-                height: 20px;
                 position: absolute;
-                border: 1px solid $blue;
-                border-radius: 50%;
+                width: scaleVW(25.5, $desktop);
+                height: scaleVW(25.5, $desktop);
                 cursor: pointer;
-                top: 3%;
-                right: 3%;
+                top: scaleVW(29, $desktop);
+                right: scaleVW(29, $desktop);
                 z-index: 10;
                 &::before{
                     content: '';
-                    width: 12px;
-                    height: 2px;
+                    width: scaleVW(25.5, $desktop);
+                    height: scaleVW(3, $desktop);
                     border-radius: 20px;
                     background: $blue;
                     position: absolute;
@@ -236,8 +252,8 @@
                 }
                 &::after{
                     content: '';
-                    width: 12px;
-                    height: 2px;
+                    width: scaleVW(25.5, $desktop);
+                    height: scaleVW(3, $desktop);
                     border-radius: 20px;
                     background: $blue;
                     position: absolute;
@@ -248,10 +264,10 @@
             }
             h3{
                 text-align: center;
-                font-size: 1.3rem;
+                font-size: scaleVW(32, $desktop);
                 color: $blue;
-                font-weight: 300;
-                margin: 1rem 0;
+                font-weight: 400;
+                margin-bottom: scaleVW(36, $desktop);
             }
             .wpcf7-response-output{
                 background: #ffffff;
@@ -262,18 +278,73 @@
                 border-color: #ffffff;
             }
             .the-form{
-                input[type="text"], input[type="email"], input[type="tel"]{
-                    width: 100%;
-                    margin-bottom: 1rem;
-                    height: 40px;
-                    border-radius: 20px;
-                    border: 1px solid $blue;
-                    padding: 10px 1rem;
-                    color: $blue;
-                    outline: none;
-                    &::placeholder{
-                        color: $blue;
-                        opacity: .3;
+                .inputs-contain{
+                    p{
+                        display: flex;
+                        flex-direction: column;
+                        gap: scaleVW(28, $desktop);
+                        margin-bottom: scaleVW(34, $desktop);
+                        br{
+                            display: none;
+                        }
+                        input[type="text"], input[type="email"], input[type="tel"]{
+                            padding: scaleVW(10, $desktop) scaleVW(10, $desktop) scaleVW(30, $desktop) scaleVW(10, $desktop);
+                            background: transparent;
+                            border: none;
+                            border-bottom: scaleVW(2, $desktop) solid #CACACA;
+                            color: $gray;
+                            font-size: scaleVW(24, $desktop);
+                            line-height: LH(36, 24);
+                            width: 100%;
+                            height: scaleVW(78, $desktop);
+                            outline: none;
+                            &:focus{
+                                border-color: $gray;
+                            }
+                        }
+                        @media(max-width:768px){
+                            margin-bottom: scaleVW(48, $movil);
+                            input[type="text"], input[type="email"], input[type="tel"]{
+                                width: scaleVW(402, $movil);
+                                height: scaleVW(78, $movil);
+                                font-size: scaleVW(24, $movil);
+                                line-height: LH(36, 24);
+                                border-bottom: scaleVW(2, $movil) solid #CACACA;
+                                padding: scaleVW(10, $movil) scaleVW(10, $movil) scaleVW(26, $movil) scaleVW(10, $movil);
+                            }
+                        }
+                    }
+                }
+                .textarea{
+                    p{
+                        margin-bottom: scaleVW(34, $desktop);
+                        textarea{
+                            padding: scaleVW(10, $desktop);
+                            background: transparent;
+                            border: none;
+                            border-bottom: scaleVW(2, $desktop) solid #CACACA;
+                            color: $gray;
+                            font-size: scaleVW(24, $desktop);
+                            line-height: LH(36, 24);
+                            width: 100%;
+                            height: scaleVW(90, $desktop);
+                            outline: none;
+                            resize: none;
+                            &:focus{
+                                border-color: $gray;
+                            }
+                        }
+                        @media(max-width:768px){
+                            margin-bottom: scaleVW(48, $movil);
+                            textarea{
+                                padding: scaleVW(10, $movil);
+                                font-size: scaleVW(24, $movil);
+                                line-height: LH(36, 24);
+                                border-bottom: scaleVW(2, $movil) solid #CACACA;
+                                width: scaleVW(402, $movil);
+                                height: scaleVW(146, $movil);
+                            }
+                        } 
                     }
                 }
                 .wpcf7-not-valid-tip{
@@ -284,71 +355,120 @@
                     font-size: 14px;
                 }
                 .policies-container{
-                    label{
-                        cursor: pointer;
-                        display: flex;
-                        br, .wpcf7-form-control-wrap{
-                            display: none;
+                    p{
+                        margin-bottom: scaleVW(30, $desktop);
+                        @media(max-width:768px){
+                            margin-bottom: scaleVW(30, $movil);
                         }
-                        .checkbox{
-                            width: 14px;
-                            height: 14px;
-                            border: 1px solid $blue;
-                            border-radius: 4px;
-                            position: relative;
-                            &::before{
-                                content: '';
-                                width: 10px;
-                                height: 4px;
-                                border-left: 2px solid $blue;
-                                border-bottom: 2px solid $blue;
-                                position: absolute;
-                                top: 50%;
-                                left: 50%;
-                                transform: translate(-50%, -50%) rotate(-45deg);
-                                visibility: hidden;
-                                transition: .2s;
+                        label{
+                            display: flex;
+                            align-items: center;
+                            gap: scaleVW(8, $desktop);
+                            cursor: pointer;
+                            width: fit-content;
+                            @media(max-width:768px){
+                                gap: scaleVW(8, $movil);
+                            }
+                            br, .wpcf7-form-control-wrap{
                                 display: none;
                             }
-                        }
-                        .checkbox.active{
-                            &::before{
-                                visibility: visible;
+                            .checkbox{
                                 display: block;
+                                min-width: scaleVW(20, $desktop);
+                                height: scaleVW(20, $desktop);
+                                border-radius: scaleVW(5, $desktop);
+                                border: scaleVW(2, $desktop) solid $gray;
+                                position: relative;
+                                &::before{
+                                    content: '';
+                                    display: none;
+                                    width: scaleVW(16, $desktop);
+                                    height: scaleVW(7, $desktop);
+                                    border-bottom: scaleVW(3, $desktop) solid $gray;
+                                    border-left: scaleVW(3, $desktop) solid $gray;
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%) rotate(-45deg);
+                                    transition: .2s;
+                                }
+                                @media(max-width:768px){
+                                    min-width: scaleVW(20, $movil);
+                                    min-height: scaleVW(20, $movil);
+                                    border-radius: scaleVW(5, $movil);
+                                    border: scaleVW(2, $movil) solid $gray;
+                                    &::before{
+                                        width: scaleVW(16, $movil);
+                                        height: scaleVW(7, $movil);
+                                        border-bottom: scaleVW(3, $movil) solid $gray;
+                                        border-left: scaleVW(3, $movil) solid $gray;
+                                    }
+                                }
                             }
-                        }
-                        .text{
-                            padding-left: 10px;
-                            color: $blue;
-                            width: 90%;
-                            font-size: 12px;
-                            font-weight: 300;
-                            a{
-                                color: $blue;
+                            .checkbox.active{
+                                &::before{
+                                    display: block;
+                                }
+                            }
+                            .text{
+                                font-size: scaleVW(16, $desktop);
+                                line-height: LH(23, 16);
+                                color: $gray;
+                                font-weight: 300;
+                                @media(max-width:768px){
+                                    font-size: scaleVW(12, $movil);
+                                    line-height: LH(14, 12);
+                                }
                             }
                         }
                     }
                 }
-                input[type="submit"]{
-                    background: $blue;
-                    display: block;
-                    width: fit-content;
+                button{
                     margin: 0 auto;
-                    border: none;
-                    color: #ffffff;
-                    font-weight: 400;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 0 scaleVW(25, $desktop);
+                    width: 100%;
+                    height: scaleVW(70, $desktop);
+                    border: scaleVW(1, $desktop) solid $blue;
+                    border-radius: scaleVW(15, $desktop);
+                    background: $blue;
+                    color: $white;
+                    font-size: scaleVW(22, $desktop);
+                    line-height: LH(27, 22);
+                    font-weight: 600;
+                    gap: scaleVW(180, $desktop);
                     outline: none;
-                    padding: 6px 2rem;
-                    border-radius: 20px;
-                    &:disabled{
-                        opacity: .6;
+                    br{
+                        display: none;
                     }
-                }
-                .wpcf7-spinner{
-                    position: absolute;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    margin: 0;
+                    svg{
+                        width: scaleVW(24, $desktop);
+                        height: scaleVW(24, $desktop);
+                    }
+                    @media(max-width:768px){
+                        width: scaleVW(402, $movil);
+                        height: scaleVW(70, $movil);
+                        border: scaleVW(1, $movil) solid $blue;
+                        border-radius: scaleVW(15, $movil);
+                        font-size: scaleVW(22, $movil);
+                        justify-content: space-between;
+                        padding: 0 scaleVW(25, $movil);
+                        svg{
+                            width: scaleVW(24, $movil);
+                            height: scaleVW(24, $movil);
+                        }
+                    }
+                    &:hover{
+                        background: $white;
+                        color: $blue;
+                        svg{
+                            path{
+                                stroke: $blue;
+                            }
+                        }
+                    }
                 }
             }
         }

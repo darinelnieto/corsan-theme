@@ -48,8 +48,8 @@ $cat = get_the_terms(get_the_id(), 'product_cat');
 							<span class="text">
 								<?php if(get_bloginfo("language") == "en-US"): ?>More information<?php else: ?>Más información<?php endif; ?>
 							</span>
-							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M12.62 20.81C12.28 20.93 11.72 20.93 11.38 20.81C8.48 19.82 2 15.69 2 8.68998C2 5.59998 4.49 3.09998 7.56 3.09998C9.38 3.09998 10.99 3.97998 12 5.33998C13.01 3.97998 14.63 3.09998 16.44 3.09998C19.51 3.09998 22 5.59998 22 8.68998C22 15.69 15.52 19.82 12.62 20.81Z" stroke="#FCF4F4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M2 16H30M30 16L16 2M30 16L16 30" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 							</svg>
 						</div>
 					</div>
@@ -85,4 +85,12 @@ $cat = get_the_terms(get_the_id(), 'product_cat');
 			magnify: 2
 		});
 	});
+    $(()=>{
+        $('.the-form button .icon').html(`
+            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12.4648H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 5.46484L19 12.4648L12 19.4648" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        `);
+    })
 </script>
