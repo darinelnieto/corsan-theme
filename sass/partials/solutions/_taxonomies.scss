@@ -144,6 +144,9 @@
                             right: scaleVW(28, $desktop);
                         }
                     }
+                    a.active{
+                        text-decoration: underline;
+                    }
                 }
                 .blue{
                     background: $blue_light;
@@ -161,11 +164,6 @@
                         height: 100%;
                         object-fit: cover;
                         object-position: center;
-                    }
-                }
-                .card-content{
-                    a{
-                        text-decoration: underline;
                     }
                 }
             }

@@ -2723,6 +2723,9 @@ body .container, html .container {
 .taxonomies-partial-a0ac83 .taxonomy-image-slide .banner .card-taxonomy .card-content a:hover {
   right: 1.4583333333vw;
 }
+.taxonomies-partial-a0ac83 .taxonomy-image-slide .banner .card-taxonomy .card-content a.active {
+  text-decoration: underline;
+}
 .taxonomies-partial-a0ac83 .taxonomy-image-slide .banner .card-taxonomy .blue {
   background: #397DC9;
 }
@@ -2738,9 +2741,6 @@ body .container, html .container {
   height: 100%;
   object-fit: cover;
   object-position: center;
-}
-.taxonomies-partial-a0ac83 .taxonomy-image-slide .banner .card-taxonomy.active .card-content a {
-  text-decoration: underline;
 }
 .taxonomies-partial-a0ac83 .category-nav {
   background: #F0F0F0;

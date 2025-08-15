@@ -73,6 +73,7 @@ $category_nav = get_field('category_nav', 'option');
             if(this.href.trim() == window.location.href){
                 $('.main-card').removeClass('active');
                 $(this).parent().parent().addClass("active");
+                $(this).addClass("active");
             }
         });
         $('.taxonomies-partial-a0ac83 .category-list a').each(function(index) {
