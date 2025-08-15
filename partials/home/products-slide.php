@@ -23,7 +23,7 @@ if($products_list):
                             </div>
                             <div class="text-contain">
                                 <h3 class="product-name"><?= get_the_title($prod->ID); ?></h3>
-                                <?php if($advantages): ?>
+                                <?php if(is_array($advantages) && count($advantages) > 0): ?>
                                     <h4 class="advantages-title">
                                         <?php if(get_bloginfo("language") == "en-US"): ?>
                                             Advantages
