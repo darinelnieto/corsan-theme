@@ -5,7 +5,7 @@
   "main": "./js/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "npx webpack -d --watch",
+  "watch": "npx webpack --watch",
     "dev": "npx webpack -d",
     "prod": "npx webpack -p"
   },
@@ -22,17 +22,17 @@
   "homepage": "https://github.com/pipe-code/ditto#readme",
   "dependencies": {
     "aos": "^2.3.4",
-    "css-loader": "^3.5.3",
-    "file-loader": "^6.0.0",
     "jquery": "^3.5.1",
-    "mini-css-extract-plugin": "^0.9.0",
-    "sass": "^1.83.4",
-    "sass-loader": "^8.0.2",
-    "style-loader": "^1.2.1",
-    "url-loader": "^4.1.0",
-    "webpack": "^4.43.0"
+    "sass": "^1.83.4"
   },
   "devDependencies": {
-    "webpack-cli": "^3.3.12"
+    "css-loader": "^6.11.0",
+    "file-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^2.9.4",
+    "sass-loader": "^13.3.3",
+    "style-loader": "^3.3.4",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.101.3",
+    "webpack-cli": "^4.10.0"
   }
 }

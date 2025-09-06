@@ -99,14 +99,14 @@
             max-width: scaleVW(650, $desktop);
             h1{
                 color: $blue;
-                font-size: scaleVW(64,$desktop);
+                font-size: scaleVW(44.8,$desktop);
                 font-weight: 700;
                 margin-bottom: 0;
                 line-height: 1;
             }
             .description{
-                font-size: scaleVW(32, $desktop);
-                line-height: LH(40, 32);
+                font-size: scaleVW(25, $desktop);
+                line-height: LH(30, 25);
                 font-weight: 300;
                 color: $gray;
                 margin-bottom: 0;

@@ -16,16 +16,37 @@
             .image-contain{
                 width: scaleVW(773, $desktop);
                 height: scaleVW(475, $desktop);
+                position: relative;
+                overflow: hidden;
                 img{
                         width: 28vw;
                         height: auto;
                         margin: 0 auto;
+                }
+                .secondary-image{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    visibility: hidden;
+                    object-fit: cover;
+                    object-position: center;
+                    width: 0;
+                    height: 0;
+                    transition: .4s;
                 }
                 @media(max-width:768px){
                     width: scaleVW(448, $movil);
                     height: auto;
                     img{
                         width: 100%;
+                    }
+                }
+                &:hover{
+                    .secondary-image{
+                        visibility: visible;
+                        width: 28VW;
+                        height: 100%;
                     }
                 }
             }

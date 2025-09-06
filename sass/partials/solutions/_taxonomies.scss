@@ -177,13 +177,15 @@
         }
         .category-list{
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
-            justify-content: start;
+            justify-content: center;
             list-style: none;
             margin: 0;
             background: $blue;
             border-radius: scaleVW(10, $desktop);
             padding: scaleVW(30, $desktop) 0;
+            gap: scaleVW(15, $desktop) 0;
             @media(max-width:768px){
                 background: transparent;
                 padding: 0;
@@ -195,7 +197,8 @@
                 border-right: scaleVW(2, $desktop) solid #849EC1;
                 a{
                     display: flex;
-                    width: 14.4vw;
+                    width: fit-content;
+                    padding: scaleVW(30, $desktop);
                     height: scaleVW(70, $desktop);
                     align-items: center;
                     justify-content: center;
@@ -231,6 +234,9 @@
                 }
             }
             li:last-child{
+                border: none;
+            }
+            li:nth-child(6){
                 border: none;
             }
         }

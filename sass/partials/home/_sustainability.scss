@@ -104,7 +104,7 @@
                 display: flex;
                 flex-direction: column;
                 width: scaleVW(330.75, $desktop);
-                height: scaleVW(263, $desktop);
+                max-height: scaleVW(358, $desktop);
                 overflow: hidden;
                 border-radius: scaleVW(40, $desktop);
                 @media(max-width:768px){
@@ -129,7 +129,7 @@
                 .process-text{
                     background: $green;
                     padding: scaleVW(16, $desktop);
-                    p{
+                    h3{
                         color: $white;
                         font-size: scaleVW(20, $desktop);
                         line-height: LH(23, 20);
@@ -137,12 +137,23 @@
                         font-weight: 400;
                         height: scaleVW(69, $desktop);
                     }
+                    p{
+                        color: $white;
+                        font-size: scaleVW(14, $desktop);
+                        line-height: LH(16, 14);
+                        text-align: center;
+                        font-weight: 300;
+                        height: scaleVW(69, $desktop);
+                    }
                     @media(max-width:768px){
                         width: scaleVW(350, $movil);
                         height: scaleVW(101, $movil);
                         padding: scaleVW(16, $movil);
-                        p{
+                        h3{
                             font-size: scaleVW(20, $movil);
+                        }
+                        p{
+                            font-size: scaleVW(14, $movil);
                         }
                     }
                 }

@@ -40,6 +40,8 @@ $tabs = $solutions['products_tabs'];
                                                     </div>
                                                     <div class="img-container">
                                                         <img src="<?= get_the_post_thumbnail_url($prod->ID); ?>" alt="<?= get_the_title($prod->ID); ?>" class="product-image">
+                                                        <?php $image = get_field('gallery', $prod->ID); ?>
+                                                        <img src="<?= $image[1]['url']; ?>" alt="<?= $image[1]['title']; ?>" width="<?= $image[1]['width']; ?>" height="<?= $image[1]['height']; ?>" class="secondary-image">
                                                         <?php if($icons): ?>
                                                             <ul class="icons-content">
                                                                 <?php foreach($icons as $icon): ?>

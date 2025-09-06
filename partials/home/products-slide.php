@@ -20,6 +20,8 @@ if($products_list):
                         <div class="item">
                             <div class="image-contain">
                                 <img src="<?= get_the_post_thumbnail_url($prod->ID) ?>" alt="<?= get_the_title($prod->ID); ?>" width="773" height="475">
+                                <?php $image = get_field('gallery', $prod->ID); ?>
+                                <img src="<?= $image[1]['url']; ?>" alt="<?= $image[1]['title']; ?>" width="<?= $image[1]['width']; ?>" height="<?= $image[1]['height']; ?>" class="secondary-image">
                             </div>
                             <div class="text-contain">
                                 <h3 class="product-name"><?= get_the_title($prod->ID); ?></h3>

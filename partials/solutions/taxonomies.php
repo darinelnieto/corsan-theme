@@ -12,7 +12,7 @@ $taxonomies = get_field('solutions_nav', 'options');
 $category_nav = get_field('category_nav', 'option');
 ?>
 <section class="taxonomies-partial-a0ac83">
-    <?php if($taxonomies): $key = 0; ?>
+    <?php if($taxonomies && is_front_page()): $key = 0; ?>
         <div class="taxonomy-image-slide">
             <div class="banner">
                 <?php foreach($taxonomies as $item): $key++; ?>
@@ -44,7 +44,7 @@ $category_nav = get_field('category_nav', 'option');
                 <?php endforeach; ?>
             </div>
         </div>
-    <?php endif; if($category_nav): ?>
+    <?php endif; if($category_nav && !is_front_page()): ?>
         <div class="category-nav">
             <div class="container">
                 <div class="row">

@@ -74,3 +74,4 @@ global $es_movil;
         </div>
     </div>
 </section>
+<?php get_template_part('partials/solutions/taxonomies'); ?>

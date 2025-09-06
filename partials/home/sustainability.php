@@ -21,9 +21,11 @@ $sustainability_two = get_field('environmental_responsibility_content_two');
                     </div>
                     <div class="text-content">
                         <h2><?= $sustainability['title']; ?></h2>
-                        <div class="iso-text">
-                            <span><?= $sustainability['iso_text']; ?></span>
-                        </div>
+                        <?php if($sustainability['iso_text']): ?>
+                            <div class="iso-text">
+                                <span><?= $sustainability['iso_text']; ?></span>
+                            </div>
+                        <?php endif; ?>
                     </div>
                 </div>
                 <div class="bottom-content">
@@ -37,7 +39,11 @@ $sustainability_two = get_field('environmental_responsibility_content_two');
                                             <img src="<?= $process['image']['url']; ?>" alt="<?= $process['image']['title']; ?>" width="<?= $process['image']['width']; ?>" height="<?= $process['image']['height']; ?>">
                                         </div>
                                         <div class="process-text">
-                                            <p><?= $process['process_description']; ?></p>
+                                            <?php if($process['title']): ?>
+                                                <h3><?= $process['title']; ?></h3>
+                                            <?php endif; if($process['process_description']): ?>
+                                                <p><?= $process['process_description']; ?></p>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
                                 <?php endforeach; ?>
@@ -54,7 +60,11 @@ $sustainability_two = get_field('environmental_responsibility_content_two');
                                             <img src="<?= $process['image']['url']; ?>" alt="<?= $process['image']['title']; ?>" width="<?= $process['image']['width']; ?>" height="<?= $process['image']['height']; ?>">
                                         </div>
                                         <div class="process-text">
-                                            <p><?= $process['process_description']; ?></p>
+                                            <?php if($process['title']): ?>
+                                                <h3><?= $process['title']; ?></h3>
+                                            <?php endif; if($process['process_description']): ?>
+                                                <p><?= $process['process_description']; ?></p>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
                                 <?php endforeach; ?>

@@ -793,6 +793,28 @@
                             "parent_repeater": "field_689dc76e437aa"
                         },
                         {
+                            "key": "field_68bada46ca592",
+                            "label": "Title",
+                            "name": "title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_689dc76e437aa"
+                        },
+                        {
                             "key": "field_689dc76e437ac",
                             "label": "Process description",
                             "name": "process_description",
@@ -887,6 +909,28 @@
                             "parent_repeater": "field_689dc8a5813f8"
                         },
                         {
+                            "key": "field_68bada5f89139",
+                            "label": "Title",
+                            "name": "title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_689dc8a5813f8"
+                        },
+                        {
                             "key": "field_689dc8a6813fa",
                             "label": "Process description",
                             "name": "process_description",
@@ -931,5 +975,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1755173118
+    "modified": 1757076076
 }

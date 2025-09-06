@@ -12,6 +12,10 @@
         object-position: center;
         object-fit: cover;
     }
+    img{
+        width: scaleVW(1920, $desktop);
+        height: scaleVW(640, $desktop);
+    }
     .video-description{
         position: absolute;
         top: scaleVW(102, $desktop);
