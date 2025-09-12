@@ -12,6 +12,7 @@ $logo = get_field('logo', 'option');
 $contact_dates = get_field('contact_dates', 'option');
 $favicon = get_field('favicon', 'option');
 $social_network = get_field('social_networks_footer', 'option');
+
 ?>
 <section class="footer-content-partial-ecbbb5">
     <div class="top-content">
@@ -53,11 +54,11 @@ $social_network = get_field('social_networks_footer', 'option');
                                     </ul>
                                 </div>
                                  <ul class="social-networks d-flex d-md-none">
-                                    <?php foreach($social_network as $social): ?>
+                                    <?php if($social_network): $key = 0; foreach($social_network as $social): $key++; if($key <= 2): ?>
                                         <li>
                                             <a href="<?= $social['social_network']; ?>" target="_blank"><?= $social['fontawesome_icon']; ?></a>
                                         </li>
-                                    <?php endforeach; ?>
+                                    <?php endif; endforeach; endif; ?>
                                 </ul>
                             </div>
                         </div>
@@ -78,11 +79,11 @@ $social_network = get_field('social_networks_footer', 'option');
                         <div class="end">
                             <p class="copi-right"><?= get_field('text_copyright', 'option'); ?></p>
                              <ul>
-                                <?php foreach($social_network as $social): ?>
+                                <?php if($social_network): $key = 0; foreach($social_network as $social): $key++; if($key <= 2): ?>
                                     <li>
                                         <a href="<?= $social['social_network']; ?>" target="_blank"><?= $social['fontawesome_icon']; ?></a>
                                     </li>
-                                <?php endforeach; ?>
+                                <?php endif; endforeach; endif; ?>
                             </ul>
                         </div>
                     </div>
