@@ -23,7 +23,7 @@ global $es_movil;
                     $tax = $taxonomy['select_taxonomy']; 
             ?>
                 <div class="taxonomy-card">
-                    <div class="taxonomi-card"  data-aos="fade-right">
+                    <div class="taxonomi-card">
                         <img src="<?= get_field('feature_image', $tax->taxonomy . '_' . $tax->term_id); ?>" alt="<?= $tax->name; ?>">
                         <div class="text-taxonomy">
                             <p class="name-category"><?= $tax->name; ?></p>

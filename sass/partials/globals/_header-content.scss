@@ -105,6 +105,8 @@
                         color: $blue;
                         font-weight: 400;
                         font-size: scaleVW(24, $desktop);
+                        position: relative;
+                        z-index: 11;
                     }
                 }
             }
@@ -147,6 +149,16 @@
         width: 100%;
         z-index: 10;
         border-top: scaleVW(1.5, $desktop) solid $blue;
+        // &::before{
+        //     content: '';
+        //     display: block;
+        //     width: 100%;
+        //     height: scaleVW(150, $desktop);
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        //     transform: translateY(-100%);
+        // }
         &::-webkit-scrollbar {
             width: scaleVW(6, $desktop);
             background: transparent;

@@ -31,7 +31,7 @@ $tabs = $solutions['products_tabs'];
                                         $cat = get_the_terms($prod->ID, 'product_cat'); 
                                         $icons = get_field('icons_for_cards', $prod->ID);
                                     ?>
-                                        <div class="item" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="3000">
+                                        <div class="item">
                                             <a href="<?= get_permalink($prod->ID); ?>">
                                                 <div class="card-product">
                                                     <div class="product-name">

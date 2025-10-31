@@ -16,22 +16,52 @@ $('.taxonomies-partial-a0ac83').on('click', '.card-content', function(){
 var product_name = '';
 $(()=>{
     if($(window).width() > 768){
-        $('.submenu').on('mouseover', 'a', function(e){
+        let submenuTimeout;
+        // Hover sobre los enlaces del menú principal
+        $('.submenu').on('mouseenter', 'a', function() {
+            clearTimeout(submenuTimeout);
             $('#submenu').addClass('active');
-            e.preventDefault();
+
+            // guardamos cuál es el item activo
+            $('.submenu a').removeClass('active');
+            $(this).addClass('active');
         });
-        $('#submenu').on('mouseleave', function(){
-            $(this).removeClass('active');
-            $('.menus ul').removeClass('active');
-            $('#product-image').html('');
+
+        // Cuando el mouse sale del enlace del menú principal
+        $('.submenu').on('mouseleave', 'a', function() {
+            submenuTimeout = setTimeout(() => {
+                $('#submenu').removeClass('active');
+                $('.submenu a').removeClass('active');
+                $('.menus ul').removeClass('active');
+                $('#product-image').html('');
+            }, 150); // pequeño delay por si entra al submenu
         });
-        $('.menus').on('mouseover', '.name-category', function(){
+
+        // Cuando el mouse entra al submenu (para mantenerlo abierto)
+        $('#submenu').on('mouseenter', function() {
+            clearTimeout(submenuTimeout);
+            $(this).addClass('active');
+        });
+
+        // Cuando el mouse sale del submenu (para cerrarlo)
+        $('#submenu').on('mouseleave', function() {
+            submenuTimeout = setTimeout(() => {
+                $(this).removeClass('active');
+                $('.submenu a').removeClass('active');
+                $('.menus ul').removeClass('active');
+                $('#product-image').html('');
+            }, 150);
+        });
+
+        // Mostrar subcategorías y productos
+        $('.menus').on('mouseover', '.name-category', function() {
             $('.menus ul').removeClass('active');
             $(this).parent().children('ul').addClass('active');
         });
-        $('.menus').on('mouseover', '.the-product', function(){
+
+        $('.menus').on('mouseover', '.the-product', function() {
             product_name = $(this).text();
-            getProduct()
+            getProduct();
         });
     }else{
         var status_bar = false;

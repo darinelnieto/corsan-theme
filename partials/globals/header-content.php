@@ -54,6 +54,7 @@ global $es_movil;
         if($submenu['menu_taxonomies']):
     ?>
         <div id="submenu">
+            
             <div class="close-submenu d-block d-md-none">
                 <i class="fa-solid fa-xmark"></i>
             </div>

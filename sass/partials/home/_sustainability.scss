@@ -109,7 +109,8 @@
                 border-radius: scaleVW(40, $desktop);
                 @media(max-width:768px){
                     width: scaleVW(350, $movil);
-                    height: scaleVW(263, $movil);
+                    height: auto;
+                    max-height: 100%;
                     border-radius: scaleVW(40, $movil);
                 }
                 .image-contain{
@@ -147,13 +148,16 @@
                     }
                     @media(max-width:768px){
                         width: scaleVW(350, $movil);
-                        height: scaleVW(101, $movil);
+                        min-height: scaleVW(101, $movil);
+                        height: max-content;
                         padding: scaleVW(16, $movil);
                         h3{
                             font-size: scaleVW(20, $movil);
+                            height: auto;
                         }
                         p{
-                            font-size: scaleVW(14, $movil);
+                            font-size: scaleVW(16, $movil);
+                            height: auto;
                         }
                     }
                 }
