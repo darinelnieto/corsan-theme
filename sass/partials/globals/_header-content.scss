@@ -58,9 +58,7 @@
                     .sub-menu{
                         display: none;
                         position: absolute;
-                        bottom: 0;
-                        transform: translateY(100%);
-                        background: $white;
+                        top: 76%;
                         li{
                             a{
                                 &::after{
