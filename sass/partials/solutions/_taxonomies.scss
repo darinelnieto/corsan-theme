@@ -131,6 +131,7 @@
                             @media(max-width:768px){
                                 font-size: scaleVW(18, $movil);
                                 line-height: LH(23, 18);
+                                opacity: 0;
                             }
                         }
                         svg{

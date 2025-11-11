@@ -33,7 +33,7 @@ $category_nav = get_field('category_nav', 'option');
                             </div>
                             <a href="<?= $item['solutions_link']['url']; ?>" class="taxonomi-link">
                                 <span>
-                                    <!-- <?php if(get_bloginfo("language") == "en-US"): ?>See products<?php else: ?>Ver porductos<?php endif; ?> -->
+                                    <?php if(get_bloginfo("language") == "en-US"): ?>See products<?php else: ?>Ver porductos<?php endif; ?>
                                 </span>
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M2 16H30M30 16L16 2M30 16L16 30" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
