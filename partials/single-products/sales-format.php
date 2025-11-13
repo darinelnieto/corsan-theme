@@ -9,21 +9,21 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
 $sales_format = get_field('sales_format');
-if($sales_format['table']):
 ?>
 <section class="sales-format-partial-f7eea0">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <?php if($sales_format['title']): ?>
+                <?php if(!empty($sales_format['title'])): ?>
                     <h2><?= $sales_format['title']; ?></h2>
-                <?php endif; ?>
+                <?php endif; if(!empty($sales_format['table'])): ?>
                 <div class="the-table-contain">
                     <div class="table-content">
                         <?= $sales_format['table']; ?>
                     </div>
                 </div>
-                <div class="cta-more-information" onclick="open_end_quote()">
+                <?php endif; ?>
+                <div class="cta-more-information" <?php if(empty($sales_format['table'])): ?>style="margin-top:0;"<?php endif; ?> onclick="open_end_quote()">
                     <span class="text">
                         <?php if(get_bloginfo("language") == "en-US"): ?>More information<?php else: ?>Más información<?php endif; ?>
                     </span>
@@ -34,5 +34,4 @@ if($sales_format['table']):
             </div>
         </div>
     </div>
-</section>
-<?php endif; ?>        
+</section>  
