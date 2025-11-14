@@ -247,10 +247,11 @@ add_action( 'rest_api_init', function () {
 });
 function products_list_handler( $request ){
   $params = $request->get_params();
+  $search = sanitize_text_field( $params['name'] );
   /*========== Query parameters ==========*/
   $query = [
     'post_type'         => 'products',
-    's'                 => $params['name'],
+    's'                 => $search,
     'post_status'       => 'publish',
   ];
   /*========== Query =========*/

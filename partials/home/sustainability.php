@@ -21,15 +21,15 @@ $sustainability_two = get_field('environmental_responsibility_content_two');
                     </div>
                     <div class="text-content">
                         <h2><?= $sustainability['title']; ?></h2>
-                        <?php if($sustainability['iso_text']): ?>
-                            <div class="iso-text">
-                                <span><?= $sustainability['iso_text']; ?></span>
-                            </div>
-                        <?php endif; ?>
                     </div>
                 </div>
                 <div class="bottom-content">
                     <div class="content mb-5">
+                        <?php if($sustainability['iso_text']): ?>
+                            <h2 class="title">
+                                <span><?= $sustainability['iso_text']; ?></span>
+                            </h2>
+                        <?php endif; ?>
                         <p class="description"><?= $sustainability['description']; ?></p>
                         <?php if($sustainability['process']): ?>
                             <div class="sustainability-cards">

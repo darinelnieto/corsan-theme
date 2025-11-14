@@ -45,32 +45,6 @@
                     line-height: LH(30, 32);
                 }
             }
-            .iso-text{
-                background: $blue_light;
-                width: scaleVW(746, $desktop);
-                height: scaleVW(188, $desktop);
-                position: relative;
-                border-radius: scaleVW(94, $desktop) 0 0 scaleVW(94, $desktop);
-                display: flex;
-                align-items: center;
-                padding-left: scaleVW(90, $desktop);
-                span{
-                    font-size: scaleVW(64, $desktop);
-                    line-height: LH(58, 64);
-                    color: $white;
-                    font-weight: 700;
-                }
-                @media(max-width:768px){
-                    min-width: scaleVW(239, $movil);
-                    height: scaleVW(51, $movil);
-                    border-radius: scaleVW(94, $movil) 0 0 scaleVW(94, $movil);
-                    padding-left: scaleVW(20, $movil);
-                    span{
-                        font-size: scaleVW(24, $movil);
-                        line-height: LH(58, 24);
-                    }
-                }
-            }
         }
     }
     /*=========== Process ===========*/
@@ -78,6 +52,17 @@
         padding: scaleVW(81, $desktop) 0 scaleVW(211, $desktop) 0;
         @media(max-width:768px){
             padding: scaleVW(35, $movil) 0 scaleVW(86, $movil);
+        }
+        .title{
+            color: $blue;
+            font-size: scaleVW(64, $desktop);
+            line-height: LH(58, 64);
+            font-weight: 700;
+            margin-bottom: scaleVW(42, $desktop);
+            @media(max-width:768px){
+                font-size: scaleVW(32, $movil);
+                line-height: LH(30, 32);
+            }
         }
         .description{
             font-size: scaleVW(24, $desktop);

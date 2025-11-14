@@ -291,7 +291,6 @@ $('.cta-likes').on('click', function(){
           ip_user: ip_user
       }
   }).done(function(data){
-      console.log(data);
       $('.likes-count').html(`<p>${data.length}</p>`);
   }).fail(function(data){
       if(data.status === 403){

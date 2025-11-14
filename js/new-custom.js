@@ -98,7 +98,6 @@ function getProduct(){
             name: product_name
         }
     }).done(function(resp){
-        console.log(resp);
         $('#product-image').html('');
         if(resp.length > 0){
             var product = resp[0];
@@ -111,4 +110,4 @@ function getProduct(){
     }).fail(function(error){
         console.log(error);
     })
-}
+} 
