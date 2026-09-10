@@ -35,14 +35,29 @@ if($related_products->have_posts()):
                                         <p class="taxonomy"><?= $cat[0]->name; ?></p>
                                     </div>
                                     <div class="img-container">
-                                        <img src="<?= get_the_post_thumbnail_url($related_products->ID); ?>" alt="<?= get_the_title($related_products->ID); ?>" class="product-image">
-                                        <?php $image = get_field('gallery', $related_products->ID); ?>
-                                        <img src="<?= $image[1]['url']; ?>" alt="<?= $image[1]['title']; ?>" width="<?= $image[1]['width']; ?>" height="<?= $image[1]['height']; ?>" class="secondary-image">
-                                        <?php if($icons): ?>
+                                        <?php echo wp_get_attachment_image(get_post_thumbnail_id($related_products->ID), 'medium', false, array(
+                                            'class' => 'product-image',
+                                            'loading' => 'lazy',
+                                            'decoding' => 'async',
+                                            'alt' => get_the_title($related_products->ID)
+                                        )); 
+                                        $image = get_field('gallery', $related_products->ID); 
+                                        echo wp_get_attachment_image($image[1]['ID'] ?? '', 'medium', false, array(
+                                            'class' => 'secondary-image',
+                                            'loading' => 'lazy',
+                                            'decoding' => 'async',
+                                            'alt' => $image[1]['title']
+                                        )); 
+                                        if($icons): ?>
                                             <ul class="icons-content">
                                                 <?php foreach($icons as $icon): ?>
                                                     <li>
-                                                        <img src="<?= $icon['icon']['url']; ?>" alt="<?= $icon['icon']['title']; ?>" width="<?= $icon['icon']['width']; ?>" height="<?= $icon['icon']['height']; ?>">
+                                                        <?= wp_get_attachment_image($icon['icon']['ID'] ?? '', 'medium', false, array(
+                                                            'class' => 'icon-image',
+                                                            'loading' => 'lazy',
+                                                            'decoding' => 'async',
+                                                            'alt' => $icon['text']
+                                                        )); ?>
                                                         <span><?= $icon['text']; ?></span>
                                                     </li>
                                                 <?php endforeach; ?>
@@ -86,88 +101,5 @@ if($related_products->have_posts()):
             </div>
         </div>
     </div>
-</section>  
-<script>
-    $(document).ready(function () {
-        var owl = $('.products-slide');
-        owl.owlCarousel({
-            autoplay:false,
-            loop:false,
-            nav:false,
-            margin:40,
-            responsive:{
-                0:{
-                    items:1.5,
-                    center:true,
-                },
-                768:{
-                    items:2
-                },
-                1000:{
-                    items:4
-                }
-            }
-        }).css({'visibility':'visible'});
-        // Función para obtener el número de ítems visibles según ancho
-        function getItemsPerPage() {
-            var width = $(window).width();
-            if (width < 640) return 1;
-            if (width < 768) return 2;
-            return 4;
-        }
-
-        // Función para regenerar los dots personalizados
-        function generateCustomDots() {
-            $('#dots-content').empty();
-
-            var totalItems = owl.find('.owl-item:not(.cloned)').length;
-            var itemsPerPage = getItemsPerPage();
-            var totalPages = Math.ceil(totalItems / itemsPerPage);
-
-            for (var i = 0; i < totalPages; i++) {
-                $('#dots-content').append(
-                    `<li><a href="#" class="dot" data-slide="${i}"></a></li>`
-                );
-            }
-
-            // Click en cada dot para mover al slide correspondiente
-            $('.dot').click(function (e) {
-                e.preventDefault();
-                var page = $(this).data('slide');
-                owl.trigger('to.owl.carousel', [page * itemsPerPage, 300]);
-            });
-
-            // Activar el primero al inicio
-            $('.dot').removeClass('active').eq(0).addClass('active');
-        }
-
-        // Mover con flechas
-        $('.nav .prev').click(function (e) {
-            e.preventDefault();
-            owl.trigger('prev.owl.carousel');
-        });
-
-        $('.nav .next').click(function (e) {
-            e.preventDefault();
-            owl.trigger('next.owl.carousel');
-        });
-
-        // Actualizar el dot activo al cambiar de slide
-        owl.on('changed.owl.carousel', function (event) {
-            var itemsPerPage = getItemsPerPage();
-            var pageIndex = Math.floor(event.item.index / itemsPerPage);
-
-            $('.dot').removeClass('active');
-            $('.dot').eq(pageIndex).addClass('active');
-        });
-
-        // Generar los dots al inicio
-        generateCustomDots();
-
-        // Regenerar al cambiar de tamaño
-        $(window).on('resize', function () {
-            setTimeout(generateCustomDots, 300);
-        });
-    });
-</script>
+</section>
 <?php endif; ?>            

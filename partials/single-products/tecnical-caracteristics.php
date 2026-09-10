@@ -21,9 +21,12 @@ $content = get_field('tecnical_caracteristics_group');
                         <div class="caracteristics-list">
                             <?php foreach($content['caracteristics'] as $item): ?>
                                 <div class="item">
-                                    <?php if($item['icon']): ?>
-                                        <img src="<?= $item['icon']['url']; ?>" alt="<?= $item['icon']['title']; ?>" width="<?= $item['icon']['width']; ?>" height="<?= $item['icon']['height']; ?>">
-                                    <?php endif; ?>
+                                    <?= wp_get_attachment_image($item['icon']['ID'] ?? '', 'medium', false, array(
+                                        'class' => 'icon-image',
+                                        'loading' => 'lazy',
+                                        'decoding' => 'async',
+                                        'alt' => $item['icon']['title'] ?? ''
+                                    )); ?>
                                     <p class="name"><?= $item['description']; ?></p>
                                 </div>
                             <?php endforeach; ?>

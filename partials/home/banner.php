@@ -15,16 +15,49 @@ $solutions_content = get_field('after_banner');
 global $es_movil;
 ?>
 <section class="banner-partial-bfa418">
-    <?php if($taxonomies): ?>
-        <div class="taxonomies <?php if($es_movil): ?> owl-carousel<?php endif; ?>">
+    <div class="after-banner">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-12 col-md-6 col-lg-5">
+                    <div class="text-contain">
+                        <?php if($solutions_content['title']): ?>
+                            <h1><?= $solutions_content['title']; ?></h1>
+                        <?php endif; if($solutions_content['description']): ?>
+                            <p class="description"><?= $solutions_content['description']; ?></p>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <?php if($solutions_content['main_image']): ?>
+                    <div class="col-12 col-md-6">
+                        <div class="image-contain">
+                            <?= wp_get_attachment_image($solutions_content['main_image']['ID'], 'large', false, array(
+                                'class' => 'full-image',
+                                'loading' => 'lazy',
+                                'decoding' => 'async',
+                                'alt' => $solutions_content['title']
+                            )) ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+    <?php if(!empty($taxonomies)): ?>
+        <div class="taxonomies <?php if($es_movil): ?>owl-carousel<?php endif; ?>">
             <?php 
                 $count = count($taxonomies); // Contar los elementos
                 foreach($taxonomies as $taxonomy): 
                     $tax = $taxonomy['select_taxonomy']; 
+                    $img = get_field('feature_image', $tax->taxonomy . '_' . $tax->term_id);
             ?>
                 <div class="taxonomy-card">
                     <div class="taxonomi-card">
-                        <img src="<?= get_field('feature_image', $tax->taxonomy . '_' . $tax->term_id); ?>" alt="<?= $tax->name; ?>">
+                        <?= wp_get_attachment_image($img, 'large', false, array(
+                            'class' => 'category-image',
+                            'loading' => 'lazy',
+                            'decoding' => 'async',
+                            'alt' => 'Imagen de  la categoría ' . $tax->name
+                        )) ?>
                         <div class="text-taxonomy">
                             <p class="name-category"><?= $tax->name; ?></p>
                             <a href="<?= home_url(); ?>/product_cat/<?= $tax->slug; ?>">
@@ -38,40 +71,5 @@ global $es_movil;
                 </div>
             <?php endforeach; ?>
         </div>
-        <?php if($es_movil ): ?>
-            <script>
-                $('.taxonomies').owlCarousel({
-                    autoplay:true,
-                    loop:true,
-                    nav:false,
-                    dots:true,
-                    items:1,
-                    margin:0
-                }).css({ 'opacity':1 });
-            </script>
-        <?php endif; ?>
     <?php endif; ?>
-    <div class="after-banner">
-        <div class="container">
-            <div class="row align-items-center justify-content-between">
-                <div class="col-12 col-md-6 col-lg-5">
-                    <div class="text-contain">
-                        <?php if($solutions_content['title']): ?>
-                            <h1><?= $solutions_content['title']; ?></h1>
-                        <?php endif; if($solutions_content['description']): ?>
-                            <p class="description"><?= $solutions_content['description']; ?></p>
-                        <?php endif; ?>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <?php if($solutions_content['main_image']): ?>
-                        <div class="image-contain">
-                            <img src="<?= $solutions_content['main_image']['url']; ?>" alt="<?= $solutions_content['main_image']['title']; ?>" width="<?= $solutions_content['main_image']['width']; ?>" height="<?= $solutions_content['main_image']['height']; ?>">
-                        </div>
-                    <?php endif; ?>
-                </div>
-            </div>
-        </div>
-    </div>
 </section>
-<?php get_template_part('partials/solutions/taxonomies'); ?>

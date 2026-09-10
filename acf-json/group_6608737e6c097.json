@@ -3,8 +3,8 @@
     "title": "Home",
     "fields": [
         {
-            "key": "field_6608739c00290",
-            "label": "Banner",
+            "key": "field_6882eb87ceda4",
+            "label": "Video banner",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -21,11 +21,11 @@
             "selected": 0
         },
         {
-            "key": "field_660874027f8e0",
-            "label": "Products taxonomies",
-            "name": "products_taxonomies",
+            "key": "field_6882eb9fceda5",
+            "label": "Video",
+            "name": "video",
             "aria-label": "",
-            "type": "repeater",
+            "type": "file",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -34,41 +34,51 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "table",
-            "pagination": 0,
-            "min": 0,
-            "max": 0,
-            "collapsed": "",
-            "button_label": "Agregar Fila",
-            "rows_per_page": 20,
-            "sub_fields": [
-                {
-                    "key": "field_660874667f8e1",
-                    "label": "Select taxonomy",
-                    "name": "select_taxonomy",
-                    "aria-label": "",
-                    "type": "taxonomy",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "taxonomy": "product_cat",
-                    "add_term": 1,
-                    "save_terms": 0,
-                    "load_terms": 0,
-                    "return_format": "object",
-                    "field_type": "select",
-                    "allow_null": 0,
-                    "bidirectional": 0,
-                    "bidirectional_target": "",
-                    "multiple": 0,
-                    "parent_repeater": "field_660874027f8e0"
-                }
-            ]
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_6882ec18ceda6",
+            "label": "Video description",
+            "name": "video_description",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_6608739c00290",
+            "label": "Banner",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_6608bb1d458c3",
@@ -153,6 +163,56 @@
                     "mime_types": "",
                     "allow_in_bindings": 0,
                     "preview_size": "medium"
+                }
+            ]
+        },
+        {
+            "key": "field_660874027f8e0",
+            "label": "Products taxonomies",
+            "name": "products_taxonomies",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Agregar Fila",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_660874667f8e1",
+                    "label": "Select taxonomy",
+                    "name": "select_taxonomy",
+                    "aria-label": "",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "product_cat",
+                    "add_term": 1,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "return_format": "object",
+                    "field_type": "select",
+                    "allow_null": 0,
+                    "bidirectional": 0,
+                    "bidirectional_target": "",
+                    "multiple": 0,
+                    "parent_repeater": "field_660874027f8e0"
                 }
             ]
         },
@@ -313,66 +373,6 @@
                     ]
                 }
             ]
-        },
-        {
-            "key": "field_6882eb87ceda4",
-            "label": "Video banner",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0,
-            "selected": 0
-        },
-        {
-            "key": "field_6882eb9fceda5",
-            "label": "Video",
-            "name": "video",
-            "aria-label": "",
-            "type": "file",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "library": "all",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": "",
-            "allow_in_bindings": 0
-        },
-        {
-            "key": "field_6882ec18ceda6",
-            "label": "Video description",
-            "name": "video_description",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "rows": 4,
-            "placeholder": "",
-            "new_lines": "br"
         },
         {
             "key": "field_688357f3545db",
@@ -975,5 +975,8 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1757076076
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1789054026
 }

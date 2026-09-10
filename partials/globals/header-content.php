@@ -28,7 +28,25 @@ global $es_movil;
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <div class="col-5 col-md-2 logo-container">
-                    <?= get_custom_logo(); ?>
+                    <?php
+                    $custom_logo_id = get_theme_mod('custom_logo');
+                    if ($custom_logo_id) {
+                        echo '<a href="' . home_url('/') . '" class="custom-logo-link" rel="home">' . wp_get_attachment_image(
+                            $custom_logo_id,
+                            'full',
+                            false,
+                            [
+                                'class'    => 'custom-logo',
+                                'fetchpriority' => 'high',
+                                'loading'  => 'eager',
+                                'decoding' => 'async',
+                                'alt' => 'Logo Corsan'
+                            ]
+                        ) . '</a>';
+                    } else {
+                        echo '<a href="' . home_url('/') . '" class="custom-logo-link" rel="home">' . get_bloginfo('name') . '</a>';
+                    }
+                    ?>
                 </div>
                 <div class="d-none d-md-block col-md-7 nav-container">
                     <?php wp_nav_menu(['menu' => 'menu main']); ?>

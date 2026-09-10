@@ -217,7 +217,7 @@ function add_products_to_quote_form(){
 function clear_car_after_submit_qoute_form(){
   setTimeout(function(){
     close_end_quote();
-  }, 3000);
+  }, 1000);
   localStorage.removeItem('car');
   all_references = [];
   get_items_to_car();
@@ -472,12 +472,6 @@ function open_car(){
 function close_car(){
   $('#car-pop-up').removeClass('show');
 }
-/*=========== Submit quote ============*/
-var wpcf7Elm = document.querySelector( '.wpcf7' );
- 
-wpcf7Elm.addEventListener( 'wpcf7submit', function( event ) {
-  clear_car_after_submit_qoute_form();
-}, false );
 /*============= Single products slider =============*/
 $('.gallery-product').owlCarousel({
   autoplay:false,
@@ -554,3 +548,438 @@ $('.policies-container label').on('click', function(){
     $('.input-and-button .button').prop('disabled', true);
   }
 });
+// Slide category movil
+if($(window).width() < 768) {
+  $('.taxonomies').owlCarousel({
+    autoplay:true,
+    loop:true,
+    nav:false,
+    dots:true,
+    items:1,
+    margin:0
+  }).css({ 'opacity':1 });
+}
+/*=========== Submit quote ============*/
+var wpcf7Elm = document.querySelector( '.wpcf7' );
+if( wpcf7Elm != null){
+  wpcf7Elm.addEventListener( 'wpcf7submit', function( event ) {
+    clear_car_after_submit_qoute_form();
+  }, false );
+}
+// Product slide home
+var productSlide = $('.products-slide-partial-19f476 .prduct-slide-home').owlCarousel({
+    autoplay:false,
+    loop:false,
+    nav:false,
+    dots:false,
+    margin:0,
+    items:1
+});
+$('.products-slide-partial-19f476 .nav .prev').click(function(e){
+    e.preventDefault();
+    productSlide.trigger('prev.owl.carousel');
+});
+
+$('.products-slide-partial-19f476 .nav .next').click(function(e){
+    e.preventDefault();
+    productSlide.trigger('next.owl.carousel');
+});
+
+$('.products-slide-partial-19f476 .nav .dot').each(function(index){
+    $(this).attr('data-slide', index);
+});
+
+$('.products-slide-partial-19f476 .nav .dot').click(function(e){
+    e.preventDefault();
+    var slideTo = $(this).data('slide');
+    productSlide.trigger('to.owl.carousel', [slideTo, 300]);
+});
+
+productSlide.on('changed.owl.carousel', function(event) {
+    var index = event.item.index - event.relatedTarget._clones.length / 2;
+    var count = event.item.count;
+    if(index >= count) index = index % count;
+    if(index < 0) index = count + index;
+
+    $('.nav .dot').removeClass('active');
+    $('.nav .dot').eq(index).addClass('active');
+});
+
+$('.products-slide-partial-19f476 .nav .dot').eq(0).addClass('active');
+// Product tabs home
+$(()=>{
+    if($(window).width() < 768){
+        $('.products-slide-partial-5303c9 .the-tabs').addClass('owl-carousel');
+        $('.products-slide-partial-5303c9 .the-tabs').owlCarousel({
+            autoplay:false,
+            loop:true,
+            nav:false,
+            dots:false,
+            margin:20,
+            responsive:{
+                0:{
+                    items:1.5,
+                    center:true
+                },
+                640:{
+                    items:2
+                }
+            }
+        });
+    }
+    // Timeline Slide About us
+    var $owlTL_slide = $('.time-line-partial-76a83f .time-line-slide');
+    var owlSlide_TL = $owlTL_slide.owlCarousel({
+        autoplay: false,
+        loop: false,
+        nav: false,
+        dots: false,
+        margin: 0,
+        responsive: {
+            0: { items: 1, margin:30 },
+            640: { items: 2, margin:30 },
+            768: { items: 3 }
+        }
+    });
+
+    // Función para obtener el número de ítems visibles según ancho
+    function getItemsPerPage() {
+        var width = $(window).width();
+        if (width < 640) return 1;
+        if (width < 768) return 2;
+        return 3;
+    }
+
+    // Función para regenerar los dots personalizados
+    function generateCustomDots() {
+        $('#dots-content').empty();
+
+        var totalItems = $owlTL_slide.find('.owl-item:not(.cloned)').length;
+        var itemsPerPage = getItemsPerPage();
+        var totalPages = Math.ceil(totalItems / itemsPerPage);
+
+        for (var i = 0; i < totalPages; i++) {
+            $('#dots-content').append(
+                `<li><a href="#" class="dot" data-slide="${i}"></a></li>`
+            );
+        }
+
+        // Click en cada dot para mover al slide correspondiente
+        $('.dot').click(function (e) {
+            e.preventDefault();
+            var page = $(this).data('slide');
+            owlSlide_TL.trigger('to.owl.carousel', [page * itemsPerPage, 300]);
+        });
+
+        // Activar el primero al inicio
+        $('.dot').removeClass('active').eq(0).addClass('active');
+    }
+
+    // Mover con flechas
+    $('.nav .prev').click(function (e) {
+        e.preventDefault();
+        owlSlide_TL.trigger('prev.owl.carousel');
+    });
+
+    $('.nav .next').click(function (e) {
+        e.preventDefault();
+        owlSlide_TL.trigger('next.owl.carousel');
+    });
+
+    // Actualizar el dot activo al cambiar de slide
+    $owlTL_slide.on('changed.owl.carousel', function (event) {
+        var itemsPerPage = getItemsPerPage();
+        var pageIndex = Math.floor(event.item.index / itemsPerPage);
+
+        $('.dot').removeClass('active');
+        $('.dot').eq(pageIndex).addClass('active');
+    });
+
+    // Generar los dots al inicio
+    generateCustomDots();
+
+    // Regenerar al cambiar de tamaño
+    $(window).on('resize', function () {
+        setTimeout(generateCustomDots, 300);
+    });
+});
+// Banner video -> Vol event
+const video = document.getElementById('customVideo');
+if(video !== null){
+  const volumeBtn = document.getElementById('volumeBtn');
+  volumeBtn.addEventListener('click', function () {
+      video.muted = !video.muted;
+      volumeBtn.innerHTML = video.muted ? `<i class="fa-solid fa-volume-high"></i>` : `<i class="fa-solid fa-volume-xmark"></i>`;
+  });
+}
+// Feature posts slide
+var slideFeaturePosts = $('#single-blog-post-template-0f368e .slide-related-post');
+if(slideFeaturePosts !== null){
+  slideFeaturePosts.owlCarousel({
+    autoplay:false,
+    loop:false,
+    nav:false,
+    navText:[
+        `<svg width="68" height="69" viewBox="0 0 68 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#filter0_d_142_196)">
+                <circle cx="34" cy="30.5" r="30" transform="rotate(180 34 30.5)" fill="white" fill-opacity="0.7"/>
+                <path d="M38 22.5L30 30.5L38 38.5" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <defs>
+                <filter id="filter0_d_142_196" x="0" y="0.5" width="68" height="68" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                    <feOffset dy="4"/>
+                    <feGaussianBlur stdDeviation="2"/>
+                    <feComposite in2="hardAlpha" operator="out"/>
+                    <feColorMatrix type="matrix" values="0 0 0 0 0.470588 0 0 0 0 0.470588 0 0 0 0 0.470588 0 0 0 0.05 0"/>
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_142_196"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_142_196" result="shape"/>
+                </filter>
+            </defs>
+        </svg>`,
+        `<svg width="68" height="69" viewBox="0 0 68 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#filter0_d_142_264)">
+                <circle cx="34" cy="30.5" r="30" fill="white" fill-opacity="0.7"/>
+                <path d="M29 38.5L37 30.5L29 22.5" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <defs>
+                <filter id="filter0_d_142_264" x="0" y="0.5" width="68" height="68" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                    <feOffset dy="4"/>
+                    <feGaussianBlur stdDeviation="2"/>
+                    <feComposite in2="hardAlpha" operator="out"/>
+                    <feColorMatrix type="matrix" values="0 0 0 0 0.470588 0 0 0 0 0.470588 0 0 0 0 0.470588 0 0 0 0.05 0"/>
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_142_264"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_142_264" result="shape"/>
+                </filter>
+            </defs>
+        </svg>`
+    ],
+    dots:true,
+    margin:20,
+    responsive:{
+        0:{
+            items:1.5,
+            center:true,
+            loop:true,
+            nav:false
+        },
+        640:{
+            items:2,
+            nav:false,
+        },
+        991:{
+            items:3
+        }
+    }
+  }).css({'visibility':'visible'});
+}
+// Active solutions categories
+var tax_links = $('.taxonomies-partial-a0ac83 .taxonomi-link');
+if(tax_links !== null){
+  tax_links.each(function(index) {
+      if(this.href.trim() == window.location.href){
+          $('.main-card').removeClass('active');
+          $(this).parent().parent().addClass("active");
+          $(this).addClass("active");
+      }
+  });
+}
+var cat_links = $('.taxonomies-partial-a0ac83 .category-list a');
+if(cat_links !== null){
+  cat_links.each(function(index) {
+      if(this.href.trim() == window.location.href){
+          $('.category-list a').removeClass('active');
+          $(this).addClass("active");
+      }
+  });
+}
+// Single product
+var nav_gallery_prod = $('.product-details-partial-d60d33 .nav-galery');
+if(nav_gallery_prod !== null){
+  nav_gallery_prod.on('click', '.item-image', function(e){
+    var item = $(this).attr('href');
+    $('.item-image').removeClass('show');
+    $(item).addClass('show');
+    e.preventDefault();
+  });
+}
+var zoom_tr_prod = $('.product-details-partial-d60d33 .zoom-trigger');
+if(zoom_tr_prod !== null){
+  zoom_tr_prod.each(function() {
+    $(this).zoom({
+      url: $(this).attr('href'),
+      magnify: 2
+    });
+  });
+}
+
+$(()=>{
+  var button_icon_form = $('.product-details-partial-d60d33 .the-form button .icon');
+  if(button_icon_form !== null){
+    $('.product-details-partial-d60d33 .the-form button .icon').html(`
+        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 12.4648H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 5.46484L19 12.4648L12 19.4648" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    `); 
+  }
+});
+// Manuals slide
+var manuals_slide_prod = $('.related-manuals-partial-d5f0ac .mauals-slide');
+manuals_slide_prod.owlCarousel({
+  loop:false,
+  autoplay:false,
+  nav:true,
+  navText:[
+      `<svg width="68" height="69" viewBox="0 0 68 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g filter="url(#filter0_d_142_196)">
+              <circle cx="34" cy="30.5" r="30" transform="rotate(180 34 30.5)" fill="white" fill-opacity="0.7"/>
+              <path d="M38 22.5L30 30.5L38 38.5" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <defs>
+              <filter id="filter0_d_142_196" x="0" y="0.5" width="68" height="68" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                  <feOffset dy="4"/>
+                  <feGaussianBlur stdDeviation="2"/>
+                  <feComposite in2="hardAlpha" operator="out"/>
+                  <feColorMatrix type="matrix" values="0 0 0 0 0.470588 0 0 0 0 0.470588 0 0 0 0 0.470588 0 0 0 0.05 0"/>
+                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_142_196"/>
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_142_196" result="shape"/>
+              </filter>
+          </defs>
+      </svg>`,
+      `<svg width="68" height="69" viewBox="0 0 68 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g filter="url(#filter0_d_142_264)">
+              <circle cx="34" cy="30.5" r="30" fill="white" fill-opacity="0.7"/>
+              <path d="M29 38.5L37 30.5L29 22.5" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <defs>
+              <filter id="filter0_d_142_264" x="0" y="0.5" width="68" height="68" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                  <feOffset dy="4"/>
+                  <feGaussianBlur stdDeviation="2"/>
+                  <feComposite in2="hardAlpha" operator="out"/>
+                  <feColorMatrix type="matrix" values="0 0 0 0 0.470588 0 0 0 0 0.470588 0 0 0 0 0.470588 0 0 0 0.05 0"/>
+                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_142_264"/>
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_142_264" result="shape"/>
+              </filter>
+          </defs>
+      </svg>`
+  ],
+  dots:true,
+  margin:20,
+  responsive:{
+      0:{
+          items:1.5,
+          center:true,
+          loop:true,
+          nav:false
+      },
+      640:{
+          items:2,
+          nav:false,
+      },
+      991:{
+          items:3
+      }
+  }
+}).css({'visibility':'visible'});
+// Single product related posts slide
+var owlSlideRelatedProduct = $('.related-products-partial-573627 .products-slide');
+$(()=>{
+  if(owlSlideRelatedProduct !== null){
+    owlSlideRelatedProduct.owlCarousel({
+        autoplay:false,
+        loop:false,
+        nav:false,
+        margin:40,
+        responsive:{
+            0:{
+                items:1.5,
+                center:true,
+            },
+            768:{
+                items:2
+            },
+            1000:{
+                items:4
+            }
+        }
+    }).css({'visibility':'visible'});
+    // Función para obtener el número de ítems visibles según ancho
+    function getItemsPerPage() {
+        var width = $(window).width();
+        if (width < 640) return 1;
+        if (width < 768) return 2;
+        return 4;
+    }
+
+    // Función para regenerar los dots personalizados
+    function generateCustomDots() {
+        $('#dots-content').empty();
+
+        var totalItems = owlSlideRelatedProduct.find('.owl-item:not(.cloned)').length;
+        var itemsPerPage = getItemsPerPage();
+        var totalPages = Math.ceil(totalItems / itemsPerPage);
+
+        for (var i = 0; i < totalPages; i++) {
+            $('#dots-content').append(
+                `<li><a href="#" class="dot" data-slide="${i}"></a></li>`
+            );
+        }
+
+        // Click en cada dot para mover al slide correspondiente
+        $('.related-products-partial-573627 .dot').click(function (e) {
+            e.preventDefault();
+            var page = $(this).data('slide');
+            owlSlideRelatedProduct.trigger('to.owl.carousel', [page * itemsPerPage, 300]);
+        });
+
+        // Activar el primero al inicio
+        $('.related-products-partial-573627 .dot').removeClass('active').eq(0).addClass('active');
+    }
+
+    // Mover con flechas
+    $('.related-products-partial-573627 .nav .prev').click(function (e) {
+        e.preventDefault();
+        owlSlideRelatedProduct.trigger('prev.owl.carousel');
+    });
+
+    $('.related-products-partial-573627 .nav .next').click(function (e) {
+        e.preventDefault();
+        owlSlideRelatedProduct.trigger('next.owl.carousel');
+    });
+
+    // Actualizar el dot activo al cambiar de slide
+    owlSlideRelatedProduct.on('changed.owl.carousel', function (event) {
+        var itemsPerPage = getItemsPerPage();
+        var pageIndex = Math.floor(event.item.index / itemsPerPage);
+
+        $('.related-products-partial-573627 .dot').removeClass('active');
+        $('.related-products-partial-573627 .dot').eq(pageIndex).addClass('active');
+    });
+
+    // Generar los dots al inicio
+    generateCustomDots();
+
+    // Regenerar al cambiar de tamaño
+    $(window).on('resize', function () {
+        setTimeout(generateCustomDots, 300);
+    });
+  }
+});
+// Contact page form
+var c_form_button = $('#contact-us-template-55cc3c .form button .icon');
+if(c_form_button !== null){
+  c_form_button.html(`
+    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 12.4648H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 5.46484L19 12.4648L12 19.4648" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  `);
+}

@@ -21,7 +21,11 @@ if($clients):
                 <div class="our-clients owl-carousel">
                     <?php foreach($clients as $client): ?>
                         <div class="item" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1000">
-                            <img src="<?= $client['logo']['url']; ?>" alt="<?= $client['logo']['title']; ?>">
+                            <?= wp_get_attachment_image($client['logo']['ID'] ?? '', 'large', false, array(
+                                'class' => 'customer-logo',
+                                'loading' => 'lazy',
+                                'decoding' => 'async',
+                            )) ?>
                         </div>
                     <?php endforeach; ?>
                 </div>

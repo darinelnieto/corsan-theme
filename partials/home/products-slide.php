@@ -19,20 +19,30 @@ if($products_list):
                     <?php foreach($products_list as $product): $prod = $product['product']; $advantages = get_field('advantages', $prod->ID); ?>
                         <div class="item">
                             <div class="image-contain">
-                                <img src="<?= get_the_post_thumbnail_url($prod->ID) ?>" alt="<?= get_the_title($prod->ID); ?>" width="773" height="475">
+                                <?= wp_get_attachment_image(get_post_thumbnail_id($prod->ID) ?? '', 'large', false, array(
+                                    'class' => 'product-image',
+                                    'loading' => 'lazy',
+                                    'decoding' => 'async',
+                                    'alt' => get_the_title($prod->ID)
+                                )); ?>
                                 <?php $image = get_field('gallery', $prod->ID); ?>
-                                <img src="<?= $image[1]['url']; ?>" alt="<?= $image[1]['title']; ?>" width="<?= $image[1]['width']; ?>" height="<?= $image[1]['height']; ?>" class="secondary-image">
+                                <?= wp_get_attachment_image($image[1]['ID'] ?? '', 'large', false, array(
+                                    'class' => 'secondary-image',
+                                    'loading' => 'lazy',
+                                    'decoding' => 'async',
+                                    'alt' => get_the_title($prod->ID)
+                                )); ?>
                             </div>
                             <div class="text-contain">
-                                <h3 class="product-name"><?= get_the_title($prod->ID); ?></h3>
+                                <h2 class="product-name"><?= get_the_title($prod->ID); ?></h2>
                                 <?php if(is_array($advantages) && count($advantages) > 0): ?>
-                                    <h4 class="advantages-title">
+                                    <h3 class="advantages-title">
                                         <?php if(get_bloginfo("language") == "en-US"): ?>
                                             Advantages
                                         <?php else: ?>
                                             Ventajas
                                         <?php endif; ?>
-                                    </h4>
+                                    </h3>
                                     <ul class="advantages">
                                         <?php foreach($advantages as $li): ?>
                                             <li>
@@ -44,7 +54,7 @@ if($products_list):
                                         <?php endforeach; ?>
                                     </ul>
                                 <?php endif; ?>
-                                <a href="<?= get_permalink($prod->ID); ?>" class="cta">
+                                <a href="<?= get_permalink($prod->ID); ?>" class="cta show-product">
                                     <span class="text"><?php if(get_bloginfo("language") == "en-US"): ?>Learn more<?php else: ?>Conocer más<?php endif; ?></span>
                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M2 16H30M30 16L16 2M30 16L16 30" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -54,7 +64,7 @@ if($products_list):
                         </div>
                     <?php endforeach; ?>
                 </div>
-                <ul class="nav">
+                <ul class="nav slide-controller">
                     <li>
                         <a href="" class="prev">
                             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -83,45 +93,4 @@ if($products_list):
         </div>
     </div>
 </section>
-<script>
-    var owl = $('.prduct-slide-home').owlCarousel({
-        autoplay:false,
-        loop:false,
-        nav:false,
-        dots:false,
-        margin:0,
-        items:1
-    });
-    $('.nav .prev').click(function(e){
-        e.preventDefault();
-        owl.trigger('prev.owl.carousel');
-    });
-
-    $('.nav .next').click(function(e){
-        e.preventDefault();
-        owl.trigger('next.owl.carousel');
-    });
-
-    $('.nav .dot').each(function(index){
-        $(this).attr('data-slide', index);
-    });
-
-    $('.nav .dot').click(function(e){
-        e.preventDefault();
-        var slideTo = $(this).data('slide');
-        owl.trigger('to.owl.carousel', [slideTo, 300]);
-    });
-
-    owl.on('changed.owl.carousel', function(event) {
-        var index = event.item.index - event.relatedTarget._clones.length / 2;
-        var count = event.item.count;
-        if(index >= count) index = index % count;
-        if(index < 0) index = count + index;
-
-        $('.nav .dot').removeClass('active');
-        $('.nav .dot').eq(index).addClass('active');
-    });
-
-    $('.nav .dot').eq(0).addClass('active');
-</script>
 <?php endif; ?>                 

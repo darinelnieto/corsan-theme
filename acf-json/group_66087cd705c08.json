@@ -16,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "url",
+            "return_format": "id",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -25,6 +25,7 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
+            "allow_in_bindings": 1,
             "preview_size": "medium"
         },
         {
@@ -47,7 +48,7 @@
         },
         {
             "key": "field_6608aa314f28b",
-            "label": "Size title",
+            "label": "Products taxonomies",
             "name": "size_title",
             "aria-label": "",
             "type": "number",
@@ -93,5 +94,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1714099060
+    "modified": 1789001801
 }

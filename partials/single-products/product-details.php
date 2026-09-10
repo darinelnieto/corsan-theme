@@ -21,7 +21,11 @@ $cat = get_the_terms(get_the_id(), 'product_cat');
 							<?php $i = 0; foreach($gallery as $image): $i++; ?>
 								<div class="nav-image">
 									<a class="item-image" href="#item-<?= $i; ?>">
-										<img src="<?= $image['url']; ?>" alt="<?= $image['title']; ?>">
+										<?= wp_get_attachment_image($image['ID'], 'medium', false, array(
+											'class' => 'image',
+											'fetchpriority' => 'high',
+											'alt' => $image['title']
+										)); ?>
 									</a>
 								</div>
 							<?php endforeach; ?>
@@ -30,7 +34,11 @@ $cat = get_the_terms(get_the_id(), 'product_cat');
 							<?php $nav = 0; foreach($gallery as $image): $nav++; ?>
 								<div class="item-image <?php if($nav === 1): ?>show<?php endif; ?>" id="item-<?= $nav; ?>">
 									<a href="<?= $image['url']; ?>" class="zoom-trigger">
-										<img src="<?= $image['url']; ?>" alt="<?= $image['title']; ?>" width="<?= $image['width']; ?>" height="<?= $image['height']; ?>" class="zoom-image">
+										<?= wp_get_attachment_image($image['ID'], 'large', false, array(
+											'class' => 'zoom-image',
+											'fetchpriority' => 'high',
+											'alt' => $image['title']
+										)) ?>
 									</a>
 								</div>
 							<?php endforeach; ?>
@@ -63,26 +71,3 @@ $cat = get_the_terms(get_the_id(), 'product_cat');
         </div>
     </div>
 </section>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.21/jquery.zoom.min.js"></script>
-<script>
-	$('.nav-galery').on('click', '.item-image', function(e){
-		var item = $(this).attr('href');
-		$('.item-image').removeClass('show');
-		$(item).addClass('show');
-		e.preventDefault();
-	});
-	$('.zoom-trigger').each(function() {
-		$(this).zoom({
-			url: $(this).attr('href'),
-			magnify: 2
-		});
-	});
-    $(()=>{
-        $('.the-form button .icon').html(`
-            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 12.4648H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M12 5.46484L19 12.4648L12 19.4648" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        `);
-    })
-</script>

@@ -40,7 +40,7 @@ usort($postucts_array, function($a, $b) {
     return strcmp(get_translated_title($a), get_translated_title($b));
 });
 wp_reset_postdata();
-if($postucts_array):
+if(!empty($postucts_array)):
 ?>
 <section class="products-list-partial-fb197d">
     <div class="container">
@@ -54,14 +54,29 @@ if($postucts_array):
                                 <p class="taxonomy"><?= $cat[0]->name; ?></p>
                             </div>
                             <div class="img-container">
-                                <img src="<?= get_the_post_thumbnail_url($post->ID); ?>" alt="<?= get_the_title($post->ID); ?>" class="product-image">
+                                <?= wp_get_attachment_image(get_post_thumbnail_id($post->ID), 'medium', false, array(
+                                    'class' => 'product-image',
+                                    'loading' => 'lazy',
+                                    'decoding' => 'async',
+                                    'alt' => get_the_title($post->ID)
+                                )); ?>
                                 <?php $image = get_field('gallery', $post->ID); ?>
-                                <img src="<?= $image[1]['url']; ?>" alt="<?= $image[1]['title']; ?>" width="<?= $image[1]['width']; ?>" height="<?= $image[1]['height']; ?>" class="secondary-image">
+                                <?= wp_get_attachment_image($image[1]['ID'] ?? '', 'medium', false, array(
+                                    'class' => 'secondary-image',
+                                    'loading' => 'lazy',
+                                    'decoding' => 'async',
+                                    'alt' => get_the_title($post->ID)
+                                )); ?>
                                 <?php if($icons): ?>
                                     <ul class="icons-content">
                                         <?php foreach($icons as $icon): ?>
                                             <li>
-                                                <img src="<?= $icon['icon']['url']; ?>" alt="<?= $icon['icon']['title']; ?>" width="<?= $icon['icon']['width']; ?>" height="<?= $icon['icon']['height']; ?>">
+                                                <?= wp_get_attachment_image($icon['icon']['ID'] ?? '', 'medium', false, array(
+                                                    'class' => 'icon-image',
+                                                    'loading' => 'lazy',
+                                                    'decoding' => 'async',
+                                                    'alt' => $icon['text'] ?? $icon['icon']['title']
+                                                )); ?>
                                                 <span><?= $icon['text']; ?></span>
                                             </li>
                                         <?php endforeach; ?>

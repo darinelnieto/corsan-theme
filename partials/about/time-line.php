@@ -26,12 +26,17 @@ $purpose_and_mission = get_field('purpose_and_mission');
                             <?php foreach($add_time_line as $item): ?>
                                 <div class="item">
                                     <div class="card-item">
-                                        <span class="year"><?= $item['year'] ?></span>
+                                        <span class="year"><?= $item['year'] ?? '' ?></span>
                                         <div class="image-and-text">
                                             <div class="image-container">
-                                                <img src="<?= $item['image']['url']; ?>" alt="<?= $item['image']['title']; ?>" width="<?= $item['image']['width']; ?>" height="<?= $item['image']['height']; ?>">
+                                                <?= wp_get_attachment_image($item['image']['ID'] ?? '', 'medium', false, array(
+                                                    'class' => 'tl-image',
+                                                    'loading' => 'lazy',
+                                                    'decoding' => 'async',
+                                                    'alt' => $item['image']['title']
+                                                )) ?>
                                             </div>
-                                            <div class="description"><?= $item['description']; ?></div>
+                                            <div class="description"><?= $item['description'] ?? ''; ?></div>
                                         </div>
                                     </div>
                                 </div>
@@ -59,84 +64,6 @@ $purpose_and_mission = get_field('purpose_and_mission');
                             </li>
                         </ul>
                     </div>
-                    <script>
-                        $(document).ready(function () {
-                            var $owl = $('.time-line-slide');
-                            var owl = $owl.owlCarousel({
-                                autoplay: false,
-                                loop: false,
-                                nav: false,
-                                dots: false,
-                                margin: 0,
-                                responsive: {
-                                    0: { items: 1, margin:30 },
-                                    640: { items: 2, margin:30 },
-                                    768: { items: 3 }
-                                }
-                            });
-
-                            // Función para obtener el número de ítems visibles según ancho
-                            function getItemsPerPage() {
-                                var width = $(window).width();
-                                if (width < 640) return 1;
-                                if (width < 768) return 2;
-                                return 3;
-                            }
-
-                            // Función para regenerar los dots personalizados
-                            function generateCustomDots() {
-                                $('#dots-content').empty();
-
-                                var totalItems = $owl.find('.owl-item:not(.cloned)').length;
-                                var itemsPerPage = getItemsPerPage();
-                                var totalPages = Math.ceil(totalItems / itemsPerPage);
-
-                                for (var i = 0; i < totalPages; i++) {
-                                    $('#dots-content').append(
-                                        `<li><a href="#" class="dot" data-slide="${i}"></a></li>`
-                                    );
-                                }
-
-                                // Click en cada dot para mover al slide correspondiente
-                                $('.dot').click(function (e) {
-                                    e.preventDefault();
-                                    var page = $(this).data('slide');
-                                    owl.trigger('to.owl.carousel', [page * itemsPerPage, 300]);
-                                });
-
-                                // Activar el primero al inicio
-                                $('.dot').removeClass('active').eq(0).addClass('active');
-                            }
-
-                            // Mover con flechas
-                            $('.nav .prev').click(function (e) {
-                                e.preventDefault();
-                                owl.trigger('prev.owl.carousel');
-                            });
-
-                            $('.nav .next').click(function (e) {
-                                e.preventDefault();
-                                owl.trigger('next.owl.carousel');
-                            });
-
-                            // Actualizar el dot activo al cambiar de slide
-                            $owl.on('changed.owl.carousel', function (event) {
-                                var itemsPerPage = getItemsPerPage();
-                                var pageIndex = Math.floor(event.item.index / itemsPerPage);
-
-                                $('.dot').removeClass('active');
-                                $('.dot').eq(pageIndex).addClass('active');
-                            });
-
-                            // Generar los dots al inicio
-                            generateCustomDots();
-
-                            // Regenerar al cambiar de tamaño
-                            $(window).on('resize', function () {
-                                setTimeout(generateCustomDots, 300);
-                            });
-                        });
-                    </script>
                 <?php endif; ?>
             </div>
         </div>

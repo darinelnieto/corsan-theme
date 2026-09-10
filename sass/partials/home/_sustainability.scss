@@ -115,7 +115,7 @@
                 .process-text{
                     background: $green;
                     padding: scaleVW(16, $desktop);
-                    h3{
+                    .process-sub{
                         color: $white;
                         font-size: scaleVW(20, $desktop);
                         line-height: LH(23, 20);
@@ -136,7 +136,7 @@
                         min-height: scaleVW(101, $movil);
                         height: max-content;
                         padding: scaleVW(16, $movil);
-                        h3{
+                        .process-sub{
                             font-size: scaleVW(20, $movil);
                             height: auto;
                         }

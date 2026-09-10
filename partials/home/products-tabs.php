@@ -39,14 +39,29 @@ $tabs = $solutions['products_tabs'];
                                                         <p class="taxonomy"><?= $cat[0]->name; ?></p>
                                                     </div>
                                                     <div class="img-container">
-                                                        <img src="<?= get_the_post_thumbnail_url($prod->ID); ?>" alt="<?= get_the_title($prod->ID); ?>" class="product-image">
+                                                        <?= wp_get_attachment_image(get_post_thumbnail_id($prod->ID) ?? '', 'large', false, array(
+                                                            'class' => 'product-image',
+                                                            'loading' => 'lazy',
+                                                            'decoding' => 'async',
+                                                            'alt' => get_the_title($prod->ID)
+                                                        )); ?>
                                                         <?php $image = get_field('gallery', $prod->ID); ?>
-                                                        <img src="<?= $image[1]['url']; ?>" alt="<?= $image[1]['title']; ?>" width="<?= $image[1]['width']; ?>" height="<?= $image[1]['height']; ?>" class="secondary-image">
+                                                        <?= wp_get_attachment_image($image[1]['ID'] ?? '', 'large', false, array(
+                                                            'class' => 'secondary-image',
+                                                            'loading' => 'lazy',
+                                                            'decoding' => 'async',
+                                                            'alt' => get_the_title($prod->ID)
+                                                        )); ?>
                                                         <?php if($icons): ?>
                                                             <ul class="icons-content">
                                                                 <?php foreach($icons as $icon): ?>
                                                                     <li>
-                                                                        <img src="<?= $icon['icon']['url']; ?>" alt="<?= $icon['icon']['title']; ?>" width="<?= $icon['icon']['width']; ?>" height="<?= $icon['icon']['height']; ?>">
+                                                                        <?= wp_get_attachment_image($icon['icon']['ID'] ?? '', 'medium', false, array(
+                                                                            'class' => 'icon-image',
+                                                                            'loading' => 'lazy',
+                                                                            'decoding' => 'async',
+                                                                            'alt' => $icon['text']
+                                                                        )) ?>
                                                                         <span><?= $icon['text']; ?></span>
                                                                     </li>
                                                                 <?php endforeach; ?>
@@ -73,27 +88,4 @@ $tabs = $solutions['products_tabs'];
             </div>
         </div>
     </div>
-</section>     
-<script>
-    $(()=>{
-        if($(window).width() < 768){
-            $('.the-tabs').addClass('owl-carousel');
-            $('.the-tabs').owlCarousel({
-                autoplay:false,
-                loop:true,
-                nav:false,
-                dots:false,
-                margin:20,
-                responsive:{
-                    0:{
-                        items:1.5,
-                        center:true
-                    },
-                    640:{
-                        items:2
-                    }
-                }
-            });
-        }
-    });
-</script>
+</section>

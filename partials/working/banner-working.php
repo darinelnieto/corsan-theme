@@ -16,7 +16,11 @@ $product_photo = get_field('product_image_banner');
         <div class="row">
             <div class="col-12 col-md-7 col-xl-8 text-and-product-photo">
                 <h1><?= get_field('title_banner'); ?></h1>
-                <img src="<?= $product_photo['url']; ?>" alt="<?= $product_photo['title']; ?>" class="product-photo">
+                <?= wp_get_attachment_image($product_photo['ID'] ?? '', 'large', false, array(
+                    'class' => 'product-photo',
+                    'fetchpriority' => 'high',
+                    'alt' => $product_photo['title'] ?? ''
+                )); ?>
             </div>
             <div class="col-12 col-md-5 col-lg-4 form-container">
                 <div class="from-card">

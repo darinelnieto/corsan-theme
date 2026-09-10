@@ -26,7 +26,7 @@ endif;
                             <?php foreach($feature_posts as $the_blog): ?>
                                 <div class="item">
                                     <div class="card-item">
-                                        <h3><?= get_the_title($the_blog['post']->ID); ?></h3>
+                                        <h2 class="post-title"><?= get_the_title($the_blog['post']->ID); ?></h2>
                                         <p><?= get_field('short_description', $the_blog['post']->ID); ?></p>
                                         <a href="<?= get_permalink($the_blog['post']->ID); ?>">
                                             <span class="text">
@@ -53,7 +53,12 @@ endif;
                     <?php while($community->have_posts()): $community->the_post(); $cat = get_the_terms($community->ID, 'community_cat'); ?>
                         <div class="item-post">
                             <div class="image-contain">
-                                <?= get_the_post_thumbnail($community->ID); ?>
+                                <?= wp_get_attachment_image(get_post_thumbnail_id($community->ID), 'medium', false, array(
+                                    'class' => 'post_image',
+                                    'loading' => 'lazy',
+                                    'decoding' => 'async',
+                                    'alt' => get_the_title($community->ID)
+                                )); ?>
                             </div>
                             <div class="text-contain">
                                 <?php if($cat): ?>
@@ -75,14 +80,3 @@ endif;
         </div>
     </div>
 </section>
-<script>
-    $(document).ready(()=>{
-        var cambio = false;
-        $('.category-filter-nav-container ul li a').each(function(index) {
-            if(this.href.trim() == window.location){
-                $(this).addClass("active");
-                cambio = true;
-            }
-        });
-    })
-</script> 

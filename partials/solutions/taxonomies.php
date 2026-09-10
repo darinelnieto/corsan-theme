@@ -18,11 +18,19 @@ $category_nav = get_field('category_nav', 'option');
                 <?php foreach($taxonomies as $item): $key++; ?>
                     <div class="card-taxonomy <?php if($key === 1): ?>main-card active<?php endif; ?>">
                         <div class="secondary-image">
-                            <img src="<?= $item['image_active']['url']; ?>" alt="<?= $item['image_active']['title']; ?>" width="<?= $item['image_active']['width']; ?>" height="<?= $item['image_active']['height']; ?>">
+                            <?= wp_get_attachment_image($item['image_active']['ID'] ?? '', 'medium', false, array(
+                                'class' => 'image',
+                                'fetchpriority' => 'high',
+                                'alt' => $item['image_active']['title']
+                            )); ?>
                         </div>
                         <div class="card-content <?php if(!$item['main_image']): ?>blue<?php endif; ?>">
-                            <?php if($item['main_image']): ?>
-                                <img src="<?= $item['main_image']['url']; ?>" alt="<?= $item['main_image']['title']; ?>" width="<?= $item['main_image']['width']; ?>" height="<?= $item['main_image']['height']; ?>" class="main-image">
+                            <?php if(!empty($item['main_image'])): ?>
+                                <?= wp_get_attachment_image($item['main_image']['ID'], 'medium', false, array(
+                                    'class' => 'main-image',
+                                    'fetchpriority' => 'high',
+                                    'alt' => $item['main_image']['title']
+                                )); ?>
                             <?php endif; ?>
                             <div class="text-contain">
                                 <?php if($item['name']): ?>
@@ -53,10 +61,12 @@ $category_nav = get_field('category_nav', 'option');
                             <?php foreach($category_nav as $item): ?>
                                 <li>
                                     <a href="<?= $item['link']['url']; ?>">
-                                        <?php if($item['icon']): ?>
-                                            <img src="<?= $item['icon']['url']; ?>" alt="<?= $item['icon']['title']; ?>" width="<?= $item['icon']['width']; ?>">
-                                        <?php endif; ?>
-                                        <span class="text"><?= $item['link']['title']; ?></span>
+                                        <?= wp_get_attachment_image($item['icon']['ID'] ?? '', 'medium', false, array(
+                                            'class' => 'icon-image',
+                                            'fetchpriority' => 'high',
+                                            'alt' => $item['link']['title']
+                                        )); ?>
+                                        <span class="text"><?= $item['link']['title'] ?? ''; ?></span>
                                     </a>
                                 </li>
                             <?php endforeach; ?>
@@ -67,20 +77,3 @@ $category_nav = get_field('category_nav', 'option');
         </div>
     <?php endif ?>
 </section>
-<script>
-    $(()=>{
-        $('.taxonomies-partial-a0ac83 .taxonomi-link').each(function(index) {
-            if(this.href.trim() == window.location.href){
-                $('.main-card').removeClass('active');
-                $(this).parent().parent().addClass("active");
-                $(this).addClass("active");
-            }
-        });
-        $('.taxonomies-partial-a0ac83 .category-list a').each(function(index) {
-            if(this.href.trim() == window.location.href){
-                $('.category-list a').removeClass('active');
-                $(this).addClass("active");
-            }
-        });
-    });
-</script>

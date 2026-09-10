@@ -21,7 +21,12 @@ $social_network = get_field('social_networks_footer', 'option');
                 <div class="col-12">
                     <div class="footer-content">
                         <div class="logo-contain">
-                            <img src="<?= $logo['url']; ?>" alt="<?= $logo['title']; ?>" width="<?= $logo['width']; ?>" height="<?= $logo['height']; ?>" class="logo">
+                            <?= wp_get_attachment_image($logo['ID'] ?? '', 'large', false, array(
+                                'class' => 'logo',
+                                'loading' => 'lazy',
+                                'decoding' => 'async',
+                                'alt' => 'Logo Corsan'
+                            )) ?>
                             <p class="slogan"><?= get_field('slogan', 'option'); ?></p>
                         </div>
                         <div class="right-content">

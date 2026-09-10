@@ -9,11 +9,17 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
 $video = get_field('video_id');
+$img_id = get_post_thumbnail_id();
 ?>
 <section class="about-partial-0056e7">
     <div class="container">
         <div class="row align-items-center" style="position:relative;">
-            <img src="<?= get_the_post_thumbnail_url(); ?>" alt="<?= get_the_title(); ?>" class="logo">
+            <?= wp_get_attachment_image($img_id ?? '', 'large', false, array(
+                'class' => 'logo',
+                'loading' => 'eage',
+                'fetchpriority' => 'high',
+                'alt' => get_the_title()
+            )) ?>
             <div class="col-12">
                 <h1 data-aos="fade-right"><?= the_title(); ?></h1>
             </div>

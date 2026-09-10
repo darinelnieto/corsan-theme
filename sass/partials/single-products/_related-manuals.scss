@@ -35,6 +35,8 @@
         .mauals-slide{
             max-width: scaleVW(1114, $desktop);
             margin: 0 auto;
+            visibility: hidden;
+            transition: all .2s ease;
             @media(max-width:768px){
                 max-width: 100%;
             }

@@ -21,13 +21,4 @@ if($video):
         <i class="fa-solid fa-volume-high"></i>
     </div>
 </section>
-<script>
-    const video = document.getElementById('customVideo');
-    const volumeBtn = document.getElementById('volumeBtn');
-
-    volumeBtn.addEventListener('click', function () {
-        video.muted = !video.muted;
-        volumeBtn.innerHTML = video.muted ? `<i class="fa-solid fa-volume-high"></i>` : `<i class="fa-solid fa-volume-xmark"></i>`;
-    });
-</script>
 <?php endif; ?>

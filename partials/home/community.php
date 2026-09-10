@@ -44,9 +44,9 @@ if(count($items) > 0):
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h2>
-                    <a href="<?= esc_url($section_link); ?>">
-                        <?= esc_html($section_title); ?>
+                <h2 class="comunity-title">
+                    <a href="<?= $section_link; ?>" target="_self" class="comunity-link">
+                        <?= $section_title; ?>
                     </a>
                 </h2>
                 <div class="comunity-content">
@@ -59,11 +59,19 @@ if(count($items) > 0):
                                     $post_id = is_array($card) ? (isset($card['item']) ? (is_array($card['item']) ? $card['item']['ID'] : $card['item']) : $card) : $card;
                                     ?>
                                     <a href="<?= esc_url(get_permalink($post_id)); ?>" class="card-item">
-                                        <?= get_the_post_thumbnail($post_id); ?>
+                                        <?= wp_get_attachment_image(get_post_thumbnail_id($post_id), 'large', false, array(
+                                            'loading' => 'lazy',
+                                            'decoding' => 'async',
+                                            'alt' => get_the_title($post_id)
+                                        )); ?>
                                     </a>
                                 <?php else: ?>
                                     <a href="<?= get_permalink($card['item']->ID); ?>" class="card-item">
-                                        <?= get_the_post_thumbnail($card['item']->ID); ?>
+                                        <?= wp_get_attachment_image(get_post_thumbnail_id($card['item']->ID), 'large', false, array(
+                                            'loading' => 'lazy',
+                                            'decoding' => 'async',
+                                            'alt' => get_the_title($card['item']->ID)
+                                        )); ?>
                                     </a>
                                 <?php endif; ?>
                             <?php endforeach; ?>
@@ -71,7 +79,7 @@ if(count($items) > 0):
                     <?php endforeach; ?>
                 </div>
                 <?php if($section_link): ?>
-                    <a href="<?= esc_url($section_link); ?>" class="see-more">
+                    <a href="<?= $section_link; ?>" class="see-more">
                         <?php if(get_bloginfo("language") == "en-US"): ?>See more<?php else: ?>Ver más<?php endif; ?>
                     </a>
                 <?php endif; ?>

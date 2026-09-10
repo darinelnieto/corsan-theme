@@ -22,7 +22,12 @@ if($gallery):
     <div class="gallery-our-team owl-carousel">
         <?php foreach($gallery as $img): ?>
             <div class="item">
-                <img src="<?= $img['url']; ?>" alt="<?= $img['title']; ?>">
+                <?= wp_get_attachment_image($img['ID'], 'medium', false, array(
+                    'class' => 'member-photo',
+                    'loading' => 'lazy',
+                    'decoding' => 'async',
+                    'alt' => $img['title']
+                )); ?>
             </div>
         <?php endforeach; ?>
     </div>

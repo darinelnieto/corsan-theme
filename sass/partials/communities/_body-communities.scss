@@ -4,6 +4,8 @@
         position: relative;
         z-index: 1;
         .feature-posts-slide{
+            visibility: hidden;
+            transition: all .2s ease;
             .owl-stage-outer{
                 overflow: inherit;
                 .item{
@@ -33,7 +35,7 @@
                             top: - scaleVW(253, $movil);
                             gap: scaleVW(38, $movil);
                         }
-                        h3{
+                        h2{
                             color: $blue;
                             font-weight: 600;
                             font-size: scaleVW(32, $desktop);

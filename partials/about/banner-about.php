@@ -21,16 +21,12 @@ $image = get_field('banner_image');
             <i class="fa-solid fa-volume-high"></i>
         </div>
     <?php else: ?>
-        <img src="<?= $image['url']; ?>" alt="<?= $image['title']; ?>" width="<?= $image['width']; ?>" height="<?= $image['height']; ?>" class="banner-image">
+        <?= wp_get_attachment_image($image['ID'] ?? '', 'large', false, array(
+            'class' => 'banner-image',
+            'fetchpriority' => 'high',
+            'loading' => 'eage',
+            'alt' => get_field('video_description')
+        )) ?>
     <?php endif; ?>
     <p class="video-description"><?= get_field('video_description'); ?></p>
-</section>            
-<script>
-    const video = document.getElementById('customVideo');
-    const volumeBtn = document.getElementById('volumeBtn');
-
-    volumeBtn.addEventListener('click', function () {
-        video.muted = !video.muted;
-        volumeBtn.innerHTML = video.muted ? `<i class="fa-solid fa-volume-high"></i>` : `<i class="fa-solid fa-volume-xmark"></i>`;
-    });
-</script>
+</section>
