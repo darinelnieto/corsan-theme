@@ -8,7 +8,11 @@ $('.tabs-content').on('click', 'a', function(e){
     e.preventDefault();
 });
 /*=========== Category solutions ===========*/
-$('.taxonomies-partial-a0ac83').on('click', '.card-content', function(){
+// $('.taxonomies-partial-a0ac83').on('click', '.card-content', function(){
+//     $('.card-taxonomy').removeClass('active');
+//     $(this).parent().addClass('active');
+// });
+$('.taxonomies-partial-a0ac83').on('mouseover', '.card-content', function(){
     $('.card-taxonomy').removeClass('active');
     $(this).parent().addClass('active');
 });
